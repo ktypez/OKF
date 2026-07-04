@@ -172,13 +172,14 @@
     border-bottom: 1px solid var(--border); flex-shrink: 0;
   }
   .graph-toolbar .legend {
-    display: flex; gap: 10px; align-items: center; margin-left: auto;
+    display: flex; gap: 6px; align-items: center; margin-left: auto;
   }
   .graph-toolbar .legend-item {
-    display: flex; align-items: center; gap: 4px;
+    display: flex; align-items: center; gap: 3px;
+    font-size: 10px;
   }
   .graph-toolbar .legend-dot {
-    width: 8px; height: 8px; border-radius: 2px;
+    width: 6px; height: 6px; border-radius: 1px;
   }
   .graph-container { flex: 1; position: relative; overflow: hidden; }
   #graph { width: 100%; height: 100%; }
@@ -436,7 +437,7 @@ function renderProjectCards() {
     const typeDots = types.slice(0, 5).map(([t]) =>
       '<span class="proj-type-dot" style="background:' + (typeColorsMap[t] || '#64748b') + '" title="' + t + '"></span>'
     ).join('');
-    return '<div class="project-card" onclick="setFilter(&apos;project:&apos; + p.name + &apos;&apos;)" title="Filter by &apos; + p.name + &apos;">' +
+    return '<div class="project-card" onclick="setFilter(&apos;project:' + p.name + '&apos;)" title="Filter by &apos; + p.name + &apos;">' +
       '<div class="proj-name" style="color:' + color + '">' + p.name + '</div>' +
       '<div class="proj-count">' + p.node_count + '</div>' +
       '<div class="proj-label">nodes</div>' +
