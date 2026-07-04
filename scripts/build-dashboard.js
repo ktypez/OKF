@@ -194,6 +194,28 @@ let html = `<!DOCTYPE html>
     width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
   }
 
+  /* ── Sidebar Legend ── */
+  .sidebar-legend {
+    border-top: 1px solid var(--border);
+    padding: 8px 12px;
+    flex-shrink: 0;
+  }
+  .sidebar-legend .legend-title {
+    font-size: 10px; color: var(--text-muted);
+    margin-bottom: 4px; text-transform: uppercase; letter-spacing: 0.5px;
+  }
+  .sidebar-legend .legend-items {
+    display: flex; gap: 4px; flex-wrap: wrap;
+  }
+  .sidebar-legend .legend-item {
+    display: inline-flex; align-items: center; gap: 3px;
+    font-size: 10px; cursor: pointer;
+  }
+  .sidebar-legend .legend-item:hover { color: var(--text); }
+  .sidebar-legend .legend-dot {
+    width: 6px; height: 6px; border-radius: 1px;
+  }
+
   /* ── Main Area ── */
   .main { flex: 1; display: flex; flex-direction: column; overflow: hidden; min-width: 0; }
 
@@ -259,16 +281,6 @@ let html = `<!DOCTYPE html>
     display: flex; align-items: center; gap: 12px;
     padding: 4px 12px; font-size: 11px; color: var(--text-muted);
     border-bottom: 1px solid var(--border); flex-shrink: 0;
-  }
-  .graph-toolbar .legend {
-    display: flex; gap: 6px; align-items: center; margin-left: auto;
-  }
-  .graph-toolbar .legend-item {
-    display: flex; align-items: center; gap: 3px;
-    font-size: 10px;
-  }
-  .graph-toolbar .legend-dot {
-    width: 6px; height: 6px; border-radius: 1px;
   }
   .graph-container { flex: 1; position: relative; overflow: hidden; }
   #graph { width: 100%; height: 100%; }
@@ -381,7 +393,7 @@ let html = `<!DOCTYPE html>
     .project-card { min-width: 80px; max-width: 110px; padding: 5px 8px; }
     .project-card .proj-count { font-size: 15px; }
     .inspector.open { width: 100%; position: fixed; inset: 0; z-index: 30; }
-    .graph-toolbar .legend { display: none; }
+
   }
 <\/style>
 </head>
@@ -414,6 +426,10 @@ let html = `<!DOCTYPE html>
     <div class="sidebar-content" id="nodeList">
       <div style="padding: 20px; text-align: center; color: var(--text-muted); font-size: 13px;">Loading...</div>
     </div>
+    <div class="sidebar-legend" id="sidebarLegend">
+      <div class="legend-title">Types</div>
+      <div class="legend-items" id="graphLegend"></div>
+    </div>
   </aside>
 
   <div class="main">
@@ -432,8 +448,6 @@ let html = `<!DOCTYPE html>
       <div class="graph-area">
         <div class="graph-toolbar">
           <span>Knowledge Graph</span>
-          
-          <div class="legend" id="graphLegend"></div>
         </div>
         <div class="graph-container">
           <div id="graph"></div>
