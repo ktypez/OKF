@@ -110,8 +110,12 @@ let html = `<!DOCTYPE html>
     --shadow: 0 2px 8px rgba(0,0,0,0.3);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
+  @font-face {
+    font-family: 'SOV_monomon';
+    src: url('SOV_monomon-hinted.ttf') format('truetype');
+  }
   body {
-    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    font-family: 'SOV_monomon', 'Courier New', monospace;
     background: var(--bg); color: var(--text);
     height: 100vh; height: 100dvh; overflow: hidden;
   }
@@ -522,14 +526,14 @@ function renderProjectCards() {
     const typeDots = types.slice(0, 5).map(([t]) =>
       '<span class="proj-type-dot" style="background:' + (typeColorsMap[t] || '#64748b') + '" title="' + t + '"></span>'
     ).join('');
-    return '<div class="project-card" onclick="setFilter(\'project:' + p.name + '\')" title="Filter by ' + p.name + '">' +
+    return '<div class="project-card" onclick="setFilter(&apos;project:&apos; + p.name + &apos;&apos;)" title="Filter by &apos; + p.name + &apos;">' +
       '<div class="proj-name" style="color:' + color + '">' + p.name + '</div>' +
       '<div class="proj-count">' + p.node_count + '</div>' +
       '<div class="proj-label">nodes</div>' +
       '<div class="proj-types">' + typeDots + '</div>' +
       '</div>';
   }).join('');
-  rail.innerHTML = '<div class="project-card" onclick="setFilter(\'all\')" style="background:var(--surface-3);border-color:transparent;" title="Show all">' +
+  rail.innerHTML = '<div class="project-card" onclick="setFilter(&apos;all&apos;)" style="background:var(--surface-3);border-color:transparent;" title="Show all">' +
     '<div class="proj-name" style="color:var(--text-muted)">All Projects</div>' +
     '<div class="proj-count">' + totalNodes + '</div>' +
     '<div class="proj-label">total nodes</div>' +
@@ -542,7 +546,7 @@ function renderLegend() {
   const usedTypes = {};
   nodes.forEach(n => { usedTypes[n.type] = (usedTypes[n.type] || 0) + 1; });
   legend.innerHTML = Object.entries(usedTypes).sort().map(([t]) =>
-    '<span class="legend-item">' +
+    '<span class="legend-item" onclick="setFilter(&apos;type:&apos; + t + &apos;&apos;)" style="cursor:pointer;" title="Filter by type: ' + (typeLabelMap[t] || t) + '">' +
     '<span class="legend-dot" style="background:' + (typeColorsMap[t] || '#64748b') + '"></span>' +
     '<span>' + (typeLabelMap[t] || t) + '</span></span>'
   ).join(' | ');
@@ -567,12 +571,17 @@ function matchesCurrentFilter(data) {
   if (currentFilter === 'open') return data.type === 'task' && data.status === 'open';
   if (currentFilter === 'risk') return data.type === 'risk';
   if (currentFilter.startsWith('project:')) return data.project === currentFilter.replace('project:', '');
+  if (currentFilter.startsWith('type:')) return data.type === currentFilter.replace('type:', '');
   return true;
 }
 
 function setFilter(f) {
   document.querySelectorAll('.sidebar-nav button').forEach(b => b.classList.remove('active'));
-  event.target.classList.add('active');
+  document.querySelectorAll('.sidebar-nav button').forEach(b => {
+    if (b.textContent === f || (f.startsWith('project:') && b.textContent === f.replace('project:', ''))) {
+      b.classList.add('active');
+    }
+  });
   currentFilter = f;
   const search = document.getElementById('search').value;
   filterNodes(search);
