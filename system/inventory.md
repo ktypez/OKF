@@ -14,6 +14,7 @@ last_updated: 2026-07-04
 | `cleanup` | Scan unused deps/files, health check, present findings, update KB | All |
 | `wrap-day` | Review today's diff, write changelog entry, update truck status, commit | truck |
 | `blog-post` | Write a blog post — censor internal project names, publish at mcky.space (`src/data/blog/`) | mcky.space |
+| `write-readme` | Write a README.md for any repo — censor internal project names | All |
 
 ### update .md
 
@@ -30,6 +31,12 @@ last_updated: 2026-07-04
 3. Present findings for user to choose
 4. Update KB files
 5. Never touch `.env*`, `node_modules/`, `dist/`, `.next/`, `.git/`, or essential config
+
+### write-readme
+
+1. Same censor rule as `blog-post` — replace internal project names (cafe, cafe-v2, clientdata, habby, truck) with generic descriptors
+2. Keep it concise — overview, stack, setup, links
+3. No frontmatter needed (plain markdown)
 
 ### blog-post
 
