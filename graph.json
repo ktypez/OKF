@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated": "2026-07-04T16:47:55.667Z",
+    "generated": "2026-07-04T16:53:04.655Z",
     "total_nodes": 111,
-    "total_edges": 202,
+    "total_edges": 203,
     "warnings": 0
   },
   "warnings": [],
@@ -1984,7 +1984,7 @@
       "type": "risk",
       "project": "mcky.space",
       "file": "projects/mcky.space/knowledge/RSK-001.md",
-      "status": "mitigated",
+      "status": "closed",
       "freshness": "2026-07-05T00:00:00.000Z",
       "verified": "2026-07-05T00:00:00.000Z",
       "expires": null,
@@ -2008,6 +2008,11 @@
           "type": "relates-to",
           "target": "DEC-001",
           "_composite": "mcky.space/DEC-001"
+        },
+        {
+          "type": "relates-to",
+          "target": "TASK-001",
+          "_composite": "mcky.space/TASK-001"
         }
       ],
       "personality": null,
@@ -4200,6 +4205,14 @@
       "source": "RSK-001",
       "sourceProject": "mcky.space",
       "target": "DEC-001",
+      "targetProject": "mcky.space",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "RSK-001",
+      "sourceProject": "mcky.space",
+      "target": "TASK-001",
       "targetProject": "mcky.space",
       "type": "relates-to",
       "label": "relates-to"
