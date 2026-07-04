@@ -15,8 +15,10 @@ priority: medium
 component: dashboard
 anchors: []
 links:
-  - type: relates-to target: LSN-001
-  - type: relates-to target: RSK-001
+  - type: relates-to
+    target: LSN-001
+  - type: relates-to
+    target: RSK-001
 ---
 
 # TASK-002: Refactor page.tsx useState to useReducer

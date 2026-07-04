@@ -11,10 +11,14 @@ superseded_by: null
 anchors:
   - /home/clientdata/app/page.tsx
 links:
-  - type: relates-to  target: DEC-001
-  - type: relates-to  target: TASK-001
-  - type: relates-to  target: LSN-001
-  - type: relates-to  target: RSK-001
+  - type: relates-to
+    target: DEC-001
+  - type: relates-to
+    target: TASK-001
+  - type: relates-to
+    target: LSN-001
+  - type: relates-to
+    target: RSK-001
 ---
 
 # COMP-001: Dashboard

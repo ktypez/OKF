@@ -12,11 +12,16 @@ anchors:
   - /home/clientdata/package.json
   - /home/clientdata/next.config.ts
 links:
-  - type: relates-to  target: clientdata-agent
-  - type: relates-to  target: clientdata-status
-  - type: relates-to  target: clientdata-structure
-  - type: relates-to  target: clientdata-dependencies
-  - type: relates-to  target: clientdata-commands
+  - type: relates-to
+    target: clientdata-agent
+  - type: relates-to
+    target: clientdata-status
+  - type: relates-to
+    target: clientdata-structure
+  - type: relates-to
+    target: clientdata-dependencies
+  - type: relates-to
+    target: clientdata-commands
 ---
 
 # Project Profile: clientdata

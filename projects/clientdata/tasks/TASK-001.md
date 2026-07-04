@@ -15,9 +15,12 @@ priority: high
 component: dashboard
 anchors: []
 links:
-  - type: caused-by  target: DEC-001
-  - type: relates-to target: LSN-001
-  - type: relates-to target: RSK-001
+  - type: caused-by
+    target: DEC-001
+  - type: relates-to
+    target: LSN-001
+  - type: relates-to
+    target: RSK-001
 ---
 
 # TASK-001: SPA routing implementation

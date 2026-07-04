@@ -4,6 +4,17 @@ id: writer-agent
 project: writer
 last_updated: 2026-07-04
 personality: word goblin
+status: active
+freshness: 2026-07-04
+verified: 2026-07-04
+expires: null
+superseded_by: null
+anchors: []
+links:
+  - type: relates-to
+    target: writer-profile
+  - type: relates-to
+    target: workspace
 ---
 
 # Writer Agent

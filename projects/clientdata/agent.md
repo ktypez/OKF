@@ -15,11 +15,16 @@ anchors:
   - /home/clientdata/lib/
   - /home/clientdata/components/
 links:
-  - type: relates-to   target: clientdata-profile
-  - type: relates-to   target: clientdata-status
-  - type: relates-to   target: clientdata-structure
-  - type: relates-to   target: clientdata-commands
-  - type: relates-to   target: workspace
+  - type: relates-to
+    target: clientdata-profile
+  - type: relates-to
+    target: clientdata-status
+  - type: relates-to
+    target: clientdata-structure
+  - type: relates-to
+    target: clientdata-commands
+  - type: relates-to
+    target: workspace
 ---
 
 # clientdata Agent

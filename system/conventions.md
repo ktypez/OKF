@@ -32,8 +32,10 @@ expires: null               # optional expiry date
 superseded_by: null         # id of node that replaces this one
 anchors: []                 # file:line paths this node concerns
 links:                      # typed edges to other nodes
-  - type: supersedes   target: DEC-003
-  - type: relates-to   target: TASK-012
+  - type: supersedes
+    target: DEC-003
+  - type: relates-to
+    target: TASK-012
 ---
 ```
 

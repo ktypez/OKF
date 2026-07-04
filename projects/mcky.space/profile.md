@@ -1,7 +1,25 @@
 ---
 type: project-profile
 id: mcky-space-profile
+project: mcky.space
 last_updated: 2026-07-04
+status: active
+freshness: 2026-07-04
+verified: 2026-07-04
+expires: null
+superseded_by: null
+anchors: []
+links:
+  - type: relates-to
+    target: mcky-agent
+  - type: relates-to
+    target: mcky-status
+  - type: relates-to
+    target: mcky-structure
+  - type: relates-to
+    target: mcky-dependencies
+  - type: relates-to
+    target: mcky-commands
 ---
 
 # Project Profile: mcky.space

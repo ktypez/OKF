@@ -5,6 +5,23 @@ project: truck
 last_updated: 2026-07-04
 personality: overtime enthusiast
 status_ref: ./status.md
+status: active
+freshness: 2026-07-04
+verified: 2026-07-04
+expires: null
+superseded_by: null
+anchors: []
+links:
+  - type: relates-to
+    target: truck-profile
+  - type: relates-to
+    target: truck-status
+  - type: relates-to
+    target: truck-structure
+  - type: relates-to
+    target: truck-commands
+  - type: relates-to
+    target: workspace
 ---
 
 # Truck Agent

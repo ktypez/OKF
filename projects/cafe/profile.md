@@ -1,7 +1,25 @@
 ---
 type: project-profile
 id: cafe-profile
+project: cafe
 last_updated: 2026-07-04
+status: active
+freshness: 2026-07-04
+verified: 2026-07-04
+expires: null
+superseded_by: null
+anchors: []
+links:
+  - type: relates-to
+    target: cafe-agent
+  - type: relates-to
+    target: cafe-status
+  - type: relates-to
+    target: cafe-structure
+  - type: relates-to
+    target: cafe-dependencies
+  - type: relates-to
+    target: cafe-commands
 ---
 
 # Project Profile: cafe

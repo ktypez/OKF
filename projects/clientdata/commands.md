@@ -10,9 +10,12 @@ expires: null
 superseded_by: null
 anchors: []
 links:
-  - type: documents   target: clientdata-agent
-  - type: relates-to  target: clientdata-dependencies
-  - type: relates-to  target: clientdata-structure
+  - type: documents
+    target: clientdata-agent
+  - type: relates-to
+    target: clientdata-dependencies
+  - type: relates-to
+    target: clientdata-structure
 ---
 
 # Project Commands: clientdata

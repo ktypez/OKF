@@ -1,3 +1,21 @@
+---
+type: document
+id: cafe-structure
+project: cafe
+last_updated: 2026-07-04
+status: active
+freshness: 2026-07-04
+verified: 2026-07-04
+expires: null
+superseded_by: null
+anchors: []
+links:
+  - type: documents
+    target: cafe-agent
+  - type: relates-to
+    target: cafe-profile
+---
+
 # Project Structure: cafe
 
 ## Directory Layout

@@ -11,9 +11,12 @@ superseded_by: null
 anchors:
   - /home/clientdata/package.json
 links:
-  - type: documents   target: clientdata-profile
-  - type: relates-to  target: clientdata-structure
-  - type: relates-to  target: clientdata-commands
+  - type: documents
+    target: clientdata-profile
+  - type: relates-to
+    target: clientdata-structure
+  - type: relates-to
+    target: clientdata-commands
 ---
 
 # Project Dependencies: clientdata

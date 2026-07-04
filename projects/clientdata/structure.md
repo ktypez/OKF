@@ -13,10 +13,14 @@ anchors:
   - /home/clientdata/lib/
   - /home/clientdata/components/
 links:
-  - type: documents   target: clientdata-agent
-  - type: relates-to  target: clientdata-profile
-  - type: relates-to  target: clientdata-dependencies
-  - type: relates-to  target: clientdata-commands
+  - type: documents
+    target: clientdata-agent
+  - type: relates-to
+    target: clientdata-profile
+  - type: relates-to
+    target: clientdata-dependencies
+  - type: relates-to
+    target: clientdata-commands
 ---
 
 # Project Structure: clientdata

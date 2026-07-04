@@ -1,54 +1,11 @@
 {
   "meta": {
-    "generated": "2026-07-04T07:06:00.728Z",
-    "total_nodes": 45,
-    "total_edges": 0,
-    "warnings": 42
+    "generated": "2026-07-04T07:11:37.406Z",
+    "total_nodes": 71,
+    "total_edges": 150,
+    "warnings": 0
   },
-  "warnings": [
-    "Node clientdata-agent links to unknown but target not found",
-    "Node clientdata-agent links to unknown but target not found",
-    "Node clientdata-agent links to unknown but target not found",
-    "Node clientdata-agent links to unknown but target not found",
-    "Node clientdata-agent links to unknown but target not found",
-    "Node clientdata-assets links to unknown but target not found",
-    "Node clientdata-assets links to unknown but target not found",
-    "Node clientdata-commands links to unknown but target not found",
-    "Node clientdata-commands links to unknown but target not found",
-    "Node clientdata-commands links to unknown but target not found",
-    "Node clientdata-decisions links to unknown but target not found",
-    "Node clientdata-decisions links to unknown but target not found",
-    "Node clientdata-dependencies links to unknown but target not found",
-    "Node clientdata-dependencies links to unknown but target not found",
-    "Node clientdata-dependencies links to unknown but target not found",
-    "Node COMP-001 links to unknown but target not found",
-    "Node COMP-001 links to unknown but target not found",
-    "Node COMP-001 links to unknown but target not found",
-    "Node COMP-001 links to unknown but target not found",
-    "Node DEC-001 links to unknown but target not found",
-    "Node DEC-001 links to unknown but target not found",
-    "Node LSN-001 links to unknown but target not found",
-    "Node LSN-001 links to unknown but target not found",
-    "Node RSK-001 links to unknown but target not found",
-    "Node RSK-001 links to unknown but target not found",
-    "Node clientdata-profile links to unknown but target not found",
-    "Node clientdata-profile links to unknown but target not found",
-    "Node clientdata-profile links to unknown but target not found",
-    "Node clientdata-profile links to unknown but target not found",
-    "Node clientdata-profile links to unknown but target not found",
-    "Node clientdata-status links to unknown but target not found",
-    "Node clientdata-status links to unknown but target not found",
-    "Node clientdata-status links to unknown but target not found",
-    "Node clientdata-structure links to unknown but target not found",
-    "Node clientdata-structure links to unknown but target not found",
-    "Node clientdata-structure links to unknown but target not found",
-    "Node clientdata-structure links to unknown but target not found",
-    "Node TASK-001 links to unknown but target not found",
-    "Node TASK-001 links to unknown but target not found",
-    "Node TASK-001 links to unknown but target not found",
-    "Node TASK-002 links to unknown but target not found",
-    "Node TASK-002 links to unknown but target not found"
-  ],
+  "warnings": [],
   "nodes": [
     {
       "id": "okf-format-rule",
@@ -82,7 +39,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "okf-index",
@@ -99,7 +56,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "cafe-agent",
@@ -107,33 +64,179 @@
       "project": "cafe",
       "file": "projects/cafe/agent.md",
       "status": "active",
-      "freshness": null,
-      "verified": null,
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
-      "links": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "cafe-profile"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-status"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-structure"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-commands"
+        },
+        {
+          "type": "relates-to",
+          "target": "workspace"
+        }
+      ],
       "personality": "barista engineer",
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "cafe-assets",
+      "type": "document",
+      "project": "cafe",
+      "file": "projects/cafe/assets.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "cafe-structure"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "cafe-commands",
+      "type": "document",
+      "project": "cafe",
+      "file": "projects/cafe/commands.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "documents",
+          "target": "cafe-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-dependencies"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-structure"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "cafe-decisions",
+      "type": "index",
+      "project": "cafe",
+      "file": "projects/cafe/decisions.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "cafe-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "cafe-dependencies",
+      "type": "document",
+      "project": "cafe",
+      "file": "projects/cafe/dependencies.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "documents",
+          "target": "cafe-profile"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-structure"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-commands"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "cafe-profile",
       "type": "project-profile",
-      "project": null,
+      "project": "cafe",
       "file": "projects/cafe/profile.md",
       "status": "active",
-      "freshness": null,
-      "verified": null,
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
-      "links": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "cafe-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-status"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-structure"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-dependencies"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-commands"
+        }
+      ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "cafe-status",
@@ -141,8 +244,112 @@
       "project": "cafe",
       "file": "projects/cafe/status.md",
       "status": "active",
-      "freshness": null,
-      "verified": null,
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "cafe-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-profile"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-structure"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "cafe-structure",
+      "type": "document",
+      "project": "cafe",
+      "file": "projects/cafe/structure.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "documents",
+          "target": "cafe-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-profile"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "cafe-v2-assets",
+      "type": "document",
+      "project": "cafe-v2",
+      "file": "projects/cafe-v2/assets.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "cafe-v2-structure"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "cafe-v2-commands",
+      "type": "document",
+      "project": "cafe-v2",
+      "file": "projects/cafe-v2/commands.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "cafe-v2-dependencies"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-v2-structure"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "cafe-v2-decisions",
+      "type": "index",
+      "project": "cafe-v2",
+      "file": "projects/cafe-v2/decisions.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
@@ -150,24 +357,119 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "cafe-v2-dependencies",
+      "type": "document",
+      "project": "cafe-v2",
+      "file": "projects/cafe-v2/dependencies.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "cafe-v2-profile"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-v2-structure"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-v2-commands"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "cafe-v2-profile",
       "type": "project-profile",
-      "project": null,
+      "project": "cafe-v2",
       "file": "projects/cafe-v2/profile.md",
       "status": "active",
-      "freshness": null,
-      "verified": null,
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
-      "links": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "cafe-v2-status"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-v2-structure"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-v2-dependencies"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-v2-commands"
+        }
+      ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-03"
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "cafe-v2-status",
+      "type": "project-status",
+      "project": "cafe-v2",
+      "file": "projects/cafe-v2/status.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "cafe-v2-profile"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-v2-structure"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "cafe-v2-structure",
+      "type": "document",
+      "project": "cafe-v2",
+      "file": "projects/cafe-v2/structure.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "cafe-v2-profile"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "clientdata-agent",
@@ -175,8 +477,8 @@
       "project": "clientdata",
       "file": "projects/clientdata/agent.md",
       "status": "active",
-      "freshness": "2026-07-04",
-      "verified": "2026-07-04",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [
@@ -186,30 +488,30 @@
       ],
       "links": [
         {
-          "type": "relates-to   target: clientdata-profile",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "clientdata-profile"
         },
         {
-          "type": "relates-to   target: clientdata-status",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "clientdata-status"
         },
         {
-          "type": "relates-to   target: clientdata-structure",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "clientdata-structure"
         },
         {
-          "type": "relates-to   target: clientdata-commands",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "clientdata-commands"
         },
         {
-          "type": "relates-to   target: workspace",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "workspace"
         }
       ],
       "personality": "data goblin",
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "clientdata-assets",
@@ -217,8 +519,8 @@
       "project": "clientdata",
       "file": "projects/clientdata/assets.md",
       "status": "active",
-      "freshness": "2026-07-04",
-      "verified": "2026-07-04",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [
@@ -226,18 +528,18 @@
       ],
       "links": [
         {
-          "type": "relates-to  target: clientdata-structure",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "clientdata-structure"
         },
         {
-          "type": "relates-to  target: clientdata-profile",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "clientdata-profile"
         }
       ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "clientdata-commands",
@@ -245,29 +547,29 @@
       "project": "clientdata",
       "file": "projects/clientdata/commands.md",
       "status": "active",
-      "freshness": "2026-07-04",
-      "verified": "2026-07-04",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
       "links": [
         {
-          "type": "documents   target: clientdata-agent",
-          "target": "unknown"
+          "type": "documents",
+          "target": "clientdata-agent"
         },
         {
-          "type": "relates-to  target: clientdata-dependencies",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "clientdata-dependencies"
         },
         {
-          "type": "relates-to  target: clientdata-structure",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "clientdata-structure"
         }
       ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "clientdata-decisions",
@@ -275,25 +577,25 @@
       "project": "clientdata",
       "file": "projects/clientdata/decisions.md",
       "status": "active",
-      "freshness": "2026-07-04",
-      "verified": "2026-07-04",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
       "links": [
         {
-          "type": "relates-to  target: clientdata-agent",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "clientdata-agent"
         },
         {
-          "type": "relates-to  target: clientdata-status",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "clientdata-status"
         }
       ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "clientdata-dependencies",
@@ -301,8 +603,8 @@
       "project": "clientdata",
       "file": "projects/clientdata/dependencies.md",
       "status": "active",
-      "freshness": "2026-07-04",
-      "verified": "2026-07-04",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [
@@ -310,22 +612,22 @@
       ],
       "links": [
         {
-          "type": "documents   target: clientdata-profile",
-          "target": "unknown"
+          "type": "documents",
+          "target": "clientdata-profile"
         },
         {
-          "type": "relates-to  target: clientdata-structure",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "clientdata-structure"
         },
         {
-          "type": "relates-to  target: clientdata-commands",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "clientdata-commands"
         }
       ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "COMP-001",
@@ -333,8 +635,8 @@
       "project": "clientdata",
       "file": "projects/clientdata/knowledge/COMP-001.md",
       "status": "active",
-      "freshness": "2026-07-04",
-      "verified": "2026-07-04",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [
@@ -342,26 +644,26 @@
       ],
       "links": [
         {
-          "type": "relates-to  target: DEC-001",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "DEC-001"
         },
         {
-          "type": "relates-to  target: TASK-001",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "TASK-001"
         },
         {
-          "type": "relates-to  target: LSN-001",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "LSN-001"
         },
         {
-          "type": "relates-to  target: RSK-001",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "RSK-001"
         }
       ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "DEC-001",
@@ -369,8 +671,8 @@
       "project": "clientdata",
       "file": "projects/clientdata/knowledge/DEC-001.md",
       "status": "active",
-      "freshness": "2026-07-04",
-      "verified": "2026-07-04",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [
@@ -379,18 +681,18 @@
       ],
       "links": [
         {
-          "type": "relates-to  target: TASK-001",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "TASK-001"
         },
         {
-          "type": "relates-to  target: COMP-001",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "COMP-001"
         }
       ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "LSN-001",
@@ -398,8 +700,8 @@
       "project": "clientdata",
       "file": "projects/clientdata/knowledge/LSN-001.md",
       "status": "active",
-      "freshness": "2026-07-04",
-      "verified": "2026-07-04",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [
@@ -407,18 +709,18 @@
       ],
       "links": [
         {
-          "type": "caused-by  target: TASK-001",
-          "target": "unknown"
+          "type": "caused-by",
+          "target": "TASK-001"
         },
         {
-          "type": "relates-to target: DEC-001",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "DEC-001"
         }
       ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "RSK-001",
@@ -426,8 +728,8 @@
       "project": "clientdata",
       "file": "projects/clientdata/knowledge/RSK-001.md",
       "status": "active",
-      "freshness": "2026-07-04",
-      "verified": "2026-07-04",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [
@@ -435,18 +737,18 @@
       ],
       "links": [
         {
-          "type": "relates-to  target: DEC-001",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "DEC-001"
         },
         {
-          "type": "relates-to  target: TASK-001",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "TASK-001"
         }
       ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "clientdata-profile",
@@ -454,8 +756,8 @@
       "project": "clientdata",
       "file": "projects/clientdata/profile.md",
       "status": "active",
-      "freshness": "2026-07-04",
-      "verified": "2026-07-04",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [
@@ -464,30 +766,30 @@
       ],
       "links": [
         {
-          "type": "relates-to  target: clientdata-agent",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "clientdata-agent"
         },
         {
-          "type": "relates-to  target: clientdata-status",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "clientdata-status"
         },
         {
-          "type": "relates-to  target: clientdata-structure",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "clientdata-structure"
         },
         {
-          "type": "relates-to  target: clientdata-dependencies",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "clientdata-dependencies"
         },
         {
-          "type": "relates-to  target: clientdata-commands",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "clientdata-commands"
         }
       ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "clientdata-status",
@@ -495,8 +797,8 @@
       "project": "clientdata",
       "file": "projects/clientdata/status.md",
       "status": "active",
-      "freshness": "2026-07-04",
-      "verified": "2026-07-04",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [
@@ -505,22 +807,22 @@
       ],
       "links": [
         {
-          "type": "relates-to  target: clientdata-agent",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "clientdata-agent"
         },
         {
-          "type": "relates-to  target: clientdata-profile",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "clientdata-profile"
         },
         {
-          "type": "relates-to  target: clientdata-structure",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "clientdata-structure"
         }
       ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "clientdata-structure",
@@ -528,8 +830,8 @@
       "project": "clientdata",
       "file": "projects/clientdata/structure.md",
       "status": "active",
-      "freshness": "2026-07-04",
-      "verified": "2026-07-04",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [
@@ -539,26 +841,26 @@
       ],
       "links": [
         {
-          "type": "documents   target: clientdata-agent",
-          "target": "unknown"
+          "type": "documents",
+          "target": "clientdata-agent"
         },
         {
-          "type": "relates-to  target: clientdata-profile",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "clientdata-profile"
         },
         {
-          "type": "relates-to  target: clientdata-dependencies",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "clientdata-dependencies"
         },
         {
-          "type": "relates-to  target: clientdata-commands",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "clientdata-commands"
         }
       ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "TASK-001",
@@ -566,29 +868,29 @@
       "project": "clientdata",
       "file": "projects/clientdata/tasks/TASK-001.md",
       "status": "closed",
-      "freshness": "2026-07-04",
-      "verified": "2026-07-04",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
       "links": [
         {
-          "type": "caused-by  target: DEC-001",
-          "target": "unknown"
+          "type": "caused-by",
+          "target": "DEC-001"
         },
         {
-          "type": "relates-to target: LSN-001",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "LSN-001"
         },
         {
-          "type": "relates-to target: RSK-001",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "RSK-001"
         }
       ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "TASK-002",
@@ -596,25 +898,25 @@
       "project": "clientdata",
       "file": "projects/clientdata/tasks/TASK-002.md",
       "status": "open",
-      "freshness": "2026-07-04",
-      "verified": "2026-07-04",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
       "links": [
         {
-          "type": "relates-to target: LSN-001",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "LSN-001"
         },
         {
-          "type": "relates-to target: RSK-001",
-          "target": "unknown"
+          "type": "relates-to",
+          "target": "RSK-001"
         }
       ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "habby-agent",
@@ -622,33 +924,179 @@
       "project": "habby",
       "file": "projects/habby/agent.md",
       "status": "active",
-      "freshness": null,
-      "verified": null,
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
-      "links": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "habby-profile"
+        },
+        {
+          "type": "relates-to",
+          "target": "habby-status"
+        },
+        {
+          "type": "relates-to",
+          "target": "habby-structure"
+        },
+        {
+          "type": "relates-to",
+          "target": "habby-commands"
+        },
+        {
+          "type": "relates-to",
+          "target": "workspace"
+        }
+      ],
       "personality": "trophy goblin",
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "habby-assets",
+      "type": "document",
+      "project": "habby",
+      "file": "projects/habby/assets.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "habby-structure"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "habby-commands",
+      "type": "document",
+      "project": "habby",
+      "file": "projects/habby/commands.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "documents",
+          "target": "habby-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "habby-dependencies"
+        },
+        {
+          "type": "relates-to",
+          "target": "habby-structure"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "habby-decisions",
+      "type": "index",
+      "project": "habby",
+      "file": "projects/habby/decisions.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "habby-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "habby-dependencies",
+      "type": "document",
+      "project": "habby",
+      "file": "projects/habby/dependencies.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "documents",
+          "target": "habby-profile"
+        },
+        {
+          "type": "relates-to",
+          "target": "habby-structure"
+        },
+        {
+          "type": "relates-to",
+          "target": "habby-commands"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "habby-profile",
       "type": "project-profile",
-      "project": null,
+      "project": "habby",
       "file": "projects/habby/profile.md",
       "status": "active",
-      "freshness": null,
-      "verified": null,
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
-      "links": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "habby-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "habby-status"
+        },
+        {
+          "type": "relates-to",
+          "target": "habby-structure"
+        },
+        {
+          "type": "relates-to",
+          "target": "habby-dependencies"
+        },
+        {
+          "type": "relates-to",
+          "target": "habby-commands"
+        }
+      ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "habby-status",
@@ -656,16 +1104,55 @@
       "project": "habby",
       "file": "projects/habby/status.md",
       "status": "active",
-      "freshness": null,
-      "verified": null,
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
-      "links": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "habby-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "habby-profile"
+        },
+        {
+          "type": "relates-to",
+          "target": "habby-structure"
+        }
+      ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "habby-structure",
+      "type": "document",
+      "project": "habby",
+      "file": "projects/habby/structure.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "documents",
+          "target": "habby-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "habby-profile"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "mcky-agent",
@@ -673,33 +1160,179 @@
       "project": "mcky.space",
       "file": "projects/mcky.space/agent.md",
       "status": "active",
-      "freshness": null,
-      "verified": null,
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
-      "links": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "mcky-space-profile"
+        },
+        {
+          "type": "relates-to",
+          "target": "mcky-status"
+        },
+        {
+          "type": "relates-to",
+          "target": "mcky-structure"
+        },
+        {
+          "type": "relates-to",
+          "target": "mcky-commands"
+        },
+        {
+          "type": "relates-to",
+          "target": "workspace"
+        }
+      ],
       "personality": "terminal hipster",
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "mcky-assets",
+      "type": "document",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/assets.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "mcky-structure"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "mcky-commands",
+      "type": "document",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/commands.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "documents",
+          "target": "mcky-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "mcky-dependencies"
+        },
+        {
+          "type": "relates-to",
+          "target": "mcky-structure"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "mcky-decisions",
+      "type": "index",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/decisions.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "mcky-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "mcky-dependencies",
+      "type": "document",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/dependencies.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "documents",
+          "target": "mcky-space-profile"
+        },
+        {
+          "type": "relates-to",
+          "target": "mcky-structure"
+        },
+        {
+          "type": "relates-to",
+          "target": "mcky-commands"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "mcky-space-profile",
       "type": "project-profile",
-      "project": null,
+      "project": "mcky.space",
       "file": "projects/mcky.space/profile.md",
       "status": "active",
-      "freshness": null,
-      "verified": null,
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
-      "links": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "mcky-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "mcky-status"
+        },
+        {
+          "type": "relates-to",
+          "target": "mcky-structure"
+        },
+        {
+          "type": "relates-to",
+          "target": "mcky-dependencies"
+        },
+        {
+          "type": "relates-to",
+          "target": "mcky-commands"
+        }
+      ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "mcky-status",
@@ -707,16 +1340,55 @@
       "project": "mcky.space",
       "file": "projects/mcky.space/status.md",
       "status": "active",
-      "freshness": null,
-      "verified": null,
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
-      "links": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "mcky-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "mcky-space-profile"
+        },
+        {
+          "type": "relates-to",
+          "target": "mcky-structure"
+        }
+      ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "mcky-structure",
+      "type": "document",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/structure.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "documents",
+          "target": "mcky-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "mcky-space-profile"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "truck-agent",
@@ -724,33 +1396,179 @@
       "project": "truck",
       "file": "projects/truck/agent.md",
       "status": "active",
-      "freshness": null,
-      "verified": null,
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
-      "links": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "truck-profile"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-status"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-structure"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-commands"
+        },
+        {
+          "type": "relates-to",
+          "target": "workspace"
+        }
+      ],
       "personality": "overtime enthusiast",
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "truck-assets",
+      "type": "document",
+      "project": "truck",
+      "file": "projects/truck/assets.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "truck-structure"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "truck-commands",
+      "type": "document",
+      "project": "truck",
+      "file": "projects/truck/commands.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "documents",
+          "target": "truck-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-dependencies"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-structure"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "truck-decisions",
+      "type": "index",
+      "project": "truck",
+      "file": "projects/truck/decisions.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "truck-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "truck-dependencies",
+      "type": "document",
+      "project": "truck",
+      "file": "projects/truck/dependencies.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "documents",
+          "target": "truck-profile"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-structure"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-commands"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "truck-profile",
       "type": "project-profile",
-      "project": null,
+      "project": "truck",
       "file": "projects/truck/profile.md",
       "status": "active",
-      "freshness": null,
-      "verified": null,
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
-      "links": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "truck-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-status"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-structure"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-dependencies"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-commands"
+        }
+      ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "truck-status",
@@ -758,16 +1576,55 @@
       "project": "truck",
       "file": "projects/truck/status.md",
       "status": "active",
-      "freshness": null,
-      "verified": null,
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
-      "links": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "truck-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-profile"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-structure"
+        }
+      ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "truck-structure",
+      "type": "document",
+      "project": "truck",
+      "file": "projects/truck/structure.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "documents",
+          "target": "truck-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-profile"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "writer-agent",
@@ -775,33 +1632,47 @@
       "project": "writer",
       "file": "projects/writer/agent.md",
       "status": "active",
-      "freshness": null,
-      "verified": null,
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
-      "links": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "writer-profile"
+        },
+        {
+          "type": "relates-to",
+          "target": "workspace"
+        }
+      ],
       "personality": "word goblin",
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "writer-profile",
       "type": "project-profile",
-      "project": null,
+      "project": "writer",
       "file": "projects/writer/profile.md",
       "status": "active",
-      "freshness": null,
-      "verified": null,
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
-      "links": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "writer-agent"
+        }
+      ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "skills-index",
@@ -818,7 +1689,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "code-audit",
@@ -835,7 +1706,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "design-skill-os",
@@ -852,7 +1723,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-06-25"
+      "last_updated": "2026-06-25T00:00:00.000Z"
     },
     {
       "id": "frontend-dev",
@@ -869,7 +1740,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-06-26"
+      "last_updated": "2026-06-26T00:00:00.000Z"
     },
     {
       "id": "kb-sync",
@@ -886,10 +1757,10 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
-      "id": "manage-okf",
+      "id": "skills-manage-okf",
       "type": "unknown",
       "project": null,
       "file": "skills/manage-okf.md",
@@ -920,7 +1791,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-06-25"
+      "last_updated": "2026-06-25T00:00:00.000Z"
     },
     {
       "id": "web-dev",
@@ -937,7 +1808,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-06-25"
+      "last_updated": "2026-06-25T00:00:00.000Z"
     },
     {
       "id": "writer-work",
@@ -954,7 +1825,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "conventions",
@@ -971,7 +1842,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "glossary",
@@ -988,7 +1859,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "inventory",
@@ -1005,7 +1876,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
       "id": "workspace",
@@ -1022,15 +1893,928 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04"
+      "last_updated": "2026-07-04T00:00:00.000Z"
     }
   ],
-  "edges": [],
+  "edges": [
+    {
+      "source": "cafe-agent",
+      "target": "cafe-profile",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-agent",
+      "target": "cafe-status",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-agent",
+      "target": "cafe-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-agent",
+      "target": "cafe-commands",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-agent",
+      "target": "workspace",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-assets",
+      "target": "cafe-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-commands",
+      "target": "cafe-agent",
+      "type": "documents",
+      "label": "documents"
+    },
+    {
+      "source": "cafe-commands",
+      "target": "cafe-dependencies",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-commands",
+      "target": "cafe-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-decisions",
+      "target": "cafe-agent",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-dependencies",
+      "target": "cafe-profile",
+      "type": "documents",
+      "label": "documents"
+    },
+    {
+      "source": "cafe-dependencies",
+      "target": "cafe-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-dependencies",
+      "target": "cafe-commands",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-profile",
+      "target": "cafe-agent",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-profile",
+      "target": "cafe-status",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-profile",
+      "target": "cafe-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-profile",
+      "target": "cafe-dependencies",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-profile",
+      "target": "cafe-commands",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-status",
+      "target": "cafe-agent",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-status",
+      "target": "cafe-profile",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-status",
+      "target": "cafe-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-structure",
+      "target": "cafe-agent",
+      "type": "documents",
+      "label": "documents"
+    },
+    {
+      "source": "cafe-structure",
+      "target": "cafe-profile",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-v2-assets",
+      "target": "cafe-v2-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-v2-commands",
+      "target": "cafe-v2-dependencies",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-v2-commands",
+      "target": "cafe-v2-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-v2-dependencies",
+      "target": "cafe-v2-profile",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-v2-dependencies",
+      "target": "cafe-v2-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-v2-dependencies",
+      "target": "cafe-v2-commands",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-v2-profile",
+      "target": "cafe-v2-status",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-v2-profile",
+      "target": "cafe-v2-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-v2-profile",
+      "target": "cafe-v2-dependencies",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-v2-profile",
+      "target": "cafe-v2-commands",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-v2-status",
+      "target": "cafe-v2-profile",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-v2-status",
+      "target": "cafe-v2-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-v2-structure",
+      "target": "cafe-v2-profile",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-agent",
+      "target": "clientdata-profile",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-agent",
+      "target": "clientdata-status",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-agent",
+      "target": "clientdata-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-agent",
+      "target": "clientdata-commands",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-agent",
+      "target": "workspace",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-assets",
+      "target": "clientdata-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-assets",
+      "target": "clientdata-profile",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-commands",
+      "target": "clientdata-agent",
+      "type": "documents",
+      "label": "documents"
+    },
+    {
+      "source": "clientdata-commands",
+      "target": "clientdata-dependencies",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-commands",
+      "target": "clientdata-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-decisions",
+      "target": "clientdata-agent",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-decisions",
+      "target": "clientdata-status",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-dependencies",
+      "target": "clientdata-profile",
+      "type": "documents",
+      "label": "documents"
+    },
+    {
+      "source": "clientdata-dependencies",
+      "target": "clientdata-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-dependencies",
+      "target": "clientdata-commands",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "COMP-001",
+      "target": "DEC-001",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "COMP-001",
+      "target": "TASK-001",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "COMP-001",
+      "target": "LSN-001",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "COMP-001",
+      "target": "RSK-001",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "DEC-001",
+      "target": "TASK-001",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "DEC-001",
+      "target": "COMP-001",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "LSN-001",
+      "target": "TASK-001",
+      "type": "caused-by",
+      "label": "caused-by"
+    },
+    {
+      "source": "LSN-001",
+      "target": "DEC-001",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "RSK-001",
+      "target": "DEC-001",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "RSK-001",
+      "target": "TASK-001",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-profile",
+      "target": "clientdata-agent",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-profile",
+      "target": "clientdata-status",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-profile",
+      "target": "clientdata-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-profile",
+      "target": "clientdata-dependencies",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-profile",
+      "target": "clientdata-commands",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-status",
+      "target": "clientdata-agent",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-status",
+      "target": "clientdata-profile",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-status",
+      "target": "clientdata-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-structure",
+      "target": "clientdata-agent",
+      "type": "documents",
+      "label": "documents"
+    },
+    {
+      "source": "clientdata-structure",
+      "target": "clientdata-profile",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-structure",
+      "target": "clientdata-dependencies",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-structure",
+      "target": "clientdata-commands",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-001",
+      "target": "DEC-001",
+      "type": "caused-by",
+      "label": "caused-by"
+    },
+    {
+      "source": "TASK-001",
+      "target": "LSN-001",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-001",
+      "target": "RSK-001",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-002",
+      "target": "LSN-001",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-002",
+      "target": "RSK-001",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-agent",
+      "target": "habby-profile",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-agent",
+      "target": "habby-status",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-agent",
+      "target": "habby-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-agent",
+      "target": "habby-commands",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-agent",
+      "target": "workspace",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-assets",
+      "target": "habby-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-commands",
+      "target": "habby-agent",
+      "type": "documents",
+      "label": "documents"
+    },
+    {
+      "source": "habby-commands",
+      "target": "habby-dependencies",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-commands",
+      "target": "habby-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-decisions",
+      "target": "habby-agent",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-dependencies",
+      "target": "habby-profile",
+      "type": "documents",
+      "label": "documents"
+    },
+    {
+      "source": "habby-dependencies",
+      "target": "habby-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-dependencies",
+      "target": "habby-commands",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-profile",
+      "target": "habby-agent",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-profile",
+      "target": "habby-status",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-profile",
+      "target": "habby-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-profile",
+      "target": "habby-dependencies",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-profile",
+      "target": "habby-commands",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-status",
+      "target": "habby-agent",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-status",
+      "target": "habby-profile",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-status",
+      "target": "habby-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-structure",
+      "target": "habby-agent",
+      "type": "documents",
+      "label": "documents"
+    },
+    {
+      "source": "habby-structure",
+      "target": "habby-profile",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-agent",
+      "target": "mcky-space-profile",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-agent",
+      "target": "mcky-status",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-agent",
+      "target": "mcky-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-agent",
+      "target": "mcky-commands",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-agent",
+      "target": "workspace",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-assets",
+      "target": "mcky-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-commands",
+      "target": "mcky-agent",
+      "type": "documents",
+      "label": "documents"
+    },
+    {
+      "source": "mcky-commands",
+      "target": "mcky-dependencies",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-commands",
+      "target": "mcky-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-decisions",
+      "target": "mcky-agent",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-dependencies",
+      "target": "mcky-space-profile",
+      "type": "documents",
+      "label": "documents"
+    },
+    {
+      "source": "mcky-dependencies",
+      "target": "mcky-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-dependencies",
+      "target": "mcky-commands",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-space-profile",
+      "target": "mcky-agent",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-space-profile",
+      "target": "mcky-status",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-space-profile",
+      "target": "mcky-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-space-profile",
+      "target": "mcky-dependencies",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-space-profile",
+      "target": "mcky-commands",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-status",
+      "target": "mcky-agent",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-status",
+      "target": "mcky-space-profile",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-status",
+      "target": "mcky-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-structure",
+      "target": "mcky-agent",
+      "type": "documents",
+      "label": "documents"
+    },
+    {
+      "source": "mcky-structure",
+      "target": "mcky-space-profile",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-agent",
+      "target": "truck-profile",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-agent",
+      "target": "truck-status",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-agent",
+      "target": "truck-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-agent",
+      "target": "truck-commands",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-agent",
+      "target": "workspace",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-assets",
+      "target": "truck-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-commands",
+      "target": "truck-agent",
+      "type": "documents",
+      "label": "documents"
+    },
+    {
+      "source": "truck-commands",
+      "target": "truck-dependencies",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-commands",
+      "target": "truck-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-decisions",
+      "target": "truck-agent",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-dependencies",
+      "target": "truck-profile",
+      "type": "documents",
+      "label": "documents"
+    },
+    {
+      "source": "truck-dependencies",
+      "target": "truck-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-dependencies",
+      "target": "truck-commands",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-profile",
+      "target": "truck-agent",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-profile",
+      "target": "truck-status",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-profile",
+      "target": "truck-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-profile",
+      "target": "truck-dependencies",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-profile",
+      "target": "truck-commands",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-status",
+      "target": "truck-agent",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-status",
+      "target": "truck-profile",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-status",
+      "target": "truck-structure",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-structure",
+      "target": "truck-agent",
+      "type": "documents",
+      "label": "documents"
+    },
+    {
+      "source": "truck-structure",
+      "target": "truck-profile",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "writer-agent",
+      "target": "writer-profile",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "writer-agent",
+      "target": "workspace",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "writer-profile",
+      "target": "writer-agent",
+      "type": "relates-to",
+      "label": "relates-to"
+    }
+  ],
   "projects": {
     "cafe": {
-      "node_count": 2,
+      "node_count": 8,
       "by_type": {
         "agent-profile": 1,
+        "document": 4,
+        "index": 1,
+        "project-profile": 1,
+        "project-status": 1
+      }
+    },
+    "cafe-v2": {
+      "node_count": 7,
+      "by_type": {
+        "document": 4,
+        "index": 1,
+        "project-profile": 1,
         "project-status": 1
       }
     },
@@ -1050,30 +2834,40 @@
       }
     },
     "habby": {
-      "node_count": 2,
+      "node_count": 8,
       "by_type": {
         "agent-profile": 1,
+        "document": 4,
+        "index": 1,
+        "project-profile": 1,
         "project-status": 1
       }
     },
     "mcky.space": {
-      "node_count": 2,
+      "node_count": 8,
       "by_type": {
         "agent-profile": 1,
+        "document": 4,
+        "index": 1,
+        "project-profile": 1,
         "project-status": 1
       }
     },
     "truck": {
-      "node_count": 2,
+      "node_count": 8,
       "by_type": {
         "agent-profile": 1,
+        "document": 4,
+        "index": 1,
+        "project-profile": 1,
         "project-status": 1
       }
     },
     "writer": {
-      "node_count": 1,
+      "node_count": 2,
       "by_type": {
-        "agent-profile": 1
+        "agent-profile": 1,
+        "project-profile": 1
       }
     }
   }

@@ -5,6 +5,23 @@ project: mcky.space
 last_updated: 2026-07-04
 personality: terminal hipster
 status_ref: ./status.md
+status: active
+freshness: 2026-07-04
+verified: 2026-07-04
+expires: null
+superseded_by: null
+anchors: []
+links:
+  - type: relates-to
+    target: mcky-space-profile
+  - type: relates-to
+    target: mcky-status
+  - type: relates-to
+    target: mcky-structure
+  - type: relates-to
+    target: mcky-commands
+  - type: relates-to
+    target: workspace
 ---
 
 # mcky.space Agent

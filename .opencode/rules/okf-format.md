@@ -27,12 +27,18 @@ anchors:                      # file paths and symbols this node concerns
   - src/lib/auth.ts:42-60
   - src/lib/utils.ts
 links:                        # typed edges to other nodes
-  - type: supersedes   target: DEC-003
-  - type: relates-to   target: TASK-012
-  - type: blocks       target: TASK-015
-  - type: caused-by    target: TASK-008
-  - type: fulfills     target: GOAL-001
-  - type: documents    target: COMP-002
+  - type: supersedes
+    target: DEC-003
+  - type: relates-to
+    target: TASK-012
+  - type: blocks
+    target: TASK-015
+  - type: caused-by
+    target: TASK-008
+  - type: fulfills
+    target: GOAL-001
+  - type: documents
+    target: COMP-002
 ---
 ```
 

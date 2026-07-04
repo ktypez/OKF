@@ -1,12 +1,41 @@
-# Workspace Knowledge Framework (OKF)
+# OKF — Open Knowledge Framework
 
-This directory contains the centralized, synchronized knowledge base for all projects in this workspace.
+A portable, self-documenting knowledge base system for AI coding agents.
 
-## Structure
-- `index.md`: Workspace entry point and project inventory.
-- `projects/`: Project-specific profiles and documentation.
-- `system/`: Workspace-level conventions, glossary, and sync logs.
-- `templates/`: Templates for new project documentation.
+OKF lives at `~/OKF/` and provides structured context for every project in the workspace — consistent schemas, YAML frontmatter, trigger-based automation, and a 5-step bootstrap flow for AI agents.
 
-## Purpose
-The OKF serves as the single source of truth for workspace-level knowledge, extracting and normalizing information from individual project repositories.
+## Layout
+
+```
+OKF/
+├── index.md            Workspace index (entry point)
+├── projects/           Per-project docs
+│   └── <project>/
+│       ├── agent.md    Agent personality + triggers
+│       ├── profile.md  Tech stack + architecture
+│       ├── status.md   Routes, components, changelog
+│       ├── structure.md
+│       └── commands.md
+├── system/             Workspace-level docs
+│   ├── conventions.md  Communication rules + setup
+│   ├── inventory.md    Task triggers
+│   └── workspace.md    Cross-project comparison
+├── skills/             Registered skills
+└── templates/          Project template
+
+```
+
+## Triggers
+
+| Trigger | Action |
+|---------|--------|
+| `update .md` | Sync KB with latest project state |
+| `cleanup` | Health check — unused deps, stale files |
+| `blog-post` | Write a blog post for the public site |
+| `write-readme` | Write a README for any repo |
+
+## Quick Start
+
+1. Read `index.md` for the full project roster
+2. Read `system/conventions.md` for rules
+3. Navigate to `projects/<name>/` for per-project context

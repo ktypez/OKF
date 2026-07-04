@@ -1,3 +1,23 @@
+---
+type: document
+id: cafe-commands
+project: cafe
+last_updated: 2026-07-04
+status: active
+freshness: 2026-07-04
+verified: 2026-07-04
+expires: null
+superseded_by: null
+anchors: []
+links:
+  - type: documents
+    target: cafe-agent
+  - type: relates-to
+    target: cafe-dependencies
+  - type: relates-to
+    target: cafe-structure
+---
+
 # Project Commands: cafe
 
 ## Development

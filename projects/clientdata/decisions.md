@@ -10,8 +10,10 @@ expires: null
 superseded_by: null
 anchors: []
 links:
-  - type: relates-to  target: clientdata-agent
-  - type: relates-to  target: clientdata-status
+  - type: relates-to
+    target: clientdata-agent
+  - type: relates-to
+    target: clientdata-status
 ---
 
 # Decisions — clientdata
