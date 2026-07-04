@@ -633,7 +633,7 @@ function renderGraph() {
     .attr('fill', 'none')
     .attr('stroke', 'var(--surface-2)')
     .attr('stroke-width', 0.5);
-  svg.append('rect').attr('width', '100%').attr('height', '100%').attr('fill', 'url(#grid)');
+  svg.append('rect').attr('width', '100%').attr('height', '100%').attr('fill', 'url(#grid)').attr('pointer-events', 'none');
 
   const g = svg.append('g');
 
