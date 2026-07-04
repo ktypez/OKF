@@ -13,6 +13,7 @@ last_updated: 2026-07-04
 | `update .md` | Read KB status + agent files, update with latest project state | All |
 | `cleanup` | Scan unused deps/files, health check, present findings, update KB | All |
 | `wrap-day` | Review today's diff, write changelog entry, update truck status, commit | truck |
+| `blog-post` | Write a blog post — publish at mcky.space (`src/data/blog/`), not in OKF | mcky.space |
 
 ### update .md
 
