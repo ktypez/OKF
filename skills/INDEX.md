@@ -19,6 +19,8 @@ skills:
     path: skills/writer-work.md
   - id: manage-okf
     path: skills/manage-okf.md
+  - id: kb-ops
+    path: skills/kb-ops.md
 ---
 
 # Skills Overview
@@ -37,6 +39,7 @@ Centralized index of all specialized skills available for AI agents.
 | web-dev | Engineering | Modern web apps — semantic HTML5, CSS Grid/Flexbox, vanilla JS |
 | writer-work | Content | Concise summaries, changelogs, step-by-step instructions, documentation |
 | manage-okf | KB Maintenance | Discover projects, extract metadata, normalize into OKF schema, sync |
+| kb-ops | KB Maintenance | Manage tasks, risks, and knowledge health — list, create, claim, close, audit |
 
 ## Directory Layout
 
@@ -52,6 +55,7 @@ Centralized index of all specialized skills available for AI agents.
 │   ├── web-dev.md
 │   ├── writer-work.md
 │   └── manage-okf.md
+│   └── kb-ops.md
 ```
 
 ## Usage

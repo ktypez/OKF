@@ -1,7 +1,7 @@
 {
   "meta": {
-    "generated": "2026-07-04T14:21:57.971Z",
-    "total_nodes": 110,
+    "generated": "2026-07-04T16:47:55.667Z",
+    "total_nodes": 111,
     "total_edges": 202,
     "warnings": 0
   },
@@ -2895,6 +2895,23 @@
       "name": null,
       "description": null,
       "last_updated": "2026-06-26T00:00:00.000Z"
+    },
+    {
+      "id": "kb-ops",
+      "type": "skill",
+      "project": null,
+      "file": "skills/kb-ops.md",
+      "status": "active",
+      "freshness": null,
+      "verified": null,
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": "Manage tasks, risks, and knowledge health across the OKF workspace.",
+      "last_updated": "2026-07-05T00:00:00.000Z"
     },
     {
       "id": "kb-sync",
