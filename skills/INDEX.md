@@ -3,14 +3,10 @@ type: index
 id: skills-index
 last_updated: 2026-07-04
 skills:
-  - id: update-md
-    path: skills/update-md.md
-  - id: cleanup-project
-    path: skills/cleanup-project.md
-  - id: code-review
-    path: skills/code-review.md
-  - id: kb-manage
-    path: skills/kb-manage.md
+  - id: code-audit
+    path: skills/code-audit.md
+  - id: kb-sync
+    path: skills/kb-sync.md
   - id: frontend-dev
     path: skills/frontend-dev.md
   - id: design-skill-os
@@ -33,10 +29,8 @@ Centralized index of all specialized skills available for AI agents.
 
 | Skill | Category | Description |
 |-------|----------|-------------|
-| update-md | KB Maintenance | Read project KB files, update status + agent files with latest changes |
-| cleanup-project | Project Health | Scan unused deps/files, health check, present findings, update KB |
-| code-review | Engineering | Code quality, bug detection, security audit, performance, best practices |
-| kb-manage | KB Maintenance | Maintain and validate the OKF — frontmatter checks, index updates, sync |
+| code-audit | Engineering | Project health scans + code quality reviews — unused deps, bugs, security, performance, best practices |
+| kb-sync | KB Maintenance | Sync OKF with project state — update status, validate frontmatter, maintain indexes |
 | frontend-dev | Engineering | Expert frontend — React 19, Next.js 16, Vue, Angular, Svelte, TypeScript |
 | design-skill-os | Design | Elite design reasoning — gestalt, 60-30-10, modular scale, Nielsen heuristics |
 | supabase-postgres-best-practices | Database | Postgres performance optimization from Supabase |
@@ -50,10 +44,8 @@ Centralized index of all specialized skills available for AI agents.
 ~/OKF/
 ├── skills/
 │   ├── INDEX.md                    ← THIS FILE
-│   ├── update-md.md
-│   ├── cleanup-project.md
-│   ├── code-review.md
-│   ├── kb-manage.md
+│   ├── code-audit.md
+│   ├── kb-sync.md
 │   ├── frontend-dev.md
 │   ├── design-skill-os.md
 │   ├── supabase-postgres-best-practices.md

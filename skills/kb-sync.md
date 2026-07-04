@@ -1,0 +1,26 @@
+---
+type: skill
+id: kb-sync
+last_updated: 2026-07-04
+source: ~/.config/opencode/skills/kb-sync/SKILL.md
+category: kb-maintenance
+projects: [global]
+---
+
+# kb-sync Skill
+
+**Purpose:** Sync OKF with latest project state — update status files, validate frontmatter, maintain indexes.
+
+**Merged from:** kb-manage + update-md
+
+## Trigger
+`update .md`, `update kb`, `sync kb`
+
+## Workflow
+1. Determine project from context
+2. Read project's AGENTS.md + status.md + agent.md
+3. Update status sections from project state
+4. Sync agent.md if architecture/stack changed
+5. Validate all KB `.md` frontmatter
+6. Verify index.md matches projects/ directories
+7. Clean stale entries
