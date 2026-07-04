@@ -128,15 +128,15 @@
 
   /* ── Project Cards Rail ── */
   .project-rail {
-    display: flex; gap: 8px; padding: 8px 12px;
+    display: flex; gap: 6px; padding: 6px 10px;
     overflow-x: auto; border-bottom: 1px solid var(--border);
     background: var(--surface);
     scrollbar-width: none;
   }
   .project-rail::-webkit-scrollbar { display: none; }
   .project-card {
-    flex-shrink: 0; min-width: 130px; max-width: 170px;
-    padding: 10px 12px; border-radius: var(--radius);
+    flex-shrink: 0; min-width: 100px; max-width: 140px;
+    padding: 6px 10px; border-radius: 8px;
     background: var(--surface-2);
     border: 1px solid var(--border);
     cursor: pointer; transition: all .15s;
@@ -147,20 +147,20 @@
   }
   .project-card.active { border-color: var(--accent); }
   .project-card .proj-name {
-    font-size: 12px; font-weight: 600; margin-bottom: 4px;
+    font-size: 11px; font-weight: 600; margin-bottom: 2px;
   }
   .project-card .proj-count {
-    font-size: 22px; font-weight: 700; color: var(--text);
-    line-height: 1.2;
+    font-size: 18px; font-weight: 700; color: var(--text);
+    line-height: 1.1;
   }
   .project-card .proj-label {
-    font-size: 10px; color: var(--text-muted);
+    font-size: 9px; color: var(--text-muted);
   }
   .project-card .proj-types {
-    display: flex; gap: 3px; margin-top: 6px; flex-wrap: wrap;
+    display: flex; gap: 2px; margin-top: 4px; flex-wrap: wrap;
   }
   .project-card .proj-type-dot {
-    width: 8px; height: 8px; border-radius: 2px;
+    width: 6px; height: 6px; border-radius: 1px;
   }
 
   /* ── Graph + Detail Panels ── */
@@ -289,8 +289,8 @@
     .hamburger { display: block; }
     .topbar-stats { display: none; }
     .project-rail { padding: 6px 8px; gap: 6px; }
-    .project-card { min-width: 100px; max-width: 130px; padding: 8px 10px; }
-    .project-card .proj-count { font-size: 18px; }
+    .project-card { min-width: 80px; max-width: 110px; padding: 5px 8px; }
+    .project-card .proj-count { font-size: 15px; }
     .inspector.open { width: 100%; position: fixed; inset: 0; z-index: 30; }
     .graph-toolbar .legend { display: none; }
   }
@@ -343,7 +343,7 @@
       <div class="graph-area">
         <div class="graph-toolbar">
           <span>Knowledge Graph</span>
-          <span style="font-size:10px;color:var(--text-muted);">drag to pan &middot; scroll to zoom</span>
+          
           <div class="legend" id="graphLegend"></div>
         </div>
         <div class="graph-container">
