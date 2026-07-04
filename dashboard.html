@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OKF Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/d3@7">
+</script>
+<style>
+  :root {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --surface-2: #334155;
+    --border: #475569;
+    --text: #f1f5f9;
+    --text-muted: #94a3b8;
+    --accent: #3b82f6;
+    --accent-hover: #60a5fa;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+    background: var(--bg); color: var(--text);
+    display: flex; height: 100vh; overflow: hidden;
+  }
+  .sidebar {
+    width: 320px; background: var(--surface);
+    border-right: 1px solid var(--border); display: flex;
+    flex-direction: column; overflow: hidden;
+  }
+  .sidebar-header {
+    padding: 16px; border-bottom: 1px solid var(--border);
+  }
+  .sidebar-header h1 { font-size: 18px; display: flex; align-items: center; gap: 8px; }
+  .sidebar-header .meta { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
+  .sidebar-nav {
+    padding: 8px; display: flex; gap: 4px; flex-wrap: wrap;
+    border-bottom: 1px solid var(--border);
+  }
+  .sidebar-nav button {
+    background: var(--surface-2); border: none; color: var(--text);
+    padding: 4px 12px; border-radius: 4px; cursor: pointer; font-size: 12px;
+  }
+  .sidebar-nav button:hover { background: var(--accent); }
+  .sidebar-nav button.active { background: var(--accent); }
+  .sidebar-content { flex: 1; overflow-y: auto; padding: 8px; }
+  .node-list { list-style: none; }
+  .node-item {
+    padding: 8px 12px; border-radius: 6px; cursor: pointer;
+    display: flex; align-items: center; gap: 8px; font-size: 13px;
+    border: 1px solid transparent; margin-bottom: 2px;
+  }
+  .node-item:hover { background: var(--surface-2); }
+  .node-item.selected { border-color: var(--accent); background: rgba(59,130,246,0.1); }
+  .node-item .id { font-weight: 600; color: var(--accent); }
+  .node-item .project { font-size: 11px; color: var(--text-muted); }
+  .node-item .status-badge {
+    font-size: 10px; padding: 1px 6px; border-radius: 3px;
+    margin-left: auto; text-transform: uppercase;
+  }
+  .status-badge.active { background: rgba(16,185,129,0.2); color: #10b981; }
+  .status-badge.open { background: rgba(59,130,246,0.2); color: #3b82f6; }
+  .status-badge.closed { background: rgba(148,163,184,0.2); color: #94a3b8; }
+  .status-badge.superseded { background: rgba(245,158,11,0.2); color: #f59e0b; }
+  .status-badge.expired { background: rgba(239,68,68,0.2); color: #ef4444; }
+  .main { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+  .graph-container { flex: 1; position: relative; }
+  #graph { width: 100%; height: 100%; }
+  .node-info {
+    height: 220px; border-top: 1px solid var(--border);
+    background: var(--surface); padding: 16px; overflow-y: auto;
+  }
+  .node-info h2 { font-size: 16px; margin-bottom: 8px; }
+  .node-info .field { font-size: 13px; margin: 4px 0; color: var(--text-muted); }
+  .node-info .field strong { color: var(--text); }
+  .node-info .links-list { margin-top: 8px; }
+  .node-info .link-item {
+    display: inline-block; font-size: 12px; padding: 2px 8px;
+    border-radius: 4px; margin: 2px;
+  }
+  .search-box { padding: 8px; border-bottom: 1px solid var(--border); }
+  .search-box input {
+    width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border);
+    background: var(--surface-2); color: var(--text); font-size: 13px;
+  }
+  .search-box input:focus { outline: none; border-color: var(--accent); }
+  .stats-bar {
+    display: flex; gap: 16px; padding: 8px 16px;
+    border-bottom: 1px solid var(--border); font-size: 12px; color: var(--text-muted);
+  }
+  .stats-bar strong { color: var(--text); }
+  .tooltip {
+    position: absolute; padding: 8px 12px; border-radius: 6px;
+    background: var(--surface-2); border: 1px solid var(--border);
+    font-size: 12px; pointer-events: none; display: none;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  }
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+</style>
+</head>
+<body>
+<div class="sidebar">
+  <div class="sidebar-header">
+    <h1>OKF Dashboard</h1>
+    <div class="meta">115 nodes · 219 edges · 7 projects</div>
+  </div>
+  <div class="search-box">
+    <input type="text" id="search" placeholder="Search nodes..." oninput="filterNodes(this.value)">
+  </div>
+  <div class="sidebar-nav" id="filterBar">
+    <button class="active" onclick="setFilter('all')">All</button>
+    <button onclick="setFilter('active')">Active</button>
+    <button onclick="setFilter('open')">Open Tasks</button>
+    <button onclick="setFilter('risk')">Risks</button>
+    <button onclick="setFilter('project:cafe')">cafe</button><button onclick="setFilter('project:cafe-v2')">cafe-v2</button><button onclick="setFilter('project:clientdata')">clientdata</button><button onclick="setFilter('project:habby')">habby</button><button onclick="setFilter('project:mcky.space')">mcky.space</button><button onclick="setFilter('project:truck')">truck</button><button onclick="setFilter('project:writer')">writer</button>
+  </div>
+  <div class="sidebar-content" id="nodeList">
+    <div class="loading">Loading...</div>
+  </div>
+</div>
+<div class="main">
+  <div class="stats-bar" id="statsBar"></div>
+  <div class="graph-container">
+    <div id="graph"></div>
+    <div class="tooltip" id="tooltip"></div>
+  </div>
+  <div class="node-info" id="nodeInfo">
+    <div style="color: var(--text-muted); text-align: center; padding: 20px;">Select a node to see details</div>
+  </div>
+</div>
+
+<script>
+const nodes = [{"id":"okf-format-rule","type":"rule","project":null,"status":"active","file":".opencode/rules/okf-format.md","color":"#64748b"},{"id":"okf-usage","type":"instruction","project":null,"status":"active","file":"USAGE.md","color":"#64748b"},{"id":"okf-index","type":"workspace-index","project":null,"status":"active","file":"index.md","color":"#64748b"},{"id":"cafe-agent","type":"agent-profile","project":"cafe","status":"active","file":"projects/cafe/agent.md","color":"#6366f1"},{"id":"cafe-assets","type":"document","project":"cafe","status":"active","file":"projects/cafe/assets.md","color":"#8b5cf6"},{"id":"cafe-commands","type":"document","project":"cafe","status":"active","file":"projects/cafe/commands.md","color":"#8b5cf6"},{"id":"cafe-decisions","type":"index","project":"cafe","status":"active","file":"projects/cafe/decisions.md","color":"#64748b"},{"id":"cafe-dependencies","type":"document","project":"cafe","status":"active","file":"projects/cafe/dependencies.md","color":"#8b5cf6"},{"id":"COMP-001","type":"component","project":"cafe","status":"active","file":"projects/cafe/knowledge/COMP-001.md","color":"#ec4899"},{"id":"DEC-001","type":"decision","project":"cafe","status":"active","file":"projects/cafe/knowledge/DEC-001.md","color":"#f59e0b"},{"id":"DEC-002","type":"decision","project":"cafe","status":"active","file":"projects/cafe/knowledge/DEC-002.md","color":"#f59e0b"},{"id":"DEC-003","type":"decision","project":"cafe","status":"active","file":"projects/cafe/knowledge/DEC-003.md","color":"#f59e0b"},{"id":"DEC-004","type":"decision","project":"cafe","status":"active","file":"projects/cafe/knowledge/DEC-004.md","color":"#f59e0b"},{"id":"DEC-005","type":"decision","project":"cafe","status":"active","file":"projects/cafe/knowledge/DEC-005.md","color":"#f59e0b"},{"id":"DEC-006","type":"decision","project":"cafe","status":"active","file":"projects/cafe/knowledge/DEC-006.md","color":"#f59e0b"},{"id":"LSN-001","type":"lesson","project":"cafe","status":"active","file":"projects/cafe/knowledge/LSN-001.md","color":"#10b981"},{"id":"cafe-profile","type":"project-profile","project":"cafe","status":"active","file":"projects/cafe/profile.md","color":"#14b8a6"},{"id":"cafe-status","type":"project-status","project":"cafe","status":"active","file":"projects/cafe/status.md","color":"#f97316"},{"id":"cafe-structure","type":"document","project":"cafe","status":"active","file":"projects/cafe/structure.md","color":"#8b5cf6"},{"id":"TASK-001","type":"task","project":"cafe","status":"open","file":"projects/cafe/tasks/TASK-001.md","color":"#3b82f6"},{"id":"cafe-v2-assets","type":"document","project":"cafe-v2","status":"active","file":"projects/cafe-v2/assets.md","color":"#8b5cf6"},{"id":"cafe-v2-commands","type":"document","project":"cafe-v2","status":"active","file":"projects/cafe-v2/commands.md","color":"#8b5cf6"},{"id":"cafe-v2-decisions","type":"index","project":"cafe-v2","status":"active","file":"projects/cafe-v2/decisions.md","color":"#64748b"},{"id":"cafe-v2-dependencies","type":"document","project":"cafe-v2","status":"active","file":"projects/cafe-v2/dependencies.md","color":"#8b5cf6"},{"id":"DEC-001","type":"decision","project":"cafe-v2","status":"active","file":"projects/cafe-v2/knowledge/DEC-001.md","color":"#f59e0b"},{"id":"cafe-v2-profile","type":"project-profile","project":"cafe-v2","status":"active","file":"projects/cafe-v2/profile.md","color":"#14b8a6"},{"id":"cafe-v2-status","type":"project-status","project":"cafe-v2","status":"active","file":"projects/cafe-v2/status.md","color":"#f97316"},{"id":"cafe-v2-structure","type":"document","project":"cafe-v2","status":"active","file":"projects/cafe-v2/structure.md","color":"#8b5cf6"},{"id":"TASK-001","type":"task","project":"cafe-v2","status":"open","file":"projects/cafe-v2/tasks/TASK-001.md","color":"#3b82f6"},{"id":"clientdata-agent","type":"agent-profile","project":"clientdata","status":"active","file":"projects/clientdata/agent.md","color":"#6366f1"},{"id":"clientdata-assets","type":"document","project":"clientdata","status":"active","file":"projects/clientdata/assets.md","color":"#8b5cf6"},{"id":"clientdata-commands","type":"document","project":"clientdata","status":"active","file":"projects/clientdata/commands.md","color":"#8b5cf6"},{"id":"clientdata-decisions","type":"index","project":"clientdata","status":"active","file":"projects/clientdata/decisions.md","color":"#64748b"},{"id":"clientdata-dependencies","type":"document","project":"clientdata","status":"active","file":"projects/clientdata/dependencies.md","color":"#8b5cf6"},{"id":"COMP-001","type":"component","project":"clientdata","status":"active","file":"projects/clientdata/knowledge/COMP-001.md","color":"#ec4899"},{"id":"COMP-002","type":"component","project":"clientdata","status":"active","file":"projects/clientdata/knowledge/COMP-002.md","color":"#ec4899"},{"id":"DEC-001","type":"decision","project":"clientdata","status":"active","file":"projects/clientdata/knowledge/DEC-001.md","color":"#f59e0b"},{"id":"DEC-002","type":"decision","project":"clientdata","status":"active","file":"projects/clientdata/knowledge/DEC-002.md","color":"#f59e0b"},{"id":"DEC-003","type":"decision","project":"clientdata","status":"active","file":"projects/clientdata/knowledge/DEC-003.md","color":"#f59e0b"},{"id":"DEC-004","type":"decision","project":"clientdata","status":"active","file":"projects/clientdata/knowledge/DEC-004.md","color":"#f59e0b"},{"id":"DEC-005","type":"decision","project":"clientdata","status":"active","file":"projects/clientdata/knowledge/DEC-005.md","color":"#f59e0b"},{"id":"DEC-006","type":"decision","project":"clientdata","status":"active","file":"projects/clientdata/knowledge/DEC-006.md","color":"#f59e0b"},{"id":"LSN-001","type":"lesson","project":"clientdata","status":"active","file":"projects/clientdata/knowledge/LSN-001.md","color":"#10b981"},{"id":"RSK-001","type":"risk","project":"clientdata","status":"active","file":"projects/clientdata/knowledge/RSK-001.md","color":"#ef4444"},{"id":"clientdata-profile","type":"project-profile","project":"clientdata","status":"active","file":"projects/clientdata/profile.md","color":"#14b8a6"},{"id":"clientdata-status","type":"project-status","project":"clientdata","status":"active","file":"projects/clientdata/status.md","color":"#f97316"},{"id":"clientdata-structure","type":"document","project":"clientdata","status":"active","file":"projects/clientdata/structure.md","color":"#8b5cf6"},{"id":"TASK-001","type":"task","project":"clientdata","status":"closed","file":"projects/clientdata/tasks/TASK-001.md","color":"#3b82f6"},{"id":"TASK-002","type":"task","project":"clientdata","status":"open","file":"projects/clientdata/tasks/TASK-002.md","color":"#3b82f6"},{"id":"habby-agent","type":"agent-profile","project":"habby","status":"active","file":"projects/habby/agent.md","color":"#6366f1"},{"id":"habby-assets","type":"document","project":"habby","status":"active","file":"projects/habby/assets.md","color":"#8b5cf6"},{"id":"habby-commands","type":"document","project":"habby","status":"active","file":"projects/habby/commands.md","color":"#8b5cf6"},{"id":"habby-decisions","type":"index","project":"habby","status":"active","file":"projects/habby/decisions.md","color":"#64748b"},{"id":"habby-dependencies","type":"document","project":"habby","status":"active","file":"projects/habby/dependencies.md","color":"#8b5cf6"},{"id":"DEC-001","type":"decision","project":"habby","status":"active","file":"projects/habby/knowledge/DEC-001.md","color":"#f59e0b"},{"id":"DEC-002","type":"decision","project":"habby","status":"active","file":"projects/habby/knowledge/DEC-002.md","color":"#f59e0b"},{"id":"DEC-003","type":"decision","project":"habby","status":"active","file":"projects/habby/knowledge/DEC-003.md","color":"#f59e0b"},{"id":"DEC-004","type":"decision","project":"habby","status":"active","file":"projects/habby/knowledge/DEC-004.md","color":"#f59e0b"},{"id":"DEC-005","type":"decision","project":"habby","status":"active","file":"projects/habby/knowledge/DEC-005.md","color":"#f59e0b"},{"id":"DEC-006","type":"decision","project":"habby","status":"active","file":"projects/habby/knowledge/DEC-006.md","color":"#f59e0b"},{"id":"habby-profile","type":"project-profile","project":"habby","status":"active","file":"projects/habby/profile.md","color":"#14b8a6"},{"id":"habby-status","type":"project-status","project":"habby","status":"active","file":"projects/habby/status.md","color":"#f97316"},{"id":"habby-structure","type":"document","project":"habby","status":"active","file":"projects/habby/structure.md","color":"#8b5cf6"},{"id":"TASK-001","type":"task","project":"habby","status":"open","file":"projects/habby/tasks/TASK-001.md","color":"#3b82f6"},{"id":"mcky-agent","type":"agent-profile","project":"mcky.space","status":"active","file":"projects/mcky.space/agent.md","color":"#6366f1"},{"id":"mcky-assets","type":"document","project":"mcky.space","status":"active","file":"projects/mcky.space/assets.md","color":"#8b5cf6"},{"id":"mcky-commands","type":"document","project":"mcky.space","status":"active","file":"projects/mcky.space/commands.md","color":"#8b5cf6"},{"id":"mcky-decisions","type":"index","project":"mcky.space","status":"active","file":"projects/mcky.space/decisions.md","color":"#64748b"},{"id":"mcky-dependencies","type":"document","project":"mcky.space","status":"active","file":"projects/mcky.space/dependencies.md","color":"#8b5cf6"},{"id":"COMP-003","type":"component","project":"mcky.space","status":"active","file":"projects/mcky.space/knowledge/COMP-003.md","color":"#ec4899"},{"id":"DEC-001","type":"decision","project":"mcky.space","status":"active","file":"projects/mcky.space/knowledge/DEC-001.md","color":"#f59e0b"},{"id":"DEC-012","type":"decision","project":"mcky.space","status":"active","file":"projects/mcky.space/knowledge/DEC-012.md","color":"#f59e0b"},{"id":"DEC-013","type":"decision","project":"mcky.space","status":"active","file":"projects/mcky.space/knowledge/DEC-013.md","color":"#f59e0b"},{"id":"DEC-014","type":"decision","project":"mcky.space","status":"active","file":"projects/mcky.space/knowledge/DEC-014.md","color":"#f59e0b"},{"id":"DEC-015","type":"decision","project":"mcky.space","status":"active","file":"projects/mcky.space/knowledge/DEC-015.md","color":"#f59e0b"},{"id":"DEC-016","type":"decision","project":"mcky.space","status":"active","file":"projects/mcky.space/knowledge/DEC-016.md","color":"#f59e0b"},{"id":"RSK-001","type":"risk","project":"mcky.space","status":"active","file":"projects/mcky.space/knowledge/RSK-001.md","color":"#ef4444"},{"id":"mcky-space-profile","type":"project-profile","project":"mcky.space","status":"active","file":"projects/mcky.space/profile.md","color":"#14b8a6"},{"id":"mcky-status","type":"project-status","project":"mcky.space","status":"active","file":"projects/mcky.space/status.md","color":"#f97316"},{"id":"mcky-structure","type":"document","project":"mcky.space","status":"active","file":"projects/mcky.space/structure.md","color":"#8b5cf6"},{"id":"TASK-001","type":"task","project":"mcky.space","status":"open","file":"projects/mcky.space/tasks/TASK-001.md","color":"#3b82f6"},{"id":"truck-agent","type":"agent-profile","project":"truck","status":"active","file":"projects/truck/agent.md","color":"#6366f1"},{"id":"truck-assets","type":"document","project":"truck","status":"active","file":"projects/truck/assets.md","color":"#8b5cf6"},{"id":"truck-commands","type":"document","project":"truck","status":"active","file":"projects/truck/commands.md","color":"#8b5cf6"},{"id":"truck-decisions","type":"index","project":"truck","status":"active","file":"projects/truck/decisions.md","color":"#64748b"},{"id":"truck-dependencies","type":"document","project":"truck","status":"active","file":"projects/truck/dependencies.md","color":"#8b5cf6"},{"id":"COMP-002","type":"component","project":"truck","status":"active","file":"projects/truck/knowledge/COMP-002.md","color":"#ec4899"},{"id":"DEC-001","type":"decision","project":"truck","status":"active","file":"projects/truck/knowledge/DEC-001.md","color":"#f59e0b"},{"id":"DEC-003","type":"decision","project":"truck","status":"active","file":"projects/truck/knowledge/DEC-003.md","color":"#f59e0b"},{"id":"DEC-004","type":"decision","project":"truck","status":"active","file":"projects/truck/knowledge/DEC-004.md","color":"#f59e0b"},{"id":"DEC-005","type":"decision","project":"truck","status":"active","file":"projects/truck/knowledge/DEC-005.md","color":"#f59e0b"},{"id":"DEC-006","type":"decision","project":"truck","status":"active","file":"projects/truck/knowledge/DEC-006.md","color":"#f59e0b"},{"id":"DEC-007","type":"decision","project":"truck","status":"active","file":"projects/truck/knowledge/DEC-007.md","color":"#f59e0b"},{"id":"LSN-001","type":"lesson","project":"truck","status":"active","file":"projects/truck/knowledge/LSN-001.md","color":"#10b981"},{"id":"truck-profile","type":"project-profile","project":"truck","status":"active","file":"projects/truck/profile.md","color":"#14b8a6"},{"id":"truck-status","type":"project-status","project":"truck","status":"active","file":"projects/truck/status.md","color":"#f97316"},{"id":"truck-structure","type":"document","project":"truck","status":"active","file":"projects/truck/structure.md","color":"#8b5cf6"},{"id":"TASK-001","type":"task","project":"truck","status":"open","file":"projects/truck/tasks/TASK-001.md","color":"#3b82f6"},{"id":"writer-agent","type":"agent-profile","project":"writer","status":"active","file":"projects/writer/agent.md","color":"#6366f1"},{"id":"DEC-001","type":"decision","project":"writer","status":"active","file":"projects/writer/knowledge/DEC-001.md","color":"#f59e0b"},{"id":"writer-profile","type":"project-profile","project":"writer","status":"active","file":"projects/writer/profile.md","color":"#14b8a6"},{"id":"TASK-001","type":"task","project":"writer","status":"open","file":"projects/writer/tasks/TASK-001.md","color":"#3b82f6"},{"id":"skills-index","type":"index","project":null,"status":"active","file":"skills/INDEX.md","color":"#64748b"},{"id":"code-audit","type":"skill","project":null,"status":"active","file":"skills/code-audit.md","color":"#64748b"},{"id":"design-skill-os","type":"skill","project":null,"status":"active","file":"skills/design-skill-os.md","color":"#64748b"},{"id":"frontend-dev","type":"skill","project":null,"status":"active","file":"skills/frontend-dev.md","color":"#64748b"},{"id":"kb-sync","type":"skill","project":null,"status":"active","file":"skills/kb-sync.md","color":"#64748b"},{"id":"skills-manage-okf","type":"unknown","project":null,"status":"active","file":"skills/manage-okf.md","color":"#64748b"},{"id":"supabase-postgres-best-practices","type":"skill","project":null,"status":"active","file":"skills/supabase-postgres-best-practices.md","color":"#64748b"},{"id":"web-dev","type":"skill","project":null,"status":"active","file":"skills/web-dev.md","color":"#64748b"},{"id":"writer-work","type":"skill","project":null,"status":"active","file":"skills/writer-work.md","color":"#64748b"},{"id":"conventions","type":"system-doc","project":null,"status":"active","file":"system/conventions.md","color":"#64748b"},{"id":"glossary","type":"system-doc","project":null,"status":"active","file":"system/glossary.md","color":"#64748b"},{"id":"inventory","type":"system-doc","project":null,"status":"active","file":"system/inventory.md","color":"#64748b"},{"id":"workspace","type":"system-doc","project":null,"status":"active","file":"system/workspace.md","color":"#64748b"}];
+const allEdges = [{"source":"cafe-agent","sourceProject":"cafe","target":"cafe-profile","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"cafe-agent","sourceProject":"cafe","target":"cafe-status","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"cafe-agent","sourceProject":"cafe","target":"cafe-structure","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"cafe-agent","sourceProject":"cafe","target":"cafe-commands","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"cafe-agent","sourceProject":"cafe","target":"workspace","targetProject":null,"type":"relates-to","label":"relates-to"},{"source":"cafe-assets","sourceProject":"cafe","target":"cafe-structure","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"cafe-commands","sourceProject":"cafe","target":"cafe-agent","targetProject":"cafe","type":"documents","label":"documents"},{"source":"cafe-commands","sourceProject":"cafe","target":"cafe-dependencies","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"cafe-commands","sourceProject":"cafe","target":"cafe-structure","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"cafe-decisions","sourceProject":"cafe","target":"cafe-agent","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"cafe-dependencies","sourceProject":"cafe","target":"cafe-profile","targetProject":"cafe","type":"documents","label":"documents"},{"source":"cafe-dependencies","sourceProject":"cafe","target":"cafe-structure","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"cafe-dependencies","sourceProject":"cafe","target":"cafe-commands","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"COMP-001","sourceProject":"cafe","target":"cafe-profile","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"DEC-001","sourceProject":"cafe","target":"cafe-agent","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"DEC-001","sourceProject":"cafe","target":"cafe-status","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"DEC-002","sourceProject":"cafe","target":"cafe-agent","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"DEC-003","sourceProject":"cafe","target":"cafe-agent","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"DEC-004","sourceProject":"cafe","target":"cafe-agent","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"DEC-005","sourceProject":"cafe","target":"cafe-agent","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"DEC-006","sourceProject":"cafe","target":"cafe-agent","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"LSN-001","sourceProject":"cafe","target":"cafe-agent","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"LSN-001","sourceProject":"cafe","target":"DEC-001","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"cafe-profile","sourceProject":"cafe","target":"cafe-agent","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"cafe-profile","sourceProject":"cafe","target":"cafe-status","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"cafe-profile","sourceProject":"cafe","target":"cafe-structure","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"cafe-profile","sourceProject":"cafe","target":"cafe-dependencies","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"cafe-profile","sourceProject":"cafe","target":"cafe-commands","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"cafe-status","sourceProject":"cafe","target":"cafe-agent","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"cafe-status","sourceProject":"cafe","target":"cafe-profile","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"cafe-status","sourceProject":"cafe","target":"cafe-structure","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"cafe-structure","sourceProject":"cafe","target":"cafe-agent","targetProject":"cafe","type":"documents","label":"documents"},{"source":"cafe-structure","sourceProject":"cafe","target":"cafe-profile","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"TASK-001","sourceProject":"cafe","target":"cafe-agent","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"TASK-001","sourceProject":"cafe","target":"cafe-status","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"TASK-001","sourceProject":"cafe","target":"LSN-001","targetProject":"cafe","type":"relates-to","label":"relates-to"},{"source":"cafe-v2-assets","sourceProject":"cafe-v2","target":"cafe-v2-structure","targetProject":"cafe-v2","type":"relates-to","label":"relates-to"},{"source":"cafe-v2-commands","sourceProject":"cafe-v2","target":"cafe-v2-dependencies","targetProject":"cafe-v2","type":"relates-to","label":"relates-to"},{"source":"cafe-v2-commands","sourceProject":"cafe-v2","target":"cafe-v2-structure","targetProject":"cafe-v2","type":"relates-to","label":"relates-to"},{"source":"cafe-v2-dependencies","sourceProject":"cafe-v2","target":"cafe-v2-profile","targetProject":"cafe-v2","type":"relates-to","label":"relates-to"},{"source":"cafe-v2-dependencies","sourceProject":"cafe-v2","target":"cafe-v2-structure","targetProject":"cafe-v2","type":"relates-to","label":"relates-to"},{"source":"cafe-v2-dependencies","sourceProject":"cafe-v2","target":"cafe-v2-commands","targetProject":"cafe-v2","type":"relates-to","label":"relates-to"},{"source":"DEC-001","sourceProject":"cafe-v2","target":"cafe-v2-profile","targetProject":"cafe-v2","type":"relates-to","label":"relates-to"},{"source":"DEC-001","sourceProject":"cafe-v2","target":"cafe-v2-status","targetProject":"cafe-v2","type":"relates-to","label":"relates-to"},{"source":"cafe-v2-profile","sourceProject":"cafe-v2","target":"cafe-v2-status","targetProject":"cafe-v2","type":"relates-to","label":"relates-to"},{"source":"cafe-v2-profile","sourceProject":"cafe-v2","target":"cafe-v2-structure","targetProject":"cafe-v2","type":"relates-to","label":"relates-to"},{"source":"cafe-v2-profile","sourceProject":"cafe-v2","target":"cafe-v2-dependencies","targetProject":"cafe-v2","type":"relates-to","label":"relates-to"},{"source":"cafe-v2-profile","sourceProject":"cafe-v2","target":"cafe-v2-commands","targetProject":"cafe-v2","type":"relates-to","label":"relates-to"},{"source":"cafe-v2-status","sourceProject":"cafe-v2","target":"cafe-v2-profile","targetProject":"cafe-v2","type":"relates-to","label":"relates-to"},{"source":"cafe-v2-status","sourceProject":"cafe-v2","target":"cafe-v2-structure","targetProject":"cafe-v2","type":"relates-to","label":"relates-to"},{"source":"cafe-v2-structure","sourceProject":"cafe-v2","target":"cafe-v2-profile","targetProject":"cafe-v2","type":"relates-to","label":"relates-to"},{"source":"TASK-001","sourceProject":"cafe-v2","target":"cafe-v2-profile","targetProject":"cafe-v2","type":"relates-to","label":"relates-to"},{"source":"TASK-001","sourceProject":"cafe-v2","target":"cafe-v2-status","targetProject":"cafe-v2","type":"relates-to","label":"relates-to"},{"source":"TASK-001","sourceProject":"cafe-v2","target":"DEC-001","targetProject":"cafe-v2","type":"relates-to","label":"relates-to"},{"source":"TASK-001","sourceProject":"cafe-v2","target":"cafe-v2-profile","targetProject":"cafe-v2","type":"supersedes","label":"supersedes"},{"source":"clientdata-agent","sourceProject":"clientdata","target":"clientdata-profile","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"clientdata-agent","sourceProject":"clientdata","target":"clientdata-status","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"clientdata-agent","sourceProject":"clientdata","target":"clientdata-structure","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"clientdata-agent","sourceProject":"clientdata","target":"clientdata-commands","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"clientdata-agent","sourceProject":"clientdata","target":"workspace","targetProject":null,"type":"relates-to","label":"relates-to"},{"source":"clientdata-assets","sourceProject":"clientdata","target":"clientdata-structure","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"clientdata-assets","sourceProject":"clientdata","target":"clientdata-profile","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"clientdata-commands","sourceProject":"clientdata","target":"clientdata-agent","targetProject":"clientdata","type":"documents","label":"documents"},{"source":"clientdata-commands","sourceProject":"clientdata","target":"clientdata-dependencies","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"clientdata-commands","sourceProject":"clientdata","target":"clientdata-structure","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"clientdata-decisions","sourceProject":"clientdata","target":"clientdata-agent","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"clientdata-decisions","sourceProject":"clientdata","target":"clientdata-status","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"clientdata-dependencies","sourceProject":"clientdata","target":"clientdata-profile","targetProject":"clientdata","type":"documents","label":"documents"},{"source":"clientdata-dependencies","sourceProject":"clientdata","target":"clientdata-structure","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"clientdata-dependencies","sourceProject":"clientdata","target":"clientdata-commands","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"COMP-001","sourceProject":"clientdata","target":"DEC-001","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"COMP-001","sourceProject":"clientdata","target":"TASK-001","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"COMP-001","sourceProject":"clientdata","target":"LSN-001","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"COMP-001","sourceProject":"clientdata","target":"RSK-001","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"COMP-002","sourceProject":"clientdata","target":"clientdata-profile","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"DEC-001","sourceProject":"clientdata","target":"TASK-001","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"DEC-001","sourceProject":"clientdata","target":"COMP-001","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"DEC-002","sourceProject":"clientdata","target":"clientdata-agent","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"DEC-003","sourceProject":"clientdata","target":"clientdata-agent","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"DEC-004","sourceProject":"clientdata","target":"clientdata-agent","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"DEC-005","sourceProject":"clientdata","target":"clientdata-agent","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"DEC-006","sourceProject":"clientdata","target":"clientdata-agent","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"LSN-001","sourceProject":"clientdata","target":"TASK-001","targetProject":"clientdata","type":"caused-by","label":"caused-by"},{"source":"LSN-001","sourceProject":"clientdata","target":"DEC-001","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"RSK-001","sourceProject":"clientdata","target":"DEC-001","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"RSK-001","sourceProject":"clientdata","target":"TASK-001","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"clientdata-profile","sourceProject":"clientdata","target":"clientdata-agent","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"clientdata-profile","sourceProject":"clientdata","target":"clientdata-status","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"clientdata-profile","sourceProject":"clientdata","target":"clientdata-structure","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"clientdata-profile","sourceProject":"clientdata","target":"clientdata-dependencies","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"clientdata-profile","sourceProject":"clientdata","target":"clientdata-commands","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"clientdata-status","sourceProject":"clientdata","target":"clientdata-agent","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"clientdata-status","sourceProject":"clientdata","target":"clientdata-profile","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"clientdata-status","sourceProject":"clientdata","target":"clientdata-structure","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"clientdata-structure","sourceProject":"clientdata","target":"clientdata-agent","targetProject":"clientdata","type":"documents","label":"documents"},{"source":"clientdata-structure","sourceProject":"clientdata","target":"clientdata-profile","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"clientdata-structure","sourceProject":"clientdata","target":"clientdata-dependencies","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"clientdata-structure","sourceProject":"clientdata","target":"clientdata-commands","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"TASK-001","sourceProject":"clientdata","target":"DEC-001","targetProject":"clientdata","type":"caused-by","label":"caused-by"},{"source":"TASK-001","sourceProject":"clientdata","target":"LSN-001","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"TASK-001","sourceProject":"clientdata","target":"RSK-001","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"TASK-002","sourceProject":"clientdata","target":"LSN-001","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"TASK-002","sourceProject":"clientdata","target":"RSK-001","targetProject":"clientdata","type":"relates-to","label":"relates-to"},{"source":"habby-agent","sourceProject":"habby","target":"habby-profile","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"habby-agent","sourceProject":"habby","target":"habby-status","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"habby-agent","sourceProject":"habby","target":"habby-structure","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"habby-agent","sourceProject":"habby","target":"habby-commands","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"habby-agent","sourceProject":"habby","target":"workspace","targetProject":null,"type":"relates-to","label":"relates-to"},{"source":"habby-assets","sourceProject":"habby","target":"habby-structure","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"habby-commands","sourceProject":"habby","target":"habby-agent","targetProject":"habby","type":"documents","label":"documents"},{"source":"habby-commands","sourceProject":"habby","target":"habby-dependencies","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"habby-commands","sourceProject":"habby","target":"habby-structure","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"habby-decisions","sourceProject":"habby","target":"habby-agent","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"habby-dependencies","sourceProject":"habby","target":"habby-profile","targetProject":"habby","type":"documents","label":"documents"},{"source":"habby-dependencies","sourceProject":"habby","target":"habby-structure","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"habby-dependencies","sourceProject":"habby","target":"habby-commands","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"DEC-001","sourceProject":"habby","target":"habby-agent","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"DEC-001","sourceProject":"habby","target":"habby-status","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"DEC-002","sourceProject":"habby","target":"habby-agent","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"DEC-003","sourceProject":"habby","target":"habby-agent","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"DEC-004","sourceProject":"habby","target":"habby-agent","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"DEC-005","sourceProject":"habby","target":"habby-agent","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"DEC-006","sourceProject":"habby","target":"habby-agent","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"habby-profile","sourceProject":"habby","target":"habby-agent","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"habby-profile","sourceProject":"habby","target":"habby-status","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"habby-profile","sourceProject":"habby","target":"habby-structure","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"habby-profile","sourceProject":"habby","target":"habby-dependencies","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"habby-profile","sourceProject":"habby","target":"habby-commands","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"habby-status","sourceProject":"habby","target":"habby-agent","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"habby-status","sourceProject":"habby","target":"habby-profile","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"habby-status","sourceProject":"habby","target":"habby-structure","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"habby-structure","sourceProject":"habby","target":"habby-agent","targetProject":"habby","type":"documents","label":"documents"},{"source":"habby-structure","sourceProject":"habby","target":"habby-profile","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"TASK-001","sourceProject":"habby","target":"habby-agent","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"TASK-001","sourceProject":"habby","target":"habby-status","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"TASK-001","sourceProject":"habby","target":"DEC-001","targetProject":"habby","type":"relates-to","label":"relates-to"},{"source":"mcky-agent","sourceProject":"mcky.space","target":"mcky-space-profile","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"mcky-agent","sourceProject":"mcky.space","target":"mcky-status","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"mcky-agent","sourceProject":"mcky.space","target":"mcky-structure","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"mcky-agent","sourceProject":"mcky.space","target":"mcky-commands","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"mcky-agent","sourceProject":"mcky.space","target":"workspace","targetProject":null,"type":"relates-to","label":"relates-to"},{"source":"mcky-assets","sourceProject":"mcky.space","target":"mcky-structure","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"mcky-commands","sourceProject":"mcky.space","target":"mcky-agent","targetProject":"mcky.space","type":"documents","label":"documents"},{"source":"mcky-commands","sourceProject":"mcky.space","target":"mcky-dependencies","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"mcky-commands","sourceProject":"mcky.space","target":"mcky-structure","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"mcky-decisions","sourceProject":"mcky.space","target":"mcky-agent","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"mcky-dependencies","sourceProject":"mcky.space","target":"mcky-space-profile","targetProject":"mcky.space","type":"documents","label":"documents"},{"source":"mcky-dependencies","sourceProject":"mcky.space","target":"mcky-structure","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"mcky-dependencies","sourceProject":"mcky.space","target":"mcky-commands","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"COMP-003","sourceProject":"mcky.space","target":"mcky-space-profile","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"DEC-001","sourceProject":"mcky.space","target":"mcky-agent","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"DEC-001","sourceProject":"mcky.space","target":"mcky-status","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"DEC-012","sourceProject":"mcky.space","target":"mcky-agent","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"DEC-013","sourceProject":"mcky.space","target":"mcky-agent","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"DEC-014","sourceProject":"mcky.space","target":"mcky-agent","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"DEC-015","sourceProject":"mcky.space","target":"mcky-agent","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"DEC-016","sourceProject":"mcky.space","target":"mcky-agent","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"RSK-001","sourceProject":"mcky.space","target":"mcky-agent","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"RSK-001","sourceProject":"mcky.space","target":"mcky-status","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"RSK-001","sourceProject":"mcky.space","target":"DEC-001","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"mcky-space-profile","sourceProject":"mcky.space","target":"mcky-agent","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"mcky-space-profile","sourceProject":"mcky.space","target":"mcky-status","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"mcky-space-profile","sourceProject":"mcky.space","target":"mcky-structure","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"mcky-space-profile","sourceProject":"mcky.space","target":"mcky-dependencies","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"mcky-space-profile","sourceProject":"mcky.space","target":"mcky-commands","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"mcky-status","sourceProject":"mcky.space","target":"mcky-agent","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"mcky-status","sourceProject":"mcky.space","target":"mcky-space-profile","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"mcky-status","sourceProject":"mcky.space","target":"mcky-structure","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"mcky-structure","sourceProject":"mcky.space","target":"mcky-agent","targetProject":"mcky.space","type":"documents","label":"documents"},{"source":"mcky-structure","sourceProject":"mcky.space","target":"mcky-space-profile","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"TASK-001","sourceProject":"mcky.space","target":"mcky-agent","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"TASK-001","sourceProject":"mcky.space","target":"mcky-status","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"TASK-001","sourceProject":"mcky.space","target":"RSK-001","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"TASK-001","sourceProject":"mcky.space","target":"DEC-001","targetProject":"mcky.space","type":"relates-to","label":"relates-to"},{"source":"truck-agent","sourceProject":"truck","target":"truck-profile","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"truck-agent","sourceProject":"truck","target":"truck-status","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"truck-agent","sourceProject":"truck","target":"truck-structure","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"truck-agent","sourceProject":"truck","target":"truck-commands","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"truck-agent","sourceProject":"truck","target":"workspace","targetProject":null,"type":"relates-to","label":"relates-to"},{"source":"truck-assets","sourceProject":"truck","target":"truck-structure","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"truck-commands","sourceProject":"truck","target":"truck-agent","targetProject":"truck","type":"documents","label":"documents"},{"source":"truck-commands","sourceProject":"truck","target":"truck-dependencies","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"truck-commands","sourceProject":"truck","target":"truck-structure","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"truck-decisions","sourceProject":"truck","target":"truck-agent","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"truck-dependencies","sourceProject":"truck","target":"truck-profile","targetProject":"truck","type":"documents","label":"documents"},{"source":"truck-dependencies","sourceProject":"truck","target":"truck-structure","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"truck-dependencies","sourceProject":"truck","target":"truck-commands","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"COMP-002","sourceProject":"truck","target":"truck-profile","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"DEC-001","sourceProject":"truck","target":"truck-agent","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"DEC-001","sourceProject":"truck","target":"truck-status","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"DEC-003","sourceProject":"truck","target":"truck-agent","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"DEC-004","sourceProject":"truck","target":"truck-agent","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"DEC-005","sourceProject":"truck","target":"truck-agent","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"DEC-006","sourceProject":"truck","target":"truck-agent","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"DEC-007","sourceProject":"truck","target":"truck-agent","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"LSN-001","sourceProject":"truck","target":"truck-agent","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"LSN-001","sourceProject":"truck","target":"truck-status","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"LSN-001","sourceProject":"truck","target":"DEC-001","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"truck-profile","sourceProject":"truck","target":"truck-agent","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"truck-profile","sourceProject":"truck","target":"truck-status","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"truck-profile","sourceProject":"truck","target":"truck-structure","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"truck-profile","sourceProject":"truck","target":"truck-dependencies","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"truck-profile","sourceProject":"truck","target":"truck-commands","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"truck-status","sourceProject":"truck","target":"truck-agent","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"truck-status","sourceProject":"truck","target":"truck-profile","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"truck-status","sourceProject":"truck","target":"truck-structure","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"truck-structure","sourceProject":"truck","target":"truck-agent","targetProject":"truck","type":"documents","label":"documents"},{"source":"truck-structure","sourceProject":"truck","target":"truck-profile","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"TASK-001","sourceProject":"truck","target":"truck-agent","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"TASK-001","sourceProject":"truck","target":"truck-status","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"TASK-001","sourceProject":"truck","target":"LSN-001","targetProject":"truck","type":"relates-to","label":"relates-to"},{"source":"writer-agent","sourceProject":"writer","target":"writer-profile","targetProject":"writer","type":"relates-to","label":"relates-to"},{"source":"writer-agent","sourceProject":"writer","target":"workspace","targetProject":null,"type":"relates-to","label":"relates-to"},{"source":"DEC-001","sourceProject":"writer","target":"writer-agent","targetProject":"writer","type":"relates-to","label":"relates-to"},{"source":"DEC-001","sourceProject":"writer","target":"writer-profile","targetProject":"writer","type":"relates-to","label":"relates-to"},{"source":"writer-profile","sourceProject":"writer","target":"writer-agent","targetProject":"writer","type":"relates-to","label":"relates-to"},{"source":"TASK-001","sourceProject":"writer","target":"writer-agent","targetProject":"writer","type":"relates-to","label":"relates-to"},{"source":"TASK-001","sourceProject":"writer","target":"writer-profile","targetProject":"writer","type":"relates-to","label":"relates-to"},{"source":"TASK-001","sourceProject":"writer","target":"DEC-001","targetProject":"writer","type":"relates-to","label":"relates-to"}];
+const projectNames = [{"name":"cafe","node_count":17,"by_type":{"agent-profile":1,"document":4,"index":1,"component":1,"decision":6,"lesson":1,"project-profile":1,"project-status":1,"task":1}},{"name":"cafe-v2","node_count":9,"by_type":{"document":4,"index":1,"decision":1,"project-profile":1,"project-status":1,"task":1}},{"name":"clientdata","node_count":20,"by_type":{"agent-profile":1,"document":4,"index":1,"component":2,"decision":6,"lesson":1,"risk":1,"project-profile":1,"project-status":1,"task":2}},{"name":"habby","node_count":15,"by_type":{"agent-profile":1,"document":4,"index":1,"decision":6,"project-profile":1,"project-status":1,"task":1}},{"name":"mcky.space","node_count":17,"by_type":{"agent-profile":1,"document":4,"index":1,"component":1,"decision":6,"risk":1,"project-profile":1,"project-status":1,"task":1}},{"name":"truck","node_count":17,"by_type":{"agent-profile":1,"document":4,"index":1,"component":1,"decision":6,"lesson":1,"project-profile":1,"project-status":1,"task":1}},{"name":"writer","node_count":4,"by_type":{"agent-profile":1,"decision":1,"project-profile":1,"task":1}}];
+const edgeColors = {"relates-to":"#94a3b8","documents":"#8b5cf6","supersedes":"#f59e0b","caused-by":"#10b981","blocks":"#ef4444","fulfills":"#3b82f6","depends-on":"#f97316","part-of":"#ec4899","contradicts":"#ef4444"};
+
+const nodeMap = {};
+nodes.forEach(n => nodeMap[n.id] = n);
+
+const edgeIndex = {};
+allEdges.forEach(e => {
+  if (!edgeIndex[e.source]) edgeIndex[e.source] = [];
+  edgeIndex[e.source].push(e);
+  if (!edgeIndex[e.target]) edgeIndex[e.target] = [];
+  edgeIndex[e.target].push({ source: e.target, target: e.source, type: e.type, label: e.label });
+});
+
+let currentFilter = 'all';
+let selectedNode = null;
+
+function escape(s) { return (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function getStatusClass(s) { return s || 'active'; }
+
+function getTypeIcon(type) {
+  const icons = {
+    'decision': '🧠', 'lesson': '📖', 'risk': '⚠️', 'task': '✅',
+    'document': '📄', 'component': '🏗️', 'agent-profile': '🤖',
+    'project-profile': '📋', 'project-status': '📊', 'index': '📑',
+    'system-doc': '🔧', 'skill': '🛠️', 'instruction': '📝',
+    'workspace-index': '📌', 'goal': '🎯', 'gap': '🔍', 'diagram': '📐'
+  };
+  return icons[type] || '📄';
+}
+
+function filterNodes(q) {
+  const items = document.querySelectorAll('.node-item');
+  const search = q.toLowerCase();
+  items.forEach(item => {
+    const text = item.dataset.search.toLowerCase();
+    const matchesFilter = matchesCurrentFilter(item.dataset);
+    const matchesSearch = !search || text.includes(search);
+    item.style.display = (matchesFilter && matchesSearch) ? '' : 'none';
+  });
+  updateStats();
+}
+
+function matchesCurrentFilter(data) {
+  if (currentFilter === 'all') return true;
+  if (currentFilter === 'active') return data.status === 'active';
+  if (currentFilter === 'open') return data.type === 'task' && data.status === 'open';
+  if (currentFilter === 'risk') return data.type === 'risk';
+  if (currentFilter.startsWith('project:')) return data.project === currentFilter.replace('project:', '');
+  return true;
+}
+
+function setFilter(f) {
+  document.querySelectorAll('.sidebar-nav button').forEach(b => b.classList.remove('active'));
+  event.target.classList.add('active');
+  currentFilter = f;
+  const search = document.getElementById('search').value;
+  filterNodes(search);
+}
+
+function renderList(nodesList) {
+  const list = document.getElementById('nodeList');
+  list.innerHTML = '<ul class="node-list">' + nodesList.map(n => {
+    const searchText = n.id + ' ' + n.type + ' ' + (n.project || '') + ' ' + (n.status || '');
+    return '<li class="node-item" data-id="' + n.id + '" data-project="' + (n.project || '') + '" data-type="' + n.type + '" data-status="' + n.status + '" data-search="' + escape(searchText) + '" onclick="selectNode('' + n.id + '')">' +
+      '<span style="font-size:16px;">' + getTypeIcon(n.type) + '</span>' +
+      '<span class="id">' + n.id + '</span>' +
+      '<span style="color:var(--text-muted);font-size:12px;">' + n.type + '</span>' +
+      '<span class="project">' + (n.project || '') + '</span>' +
+      '<span class="status-badge ' + getStatusClass(n.status) + '">' + (n.status || 'active') + '</span>' +
+      '</li>';
+  }).join('') + '</ul>';
+  updateStats();
+}
+
+function updateStats() {
+  const visible = document.querySelectorAll('.node-item:not([style*="display: none"])');
+  const stats = document.getElementById('statsBar');
+  const byType = {};
+  visible.forEach(item => {
+    const type = item.dataset.type;
+    byType[type] = (byType[type] || 0) + 1;
+  });
+  const parts = Object.entries(byType).map(([t, c]) => '<strong>' + c + '</strong> ' + t);
+  stats.innerHTML = 'Showing <strong>' + visible.length + '</strong> nodes &mdash; ' + parts.join(' · ');
+}
+
+function selectNode(id) {
+  selectedNode = id;
+  document.querySelectorAll('.node-item').forEach(i => i.classList.toggle('selected', i.dataset.id === id));
+  const node = nodeMap[id];
+  if (!node) return;
+
+  const related = (edgeIndex[id] || []).map(e => {
+    const other = e.source === id ? nodeMap[e.target] : nodeMap[e.source];
+    return { ...e, other };
+  }).filter(e => e.other);
+
+  const info = document.getElementById('nodeInfo');
+  let html = '<h2>' + getTypeIcon(node.type) + ' ' + node.id + ' <span style="font-weight:400;color:var(--text-muted);font-size:14px;">' + node.type + '</span></h2>';
+  html += '<div class="field"><strong>Project:</strong> ' + (node.project || '(global)') + '</div>';
+  html += '<div class="field"><strong>Status:</strong> <span class="status-badge ' + getStatusClass(node.status) + '">' + (node.status || 'active') + '</span></div>';
+  html += '<div class="field"><strong>File:</strong> <code style="font-size:12px;background:var(--surface-2);padding:2px 6px;border-radius:3px;">' + escape(node.file) + '</code></div>';
+  if (node.freshness) html += '<div class="field"><strong>Freshness:</strong> ' + node.freshness + '</div>';
+  if (node.verified) html += '<div class="field"><strong>Verified:</strong> ' + node.verified + '</div>';
+  if (node.expires) html += '<div class="field"><strong>Expires:</strong> ' + node.expires + '</div>';
+  if (node.superseded_by) html += '<div class="field"><strong>Superseded by:</strong> ' + node.superseded_by + '</div>';
+  if (related.length > 0) {
+    html += '<div class="links-list"><strong>Links:</strong><br>';
+    html += related.map(e => {
+      const color = edgeColors[e.type] || '#94a3b8';
+      return '<span class="link-item" style="background:' + color + '22;border:1px solid ' + color + ';color:' + color + ';cursor:pointer;" onclick="selectNode('' + e.other.id + '')">' + e.type + ' → ' + e.other.id + '</span>';
+    }).join(' ');
+    html += '</div>';
+  }
+  info.innerHTML = html;
+}
+
+function renderGraph() {
+  const container = document.getElementById('graph');
+  const width = container.clientWidth;
+  const height = container.clientHeight;
+
+  const svg = d3.select('#graph').append('svg')
+    .attr('width', width).attr('height', height)
+    .style('background', 'var(--bg)');
+
+  const g = svg.append('g');
+
+  const zoom = d3.zoom()
+    .scaleExtent([0.1, 4])
+    .on('zoom', (event) => g.attr('transform', event.transform));
+  svg.call(zoom);
+
+  // Filter out meta-nodes for cleaner graph
+  const skipTypes = ['system-doc', 'skill', 'instruction', 'index', 'workspace-index'];
+  const activeNodes = nodes.filter(n => !skipTypes.includes(n.type));
+  const nodeIds = new Set(activeNodes.map(n => n.id));
+  const visibleEdges = allEdges.filter(e => nodeIds.has(e.source) && nodeIds.has(e.target));
+
+  const sim = d3.forceSimulation(activeNodes)
+    .force('link', d3.forceLink(visibleEdges).id(d => d.id).distance(100).strength(0.2))
+    .force('charge', d3.forceManyBody().strength(-200))
+    .force('center', d3.forceCenter(width / 2, height / 2))
+    .force('collision', d3.forceCollide().radius(25));
+
+  const link = g.append('g')
+    .selectAll('line').data(visibleEdges).join('line')
+    .attr('stroke', d => (edgeColors[d.type] || '#94a3b8') + '44')
+    .attr('stroke-width', 1)
+    .attr('stroke-dasharray', d => d.type === 'relates-to' ? '4,4' : 'none');
+
+  const node = g.append('g')
+    .selectAll('g').data(activeNodes).join('g')
+    .call(d3.drag()
+      .on('start', (event, d) => { if (!event.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+      .on('drag', (event, d) => { d.fx = event.x; d.fy = event.y; })
+      .on('end', (event, d) => { if (!event.active) sim.alphaTarget(0); d.fx = null; d.fy = null; })
+    )
+    .on('click', (event, d) => { selectNode(d.id); });
+
+  node.append('circle')
+    .attr('r', d => d.type === 'task' ? 8 : d.type === 'decision' ? 10 : d.type === 'risk' ? 8 : 6)
+    .attr('fill', d => d.color + '88')
+    .attr('stroke', d => d.color)
+    .attr('stroke-width', 2);
+
+  node.append('text')
+    .text(d => getTypeIcon(d.type))
+    .attr('x', 10).attr('y', 4).attr('font-size', 12);
+
+  node.append('text')
+    .text(d => d.id)
+    .attr('x', 24).attr('y', 4)
+    .attr('font-size', 10)
+    .attr('fill', 'var(--text-muted)')
+    .style('pointer-events', 'none');
+
+  sim.on('tick', () => {
+    link
+      .attr('x1', d => d.source.x)
+      .attr('y1', d => d.source.y)
+      .attr('x2', d => d.target.x)
+      .attr('y2', d => d.target.y);
+    node.attr('transform', d => 'translate(' + d.x + ',' + d.y + ')');
+  });
+}
+
+renderList(nodes);
+renderGraph();
+
+window.addEventListener('resize', () => {
+  const svg = document.querySelector('#graph svg');
+  if (svg) {
+    svg.setAttribute('width', document.getElementById('graph').clientWidth);
+    svg.setAttribute('height', document.getElementById('graph').clientHeight);
+  }
+});
+</script>
+</body>
+</html>

@@ -23,6 +23,21 @@ last_updated: 2026-07-04
 | truck | [profile](./projects/truck/profile.md) | [agent](./projects/truck/agent.md) | [status](./projects/truck/status.md) | active | React 19, Vite 8, Supabase, PWA |
 | writer | [profile](./projects/writer/profile.md) | [agent](./projects/writer/agent.md) | — | global | Markdown, AI agent system |
 
+## Graph (Knowledge Graph)
+The entire KB is connected as a graph with typed edges. Every node has a stable ID.
+
+| Metric | Count |
+|--------|-------|
+| Total nodes | 92 |
+| Total edges | 196 |
+| Projects covered | 7 |
+| Knowledge types | decision, lesson, risk, component, task, document |
+
+- **Graph index:** `graph.json` — auto-generated registry with all nodes and edges
+- **Rebuild:** `node ~/OKF/scripts/build-graph.js`
+- **Dashboard:** `dashboard.html` — interactive D3 force-directed graph visualization
+- **Schema:** [`.opencode/rules/okf-format.md`](./.opencode/rules/okf-format.md)
+
 ## Agent Roles
 
 | Project | Role | Personality |
@@ -47,6 +62,7 @@ last_updated: 2026-07-04
 - **Dependencies:** 100%
 - **Commands:** 100%
 - **Status:** 100%
+- **Knowledge Graph:** 92 nodes, 196 edges
 
 ## Triggers
 
@@ -55,6 +71,21 @@ last_updated: 2026-07-04
 | `update .md` | Read project KB files, update status + agent context | All |
 | `cleanup` | Scan unused deps/files, health check, update KB | All |
 | `wrap-day` | Read diff, update changelog + status, commit | truck only |
+| `dispatch` | Operator — list open tasks, claim, plan, execute | Per project |
+| `doctor-kb` | Knowledge lifecycle audit — stale, expired, broken links | All |
+| `backfill` | Seed KB from git history + code structure | Per project |
+
+## Scripts
+
+| Script | Purpose |
+|--------|---------|
+| `scripts/build-graph.js` | Rebuild `graph.json` from all KB files |
+| `scripts/build-dashboard.js` | Generate `dashboard.html` |
+| `scripts/dispatch.js` | List open tasks and context |
+| `scripts/claim-task.js` | Atomically claim a task |
+| `scripts/complete-task.js` | Close a task and record lesson |
+| `scripts/doctor-kb.js` | Knowledge lifecycle audit |
+| `scripts/backfill.js` | Seed KB from git/code/docs |
 
 ## System Files
 - [Conventions](./system/conventions.md) — user profile, Termux setup, communication rules

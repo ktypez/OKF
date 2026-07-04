@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated": "2026-07-04T07:11:37.406Z",
-    "total_nodes": 71,
-    "total_edges": 150,
+    "generated": "2026-07-04T07:33:04.995Z",
+    "total_nodes": 115,
+    "total_edges": 219,
     "warnings": 0
   },
   "warnings": [],
@@ -72,23 +72,28 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "cafe-profile"
+          "target": "cafe-profile",
+          "_composite": "cafe/cafe-profile"
         },
         {
           "type": "relates-to",
-          "target": "cafe-status"
+          "target": "cafe-status",
+          "_composite": "cafe/cafe-status"
         },
         {
           "type": "relates-to",
-          "target": "cafe-structure"
+          "target": "cafe-structure",
+          "_composite": "cafe/cafe-structure"
         },
         {
           "type": "relates-to",
-          "target": "cafe-commands"
+          "target": "cafe-commands",
+          "_composite": "cafe/cafe-commands"
         },
         {
           "type": "relates-to",
-          "target": "workspace"
+          "target": "workspace",
+          "_composite": "workspace"
         }
       ],
       "personality": "barista engineer",
@@ -110,7 +115,8 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "cafe-structure"
+          "target": "cafe-structure",
+          "_composite": "cafe/cafe-structure"
         }
       ],
       "personality": null,
@@ -132,15 +138,18 @@
       "links": [
         {
           "type": "documents",
-          "target": "cafe-agent"
+          "target": "cafe-agent",
+          "_composite": "cafe/cafe-agent"
         },
         {
           "type": "relates-to",
-          "target": "cafe-dependencies"
+          "target": "cafe-dependencies",
+          "_composite": "cafe/cafe-dependencies"
         },
         {
           "type": "relates-to",
-          "target": "cafe-structure"
+          "target": "cafe-structure",
+          "_composite": "cafe/cafe-structure"
         }
       ],
       "personality": null,
@@ -162,7 +171,8 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "cafe-agent"
+          "target": "cafe-agent",
+          "_composite": "cafe/cafe-agent"
         }
       ],
       "personality": null,
@@ -184,15 +194,223 @@
       "links": [
         {
           "type": "documents",
-          "target": "cafe-profile"
+          "target": "cafe-profile",
+          "_composite": "cafe/cafe-profile"
         },
         {
           "type": "relates-to",
-          "target": "cafe-structure"
+          "target": "cafe-structure",
+          "_composite": "cafe/cafe-structure"
         },
         {
           "type": "relates-to",
-          "target": "cafe-commands"
+          "target": "cafe-commands",
+          "_composite": "cafe/cafe-commands"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "COMP-001",
+      "type": "component",
+      "project": "cafe",
+      "file": "projects/cafe/knowledge/COMP-001.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/cafe/app/api",
+        "/home/cafe/app/liff",
+        "/home/cafe/app/settings",
+        "/home/cafe/components/admin",
+        "/home/cafe/components/settings",
+        "/home/cafe/components/ui"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "cafe-profile",
+          "_composite": "cafe/cafe-profile"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "DEC-001",
+      "type": "decision",
+      "project": "cafe",
+      "file": "projects/cafe/knowledge/DEC-001.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/cafe/app/page.tsx"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "cafe-agent",
+          "_composite": "cafe/cafe-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-status",
+          "_composite": "cafe/cafe-status"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "DEC-002",
+      "type": "decision",
+      "project": "cafe",
+      "file": "projects/cafe/knowledge/DEC-002.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "cafe-agent",
+          "_composite": "cafe/cafe-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "DEC-003",
+      "type": "decision",
+      "project": "cafe",
+      "file": "projects/cafe/knowledge/DEC-003.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "cafe-agent",
+          "_composite": "cafe/cafe-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "DEC-004",
+      "type": "decision",
+      "project": "cafe",
+      "file": "projects/cafe/knowledge/DEC-004.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "cafe-agent",
+          "_composite": "cafe/cafe-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "DEC-005",
+      "type": "decision",
+      "project": "cafe",
+      "file": "projects/cafe/knowledge/DEC-005.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "cafe-agent",
+          "_composite": "cafe/cafe-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "DEC-006",
+      "type": "decision",
+      "project": "cafe",
+      "file": "projects/cafe/knowledge/DEC-006.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "cafe-agent",
+          "_composite": "cafe/cafe-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "LSN-001",
+      "type": "lesson",
+      "project": "cafe",
+      "file": "projects/cafe/knowledge/LSN-001.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/cafe/components/ReceiptViewer.tsx"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "cafe-agent",
+          "_composite": "cafe/cafe-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "DEC-001",
+          "_composite": "cafe/DEC-001"
         }
       ],
       "personality": null,
@@ -214,23 +432,28 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "cafe-agent"
+          "target": "cafe-agent",
+          "_composite": "cafe/cafe-agent"
         },
         {
           "type": "relates-to",
-          "target": "cafe-status"
+          "target": "cafe-status",
+          "_composite": "cafe/cafe-status"
         },
         {
           "type": "relates-to",
-          "target": "cafe-structure"
+          "target": "cafe-structure",
+          "_composite": "cafe/cafe-structure"
         },
         {
           "type": "relates-to",
-          "target": "cafe-dependencies"
+          "target": "cafe-dependencies",
+          "_composite": "cafe/cafe-dependencies"
         },
         {
           "type": "relates-to",
-          "target": "cafe-commands"
+          "target": "cafe-commands",
+          "_composite": "cafe/cafe-commands"
         }
       ],
       "personality": null,
@@ -252,15 +475,18 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "cafe-agent"
+          "target": "cafe-agent",
+          "_composite": "cafe/cafe-agent"
         },
         {
           "type": "relates-to",
-          "target": "cafe-profile"
+          "target": "cafe-profile",
+          "_composite": "cafe/cafe-profile"
         },
         {
           "type": "relates-to",
-          "target": "cafe-structure"
+          "target": "cafe-structure",
+          "_composite": "cafe/cafe-structure"
         }
       ],
       "personality": null,
@@ -282,11 +508,46 @@
       "links": [
         {
           "type": "documents",
-          "target": "cafe-agent"
+          "target": "cafe-agent",
+          "_composite": "cafe/cafe-agent"
         },
         {
           "type": "relates-to",
-          "target": "cafe-profile"
+          "target": "cafe-profile",
+          "_composite": "cafe/cafe-profile"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "TASK-001",
+      "type": "task",
+      "project": "cafe",
+      "file": "projects/cafe/tasks/TASK-001.md",
+      "status": "open",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "cafe-agent",
+          "_composite": "cafe/cafe-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-status",
+          "_composite": "cafe/cafe-status"
+        },
+        {
+          "type": "relates-to",
+          "target": "LSN-001",
+          "_composite": "cafe/LSN-001"
         }
       ],
       "personality": null,
@@ -308,7 +569,8 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "cafe-v2-structure"
+          "target": "cafe-v2-structure",
+          "_composite": "cafe-v2/cafe-v2-structure"
         }
       ],
       "personality": null,
@@ -330,11 +592,13 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "cafe-v2-dependencies"
+          "target": "cafe-v2-dependencies",
+          "_composite": "cafe-v2/cafe-v2-dependencies"
         },
         {
           "type": "relates-to",
-          "target": "cafe-v2-structure"
+          "target": "cafe-v2-structure",
+          "_composite": "cafe-v2/cafe-v2-structure"
         }
       ],
       "personality": null,
@@ -373,15 +637,48 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "cafe-v2-profile"
+          "target": "cafe-v2-profile",
+          "_composite": "cafe-v2/cafe-v2-profile"
         },
         {
           "type": "relates-to",
-          "target": "cafe-v2-structure"
+          "target": "cafe-v2-structure",
+          "_composite": "cafe-v2/cafe-v2-structure"
         },
         {
           "type": "relates-to",
-          "target": "cafe-v2-commands"
+          "target": "cafe-v2-commands",
+          "_composite": "cafe-v2/cafe-v2-commands"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "DEC-001",
+      "type": "decision",
+      "project": "cafe-v2",
+      "file": "projects/cafe-v2/knowledge/DEC-001.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/cafe-v2/data.js"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "cafe-v2-profile",
+          "_composite": "cafe-v2/cafe-v2-profile"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-v2-status",
+          "_composite": "cafe-v2/cafe-v2-status"
         }
       ],
       "personality": null,
@@ -403,19 +700,23 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "cafe-v2-status"
+          "target": "cafe-v2-status",
+          "_composite": "cafe-v2/cafe-v2-status"
         },
         {
           "type": "relates-to",
-          "target": "cafe-v2-structure"
+          "target": "cafe-v2-structure",
+          "_composite": "cafe-v2/cafe-v2-structure"
         },
         {
           "type": "relates-to",
-          "target": "cafe-v2-dependencies"
+          "target": "cafe-v2-dependencies",
+          "_composite": "cafe-v2/cafe-v2-dependencies"
         },
         {
           "type": "relates-to",
-          "target": "cafe-v2-commands"
+          "target": "cafe-v2-commands",
+          "_composite": "cafe-v2/cafe-v2-commands"
         }
       ],
       "personality": null,
@@ -437,11 +738,13 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "cafe-v2-profile"
+          "target": "cafe-v2-profile",
+          "_composite": "cafe-v2/cafe-v2-profile"
         },
         {
           "type": "relates-to",
-          "target": "cafe-v2-structure"
+          "target": "cafe-v2-structure",
+          "_composite": "cafe-v2/cafe-v2-structure"
         }
       ],
       "personality": null,
@@ -463,7 +766,46 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "cafe-v2-profile"
+          "target": "cafe-v2-profile",
+          "_composite": "cafe-v2/cafe-v2-profile"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "TASK-001",
+      "type": "task",
+      "project": "cafe-v2",
+      "file": "projects/cafe-v2/tasks/TASK-001.md",
+      "status": "open",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "cafe-v2-profile",
+          "_composite": "cafe-v2/cafe-v2-profile"
+        },
+        {
+          "type": "relates-to",
+          "target": "cafe-v2-status",
+          "_composite": "cafe-v2/cafe-v2-status"
+        },
+        {
+          "type": "relates-to",
+          "target": "DEC-001",
+          "_composite": "cafe-v2/DEC-001"
+        },
+        {
+          "type": "supersedes",
+          "target": "cafe-v2-profile",
+          "_composite": "cafe-v2/cafe-v2-profile"
         }
       ],
       "personality": null,
@@ -489,23 +831,28 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "clientdata-profile"
+          "target": "clientdata-profile",
+          "_composite": "clientdata/clientdata-profile"
         },
         {
           "type": "relates-to",
-          "target": "clientdata-status"
+          "target": "clientdata-status",
+          "_composite": "clientdata/clientdata-status"
         },
         {
           "type": "relates-to",
-          "target": "clientdata-structure"
+          "target": "clientdata-structure",
+          "_composite": "clientdata/clientdata-structure"
         },
         {
           "type": "relates-to",
-          "target": "clientdata-commands"
+          "target": "clientdata-commands",
+          "_composite": "clientdata/clientdata-commands"
         },
         {
           "type": "relates-to",
-          "target": "workspace"
+          "target": "workspace",
+          "_composite": "workspace"
         }
       ],
       "personality": "data goblin",
@@ -529,11 +876,13 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "clientdata-structure"
+          "target": "clientdata-structure",
+          "_composite": "clientdata/clientdata-structure"
         },
         {
           "type": "relates-to",
-          "target": "clientdata-profile"
+          "target": "clientdata-profile",
+          "_composite": "clientdata/clientdata-profile"
         }
       ],
       "personality": null,
@@ -555,15 +904,18 @@
       "links": [
         {
           "type": "documents",
-          "target": "clientdata-agent"
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
         },
         {
           "type": "relates-to",
-          "target": "clientdata-dependencies"
+          "target": "clientdata-dependencies",
+          "_composite": "clientdata/clientdata-dependencies"
         },
         {
           "type": "relates-to",
-          "target": "clientdata-structure"
+          "target": "clientdata-structure",
+          "_composite": "clientdata/clientdata-structure"
         }
       ],
       "personality": null,
@@ -585,11 +937,13 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "clientdata-agent"
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
         },
         {
           "type": "relates-to",
-          "target": "clientdata-status"
+          "target": "clientdata-status",
+          "_composite": "clientdata/clientdata-status"
         }
       ],
       "personality": null,
@@ -613,15 +967,18 @@
       "links": [
         {
           "type": "documents",
-          "target": "clientdata-profile"
+          "target": "clientdata-profile",
+          "_composite": "clientdata/clientdata-profile"
         },
         {
           "type": "relates-to",
-          "target": "clientdata-structure"
+          "target": "clientdata-structure",
+          "_composite": "clientdata/clientdata-structure"
         },
         {
           "type": "relates-to",
-          "target": "clientdata-commands"
+          "target": "clientdata-commands",
+          "_composite": "clientdata/clientdata-commands"
         }
       ],
       "personality": null,
@@ -645,25 +1002,58 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "DEC-001"
+          "target": "DEC-001",
+          "_composite": "clientdata/DEC-001"
         },
         {
           "type": "relates-to",
-          "target": "TASK-001"
+          "target": "TASK-001",
+          "_composite": "clientdata/TASK-001"
         },
         {
           "type": "relates-to",
-          "target": "LSN-001"
+          "target": "LSN-001",
+          "_composite": "clientdata/LSN-001"
         },
         {
           "type": "relates-to",
-          "target": "RSK-001"
+          "target": "RSK-001",
+          "_composite": "clientdata/RSK-001"
         }
       ],
       "personality": null,
       "name": null,
       "description": null,
       "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "COMP-002",
+      "type": "component",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/COMP-002.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/clientdata/app/api",
+        "/home/clientdata/app/c",
+        "/home/clientdata/components/ui",
+        "/home/clientdata/lib/db",
+        "/home/clientdata/lib/sync"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "clientdata-profile",
+          "_composite": "clientdata/clientdata-profile"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
     },
     {
       "id": "DEC-001",
@@ -682,17 +1072,134 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "TASK-001"
+          "target": "TASK-001",
+          "_composite": "clientdata/TASK-001"
         },
         {
           "type": "relates-to",
-          "target": "COMP-001"
+          "target": "COMP-001",
+          "_composite": "clientdata/COMP-001"
         }
       ],
       "personality": null,
       "name": null,
       "description": null,
       "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "DEC-002",
+      "type": "decision",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/DEC-002.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "DEC-003",
+      "type": "decision",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/DEC-003.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "DEC-004",
+      "type": "decision",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/DEC-004.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "DEC-005",
+      "type": "decision",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/DEC-005.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "DEC-006",
+      "type": "decision",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/DEC-006.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
     },
     {
       "id": "LSN-001",
@@ -710,11 +1217,13 @@
       "links": [
         {
           "type": "caused-by",
-          "target": "TASK-001"
+          "target": "TASK-001",
+          "_composite": "clientdata/TASK-001"
         },
         {
           "type": "relates-to",
-          "target": "DEC-001"
+          "target": "DEC-001",
+          "_composite": "clientdata/DEC-001"
         }
       ],
       "personality": null,
@@ -738,11 +1247,13 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "DEC-001"
+          "target": "DEC-001",
+          "_composite": "clientdata/DEC-001"
         },
         {
           "type": "relates-to",
-          "target": "TASK-001"
+          "target": "TASK-001",
+          "_composite": "clientdata/TASK-001"
         }
       ],
       "personality": null,
@@ -767,23 +1278,28 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "clientdata-agent"
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
         },
         {
           "type": "relates-to",
-          "target": "clientdata-status"
+          "target": "clientdata-status",
+          "_composite": "clientdata/clientdata-status"
         },
         {
           "type": "relates-to",
-          "target": "clientdata-structure"
+          "target": "clientdata-structure",
+          "_composite": "clientdata/clientdata-structure"
         },
         {
           "type": "relates-to",
-          "target": "clientdata-dependencies"
+          "target": "clientdata-dependencies",
+          "_composite": "clientdata/clientdata-dependencies"
         },
         {
           "type": "relates-to",
-          "target": "clientdata-commands"
+          "target": "clientdata-commands",
+          "_composite": "clientdata/clientdata-commands"
         }
       ],
       "personality": null,
@@ -808,15 +1324,18 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "clientdata-agent"
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
         },
         {
           "type": "relates-to",
-          "target": "clientdata-profile"
+          "target": "clientdata-profile",
+          "_composite": "clientdata/clientdata-profile"
         },
         {
           "type": "relates-to",
-          "target": "clientdata-structure"
+          "target": "clientdata-structure",
+          "_composite": "clientdata/clientdata-structure"
         }
       ],
       "personality": null,
@@ -842,19 +1361,23 @@
       "links": [
         {
           "type": "documents",
-          "target": "clientdata-agent"
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
         },
         {
           "type": "relates-to",
-          "target": "clientdata-profile"
+          "target": "clientdata-profile",
+          "_composite": "clientdata/clientdata-profile"
         },
         {
           "type": "relates-to",
-          "target": "clientdata-dependencies"
+          "target": "clientdata-dependencies",
+          "_composite": "clientdata/clientdata-dependencies"
         },
         {
           "type": "relates-to",
-          "target": "clientdata-commands"
+          "target": "clientdata-commands",
+          "_composite": "clientdata/clientdata-commands"
         }
       ],
       "personality": null,
@@ -876,15 +1399,18 @@
       "links": [
         {
           "type": "caused-by",
-          "target": "DEC-001"
+          "target": "DEC-001",
+          "_composite": "clientdata/DEC-001"
         },
         {
           "type": "relates-to",
-          "target": "LSN-001"
+          "target": "LSN-001",
+          "_composite": "clientdata/LSN-001"
         },
         {
           "type": "relates-to",
-          "target": "RSK-001"
+          "target": "RSK-001",
+          "_composite": "clientdata/RSK-001"
         }
       ],
       "personality": null,
@@ -906,11 +1432,13 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "LSN-001"
+          "target": "LSN-001",
+          "_composite": "clientdata/LSN-001"
         },
         {
           "type": "relates-to",
-          "target": "RSK-001"
+          "target": "RSK-001",
+          "_composite": "clientdata/RSK-001"
         }
       ],
       "personality": null,
@@ -932,23 +1460,28 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "habby-profile"
+          "target": "habby-profile",
+          "_composite": "habby/habby-profile"
         },
         {
           "type": "relates-to",
-          "target": "habby-status"
+          "target": "habby-status",
+          "_composite": "habby/habby-status"
         },
         {
           "type": "relates-to",
-          "target": "habby-structure"
+          "target": "habby-structure",
+          "_composite": "habby/habby-structure"
         },
         {
           "type": "relates-to",
-          "target": "habby-commands"
+          "target": "habby-commands",
+          "_composite": "habby/habby-commands"
         },
         {
           "type": "relates-to",
-          "target": "workspace"
+          "target": "workspace",
+          "_composite": "workspace"
         }
       ],
       "personality": "trophy goblin",
@@ -970,7 +1503,8 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "habby-structure"
+          "target": "habby-structure",
+          "_composite": "habby/habby-structure"
         }
       ],
       "personality": null,
@@ -992,15 +1526,18 @@
       "links": [
         {
           "type": "documents",
-          "target": "habby-agent"
+          "target": "habby-agent",
+          "_composite": "habby/habby-agent"
         },
         {
           "type": "relates-to",
-          "target": "habby-dependencies"
+          "target": "habby-dependencies",
+          "_composite": "habby/habby-dependencies"
         },
         {
           "type": "relates-to",
-          "target": "habby-structure"
+          "target": "habby-structure",
+          "_composite": "habby/habby-structure"
         }
       ],
       "personality": null,
@@ -1022,7 +1559,8 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "habby-agent"
+          "target": "habby-agent",
+          "_composite": "habby/habby-agent"
         }
       ],
       "personality": null,
@@ -1044,21 +1582,170 @@
       "links": [
         {
           "type": "documents",
-          "target": "habby-profile"
+          "target": "habby-profile",
+          "_composite": "habby/habby-profile"
         },
         {
           "type": "relates-to",
-          "target": "habby-structure"
+          "target": "habby-structure",
+          "_composite": "habby/habby-structure"
         },
         {
           "type": "relates-to",
-          "target": "habby-commands"
+          "target": "habby-commands",
+          "_composite": "habby/habby-commands"
         }
       ],
       "personality": null,
       "name": null,
       "description": null,
       "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "DEC-001",
+      "type": "decision",
+      "project": "habby",
+      "file": "projects/habby/knowledge/DEC-001.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/habby/index.html",
+        "/home/habby/style.css"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "habby-agent",
+          "_composite": "habby/habby-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "habby-status",
+          "_composite": "habby/habby-status"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "DEC-002",
+      "type": "decision",
+      "project": "habby",
+      "file": "projects/habby/knowledge/DEC-002.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "habby-agent",
+          "_composite": "habby/habby-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "DEC-003",
+      "type": "decision",
+      "project": "habby",
+      "file": "projects/habby/knowledge/DEC-003.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "habby-agent",
+          "_composite": "habby/habby-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "DEC-004",
+      "type": "decision",
+      "project": "habby",
+      "file": "projects/habby/knowledge/DEC-004.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "habby-agent",
+          "_composite": "habby/habby-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "DEC-005",
+      "type": "decision",
+      "project": "habby",
+      "file": "projects/habby/knowledge/DEC-005.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "habby-agent",
+          "_composite": "habby/habby-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "DEC-006",
+      "type": "decision",
+      "project": "habby",
+      "file": "projects/habby/knowledge/DEC-006.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "habby-agent",
+          "_composite": "habby/habby-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
     },
     {
       "id": "habby-profile",
@@ -1074,23 +1761,28 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "habby-agent"
+          "target": "habby-agent",
+          "_composite": "habby/habby-agent"
         },
         {
           "type": "relates-to",
-          "target": "habby-status"
+          "target": "habby-status",
+          "_composite": "habby/habby-status"
         },
         {
           "type": "relates-to",
-          "target": "habby-structure"
+          "target": "habby-structure",
+          "_composite": "habby/habby-structure"
         },
         {
           "type": "relates-to",
-          "target": "habby-dependencies"
+          "target": "habby-dependencies",
+          "_composite": "habby/habby-dependencies"
         },
         {
           "type": "relates-to",
-          "target": "habby-commands"
+          "target": "habby-commands",
+          "_composite": "habby/habby-commands"
         }
       ],
       "personality": null,
@@ -1112,15 +1804,18 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "habby-agent"
+          "target": "habby-agent",
+          "_composite": "habby/habby-agent"
         },
         {
           "type": "relates-to",
-          "target": "habby-profile"
+          "target": "habby-profile",
+          "_composite": "habby/habby-profile"
         },
         {
           "type": "relates-to",
-          "target": "habby-structure"
+          "target": "habby-structure",
+          "_composite": "habby/habby-structure"
         }
       ],
       "personality": null,
@@ -1142,11 +1837,46 @@
       "links": [
         {
           "type": "documents",
-          "target": "habby-agent"
+          "target": "habby-agent",
+          "_composite": "habby/habby-agent"
         },
         {
           "type": "relates-to",
-          "target": "habby-profile"
+          "target": "habby-profile",
+          "_composite": "habby/habby-profile"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "TASK-001",
+      "type": "task",
+      "project": "habby",
+      "file": "projects/habby/tasks/TASK-001.md",
+      "status": "open",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "habby-agent",
+          "_composite": "habby/habby-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "habby-status",
+          "_composite": "habby/habby-status"
+        },
+        {
+          "type": "relates-to",
+          "target": "DEC-001",
+          "_composite": "habby/DEC-001"
         }
       ],
       "personality": null,
@@ -1168,23 +1898,28 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "mcky-space-profile"
+          "target": "mcky-space-profile",
+          "_composite": "mcky.space/mcky-space-profile"
         },
         {
           "type": "relates-to",
-          "target": "mcky-status"
+          "target": "mcky-status",
+          "_composite": "mcky.space/mcky-status"
         },
         {
           "type": "relates-to",
-          "target": "mcky-structure"
+          "target": "mcky-structure",
+          "_composite": "mcky.space/mcky-structure"
         },
         {
           "type": "relates-to",
-          "target": "mcky-commands"
+          "target": "mcky-commands",
+          "_composite": "mcky.space/mcky-commands"
         },
         {
           "type": "relates-to",
-          "target": "workspace"
+          "target": "workspace",
+          "_composite": "workspace"
         }
       ],
       "personality": "terminal hipster",
@@ -1206,7 +1941,8 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "mcky-structure"
+          "target": "mcky-structure",
+          "_composite": "mcky.space/mcky-structure"
         }
       ],
       "personality": null,
@@ -1228,15 +1964,18 @@
       "links": [
         {
           "type": "documents",
-          "target": "mcky-agent"
+          "target": "mcky-agent",
+          "_composite": "mcky.space/mcky-agent"
         },
         {
           "type": "relates-to",
-          "target": "mcky-dependencies"
+          "target": "mcky-dependencies",
+          "_composite": "mcky.space/mcky-dependencies"
         },
         {
           "type": "relates-to",
-          "target": "mcky-structure"
+          "target": "mcky-structure",
+          "_composite": "mcky.space/mcky-structure"
         }
       ],
       "personality": null,
@@ -1258,7 +1997,8 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "mcky-agent"
+          "target": "mcky-agent",
+          "_composite": "mcky.space/mcky-agent"
         }
       ],
       "personality": null,
@@ -1280,15 +2020,228 @@
       "links": [
         {
           "type": "documents",
-          "target": "mcky-space-profile"
+          "target": "mcky-space-profile",
+          "_composite": "mcky.space/mcky-space-profile"
         },
         {
           "type": "relates-to",
-          "target": "mcky-structure"
+          "target": "mcky-structure",
+          "_composite": "mcky.space/mcky-structure"
         },
         {
           "type": "relates-to",
-          "target": "mcky-commands"
+          "target": "mcky-commands",
+          "_composite": "mcky.space/mcky-commands"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "COMP-003",
+      "type": "component",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/knowledge/COMP-003.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/mcky.space/src/api",
+        "/home/mcky.space/src/components",
+        "/home/mcky.space/src/data",
+        "/home/mcky.space/src/layouts",
+        "/home/mcky.space/src/lib",
+        "/home/mcky.space/src/pages"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "mcky-space-profile",
+          "_composite": "mcky.space/mcky-space-profile"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "DEC-001",
+      "type": "decision",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/knowledge/DEC-001.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/mcky.space/src/styles/global.css"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "mcky-agent",
+          "_composite": "mcky.space/mcky-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "mcky-status",
+          "_composite": "mcky.space/mcky-status"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "DEC-012",
+      "type": "decision",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/knowledge/DEC-012.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "mcky-agent",
+          "_composite": "mcky.space/mcky-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "DEC-013",
+      "type": "decision",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/knowledge/DEC-013.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "mcky-agent",
+          "_composite": "mcky.space/mcky-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "DEC-014",
+      "type": "decision",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/knowledge/DEC-014.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "mcky-agent",
+          "_composite": "mcky.space/mcky-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "DEC-015",
+      "type": "decision",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/knowledge/DEC-015.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "mcky-agent",
+          "_composite": "mcky.space/mcky-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "DEC-016",
+      "type": "decision",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/knowledge/DEC-016.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "mcky-agent",
+          "_composite": "mcky.space/mcky-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "RSK-001",
+      "type": "risk",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/knowledge/RSK-001.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/mcky.space/astro.config.mjs"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "mcky-agent",
+          "_composite": "mcky.space/mcky-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "mcky-status",
+          "_composite": "mcky.space/mcky-status"
+        },
+        {
+          "type": "relates-to",
+          "target": "DEC-001",
+          "_composite": "mcky.space/DEC-001"
         }
       ],
       "personality": null,
@@ -1310,23 +2263,28 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "mcky-agent"
+          "target": "mcky-agent",
+          "_composite": "mcky.space/mcky-agent"
         },
         {
           "type": "relates-to",
-          "target": "mcky-status"
+          "target": "mcky-status",
+          "_composite": "mcky.space/mcky-status"
         },
         {
           "type": "relates-to",
-          "target": "mcky-structure"
+          "target": "mcky-structure",
+          "_composite": "mcky.space/mcky-structure"
         },
         {
           "type": "relates-to",
-          "target": "mcky-dependencies"
+          "target": "mcky-dependencies",
+          "_composite": "mcky.space/mcky-dependencies"
         },
         {
           "type": "relates-to",
-          "target": "mcky-commands"
+          "target": "mcky-commands",
+          "_composite": "mcky.space/mcky-commands"
         }
       ],
       "personality": null,
@@ -1348,15 +2306,18 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "mcky-agent"
+          "target": "mcky-agent",
+          "_composite": "mcky.space/mcky-agent"
         },
         {
           "type": "relates-to",
-          "target": "mcky-space-profile"
+          "target": "mcky-space-profile",
+          "_composite": "mcky.space/mcky-space-profile"
         },
         {
           "type": "relates-to",
-          "target": "mcky-structure"
+          "target": "mcky-structure",
+          "_composite": "mcky.space/mcky-structure"
         }
       ],
       "personality": null,
@@ -1378,11 +2339,51 @@
       "links": [
         {
           "type": "documents",
-          "target": "mcky-agent"
+          "target": "mcky-agent",
+          "_composite": "mcky.space/mcky-agent"
         },
         {
           "type": "relates-to",
-          "target": "mcky-space-profile"
+          "target": "mcky-space-profile",
+          "_composite": "mcky.space/mcky-space-profile"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "TASK-001",
+      "type": "task",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/tasks/TASK-001.md",
+      "status": "open",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "mcky-agent",
+          "_composite": "mcky.space/mcky-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "mcky-status",
+          "_composite": "mcky.space/mcky-status"
+        },
+        {
+          "type": "relates-to",
+          "target": "RSK-001",
+          "_composite": "mcky.space/RSK-001"
+        },
+        {
+          "type": "relates-to",
+          "target": "DEC-001",
+          "_composite": "mcky.space/DEC-001"
         }
       ],
       "personality": null,
@@ -1404,23 +2405,28 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "truck-profile"
+          "target": "truck-profile",
+          "_composite": "truck/truck-profile"
         },
         {
           "type": "relates-to",
-          "target": "truck-status"
+          "target": "truck-status",
+          "_composite": "truck/truck-status"
         },
         {
           "type": "relates-to",
-          "target": "truck-structure"
+          "target": "truck-structure",
+          "_composite": "truck/truck-structure"
         },
         {
           "type": "relates-to",
-          "target": "truck-commands"
+          "target": "truck-commands",
+          "_composite": "truck/truck-commands"
         },
         {
           "type": "relates-to",
-          "target": "workspace"
+          "target": "workspace",
+          "_composite": "workspace"
         }
       ],
       "personality": "overtime enthusiast",
@@ -1442,7 +2448,8 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "truck-structure"
+          "target": "truck-structure",
+          "_composite": "truck/truck-structure"
         }
       ],
       "personality": null,
@@ -1464,15 +2471,18 @@
       "links": [
         {
           "type": "documents",
-          "target": "truck-agent"
+          "target": "truck-agent",
+          "_composite": "truck/truck-agent"
         },
         {
           "type": "relates-to",
-          "target": "truck-dependencies"
+          "target": "truck-dependencies",
+          "_composite": "truck/truck-dependencies"
         },
         {
           "type": "relates-to",
-          "target": "truck-structure"
+          "target": "truck-structure",
+          "_composite": "truck/truck-structure"
         }
       ],
       "personality": null,
@@ -1494,7 +2504,8 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "truck-agent"
+          "target": "truck-agent",
+          "_composite": "truck/truck-agent"
         }
       ],
       "personality": null,
@@ -1516,15 +2527,229 @@
       "links": [
         {
           "type": "documents",
-          "target": "truck-profile"
+          "target": "truck-profile",
+          "_composite": "truck/truck-profile"
         },
         {
           "type": "relates-to",
-          "target": "truck-structure"
+          "target": "truck-structure",
+          "_composite": "truck/truck-structure"
         },
         {
           "type": "relates-to",
-          "target": "truck-commands"
+          "target": "truck-commands",
+          "_composite": "truck/truck-commands"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "COMP-002",
+      "type": "component",
+      "project": "truck",
+      "file": "projects/truck/knowledge/COMP-002.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/truck/src/components",
+        "/home/truck/src/hooks",
+        "/home/truck/src/lib",
+        "/home/truck/src/styles",
+        "/home/truck/src/test",
+        "/home/truck/src/utils"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "truck-profile",
+          "_composite": "truck/truck-profile"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "DEC-001",
+      "type": "decision",
+      "project": "truck",
+      "file": "projects/truck/knowledge/DEC-001.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/truck/vite.config.ts",
+        "/home/truck/public/sw.js"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "truck-agent",
+          "_composite": "truck/truck-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-status",
+          "_composite": "truck/truck-status"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "DEC-003",
+      "type": "decision",
+      "project": "truck",
+      "file": "projects/truck/knowledge/DEC-003.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "truck-agent",
+          "_composite": "truck/truck-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "DEC-004",
+      "type": "decision",
+      "project": "truck",
+      "file": "projects/truck/knowledge/DEC-004.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "truck-agent",
+          "_composite": "truck/truck-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "DEC-005",
+      "type": "decision",
+      "project": "truck",
+      "file": "projects/truck/knowledge/DEC-005.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "truck-agent",
+          "_composite": "truck/truck-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "DEC-006",
+      "type": "decision",
+      "project": "truck",
+      "file": "projects/truck/knowledge/DEC-006.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "truck-agent",
+          "_composite": "truck/truck-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "DEC-007",
+      "type": "decision",
+      "project": "truck",
+      "file": "projects/truck/knowledge/DEC-007.md",
+      "status": "active",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "truck-agent",
+          "_composite": "truck/truck-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04"
+    },
+    {
+      "id": "LSN-001",
+      "type": "lesson",
+      "project": "truck",
+      "file": "projects/truck/knowledge/LSN-001.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/truck/src/lib/supabase.ts"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "truck-agent",
+          "_composite": "truck/truck-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-status",
+          "_composite": "truck/truck-status"
+        },
+        {
+          "type": "relates-to",
+          "target": "DEC-001",
+          "_composite": "truck/DEC-001"
         }
       ],
       "personality": null,
@@ -1546,23 +2771,28 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "truck-agent"
+          "target": "truck-agent",
+          "_composite": "truck/truck-agent"
         },
         {
           "type": "relates-to",
-          "target": "truck-status"
+          "target": "truck-status",
+          "_composite": "truck/truck-status"
         },
         {
           "type": "relates-to",
-          "target": "truck-structure"
+          "target": "truck-structure",
+          "_composite": "truck/truck-structure"
         },
         {
           "type": "relates-to",
-          "target": "truck-dependencies"
+          "target": "truck-dependencies",
+          "_composite": "truck/truck-dependencies"
         },
         {
           "type": "relates-to",
-          "target": "truck-commands"
+          "target": "truck-commands",
+          "_composite": "truck/truck-commands"
         }
       ],
       "personality": null,
@@ -1584,15 +2814,18 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "truck-agent"
+          "target": "truck-agent",
+          "_composite": "truck/truck-agent"
         },
         {
           "type": "relates-to",
-          "target": "truck-profile"
+          "target": "truck-profile",
+          "_composite": "truck/truck-profile"
         },
         {
           "type": "relates-to",
-          "target": "truck-structure"
+          "target": "truck-structure",
+          "_composite": "truck/truck-structure"
         }
       ],
       "personality": null,
@@ -1614,11 +2847,46 @@
       "links": [
         {
           "type": "documents",
-          "target": "truck-agent"
+          "target": "truck-agent",
+          "_composite": "truck/truck-agent"
         },
         {
           "type": "relates-to",
-          "target": "truck-profile"
+          "target": "truck-profile",
+          "_composite": "truck/truck-profile"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "TASK-001",
+      "type": "task",
+      "project": "truck",
+      "file": "projects/truck/tasks/TASK-001.md",
+      "status": "open",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "truck-agent",
+          "_composite": "truck/truck-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-status",
+          "_composite": "truck/truck-status"
+        },
+        {
+          "type": "relates-to",
+          "target": "LSN-001",
+          "_composite": "truck/LSN-001"
         }
       ],
       "personality": null,
@@ -1640,14 +2908,44 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "writer-profile"
+          "target": "writer-profile",
+          "_composite": "writer/writer-profile"
         },
         {
           "type": "relates-to",
-          "target": "workspace"
+          "target": "workspace",
+          "_composite": "workspace"
         }
       ],
       "personality": "word goblin",
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "DEC-001",
+      "type": "decision",
+      "project": "writer",
+      "file": "projects/writer/knowledge/DEC-001.md",
+      "status": "active",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "writer-agent",
+          "_composite": "writer/writer-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "writer-profile",
+          "_composite": "writer/writer-profile"
+        }
+      ],
+      "personality": null,
       "name": null,
       "description": null,
       "last_updated": "2026-07-04T00:00:00.000Z"
@@ -1666,7 +2964,41 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "writer-agent"
+          "target": "writer-agent",
+          "_composite": "writer/writer-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "TASK-001",
+      "type": "task",
+      "project": "writer",
+      "file": "projects/writer/tasks/TASK-001.md",
+      "status": "open",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "writer-agent",
+          "_composite": "writer/writer-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "writer-profile",
+          "_composite": "writer/writer-profile"
+        },
+        {
+          "type": "relates-to",
+          "target": "DEC-001",
+          "_composite": "writer/DEC-001"
         }
       ],
       "personality": null,
@@ -1899,933 +3231,1791 @@
   "edges": [
     {
       "source": "cafe-agent",
+      "sourceProject": "cafe",
       "target": "cafe-profile",
+      "targetProject": "cafe",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "cafe-agent",
+      "sourceProject": "cafe",
       "target": "cafe-status",
+      "targetProject": "cafe",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "cafe-agent",
+      "sourceProject": "cafe",
       "target": "cafe-structure",
+      "targetProject": "cafe",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "cafe-agent",
+      "sourceProject": "cafe",
       "target": "cafe-commands",
+      "targetProject": "cafe",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "cafe-agent",
+      "sourceProject": "cafe",
       "target": "workspace",
+      "targetProject": null,
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "cafe-assets",
+      "sourceProject": "cafe",
       "target": "cafe-structure",
+      "targetProject": "cafe",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "cafe-commands",
+      "sourceProject": "cafe",
       "target": "cafe-agent",
+      "targetProject": "cafe",
       "type": "documents",
       "label": "documents"
     },
     {
       "source": "cafe-commands",
+      "sourceProject": "cafe",
       "target": "cafe-dependencies",
+      "targetProject": "cafe",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "cafe-commands",
+      "sourceProject": "cafe",
       "target": "cafe-structure",
+      "targetProject": "cafe",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "cafe-decisions",
+      "sourceProject": "cafe",
       "target": "cafe-agent",
+      "targetProject": "cafe",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "cafe-dependencies",
+      "sourceProject": "cafe",
       "target": "cafe-profile",
+      "targetProject": "cafe",
       "type": "documents",
       "label": "documents"
     },
     {
       "source": "cafe-dependencies",
+      "sourceProject": "cafe",
       "target": "cafe-structure",
+      "targetProject": "cafe",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "cafe-dependencies",
+      "sourceProject": "cafe",
       "target": "cafe-commands",
+      "targetProject": "cafe",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "cafe-profile",
+      "source": "COMP-001",
+      "sourceProject": "cafe",
+      "target": "cafe-profile",
+      "targetProject": "cafe",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "DEC-001",
+      "sourceProject": "cafe",
       "target": "cafe-agent",
+      "targetProject": "cafe",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "cafe-profile",
+      "source": "DEC-001",
+      "sourceProject": "cafe",
       "target": "cafe-status",
+      "targetProject": "cafe",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "cafe-profile",
-      "target": "cafe-structure",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-profile",
-      "target": "cafe-dependencies",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-profile",
-      "target": "cafe-commands",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-status",
+      "source": "DEC-002",
+      "sourceProject": "cafe",
       "target": "cafe-agent",
+      "targetProject": "cafe",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "cafe-status",
-      "target": "cafe-profile",
+      "source": "DEC-003",
+      "sourceProject": "cafe",
+      "target": "cafe-agent",
+      "targetProject": "cafe",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "cafe-status",
+      "source": "DEC-004",
+      "sourceProject": "cafe",
+      "target": "cafe-agent",
+      "targetProject": "cafe",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "DEC-005",
+      "sourceProject": "cafe",
+      "target": "cafe-agent",
+      "targetProject": "cafe",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "DEC-006",
+      "sourceProject": "cafe",
+      "target": "cafe-agent",
+      "targetProject": "cafe",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "LSN-001",
+      "sourceProject": "cafe",
+      "target": "cafe-agent",
+      "targetProject": "cafe",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "LSN-001",
+      "sourceProject": "cafe",
+      "target": "DEC-001",
+      "targetProject": "cafe",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-profile",
+      "sourceProject": "cafe",
+      "target": "cafe-agent",
+      "targetProject": "cafe",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-profile",
+      "sourceProject": "cafe",
+      "target": "cafe-status",
+      "targetProject": "cafe",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-profile",
+      "sourceProject": "cafe",
       "target": "cafe-structure",
+      "targetProject": "cafe",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-profile",
+      "sourceProject": "cafe",
+      "target": "cafe-dependencies",
+      "targetProject": "cafe",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-profile",
+      "sourceProject": "cafe",
+      "target": "cafe-commands",
+      "targetProject": "cafe",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-status",
+      "sourceProject": "cafe",
+      "target": "cafe-agent",
+      "targetProject": "cafe",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-status",
+      "sourceProject": "cafe",
+      "target": "cafe-profile",
+      "targetProject": "cafe",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-status",
+      "sourceProject": "cafe",
+      "target": "cafe-structure",
+      "targetProject": "cafe",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "cafe-structure",
+      "sourceProject": "cafe",
       "target": "cafe-agent",
+      "targetProject": "cafe",
       "type": "documents",
       "label": "documents"
     },
     {
       "source": "cafe-structure",
+      "sourceProject": "cafe",
       "target": "cafe-profile",
+      "targetProject": "cafe",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-001",
+      "sourceProject": "cafe",
+      "target": "cafe-agent",
+      "targetProject": "cafe",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-001",
+      "sourceProject": "cafe",
+      "target": "cafe-status",
+      "targetProject": "cafe",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-001",
+      "sourceProject": "cafe",
+      "target": "LSN-001",
+      "targetProject": "cafe",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "cafe-v2-assets",
+      "sourceProject": "cafe-v2",
       "target": "cafe-v2-structure",
+      "targetProject": "cafe-v2",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "cafe-v2-commands",
+      "sourceProject": "cafe-v2",
       "target": "cafe-v2-dependencies",
+      "targetProject": "cafe-v2",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "cafe-v2-commands",
+      "sourceProject": "cafe-v2",
       "target": "cafe-v2-structure",
+      "targetProject": "cafe-v2",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "cafe-v2-dependencies",
+      "sourceProject": "cafe-v2",
       "target": "cafe-v2-profile",
+      "targetProject": "cafe-v2",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "cafe-v2-dependencies",
+      "sourceProject": "cafe-v2",
       "target": "cafe-v2-structure",
+      "targetProject": "cafe-v2",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "cafe-v2-dependencies",
+      "sourceProject": "cafe-v2",
       "target": "cafe-v2-commands",
+      "targetProject": "cafe-v2",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "cafe-v2-profile",
+      "source": "DEC-001",
+      "sourceProject": "cafe-v2",
+      "target": "cafe-v2-profile",
+      "targetProject": "cafe-v2",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "DEC-001",
+      "sourceProject": "cafe-v2",
       "target": "cafe-v2-status",
+      "targetProject": "cafe-v2",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "cafe-v2-profile",
+      "sourceProject": "cafe-v2",
+      "target": "cafe-v2-status",
+      "targetProject": "cafe-v2",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "cafe-v2-profile",
+      "sourceProject": "cafe-v2",
       "target": "cafe-v2-structure",
+      "targetProject": "cafe-v2",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "cafe-v2-profile",
+      "sourceProject": "cafe-v2",
       "target": "cafe-v2-dependencies",
+      "targetProject": "cafe-v2",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "cafe-v2-profile",
+      "sourceProject": "cafe-v2",
       "target": "cafe-v2-commands",
+      "targetProject": "cafe-v2",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "cafe-v2-status",
+      "sourceProject": "cafe-v2",
       "target": "cafe-v2-profile",
+      "targetProject": "cafe-v2",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "cafe-v2-status",
+      "sourceProject": "cafe-v2",
       "target": "cafe-v2-structure",
+      "targetProject": "cafe-v2",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "cafe-v2-structure",
+      "sourceProject": "cafe-v2",
       "target": "cafe-v2-profile",
+      "targetProject": "cafe-v2",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "clientdata-agent",
-      "target": "clientdata-profile",
+      "source": "TASK-001",
+      "sourceProject": "cafe-v2",
+      "target": "cafe-v2-profile",
+      "targetProject": "cafe-v2",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "clientdata-agent",
-      "target": "clientdata-status",
+      "source": "TASK-001",
+      "sourceProject": "cafe-v2",
+      "target": "cafe-v2-status",
+      "targetProject": "cafe-v2",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "clientdata-agent",
-      "target": "clientdata-structure",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "clientdata-agent",
-      "target": "clientdata-commands",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "clientdata-agent",
-      "target": "workspace",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "clientdata-assets",
-      "target": "clientdata-structure",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "clientdata-assets",
-      "target": "clientdata-profile",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "clientdata-commands",
-      "target": "clientdata-agent",
-      "type": "documents",
-      "label": "documents"
-    },
-    {
-      "source": "clientdata-commands",
-      "target": "clientdata-dependencies",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "clientdata-commands",
-      "target": "clientdata-structure",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "clientdata-decisions",
-      "target": "clientdata-agent",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "clientdata-decisions",
-      "target": "clientdata-status",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "clientdata-dependencies",
-      "target": "clientdata-profile",
-      "type": "documents",
-      "label": "documents"
-    },
-    {
-      "source": "clientdata-dependencies",
-      "target": "clientdata-structure",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "clientdata-dependencies",
-      "target": "clientdata-commands",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "COMP-001",
+      "source": "TASK-001",
+      "sourceProject": "cafe-v2",
       "target": "DEC-001",
+      "targetProject": "cafe-v2",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-001",
+      "sourceProject": "cafe-v2",
+      "target": "cafe-v2-profile",
+      "targetProject": "cafe-v2",
+      "type": "supersedes",
+      "label": "supersedes"
+    },
+    {
+      "source": "clientdata-agent",
+      "sourceProject": "clientdata",
+      "target": "clientdata-profile",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-agent",
+      "sourceProject": "clientdata",
+      "target": "clientdata-status",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-agent",
+      "sourceProject": "clientdata",
+      "target": "clientdata-structure",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-agent",
+      "sourceProject": "clientdata",
+      "target": "clientdata-commands",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-agent",
+      "sourceProject": "clientdata",
+      "target": "workspace",
+      "targetProject": null,
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-assets",
+      "sourceProject": "clientdata",
+      "target": "clientdata-structure",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-assets",
+      "sourceProject": "clientdata",
+      "target": "clientdata-profile",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-commands",
+      "sourceProject": "clientdata",
+      "target": "clientdata-agent",
+      "targetProject": "clientdata",
+      "type": "documents",
+      "label": "documents"
+    },
+    {
+      "source": "clientdata-commands",
+      "sourceProject": "clientdata",
+      "target": "clientdata-dependencies",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-commands",
+      "sourceProject": "clientdata",
+      "target": "clientdata-structure",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-decisions",
+      "sourceProject": "clientdata",
+      "target": "clientdata-agent",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-decisions",
+      "sourceProject": "clientdata",
+      "target": "clientdata-status",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-dependencies",
+      "sourceProject": "clientdata",
+      "target": "clientdata-profile",
+      "targetProject": "clientdata",
+      "type": "documents",
+      "label": "documents"
+    },
+    {
+      "source": "clientdata-dependencies",
+      "sourceProject": "clientdata",
+      "target": "clientdata-structure",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "clientdata-dependencies",
+      "sourceProject": "clientdata",
+      "target": "clientdata-commands",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "COMP-001",
+      "sourceProject": "clientdata",
+      "target": "DEC-001",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "COMP-001",
+      "sourceProject": "clientdata",
       "target": "TASK-001",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "COMP-001",
+      "sourceProject": "clientdata",
       "target": "LSN-001",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "COMP-001",
+      "sourceProject": "clientdata",
       "target": "RSK-001",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "COMP-002",
+      "sourceProject": "clientdata",
+      "target": "clientdata-profile",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "DEC-001",
+      "sourceProject": "clientdata",
       "target": "TASK-001",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "DEC-001",
+      "sourceProject": "clientdata",
       "target": "COMP-001",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "DEC-002",
+      "sourceProject": "clientdata",
+      "target": "clientdata-agent",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "DEC-003",
+      "sourceProject": "clientdata",
+      "target": "clientdata-agent",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "DEC-004",
+      "sourceProject": "clientdata",
+      "target": "clientdata-agent",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "DEC-005",
+      "sourceProject": "clientdata",
+      "target": "clientdata-agent",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "DEC-006",
+      "sourceProject": "clientdata",
+      "target": "clientdata-agent",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "LSN-001",
+      "sourceProject": "clientdata",
       "target": "TASK-001",
+      "targetProject": "clientdata",
       "type": "caused-by",
       "label": "caused-by"
     },
     {
       "source": "LSN-001",
+      "sourceProject": "clientdata",
       "target": "DEC-001",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "RSK-001",
+      "sourceProject": "clientdata",
       "target": "DEC-001",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "RSK-001",
+      "sourceProject": "clientdata",
       "target": "TASK-001",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "clientdata-profile",
+      "sourceProject": "clientdata",
       "target": "clientdata-agent",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "clientdata-profile",
+      "sourceProject": "clientdata",
       "target": "clientdata-status",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "clientdata-profile",
+      "sourceProject": "clientdata",
       "target": "clientdata-structure",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "clientdata-profile",
+      "sourceProject": "clientdata",
       "target": "clientdata-dependencies",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "clientdata-profile",
+      "sourceProject": "clientdata",
       "target": "clientdata-commands",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "clientdata-status",
+      "sourceProject": "clientdata",
       "target": "clientdata-agent",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "clientdata-status",
+      "sourceProject": "clientdata",
       "target": "clientdata-profile",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "clientdata-status",
+      "sourceProject": "clientdata",
       "target": "clientdata-structure",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "clientdata-structure",
+      "sourceProject": "clientdata",
       "target": "clientdata-agent",
+      "targetProject": "clientdata",
       "type": "documents",
       "label": "documents"
     },
     {
       "source": "clientdata-structure",
+      "sourceProject": "clientdata",
       "target": "clientdata-profile",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "clientdata-structure",
+      "sourceProject": "clientdata",
       "target": "clientdata-dependencies",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "clientdata-structure",
+      "sourceProject": "clientdata",
       "target": "clientdata-commands",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "TASK-001",
+      "sourceProject": "clientdata",
       "target": "DEC-001",
+      "targetProject": "clientdata",
       "type": "caused-by",
       "label": "caused-by"
     },
     {
       "source": "TASK-001",
+      "sourceProject": "clientdata",
       "target": "LSN-001",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "TASK-001",
+      "sourceProject": "clientdata",
       "target": "RSK-001",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "TASK-002",
+      "sourceProject": "clientdata",
       "target": "LSN-001",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "TASK-002",
+      "sourceProject": "clientdata",
       "target": "RSK-001",
+      "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "habby-agent",
+      "sourceProject": "habby",
       "target": "habby-profile",
+      "targetProject": "habby",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "habby-agent",
+      "sourceProject": "habby",
       "target": "habby-status",
+      "targetProject": "habby",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "habby-agent",
+      "sourceProject": "habby",
       "target": "habby-structure",
+      "targetProject": "habby",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "habby-agent",
+      "sourceProject": "habby",
       "target": "habby-commands",
+      "targetProject": "habby",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "habby-agent",
+      "sourceProject": "habby",
       "target": "workspace",
+      "targetProject": null,
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "habby-assets",
+      "sourceProject": "habby",
       "target": "habby-structure",
+      "targetProject": "habby",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "habby-commands",
+      "sourceProject": "habby",
       "target": "habby-agent",
+      "targetProject": "habby",
       "type": "documents",
       "label": "documents"
     },
     {
       "source": "habby-commands",
+      "sourceProject": "habby",
       "target": "habby-dependencies",
+      "targetProject": "habby",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "habby-commands",
+      "sourceProject": "habby",
       "target": "habby-structure",
+      "targetProject": "habby",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "habby-decisions",
+      "sourceProject": "habby",
       "target": "habby-agent",
+      "targetProject": "habby",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "habby-dependencies",
+      "sourceProject": "habby",
       "target": "habby-profile",
+      "targetProject": "habby",
       "type": "documents",
       "label": "documents"
     },
     {
       "source": "habby-dependencies",
+      "sourceProject": "habby",
       "target": "habby-structure",
+      "targetProject": "habby",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "habby-dependencies",
+      "sourceProject": "habby",
       "target": "habby-commands",
+      "targetProject": "habby",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "habby-profile",
+      "source": "DEC-001",
+      "sourceProject": "habby",
       "target": "habby-agent",
+      "targetProject": "habby",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "habby-profile",
+      "source": "DEC-001",
+      "sourceProject": "habby",
       "target": "habby-status",
+      "targetProject": "habby",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "habby-profile",
-      "target": "habby-structure",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "habby-profile",
-      "target": "habby-dependencies",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "habby-profile",
-      "target": "habby-commands",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "habby-status",
+      "source": "DEC-002",
+      "sourceProject": "habby",
       "target": "habby-agent",
+      "targetProject": "habby",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "habby-status",
-      "target": "habby-profile",
+      "source": "DEC-003",
+      "sourceProject": "habby",
+      "target": "habby-agent",
+      "targetProject": "habby",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "habby-status",
+      "source": "DEC-004",
+      "sourceProject": "habby",
+      "target": "habby-agent",
+      "targetProject": "habby",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "DEC-005",
+      "sourceProject": "habby",
+      "target": "habby-agent",
+      "targetProject": "habby",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "DEC-006",
+      "sourceProject": "habby",
+      "target": "habby-agent",
+      "targetProject": "habby",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-profile",
+      "sourceProject": "habby",
+      "target": "habby-agent",
+      "targetProject": "habby",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-profile",
+      "sourceProject": "habby",
+      "target": "habby-status",
+      "targetProject": "habby",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-profile",
+      "sourceProject": "habby",
       "target": "habby-structure",
+      "targetProject": "habby",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-profile",
+      "sourceProject": "habby",
+      "target": "habby-dependencies",
+      "targetProject": "habby",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-profile",
+      "sourceProject": "habby",
+      "target": "habby-commands",
+      "targetProject": "habby",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-status",
+      "sourceProject": "habby",
+      "target": "habby-agent",
+      "targetProject": "habby",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-status",
+      "sourceProject": "habby",
+      "target": "habby-profile",
+      "targetProject": "habby",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "habby-status",
+      "sourceProject": "habby",
+      "target": "habby-structure",
+      "targetProject": "habby",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "habby-structure",
+      "sourceProject": "habby",
       "target": "habby-agent",
+      "targetProject": "habby",
       "type": "documents",
       "label": "documents"
     },
     {
       "source": "habby-structure",
+      "sourceProject": "habby",
       "target": "habby-profile",
+      "targetProject": "habby",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-001",
+      "sourceProject": "habby",
+      "target": "habby-agent",
+      "targetProject": "habby",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-001",
+      "sourceProject": "habby",
+      "target": "habby-status",
+      "targetProject": "habby",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-001",
+      "sourceProject": "habby",
+      "target": "DEC-001",
+      "targetProject": "habby",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "mcky-agent",
+      "sourceProject": "mcky.space",
       "target": "mcky-space-profile",
+      "targetProject": "mcky.space",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "mcky-agent",
+      "sourceProject": "mcky.space",
       "target": "mcky-status",
+      "targetProject": "mcky.space",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "mcky-agent",
+      "sourceProject": "mcky.space",
       "target": "mcky-structure",
+      "targetProject": "mcky.space",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "mcky-agent",
+      "sourceProject": "mcky.space",
       "target": "mcky-commands",
+      "targetProject": "mcky.space",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "mcky-agent",
+      "sourceProject": "mcky.space",
       "target": "workspace",
+      "targetProject": null,
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "mcky-assets",
+      "sourceProject": "mcky.space",
       "target": "mcky-structure",
+      "targetProject": "mcky.space",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "mcky-commands",
+      "sourceProject": "mcky.space",
       "target": "mcky-agent",
+      "targetProject": "mcky.space",
       "type": "documents",
       "label": "documents"
     },
     {
       "source": "mcky-commands",
+      "sourceProject": "mcky.space",
       "target": "mcky-dependencies",
+      "targetProject": "mcky.space",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "mcky-commands",
+      "sourceProject": "mcky.space",
       "target": "mcky-structure",
+      "targetProject": "mcky.space",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "mcky-decisions",
+      "sourceProject": "mcky.space",
       "target": "mcky-agent",
+      "targetProject": "mcky.space",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "mcky-dependencies",
+      "sourceProject": "mcky.space",
       "target": "mcky-space-profile",
+      "targetProject": "mcky.space",
       "type": "documents",
       "label": "documents"
     },
     {
       "source": "mcky-dependencies",
+      "sourceProject": "mcky.space",
       "target": "mcky-structure",
+      "targetProject": "mcky.space",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "mcky-dependencies",
+      "sourceProject": "mcky.space",
       "target": "mcky-commands",
+      "targetProject": "mcky.space",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "mcky-space-profile",
+      "source": "COMP-003",
+      "sourceProject": "mcky.space",
+      "target": "mcky-space-profile",
+      "targetProject": "mcky.space",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "DEC-001",
+      "sourceProject": "mcky.space",
       "target": "mcky-agent",
+      "targetProject": "mcky.space",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "mcky-space-profile",
+      "source": "DEC-001",
+      "sourceProject": "mcky.space",
       "target": "mcky-status",
+      "targetProject": "mcky.space",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "mcky-space-profile",
-      "target": "mcky-structure",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "mcky-space-profile",
-      "target": "mcky-dependencies",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "mcky-space-profile",
-      "target": "mcky-commands",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "mcky-status",
+      "source": "DEC-012",
+      "sourceProject": "mcky.space",
       "target": "mcky-agent",
+      "targetProject": "mcky.space",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "mcky-status",
-      "target": "mcky-space-profile",
+      "source": "DEC-013",
+      "sourceProject": "mcky.space",
+      "target": "mcky-agent",
+      "targetProject": "mcky.space",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "mcky-status",
+      "source": "DEC-014",
+      "sourceProject": "mcky.space",
+      "target": "mcky-agent",
+      "targetProject": "mcky.space",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "DEC-015",
+      "sourceProject": "mcky.space",
+      "target": "mcky-agent",
+      "targetProject": "mcky.space",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "DEC-016",
+      "sourceProject": "mcky.space",
+      "target": "mcky-agent",
+      "targetProject": "mcky.space",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "RSK-001",
+      "sourceProject": "mcky.space",
+      "target": "mcky-agent",
+      "targetProject": "mcky.space",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "RSK-001",
+      "sourceProject": "mcky.space",
+      "target": "mcky-status",
+      "targetProject": "mcky.space",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "RSK-001",
+      "sourceProject": "mcky.space",
+      "target": "DEC-001",
+      "targetProject": "mcky.space",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-space-profile",
+      "sourceProject": "mcky.space",
+      "target": "mcky-agent",
+      "targetProject": "mcky.space",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-space-profile",
+      "sourceProject": "mcky.space",
+      "target": "mcky-status",
+      "targetProject": "mcky.space",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-space-profile",
+      "sourceProject": "mcky.space",
       "target": "mcky-structure",
+      "targetProject": "mcky.space",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-space-profile",
+      "sourceProject": "mcky.space",
+      "target": "mcky-dependencies",
+      "targetProject": "mcky.space",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-space-profile",
+      "sourceProject": "mcky.space",
+      "target": "mcky-commands",
+      "targetProject": "mcky.space",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-status",
+      "sourceProject": "mcky.space",
+      "target": "mcky-agent",
+      "targetProject": "mcky.space",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-status",
+      "sourceProject": "mcky.space",
+      "target": "mcky-space-profile",
+      "targetProject": "mcky.space",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "mcky-status",
+      "sourceProject": "mcky.space",
+      "target": "mcky-structure",
+      "targetProject": "mcky.space",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "mcky-structure",
+      "sourceProject": "mcky.space",
       "target": "mcky-agent",
+      "targetProject": "mcky.space",
       "type": "documents",
       "label": "documents"
     },
     {
       "source": "mcky-structure",
+      "sourceProject": "mcky.space",
       "target": "mcky-space-profile",
+      "targetProject": "mcky.space",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-001",
+      "sourceProject": "mcky.space",
+      "target": "mcky-agent",
+      "targetProject": "mcky.space",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-001",
+      "sourceProject": "mcky.space",
+      "target": "mcky-status",
+      "targetProject": "mcky.space",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-001",
+      "sourceProject": "mcky.space",
+      "target": "RSK-001",
+      "targetProject": "mcky.space",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-001",
+      "sourceProject": "mcky.space",
+      "target": "DEC-001",
+      "targetProject": "mcky.space",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "truck-agent",
+      "sourceProject": "truck",
       "target": "truck-profile",
+      "targetProject": "truck",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "truck-agent",
+      "sourceProject": "truck",
       "target": "truck-status",
+      "targetProject": "truck",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "truck-agent",
+      "sourceProject": "truck",
       "target": "truck-structure",
+      "targetProject": "truck",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "truck-agent",
+      "sourceProject": "truck",
       "target": "truck-commands",
+      "targetProject": "truck",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "truck-agent",
+      "sourceProject": "truck",
       "target": "workspace",
+      "targetProject": null,
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "truck-assets",
+      "sourceProject": "truck",
       "target": "truck-structure",
+      "targetProject": "truck",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "truck-commands",
+      "sourceProject": "truck",
       "target": "truck-agent",
+      "targetProject": "truck",
       "type": "documents",
       "label": "documents"
     },
     {
       "source": "truck-commands",
+      "sourceProject": "truck",
       "target": "truck-dependencies",
+      "targetProject": "truck",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "truck-commands",
+      "sourceProject": "truck",
       "target": "truck-structure",
+      "targetProject": "truck",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "truck-decisions",
+      "sourceProject": "truck",
       "target": "truck-agent",
+      "targetProject": "truck",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "truck-dependencies",
+      "sourceProject": "truck",
       "target": "truck-profile",
+      "targetProject": "truck",
       "type": "documents",
       "label": "documents"
     },
     {
       "source": "truck-dependencies",
+      "sourceProject": "truck",
       "target": "truck-structure",
+      "targetProject": "truck",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "truck-dependencies",
+      "sourceProject": "truck",
       "target": "truck-commands",
+      "targetProject": "truck",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "truck-profile",
+      "source": "COMP-002",
+      "sourceProject": "truck",
+      "target": "truck-profile",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "DEC-001",
+      "sourceProject": "truck",
       "target": "truck-agent",
+      "targetProject": "truck",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "truck-profile",
+      "source": "DEC-001",
+      "sourceProject": "truck",
       "target": "truck-status",
+      "targetProject": "truck",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "truck-profile",
-      "target": "truck-structure",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "truck-profile",
-      "target": "truck-dependencies",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "truck-profile",
-      "target": "truck-commands",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "truck-status",
+      "source": "DEC-003",
+      "sourceProject": "truck",
       "target": "truck-agent",
+      "targetProject": "truck",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "truck-status",
-      "target": "truck-profile",
+      "source": "DEC-004",
+      "sourceProject": "truck",
+      "target": "truck-agent",
+      "targetProject": "truck",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
-      "source": "truck-status",
+      "source": "DEC-005",
+      "sourceProject": "truck",
+      "target": "truck-agent",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "DEC-006",
+      "sourceProject": "truck",
+      "target": "truck-agent",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "DEC-007",
+      "sourceProject": "truck",
+      "target": "truck-agent",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "LSN-001",
+      "sourceProject": "truck",
+      "target": "truck-agent",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "LSN-001",
+      "sourceProject": "truck",
+      "target": "truck-status",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "LSN-001",
+      "sourceProject": "truck",
+      "target": "DEC-001",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-profile",
+      "sourceProject": "truck",
+      "target": "truck-agent",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-profile",
+      "sourceProject": "truck",
+      "target": "truck-status",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-profile",
+      "sourceProject": "truck",
       "target": "truck-structure",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-profile",
+      "sourceProject": "truck",
+      "target": "truck-dependencies",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-profile",
+      "sourceProject": "truck",
+      "target": "truck-commands",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-status",
+      "sourceProject": "truck",
+      "target": "truck-agent",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-status",
+      "sourceProject": "truck",
+      "target": "truck-profile",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "truck-status",
+      "sourceProject": "truck",
+      "target": "truck-structure",
+      "targetProject": "truck",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "truck-structure",
+      "sourceProject": "truck",
       "target": "truck-agent",
+      "targetProject": "truck",
       "type": "documents",
       "label": "documents"
     },
     {
       "source": "truck-structure",
+      "sourceProject": "truck",
       "target": "truck-profile",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-001",
+      "sourceProject": "truck",
+      "target": "truck-agent",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-001",
+      "sourceProject": "truck",
+      "target": "truck-status",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-001",
+      "sourceProject": "truck",
+      "target": "LSN-001",
+      "targetProject": "truck",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "writer-agent",
+      "sourceProject": "writer",
       "target": "writer-profile",
+      "targetProject": "writer",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "writer-agent",
+      "sourceProject": "writer",
       "target": "workspace",
+      "targetProject": null,
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "DEC-001",
+      "sourceProject": "writer",
+      "target": "writer-agent",
+      "targetProject": "writer",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "DEC-001",
+      "sourceProject": "writer",
+      "target": "writer-profile",
+      "targetProject": "writer",
       "type": "relates-to",
       "label": "relates-to"
     },
     {
       "source": "writer-profile",
+      "sourceProject": "writer",
       "target": "writer-agent",
+      "targetProject": "writer",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-001",
+      "sourceProject": "writer",
+      "target": "writer-agent",
+      "targetProject": "writer",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-001",
+      "sourceProject": "writer",
+      "target": "writer-profile",
+      "targetProject": "writer",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-001",
+      "sourceProject": "writer",
+      "target": "DEC-001",
+      "targetProject": "writer",
       "type": "relates-to",
       "label": "relates-to"
     }
   ],
   "projects": {
     "cafe": {
-      "node_count": 8,
-      "by_type": {
-        "agent-profile": 1,
-        "document": 4,
-        "index": 1,
-        "project-profile": 1,
-        "project-status": 1
-      }
-    },
-    "cafe-v2": {
-      "node_count": 7,
-      "by_type": {
-        "document": 4,
-        "index": 1,
-        "project-profile": 1,
-        "project-status": 1
-      }
-    },
-    "clientdata": {
-      "node_count": 14,
+      "node_count": 17,
       "by_type": {
         "agent-profile": 1,
         "document": 4,
         "index": 1,
         "component": 1,
+        "decision": 6,
+        "lesson": 1,
+        "project-profile": 1,
+        "project-status": 1,
+        "task": 1
+      }
+    },
+    "cafe-v2": {
+      "node_count": 9,
+      "by_type": {
+        "document": 4,
+        "index": 1,
         "decision": 1,
+        "project-profile": 1,
+        "project-status": 1,
+        "task": 1
+      }
+    },
+    "clientdata": {
+      "node_count": 20,
+      "by_type": {
+        "agent-profile": 1,
+        "document": 4,
+        "index": 1,
+        "component": 2,
+        "decision": 6,
         "lesson": 1,
         "risk": 1,
         "project-profile": 1,
@@ -2834,40 +5024,52 @@
       }
     },
     "habby": {
-      "node_count": 8,
+      "node_count": 15,
       "by_type": {
         "agent-profile": 1,
         "document": 4,
         "index": 1,
+        "decision": 6,
         "project-profile": 1,
-        "project-status": 1
+        "project-status": 1,
+        "task": 1
       }
     },
     "mcky.space": {
-      "node_count": 8,
+      "node_count": 17,
       "by_type": {
         "agent-profile": 1,
         "document": 4,
         "index": 1,
+        "component": 1,
+        "decision": 6,
+        "risk": 1,
         "project-profile": 1,
-        "project-status": 1
+        "project-status": 1,
+        "task": 1
       }
     },
     "truck": {
-      "node_count": 8,
+      "node_count": 17,
       "by_type": {
         "agent-profile": 1,
         "document": 4,
         "index": 1,
+        "component": 1,
+        "decision": 6,
+        "lesson": 1,
         "project-profile": 1,
-        "project-status": 1
+        "project-status": 1,
+        "task": 1
       }
     },
     "writer": {
-      "node_count": 2,
+      "node_count": 4,
       "by_type": {
         "agent-profile": 1,
-        "project-profile": 1
+        "decision": 1,
+        "project-profile": 1,
+        "task": 1
       }
     }
   }

@@ -2,11 +2,13 @@
  * OKF Graph Indexer
  * Reads all .md files in ~/OKF/, extracts frontmatter, builds a graph registry.
  *
+ * ID resolution: IDs may repeat across projects (e.g., DEC-001 in cafe and clientdata).
+ * The graph builder uses composite keys (project/id) internally but displays the bare ID.
+ * Link targets are resolved with project-awareness: a link from project X prefers a node
+ * in project X with the same bare ID.
+ *
  * Usage: node scripts/build-graph.js
  * Output: writes ~/OKF/graph.json
- *
- * The graph.json is the single fast-lookup registry for agent context injection.
- * It contains all nodes, their link edges, and validation warnings.
  */
 
 const fs = require('fs');
@@ -16,7 +18,6 @@ const yaml = require('js-yaml');
 const OKF_ROOT = path.resolve(__dirname, '..');
 const GRAPH_OUT = path.join(OKF_ROOT, 'graph.json');
 
-// Walk directory recursively, return all .md file paths
 function walkDir(dir) {
   const files = [];
   const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -32,35 +33,39 @@ function walkDir(dir) {
   return files;
 }
 
-// Parse YAML frontmatter from a markdown file using js-yaml
 function parseFrontmatter(filePath) {
   const content = fs.readFileSync(filePath, 'utf-8');
   const match = content.match(/^---\n([\s\S]*?)\n---/);
   if (!match) return null;
-
   try {
     const fm = yaml.load(match[1]);
     return fm || {};
   } catch (err) {
-    console.warn(`  ⚠ YAML parse error in ${path.relative(OKF_ROOT, filePath)}: ${err.message}`);
+    console.warn(`  ⚠ YAML error in ${path.relative(OKF_ROOT, filePath)}: ${err.message}`);
     return {};
   }
+}
+
+// Composite key = "project/id" for project nodes, or "id" for global nodes
+function compositeKey(id, project) {
+  return project ? `${project}/${id}` : id;
 }
 
 function buildGraph() {
   const files = walkDir(OKF_ROOT);
   const nodes = [];
   const warnings = [];
+  // nodeMap: compositeKey → node (exact match)
   const nodeMap = {};
+  // bareIndex: bare ID → [{node, compositeKey}] (for disambiguation)
+  const bareIndex = {};
   const projectNodes = {};
 
+  // First pass: read all files and index everything
   for (const filePath of files) {
     const relPath = path.relative(OKF_ROOT, filePath);
     const fm = parseFrontmatter(filePath);
-
-    if (!fm || Object.keys(fm).length === 0) {
-      continue;
-    }
+    if (!fm || Object.keys(fm).length === 0) continue;
 
     const id = fm.id || relPath.replace(/\.md$/, '').replace(/\//g, '-');
     const type = fm.type || 'unknown';
@@ -76,11 +81,8 @@ function buildGraph() {
     const name = fm.name || null;
     const description = fm.description || null;
 
-    // Normalize links
     const links = rawLinks.map(link => {
-      if (typeof link === 'string') {
-        return { type: 'relates-to', target: link };
-      }
+      if (typeof link === 'string') return { type: 'relates-to', target: link };
       return {
         type: link.type || 'relates-to',
         target: link.target || 'unknown'
@@ -106,48 +108,63 @@ function buildGraph() {
     };
 
     nodes.push(node);
-    nodeMap[id] = node;
 
-    if (project && !projectNodes[project]) projectNodes[project] = [];
-    if (project) projectNodes[project].push(node);
+    const ck = compositeKey(id, project);
+    nodeMap[ck] = node;
+
+    if (!bareIndex[id]) bareIndex[id] = [];
+    bareIndex[id].push({ node, ck });
+
+    if (project) {
+      if (!projectNodes[project]) projectNodes[project] = [];
+      projectNodes[project].push(node);
+    }
   }
 
-  // Validate links — check targets exist, try project-prefixed resolution
+  // Second pass: resolve link targets with project-awareness
   for (const node of nodes) {
     for (const link of node.links) {
       const target = link.target;
       if (typeof target !== 'string') continue;
 
-      if (!nodeMap[target]) {
-        // Try project-prefixed resolution
-        let found = false;
-        if (node.project) {
-          // Check if target starts with a known project name
-          for (const proj of Object.keys(projectNodes)) {
-            const prefixed = `${proj}/${target}`.replace(/\/\//g, '/');
-            if (nodeMap[prefixed]) {
-              link.target = prefixed;
-              found = true;
-              break;
-            }
-          }
-        }
-        if (!found) {
-          warnings.push(`${node.id} → ${target} (target not found in graph)`);
-        }
+      const candidates = bareIndex[target];
+      if (!candidates || candidates.length === 0) {
+        warnings.push(`${node.id} → ${target} (not found)`);
+        continue;
+      }
+
+      if (candidates.length === 1) {
+        // Unique — resolve directly
+        link._composite = candidates[0].ck;
+        continue;
+      }
+
+      // Multiple candidates — prefer same project
+      const sameProject = candidates.filter(c => c.node.project === node.project);
+      if (sameProject.length === 1) {
+        link._composite = sameProject[0].ck;
+      } else if (sameProject.length > 1) {
+        warnings.push(`${node.id} → ${target} (${sameProject.length} matches in ${node.project})`);
+        link._composite = sameProject[0].ck;
+      } else {
+        // Cross-project reference — still resolve to the first one but warn
+        warnings.push(`${node.id} → ${target} (cross-project: ${candidates.map(c => c.node.project).join(', ')})`);
+        link._composite = candidates[0].ck;
       }
     }
   }
 
-  // Build edges list from resolved links
+  // Build edges from resolved links
   const edges = [];
   for (const node of nodes) {
     for (const link of node.links) {
-      const target = link.target;
-      if (typeof target === 'string' && nodeMap[target]) {
+      const ck = link._composite;
+      if (ck && nodeMap[ck]) {
         edges.push({
           source: node.id,
-          target: target,
+          sourceProject: node.project,
+          target: nodeMap[ck].id,
+          targetProject: nodeMap[ck].project,
           type: link.type || 'relates-to',
           label: link.type || 'relates-to'
         });
@@ -159,13 +176,8 @@ function buildGraph() {
   const projectSummaries = {};
   for (const [proj, projNodes] of Object.entries(projectNodes)) {
     const byType = {};
-    for (const n of projNodes) {
-      byType[n.type] = (byType[n.type] || 0) + 1;
-    }
-    projectSummaries[proj] = {
-      node_count: projNodes.length,
-      by_type: byType
-    };
+    for (const n of projNodes) byType[n.type] = (byType[n.type] || 0) + 1;
+    projectSummaries[proj] = { node_count: projNodes.length, by_type: byType };
   }
 
   const graph = {
@@ -186,10 +198,8 @@ function buildGraph() {
   console.log(`Output: ${GRAPH_OUT}`);
 
   if (warnings.length > 0) {
-    console.log('\nWarnings (broken links):');
-    for (const w of warnings) {
-      console.log(`  ⚠ ${w}`);
-    }
+    console.log('\nWarnings:');
+    for (const w of warnings) console.log(`  ⚠ ${w}`);
   }
 }
 

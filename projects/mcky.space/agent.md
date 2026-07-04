@@ -2,7 +2,7 @@
 type: agent-profile
 id: mcky-agent
 project: mcky.space
-last_updated: 2026-07-04
+last_updated: 2026-07-05
 personality: terminal hipster
 status_ref: ./status.md
 status: active
@@ -28,7 +28,7 @@ links:
 
 ## Overview
 
-Terminal-style personal website. Neobrutalist design with responsive layout (320px–1440px+), Alpine.js interactivity, Astro 7 server output, and SHA-256 auth.
+Terminal-style personal website. Neobrutalist design with responsive layout (320px–1440px+), Alpine.js interactivity, Astro 7 server output. No auth.
 
 ## Stack
 
@@ -42,14 +42,14 @@ Terminal-style personal website. Neobrutalist design with responsive layout (320
 | Blog | .md files compiled to TS at build time |
 | Client UI | Alpine.js via CDN |
 | Markdown | `marked` |
-| Auth | SHA-256 via Web Crypto API, header-based gating |
+| Auth | None (removed) |
 | Deployment | Vercel with cache + security headers |
 
 ## Architecture
 
 | Route | Description |
 |-------|-------------|
-| `/` | Terminal-style homepage — neo-card with terminal sim, tech stack tags |
+| `/` | Terminal-style homepage — neo-card with terminal sim, tech stack tags, blog sub-items |
 | `/about` | About page — neo-cards for bio, stack badges, contact |
 | `/blog` | Blog listing — neo-card per post, badge dates, empty state |
 | `/blog/[slug]` | Blog post — neo-styled content, prev/next nav |
@@ -71,7 +71,6 @@ Terminal-style personal website. Neobrutalist design with responsive layout (320
 - Astro static pages for non-interactive content
 - Blog .md compiled to TS at build time (no runtime filesystem access)
 - CSS-only skeleton loading (.skel class with shimmer keyframe)
-- SHA-256 auth hash stored in localStorage as auth_hash
 - Self-hosted fonts with font-display:swap (no external CDN)
 - prefers-reduced-motion for all animations
 - :focus-visible on all interactive elements
@@ -110,7 +109,6 @@ Terminal-style personal website. Neobrutalist design with responsive layout (320
 - Static pages are pure Astro HTML — no JS needed
 - Interactive pages use Alpine.js x-data directives inline in .astro templates
 - Blog is read-only — edit via Git (.md files + rebuild)
-- All mutating API endpoints require `x-auth-hash` header
 - No external API calls, no database (except Supabase for auth)
 - Do not run `npm install` (android-arm64 binding breaks)
 - Do not delete `node_modules/`

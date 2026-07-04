@@ -2,7 +2,7 @@
 type: project-status
 id: mcky-status
 project: mcky.space
-last_updated: 2026-07-04
+last_updated: 2026-07-05
 state: active
 documentation_completeness: High
 confidence_level: High
@@ -40,7 +40,7 @@ links:
 
 | Path | Status | Description |
 |------|--------|-------------|
-| `/` | ✅ Live | Terminal-style homepage with terminal sim, tech stack tags |
+| `/` | ✅ Live | Terminal-style homepage with terminal sim, tech stack tags, blog sub-items |
 | `/about` | ✅ Live | About page — neo-cards for bio, stack badges, contact |
 | `/blog` | ✅ Live | Blog listing — neo-card per post, badge dates, empty state |
 | `/blog/[slug]` | ✅ Live | Blog post — neo-styled content, prev/next nav |
@@ -64,6 +64,13 @@ links:
 
 ## Changelog
 
+### 2026-07-04 — Auth removal, dark mode refresh, homepage blog section
+- **Auth**: Removed login/logout from layout — auth store, sidebar buttons, floating form all stripped
+- **Dark mode**: Navy → deep grey palette (#141414 bg, #aaa text, #666 borders)
+- **Homepage**: Blog moved to own `cat blog.txt` section with post sub-items; all 4 tech tags now white text
+- **Blog**: Published "From Chaos to Clarity: Building OKF" with file structure example
+- **Docs**: Added README, censored internal project names from blog post
+
 ### 2026-07-02 — Blog post, DESIGN.md docs, cleanup
 - **Blog**: Published "Project Updates: Component Extraction & Design System"
 - **Docs**: DESIGN.md updated
@@ -85,7 +92,7 @@ links:
 
 ## Design System
 
-- **Theme**: Neobrutalism — light default (`#f5f5f0` bg), dark mode via `[data-theme="dark"]`
+- **Theme**: Neobrutalism — light default (`#f5f5f0` bg), dark mode via `[data-theme="dark"]` (#141414 deep grey bg, #aaa text, #666 borders)
 - **Borders**: 3px solid `var(--border)`
 - **Shadows**: Hard offset (`4px 4px 0` / `2px 2px 0`)
 - **Colors**: CSS custom properties — green, amber, red, blue, purple, orange, cyan, pink
@@ -98,3 +105,4 @@ links:
 - Alpine.js loaded from CDN (intentional per stack definition)
 - Dev server broken locally (shiki module corruption) — works on Vercel
 - `npm install` breaks android-arm64 native binding
+- `/api/auth` route exists but no longer referenced (auth removed from layout)

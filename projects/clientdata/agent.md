@@ -100,6 +100,7 @@ Client management & CRM — Next.js 16 with Drizzle + Neon Postgres, Cloudflare 
 2. Update `projects/clientdata/status.md` with latest changes
 3. Update `projects/clientdata/agent.md` (directory map, components, patterns)
 4. If project AGENTS.md has stale info, update it too
+5. Rebuild graph: `node ~/OKF/scripts/build-graph.js`
 
 ### "cleanup"
 
@@ -108,7 +109,41 @@ Client management & CRM — Next.js 16 with Drizzle + Neon Postgres, Cloudflare 
 3. Deep scan: leftover dirs, `console.log`, TODO/FIXME
 4. Present findings for user to choose
 5. Update STATUS.md + KB agent file
-6. Never cleanup `.env*`, `node_modules/`, `.next/`, `.git/`, or essential config
+6. Rebuild graph: `node ~/OKF/scripts/build-graph.js`
+7. Never cleanup `.env*`, `node_modules/`, `.next/`, `.git/`, or essential config
+
+### "dispatch" — Operator Agent
+
+1. Read `tasks/TASK-*.md` files with `status: open`
+2. Claim the highest-priority task (set `claimed_by: agent` in frontmatter)
+3. Present a plan to the user with:
+   - Task scope and acceptance criteria
+   - Files that will be changed
+   - Relevant decisions (DEC-*), lessons (LSN-*), risks (RSK-*)
+4. Execute the work
+5. Close the task (set `status: closed`, `closed: YYYY-MM-DD`)
+6. Record any lessons learned as new LSN-* or DEC-* knowledge nodes
+7. Rebuild graph: `node ~/OKF/scripts/build-graph.js`
+
+### "doctor-kb" — Knowledge Lifecycle
+
+1. Read `graph.json` and find all knowledge nodes
+2. Flag nodes where `verified` is 30+ days old — prompt user to re-verify
+3. Find nodes with `status: superseded` — confirm they should stay archived
+4. Find nodes with `expires` date passed — auto-set `status: expired`
+5. Detect broken links: walk all `links:` targets, report any that don't resolve
+6. Detect near-duplicate nodes by name/description similarity
+7. Present findings, let user choose actions
+8. Rebuild graph: `node ~/OKF/scripts/build-graph.js`
+
+### "backfill" — Seed KB from Codebase
+
+1. Scan git log for commit messages → extract decisions as DEC-* nodes
+2. Scan project directory structure → create COMP-* component nodes
+3. Read existing docs (README, DESIGN.md, etc.) → extract lessons as LSN-*
+4. Read package.json → verify profile.md dependency accuracy
+5. Present findings for user approval before writing
+6. Rebuild graph: `node ~/OKF/scripts/build-graph.js`
 
 ## Environment Variables
 
