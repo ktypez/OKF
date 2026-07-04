@@ -13,7 +13,7 @@ last_updated: 2026-07-04
 | `update .md` | Read KB status + agent files, update with latest project state | All |
 | `cleanup` | Scan unused deps/files, health check, present findings, update KB | All |
 | `wrap-day` | Review today's diff, write changelog entry, update truck status, commit | truck |
-| `blog-post` | Write a blog post — publish at mcky.space (`src/data/blog/`), not in OKF | mcky.space |
+| `blog-post` | Write a blog post — censor internal project names, publish at mcky.space (`src/data/blog/`) | mcky.space |
 
 ### update .md
 
@@ -30,6 +30,14 @@ last_updated: 2026-07-04
 3. Present findings for user to choose
 4. Update KB files
 5. Never touch `.env*`, `node_modules/`, `dist/`, `.next/`, `.git/`, or essential config
+
+### blog-post
+
+1. Write the post content
+2. **Censor internal project names** — replace cafe, cafe-v2, clientdata, habby, truck, and project-specific identifiers with generic descriptors ("a project", "another project", etc.)
+3. Save to `mcky.space/src/data/blog/<slug>.md` with frontmatter (title, date, slug)
+4. Regenerate blog index: `node scripts/build-blog-posts.mjs`
+5. Verify build passes
 
 ### wrap-day (truck only)
 

@@ -1,7 +1,22 @@
 ---
 type: project-profile
 id: clientdata-profile
+project: clientdata
 last_updated: 2026-07-04
+status: active
+freshness: 2026-07-04
+verified: 2026-07-04
+expires: null
+superseded_by: null
+anchors:
+  - /home/clientdata/package.json
+  - /home/clientdata/next.config.ts
+links:
+  - type: relates-to  target: clientdata-agent
+  - type: relates-to  target: clientdata-status
+  - type: relates-to  target: clientdata-structure
+  - type: relates-to  target: clientdata-dependencies
+  - type: relates-to  target: clientdata-commands
 ---
 
 # Project Profile: clientdata

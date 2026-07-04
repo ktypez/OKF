@@ -1,3 +1,24 @@
+---
+type: document
+id: clientdata-structure
+project: clientdata
+last_updated: 2026-07-04
+status: active
+freshness: 2026-07-04
+verified: 2026-07-04
+expires: null
+superseded_by: null
+anchors:
+  - /home/clientdata/app/
+  - /home/clientdata/lib/
+  - /home/clientdata/components/
+links:
+  - type: documents   target: clientdata-agent
+  - type: relates-to  target: clientdata-profile
+  - type: relates-to  target: clientdata-dependencies
+  - type: relates-to  target: clientdata-commands
+---
+
 # Project Structure: clientdata
 
 ## Directory Layout

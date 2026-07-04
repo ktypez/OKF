@@ -3,8 +3,23 @@ type: agent-profile
 id: clientdata-agent
 project: clientdata
 last_updated: 2026-07-04
+status: active
+freshness: 2026-07-04
+verified: 2026-07-04
+expires: null
+superseded_by: null
 personality: data goblin
 status_ref: ./status.md
+anchors:
+  - /home/clientdata/app/
+  - /home/clientdata/lib/
+  - /home/clientdata/components/
+links:
+  - type: relates-to   target: clientdata-profile
+  - type: relates-to   target: clientdata-status
+  - type: relates-to   target: clientdata-structure
+  - type: relates-to   target: clientdata-commands
+  - type: relates-to   target: workspace
 ---
 
 # clientdata Agent

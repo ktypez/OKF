@@ -17,15 +17,27 @@ last_updated: 2026-07-04
 
 ## File Format
 
-All KB files use **OKF format** — YAML frontmatter + Markdown body.
+All KB files use **OKF format** — YAML frontmatter + Markdown body. Every file is a **node** in the project knowledge graph.
 
 ```yaml
 ---
 type: <type>
 id: <unique-id>
+project: <project-name>
 last_updated: <YYYY-MM-DD>
+status: active              # active | superseded | expired | archived
+freshness: <YYYY-MM-DD>     # when content last changed
+verified: <YYYY-MM-DD>      # when last confirmed against reality
+expires: null               # optional expiry date
+superseded_by: null         # id of node that replaces this one
+anchors: []                 # file:line paths this node concerns
+links:                      # typed edges to other nodes
+  - type: supersedes   target: DEC-003
+  - type: relates-to   target: TASK-012
 ---
 ```
+
+See `~/.opencode/rules/okf-format.md` for full schema reference.
 
 ## Node.js Setup (Termux)
 
