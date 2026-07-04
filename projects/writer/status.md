@@ -33,4 +33,4 @@ The writer project is a knowledge-only project within OKF. It tracks documentati
 
 | Task | Status | Priority |
 |------|--------|----------|
-| TASK-001 | open | medium |
+| TASK-001 | closed | medium |
