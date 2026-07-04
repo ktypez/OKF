@@ -606,7 +606,9 @@ function setFilter(f) {
 
   // highlight matching project card
   document.querySelectorAll('.project-card').forEach(c => c.classList.remove('active'));
-  if (f.startsWith('project:')) {
+  if (f === 'all') {
+    document.querySelectorAll('.project-card')[0].classList.add('active');
+  } else if (f.startsWith('project:')) {
     const name = f.replace('project:', '');
     document.querySelectorAll('.project-card').forEach(c => {
       if (c.querySelector('.proj-name') && c.querySelector('.proj-name').textContent === name) {
