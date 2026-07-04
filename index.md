@@ -16,7 +16,6 @@ last_updated: 2026-07-05
 | Project | Profile | Agent | Status | Role | Tech Stack |
 |---------|---------|-------|--------|------|------------|
 | cafe | [profile](./projects/cafe/profile.md) | [agent](./projects/cafe/agent.md) | [status](./projects/cafe/status.md) | active | Next.js 15, React 19, Supabase, LINE |
-| cafe-v2 | [profile](./projects/cafe-v2/profile.md) | [agent](./projects/cafe-v2/agent.md) | [status](./projects/cafe-v2/status.md) | experimental | Express, LINE Bot, LIFF |
 | clientdata | [profile](./projects/clientdata/profile.md) | [agent](./projects/clientdata/agent.md) | [status](./projects/clientdata/status.md) | active | Next.js 16, React 19, Neon, Drizzle |
 | habby | [profile](./projects/habby/profile.md) | [agent](./projects/habby/agent.md) | [status](./projects/habby/status.md) | active | Vite 6, Express, Redis |
 | mcky.space | [profile](./projects/mcky.space/profile.md) | [agent](./projects/mcky.space/agent.md) | [status](./projects/mcky.space/status.md) | active | Astro 7, Alpine.js, Supabase |
@@ -28,14 +27,16 @@ The entire KB is connected as a graph with typed edges. Every node has a stable 
 
 | Metric | Count |
 |--------|-------|
-| Total nodes | 92 |
-| Total edges | 196 |
+| Total nodes | 115 |
+| Total edges | 219 |
 | Projects covered | 7 |
 | Knowledge types | decision, lesson, risk, component, task, document |
 
 - **Graph index:** `graph.json` — auto-generated registry with all nodes and edges
 - **Rebuild:** `node ~/OKF/scripts/build-graph.js`
 - **Dashboard:** `dashboard.html` — interactive D3 force-directed graph visualization
+- **Dashboard commands:** `bash scripts/dashboard.sh <start|stop|restart|rebuild>`
+- **View:** [http://localhost:8080](http://localhost:8080) after `start`
 - **Schema:** [`.opencode/rules/okf-format.md`](./.opencode/rules/okf-format.md)
 
 ## Agent Roles
@@ -43,7 +44,6 @@ The entire KB is connected as a graph with typed edges. Every node has a stable 
 | Project | Role | Personality |
 |---------|------|-------------|
 | cafe | barista engineer | — |
-| cafe-v2 | — | — |
 | clientdata | data goblin | — |
 | habby | trophy goblin | — |
 | mcky.space | terminal hipster | — |
@@ -62,7 +62,7 @@ The entire KB is connected as a graph with typed edges. Every node has a stable 
 - **Dependencies:** 100%
 - **Commands:** 100%
 - **Status:** 100%
-- **Knowledge Graph:** 92 nodes, 196 edges
+- **Knowledge Graph:** 115 nodes, 219 edges
 
 ## Triggers
 
@@ -74,6 +74,7 @@ The entire KB is connected as a graph with typed edges. Every node has a stable 
 | `dispatch` | Operator — list open tasks, claim, plan, execute | Per project |
 | `doctor-kb` | Knowledge lifecycle audit — stale, expired, broken links | All |
 | `backfill` | Seed KB from git history + code structure | Per project |
+| `dashboard` | Start/stop/restart/rebuild the graph dashboard | OKF |
 
 ## Scripts
 
@@ -81,6 +82,7 @@ The entire KB is connected as a graph with typed edges. Every node has a stable 
 |--------|---------|
 | `scripts/build-graph.js` | Rebuild `graph.json` from all KB files |
 | `scripts/build-dashboard.js` | Generate `dashboard.html` |
+| `scripts/dashboard.sh` | Start/stop/restart the HTTP server, or rebuild dashboard |
 | `scripts/dispatch.js` | List open tasks and context |
 | `scripts/claim-task.js` | Atomically claim a task |
 | `scripts/complete-task.js` | Close a task and record lesson |

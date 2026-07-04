@@ -34,7 +34,7 @@ last_updated: 2026-07-04
 
 ### write-readme
 
-1. Same censor rule as `blog-post` — replace internal project names (cafe, cafe-v2, clientdata, habby, truck) with generic descriptors
+1. Same censor rule as `blog-post` — replace internal project names (cafe, clientdata, habby, truck) with generic descriptors
 2. Keep it concise — overview, stack, setup, links
 3. No frontmatter needed (plain markdown)
 

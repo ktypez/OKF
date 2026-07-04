@@ -39,7 +39,6 @@ You have access to a shared knowledge base at `~/OKF/`. Before any task:
 | Project | Agent | Status |
 |---------|-------|--------|
 | cafe | [agent](projects/cafe/agent.md) | [status](projects/cafe/status.md) |
-| cafe-v2 | [agent](projects/cafe-v2/agent.md) | [status](projects/cafe-v2/status.md) |
 | clientdata | [agent](projects/clientdata/agent.md) | [status](projects/clientdata/status.md) |
 | habby | [agent](projects/habby/agent.md) | [status](projects/habby/status.md) |
 | mcky.space | [agent](projects/mcky.space/agent.md) | [status](projects/mcky.space/status.md) |

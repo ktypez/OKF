@@ -51,6 +51,41 @@ const nodesJson = JSON.stringify(graph.nodes.map(n => ({
 const edgesJson = JSON.stringify(graph.edges);
 const projectsJson = JSON.stringify(Object.entries(graph.projects).map(([k, v]) => ({ name: k, ...v })));
 
+function buildScript() {
+  var script = '';
+
+  script += 'function renderMarkdown(md) {\n';
+  script += '  var escaped = md.replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");\n';
+  script += '  var html = "";\n';
+  script += '  var lines = escaped.split("\\n");\n';
+  script += '  var inCode = false, buf = [];\n';
+  script += '  for (var i = 0; i < lines.length; i++) {\n';
+  script += '    var l = lines[i];\n';
+  script += '    if (l.startsWith("```")) { if (inCode) { html += "<pre><code>" + buf.join("\\n") + "<\\/code><\\/pre>"; buf = []; } inCode = !inCode; continue; }\n';
+  script += '    if (inCode) { buf.push(l); continue; }\n';
+  script += '    if (!l.trim()) { html += "<br>"; continue; }\n';
+  script += '    if (/^#{1,6}\\s/.test(l)) { var n = l.match(/^(#+)\\s/)[1].length; html += "<h" + n + ">" + l.replace(/^#+\\s/,"") + "<\\/h" + n + ">"; continue; }\n';
+  script += '    if (/^\\- /.test(l)) { html += "<li>" + l.replace(/^\\- /,"") + "<\\/li>"; continue; }\n';
+  script += '    if (/^\\d+\\.\\s/.test(l)) { html += "<li>" + l.replace(/^\\d+\\.\\s/,"") + "<\\/li>"; continue; }\n';
+  script += '    if (/^\\-\\-\\-/.test(l)) { html += "<hr>"; continue; }\n';
+  script += '    var p = l.replace(/\\*\\*(.+?)\\*\\*/g,"<strong>$1<\\/strong>").replace(/\\x60(.+?)\\x60/g,"<code>$1<\\/code>").replace(/\\[(.+?)\\]\\((.+?)\\)/g,"<a href=\\"$2\\" target=\\"_blank\\">$1<\\/a>");\n';
+  script += '    html += "<p>" + p + "<\\/p>";\n';
+  script += '  }\n';
+  script += '  if (inCode) html += "<pre><code>" + buf.join("\\n") + "<\\/code><\\/pre>";\n';
+  script += '  return html;\n';
+  script += '}\n';
+
+  script += 'async function loadNodeContent(fp) {\n';
+  script += '  var c = document.getElementById("nodeContent");\n';
+  script += '  if (!fp) { c.innerHTML = ""; return; }\n';
+  script += '  c.innerHTML = "<div style=\\"color:var(--text-muted);padding:8px 0;\\">Loading...<\\/div>";\n';
+  script += '  try { var r = await fetch(fp); if (!r.ok) throw new Error("HTTP " + r.status); var t = await r.text(); c.innerHTML = "<div class=\\"content-body\\">" + renderMarkdown(t) + "<\\/div>"; }\n';
+  script += '  catch(e) { c.innerHTML = "<div style=\\"color:#ef4444;padding:8px 0;font-size:12px;\\">Failed to load: " + escape(e.message) + "<\\/div>"; }\n';
+  script += '}\n';
+
+  return script;
+}
+
 // Generate the HTML as a buffer-safe template (no template literal conflict)
 let html = `<!DOCTYPE html>
 <html lang="en">
@@ -75,15 +110,17 @@ let html = `<!DOCTYPE html>
   body {
     font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
     background: var(--bg); color: var(--text);
-    display: flex; height: 100vh; overflow: hidden;
+    display: flex; height: 100vh; height: 100dvh; overflow: hidden;
   }
   .sidebar {
     width: 320px; background: var(--surface);
     border-right: 1px solid var(--border); display: flex;
     flex-direction: column; overflow: hidden;
+    z-index: 10;
   }
   .sidebar-header {
     padding: 16px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
   }
   .sidebar-header h1 { font-size: 18px; display: flex; align-items: center; gap: 8px; }
   .sidebar-header .meta { font-size: 12px; color: var(--text-muted); margin-top: 4px; }
@@ -94,6 +131,7 @@ let html = `<!DOCTYPE html>
   .sidebar-nav button {
     background: var(--surface-2); border: none; color: var(--text);
     padding: 4px 12px; border-radius: 4px; cursor: pointer; font-size: 12px;
+    white-space: nowrap;
   }
   .sidebar-nav button:hover { background: var(--accent); }
   .sidebar-nav button.active { background: var(--accent); }
@@ -132,6 +170,30 @@ let html = `<!DOCTYPE html>
     display: inline-block; font-size: 12px; padding: 2px 8px;
     border-radius: 4px; margin: 2px;
   }
+  .content-body { font-size: 13px; line-height: 1.5; }
+  .content-body h1, .content-body h2, .content-body h3,
+  .content-body h4, .content-body h5, .content-body h6 {
+    color: var(--text); margin: 12px 0 6px;
+  }
+  .content-body h1 { font-size: 16px; }
+  .content-body h2 { font-size: 15px; }
+  .content-body h3 { font-size: 14px; }
+  .content-body h4, .content-body h5, .content-body h6 { font-size: 13px; }
+  .content-body p { margin: 4px 0; color: var(--text-muted); }
+  .content-body strong { color: var(--text); }
+  .content-body code {
+    background: var(--surface-2); padding: 1px 4px; border-radius: 3px;
+    font-size: 12px;
+  }
+  .content-body pre { margin: 8px 0; }
+  .content-body pre code {
+    display: block; padding: 8px; overflow-x: auto;
+    line-height: 1.4;
+  }
+  .content-body li { margin: 2px 0 2px 16px; color: var(--text-muted); }
+  .content-body a { color: var(--accent); }
+  .content-body hr { border: none; border-top: 1px solid var(--border); margin: 8px 0; }
+  .content-body br { display: none; }
   .search-box { padding: 8px; border-bottom: 1px solid var(--border); }
   .search-box input {
     width: 100%; padding: 8px; border-radius: 6px; border: 1px solid var(--border);
@@ -141,8 +203,17 @@ let html = `<!DOCTYPE html>
   .stats-bar {
     display: flex; gap: 16px; padding: 8px 16px;
     border-bottom: 1px solid var(--border); font-size: 12px; color: var(--text-muted);
+    align-items: center;
   }
   .stats-bar strong { color: var(--text); }
+  .hamburger {
+    display: none; background: none; border: none; color: var(--text);
+    font-size: 24px; cursor: pointer; padding: 0 4px;
+  }
+  .sidebar-overlay {
+    display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+    z-index: 9;
+  }
   .tooltip {
     position: absolute; padding: 8px 12px; border-radius: 6px;
     background: var(--surface-2); border: 1px solid var(--border);
@@ -152,14 +223,39 @@ let html = `<!DOCTYPE html>
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: transparent; }
   ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+
+  @media (max-width: 768px) {
+    body { flex-direction: column; }
+    .sidebar {
+      position: fixed; top: 0; left: 0; bottom: 0;
+      transform: translateX(-100%); transition: transform .25s ease;
+      width: 280px;
+    }
+    .sidebar.open { transform: translateX(0); }
+    .sidebar-overlay.open { display: block; }
+    .hamburger { display: block; }
+    .sidebar-header .meta { display: none; }
+    .main { width: 100%; }
+    .node-info { height: 160px; padding: 12px; }
+    .node-info h2 { font-size: 14px; }
+    .node-info .field { font-size: 12px; }
+    .stats-bar { gap: 8px; padding: 6px 12px; font-size: 11px; flex-wrap: wrap; }
+    .sidebar-nav { flex-wrap: nowrap; overflow-x: auto; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+    .sidebar-nav::-webkit-scrollbar { display: none; }
+    .sidebar-nav button { flex-shrink: 0; }
+  }
 <\/style>
 </head>
 <body>
-<div class="sidebar">
+
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+
+<div class="sidebar" id="sidebar">
   <div class="sidebar-header">
     <h1>OKF Dashboard</h1>
-    <div class="meta">${graph.meta.total_nodes} nodes · ${graph.meta.total_edges} edges · ${Object.keys(graph.projects).length} projects</div>
+    <button class="hamburger" id="closeSidebarBtn" onclick="toggleSidebar()">&times;</button>
   </div>
+  <div class="meta" style="padding: 4px 16px 8px; font-size: 12px; color: var(--text-muted); border-bottom: 1px solid var(--border);">${graph.meta.total_nodes} nodes · ${graph.meta.total_edges} edges · ${Object.keys(graph.projects).length} projects</div>
   <div class="search-box">
     <input type="text" id="search" placeholder="Search nodes..." oninput="filterNodes(this.value)">
   </div>
@@ -175,7 +271,10 @@ let html = `<!DOCTYPE html>
   </div>
 </div>
 <div class="main">
-  <div class="stats-bar" id="statsBar"></div>
+  <div class="stats-bar" id="statsBar">
+    <button class="hamburger" id="openSidebarBtn" onclick="toggleSidebar()">&#9776;</button>
+    <span id="statsText"></span>
+  </div>
   <div class="graph-container">
     <div id="graph"></div>
     <div class="tooltip" id="tooltip"></div>
@@ -204,6 +303,11 @@ allEdges.forEach(e => {
 
 let currentFilter = 'all';
 let selectedNode = null;
+
+function toggleSidebar() {
+  document.getElementById('sidebar').classList.toggle('open');
+  document.getElementById('sidebarOverlay').classList.toggle('open');
+}
 
 function escape(s) { return (s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
 
@@ -253,7 +357,7 @@ function renderList(nodesList) {
   const list = document.getElementById('nodeList');
   list.innerHTML = '<ul class="node-list">' + nodesList.map(n => {
     const searchText = n.id + ' ' + n.type + ' ' + (n.project || '') + ' ' + (n.status || '');
-    return '<li class="node-item" data-id="' + n.id + '" data-project="' + (n.project || '') + '" data-type="' + n.type + '" data-status="' + n.status + '" data-search="' + escape(searchText) + '" onclick="selectNode(\'' + n.id + '\')">' +
+    return '<li class="node-item" data-id="' + n.id + '" data-project="' + (n.project || '') + '" data-type="' + n.type + '" data-status="' + n.status + '" data-search="' + escape(searchText) + '" onclick="selectNode(\\'' + n.id + '\\')">' +
       '<span style="font-size:16px;">' + getTypeIcon(n.type) + '</span>' +
       '<span class="id">' + n.id + '</span>' +
       '<span style="color:var(--text-muted);font-size:12px;">' + n.type + '</span>' +
@@ -266,7 +370,7 @@ function renderList(nodesList) {
 
 function updateStats() {
   const visible = document.querySelectorAll('.node-item:not([style*="display: none"])');
-  const stats = document.getElementById('statsBar');
+  const stats = document.getElementById('statsText');
   const byType = {};
   visible.forEach(item => {
     const type = item.dataset.type;
@@ -276,11 +380,18 @@ function updateStats() {
   stats.innerHTML = 'Showing <strong>' + visible.length + '</strong> nodes &mdash; ' + parts.join(' · ');
 }
 
+${buildScript()}
+
 function selectNode(id) {
   selectedNode = id;
   document.querySelectorAll('.node-item').forEach(i => i.classList.toggle('selected', i.dataset.id === id));
   const node = nodeMap[id];
   if (!node) return;
+
+  if (window.innerWidth <= 768) {
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('sidebarOverlay').classList.remove('open');
+  }
 
   const related = (edgeIndex[id] || []).map(e => {
     const other = e.source === id ? nodeMap[e.target] : nodeMap[e.source];
@@ -291,7 +402,7 @@ function selectNode(id) {
   let html = '<h2>' + getTypeIcon(node.type) + ' ' + node.id + ' <span style="font-weight:400;color:var(--text-muted);font-size:14px;">' + node.type + '</span></h2>';
   html += '<div class="field"><strong>Project:</strong> ' + (node.project || '(global)') + '</div>';
   html += '<div class="field"><strong>Status:</strong> <span class="status-badge ' + getStatusClass(node.status) + '">' + (node.status || 'active') + '</span></div>';
-  html += '<div class="field"><strong>File:</strong> <code style="font-size:12px;background:var(--surface-2);padding:2px 6px;border-radius:3px;">' + escape(node.file) + '</code></div>';
+  html += '<div class="field"><strong>File:</strong> <code style="font-size:12px;background:var(--surface-2);padding:2px 6px;border-radius:3px;">' + escape(node.file) + '</code> <a href="' + escape(node.file) + '" target="_blank" style="color:var(--accent);font-size:12px;text-decoration:none;" title="Open raw file">[view]</a></div>';
   if (node.freshness) html += '<div class="field"><strong>Freshness:</strong> ' + node.freshness + '</div>';
   if (node.verified) html += '<div class="field"><strong>Verified:</strong> ' + node.verified + '</div>';
   if (node.expires) html += '<div class="field"><strong>Expires:</strong> ' + node.expires + '</div>';
@@ -300,11 +411,13 @@ function selectNode(id) {
     html += '<div class="links-list"><strong>Links:</strong><br>';
     html += related.map(e => {
       const color = edgeColors[e.type] || '#94a3b8';
-      return '<span class="link-item" style="background:' + color + '22;border:1px solid ' + color + ';color:' + color + ';cursor:pointer;" onclick="selectNode(\'' + e.other.id + '\')">' + e.type + ' → ' + e.other.id + '</span>';
+      return '<span class="link-item" style="background:' + color + '22;border:1px solid ' + color + ';color:' + color + ';cursor:pointer;" onclick="selectNode(\\'' + e.other.id + '\\')">' + e.type + ' → ' + e.other.id + '</span>';
     }).join(' ');
     html += '</div>';
   }
+  html += '<div class="content-section" style="margin-top:12px;border-top:1px solid var(--border);padding-top:8px;"><strong style="font-size:12px;color:var(--text-muted);">Content<\/strong><div id="nodeContent"><\/div><\/div>';
   info.innerHTML = html;
+  loadNodeContent(node.file);
 }
 
 function renderGraph() {
@@ -379,6 +492,7 @@ function renderGraph() {
 
 renderList(nodes);
 renderGraph();
+updateStats();
 
 window.addEventListener('resize', () => {
   const svg = document.querySelector('#graph svg');

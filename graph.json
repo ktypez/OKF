@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated": "2026-07-04T07:33:04.995Z",
-    "total_nodes": 115,
-    "total_edges": 219,
+    "generated": "2026-07-04T14:21:57.971Z",
+    "total_nodes": 110,
+    "total_edges": 202,
     "warnings": 0
   },
   "warnings": [],
@@ -56,7 +56,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
+      "last_updated": "2026-07-05T00:00:00.000Z"
     },
     {
       "id": "cafe-agent",
@@ -527,9 +527,9 @@
       "type": "task",
       "project": "cafe",
       "file": "projects/cafe/tasks/TASK-001.md",
-      "status": "open",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
+      "status": "closed",
+      "freshness": "2026-07-05T00:00:00.000Z",
+      "verified": "2026-07-05T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
@@ -553,265 +553,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
-    },
-    {
-      "id": "cafe-v2-assets",
-      "type": "document",
-      "project": "cafe-v2",
-      "file": "projects/cafe-v2/assets.md",
-      "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [],
-      "links": [
-        {
-          "type": "relates-to",
-          "target": "cafe-v2-structure",
-          "_composite": "cafe-v2/cafe-v2-structure"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
-    },
-    {
-      "id": "cafe-v2-commands",
-      "type": "document",
-      "project": "cafe-v2",
-      "file": "projects/cafe-v2/commands.md",
-      "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [],
-      "links": [
-        {
-          "type": "relates-to",
-          "target": "cafe-v2-dependencies",
-          "_composite": "cafe-v2/cafe-v2-dependencies"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-v2-structure",
-          "_composite": "cafe-v2/cafe-v2-structure"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
-    },
-    {
-      "id": "cafe-v2-decisions",
-      "type": "index",
-      "project": "cafe-v2",
-      "file": "projects/cafe-v2/decisions.md",
-      "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [],
-      "links": [],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
-    },
-    {
-      "id": "cafe-v2-dependencies",
-      "type": "document",
-      "project": "cafe-v2",
-      "file": "projects/cafe-v2/dependencies.md",
-      "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [],
-      "links": [
-        {
-          "type": "relates-to",
-          "target": "cafe-v2-profile",
-          "_composite": "cafe-v2/cafe-v2-profile"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-v2-structure",
-          "_composite": "cafe-v2/cafe-v2-structure"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-v2-commands",
-          "_composite": "cafe-v2/cafe-v2-commands"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
-    },
-    {
-      "id": "DEC-001",
-      "type": "decision",
-      "project": "cafe-v2",
-      "file": "projects/cafe-v2/knowledge/DEC-001.md",
-      "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [
-        "/home/cafe-v2/data.js"
-      ],
-      "links": [
-        {
-          "type": "relates-to",
-          "target": "cafe-v2-profile",
-          "_composite": "cafe-v2/cafe-v2-profile"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-v2-status",
-          "_composite": "cafe-v2/cafe-v2-status"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
-    },
-    {
-      "id": "cafe-v2-profile",
-      "type": "project-profile",
-      "project": "cafe-v2",
-      "file": "projects/cafe-v2/profile.md",
-      "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [],
-      "links": [
-        {
-          "type": "relates-to",
-          "target": "cafe-v2-status",
-          "_composite": "cafe-v2/cafe-v2-status"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-v2-structure",
-          "_composite": "cafe-v2/cafe-v2-structure"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-v2-dependencies",
-          "_composite": "cafe-v2/cafe-v2-dependencies"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-v2-commands",
-          "_composite": "cafe-v2/cafe-v2-commands"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
-    },
-    {
-      "id": "cafe-v2-status",
-      "type": "project-status",
-      "project": "cafe-v2",
-      "file": "projects/cafe-v2/status.md",
-      "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [],
-      "links": [
-        {
-          "type": "relates-to",
-          "target": "cafe-v2-profile",
-          "_composite": "cafe-v2/cafe-v2-profile"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-v2-structure",
-          "_composite": "cafe-v2/cafe-v2-structure"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
-    },
-    {
-      "id": "cafe-v2-structure",
-      "type": "document",
-      "project": "cafe-v2",
-      "file": "projects/cafe-v2/structure.md",
-      "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [],
-      "links": [
-        {
-          "type": "relates-to",
-          "target": "cafe-v2-profile",
-          "_composite": "cafe-v2/cafe-v2-profile"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
-    },
-    {
-      "id": "TASK-001",
-      "type": "task",
-      "project": "cafe-v2",
-      "file": "projects/cafe-v2/tasks/TASK-001.md",
-      "status": "open",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [],
-      "links": [
-        {
-          "type": "relates-to",
-          "target": "cafe-v2-profile",
-          "_composite": "cafe-v2/cafe-v2-profile"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-v2-status",
-          "_composite": "cafe-v2/cafe-v2-status"
-        },
-        {
-          "type": "relates-to",
-          "target": "DEC-001",
-          "_composite": "cafe-v2/DEC-001"
-        },
-        {
-          "type": "supersedes",
-          "target": "cafe-v2-profile",
-          "_composite": "cafe-v2/cafe-v2-profile"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
+      "last_updated": "2026-07-05T00:00:00.000Z"
     },
     {
       "id": "clientdata-agent",
@@ -1236,9 +978,9 @@
       "type": "risk",
       "project": "clientdata",
       "file": "projects/clientdata/knowledge/RSK-001.md",
-      "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
+      "status": "closed",
+      "freshness": "2026-07-05T00:00:00.000Z",
+      "verified": "2026-07-05T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [
@@ -1259,7 +1001,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
+      "last_updated": "2026-07-05T00:00:00.000Z"
     },
     {
       "id": "clientdata-profile",
@@ -1423,9 +1165,9 @@
       "type": "task",
       "project": "clientdata",
       "file": "projects/clientdata/tasks/TASK-002.md",
-      "status": "open",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
+      "status": "closed",
+      "freshness": "2026-07-05T00:00:00.000Z",
+      "verified": "2026-07-05T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
@@ -1444,7 +1186,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
+      "last_updated": "2026-07-05T00:00:00.000Z"
     },
     {
       "id": "habby-agent",
@@ -1856,9 +1598,9 @@
       "type": "task",
       "project": "habby",
       "file": "projects/habby/tasks/TASK-001.md",
-      "status": "open",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
+      "status": "closed",
+      "freshness": "2026-07-05T00:00:00.000Z",
+      "verified": "2026-07-05T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
@@ -1882,7 +1624,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
+      "last_updated": "2026-07-05T00:00:00.000Z"
     },
     {
       "id": "mcky-agent",
@@ -1890,8 +1632,8 @@
       "project": "mcky.space",
       "file": "projects/mcky.space/agent.md",
       "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
+      "freshness": "2026-07-05T00:00:00.000Z",
+      "verified": "2026-07-05T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
@@ -1925,7 +1667,7 @@
       "personality": "terminal hipster",
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
+      "last_updated": "2026-07-05T00:00:00.000Z"
     },
     {
       "id": "mcky-assets",
@@ -2215,17 +1957,41 @@
       "last_updated": "2026-07-04"
     },
     {
+      "id": "LSN-001",
+      "type": "lesson",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/knowledge/LSN-001.md",
+      "status": "active",
+      "freshness": "2026-07-05T00:00:00.000Z",
+      "verified": "2026-07-05T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "caused-by",
+          "target": "TASK-001",
+          "_composite": "mcky.space/TASK-001"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-05T00:00:00.000Z"
+    },
+    {
       "id": "RSK-001",
       "type": "risk",
       "project": "mcky.space",
       "file": "projects/mcky.space/knowledge/RSK-001.md",
-      "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
+      "status": "mitigated",
+      "freshness": "2026-07-05T00:00:00.000Z",
+      "verified": "2026-07-05T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [
-        "/home/mcky.space/astro.config.mjs"
+        "/home/mcky.space/astro.config.mjs",
+        "/home/mcky.space/agent.md"
       ],
       "links": [
         {
@@ -2247,7 +2013,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
+      "last_updated": "2026-07-05T00:00:00.000Z"
     },
     {
       "id": "mcky-space-profile",
@@ -2298,8 +2064,8 @@
       "project": "mcky.space",
       "file": "projects/mcky.space/status.md",
       "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
+      "freshness": "2026-07-05T00:00:00.000Z",
+      "verified": "2026-07-05T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
@@ -2323,7 +2089,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
+      "last_updated": "2026-07-05T00:00:00.000Z"
     },
     {
       "id": "mcky-structure",
@@ -2358,9 +2124,9 @@
       "type": "task",
       "project": "mcky.space",
       "file": "projects/mcky.space/tasks/TASK-001.md",
-      "status": "open",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
+      "status": "closed",
+      "freshness": "2026-07-05T00:00:00.000Z",
+      "verified": "2026-07-05T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
@@ -2384,12 +2150,17 @@
           "type": "relates-to",
           "target": "DEC-001",
           "_composite": "mcky.space/DEC-001"
+        },
+        {
+          "type": "resolved-by",
+          "target": "LSN-001",
+          "_composite": "mcky.space/LSN-001"
         }
       ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
+      "last_updated": "2026-07-05T00:00:00.000Z"
     },
     {
       "id": "truck-agent",
@@ -2866,9 +2637,9 @@
       "type": "task",
       "project": "truck",
       "file": "projects/truck/tasks/TASK-001.md",
-      "status": "open",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
+      "status": "closed",
+      "freshness": "2026-07-05T00:00:00.000Z",
+      "verified": "2026-07-05T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
@@ -2892,7 +2663,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
+      "last_updated": "2026-07-05T00:00:00.000Z"
     },
     {
       "id": "writer-agent",
@@ -2921,6 +2692,23 @@
       "name": null,
       "description": null,
       "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "writer-commands",
+      "type": "project-commands",
+      "project": "writer",
+      "file": "projects/writer/commands.md",
+      "status": "active",
+      "freshness": null,
+      "verified": null,
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-05T00:00:00.000Z"
     },
     {
       "id": "DEC-001",
@@ -2974,13 +2762,47 @@
       "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
+      "id": "writer-status",
+      "type": "project-status",
+      "project": "writer",
+      "file": "projects/writer/status.md",
+      "status": "active",
+      "freshness": null,
+      "verified": null,
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-05T00:00:00.000Z"
+    },
+    {
+      "id": "writer-structure",
+      "type": "project-structure",
+      "project": "writer",
+      "file": "projects/writer/structure.md",
+      "status": "active",
+      "freshness": null,
+      "verified": null,
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-05T00:00:00.000Z"
+    },
+    {
       "id": "TASK-001",
       "type": "task",
       "project": "writer",
       "file": "projects/writer/tasks/TASK-001.md",
-      "status": "open",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
+      "status": "closed",
+      "freshness": "2026-07-05T00:00:00.000Z",
+      "verified": "2026-07-05T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
@@ -3004,7 +2826,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
+      "last_updated": "2026-07-05T00:00:00.000Z"
     },
     {
       "id": "skills-index",
@@ -3516,158 +3338,6 @@
       "targetProject": "cafe",
       "type": "relates-to",
       "label": "relates-to"
-    },
-    {
-      "source": "cafe-v2-assets",
-      "sourceProject": "cafe-v2",
-      "target": "cafe-v2-structure",
-      "targetProject": "cafe-v2",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-v2-commands",
-      "sourceProject": "cafe-v2",
-      "target": "cafe-v2-dependencies",
-      "targetProject": "cafe-v2",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-v2-commands",
-      "sourceProject": "cafe-v2",
-      "target": "cafe-v2-structure",
-      "targetProject": "cafe-v2",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-v2-dependencies",
-      "sourceProject": "cafe-v2",
-      "target": "cafe-v2-profile",
-      "targetProject": "cafe-v2",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-v2-dependencies",
-      "sourceProject": "cafe-v2",
-      "target": "cafe-v2-structure",
-      "targetProject": "cafe-v2",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-v2-dependencies",
-      "sourceProject": "cafe-v2",
-      "target": "cafe-v2-commands",
-      "targetProject": "cafe-v2",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "DEC-001",
-      "sourceProject": "cafe-v2",
-      "target": "cafe-v2-profile",
-      "targetProject": "cafe-v2",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "DEC-001",
-      "sourceProject": "cafe-v2",
-      "target": "cafe-v2-status",
-      "targetProject": "cafe-v2",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-v2-profile",
-      "sourceProject": "cafe-v2",
-      "target": "cafe-v2-status",
-      "targetProject": "cafe-v2",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-v2-profile",
-      "sourceProject": "cafe-v2",
-      "target": "cafe-v2-structure",
-      "targetProject": "cafe-v2",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-v2-profile",
-      "sourceProject": "cafe-v2",
-      "target": "cafe-v2-dependencies",
-      "targetProject": "cafe-v2",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-v2-profile",
-      "sourceProject": "cafe-v2",
-      "target": "cafe-v2-commands",
-      "targetProject": "cafe-v2",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-v2-status",
-      "sourceProject": "cafe-v2",
-      "target": "cafe-v2-profile",
-      "targetProject": "cafe-v2",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-v2-status",
-      "sourceProject": "cafe-v2",
-      "target": "cafe-v2-structure",
-      "targetProject": "cafe-v2",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-v2-structure",
-      "sourceProject": "cafe-v2",
-      "target": "cafe-v2-profile",
-      "targetProject": "cafe-v2",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "TASK-001",
-      "sourceProject": "cafe-v2",
-      "target": "cafe-v2-profile",
-      "targetProject": "cafe-v2",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "TASK-001",
-      "sourceProject": "cafe-v2",
-      "target": "cafe-v2-status",
-      "targetProject": "cafe-v2",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "TASK-001",
-      "sourceProject": "cafe-v2",
-      "target": "DEC-001",
-      "targetProject": "cafe-v2",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "TASK-001",
-      "sourceProject": "cafe-v2",
-      "target": "cafe-v2-profile",
-      "targetProject": "cafe-v2",
-      "type": "supersedes",
-      "label": "supersedes"
     },
     {
       "source": "clientdata-agent",
@@ -4486,6 +4156,14 @@
       "label": "relates-to"
     },
     {
+      "source": "LSN-001",
+      "sourceProject": "mcky.space",
+      "target": "TASK-001",
+      "targetProject": "mcky.space",
+      "type": "caused-by",
+      "label": "caused-by"
+    },
+    {
       "source": "RSK-001",
       "sourceProject": "mcky.space",
       "target": "mcky-agent",
@@ -4620,6 +4298,14 @@
       "targetProject": "mcky.space",
       "type": "relates-to",
       "label": "relates-to"
+    },
+    {
+      "source": "TASK-001",
+      "sourceProject": "mcky.space",
+      "target": "LSN-001",
+      "targetProject": "mcky.space",
+      "type": "resolved-by",
+      "label": "resolved-by"
     },
     {
       "source": "truck-agent",
@@ -4997,17 +4683,6 @@
         "task": 1
       }
     },
-    "cafe-v2": {
-      "node_count": 9,
-      "by_type": {
-        "document": 4,
-        "index": 1,
-        "decision": 1,
-        "project-profile": 1,
-        "project-status": 1,
-        "task": 1
-      }
-    },
     "clientdata": {
       "node_count": 20,
       "by_type": {
@@ -5036,13 +4711,14 @@
       }
     },
     "mcky.space": {
-      "node_count": 17,
+      "node_count": 18,
       "by_type": {
         "agent-profile": 1,
         "document": 4,
         "index": 1,
         "component": 1,
         "decision": 6,
+        "lesson": 1,
         "risk": 1,
         "project-profile": 1,
         "project-status": 1,
@@ -5064,11 +4740,14 @@
       }
     },
     "writer": {
-      "node_count": 4,
+      "node_count": 7,
       "by_type": {
         "agent-profile": 1,
+        "project-commands": 1,
         "decision": 1,
         "project-profile": 1,
+        "project-status": 1,
+        "project-structure": 1,
         "task": 1
       }
     }

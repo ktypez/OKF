@@ -6,8 +6,8 @@ last_updated: 2026-07-05
 personality: terminal hipster
 status_ref: ./status.md
 status: active
-freshness: 2026-07-04
-verified: 2026-07-04
+freshness: 2026-07-05
+verified: 2026-07-05
 expires: null
 superseded_by: null
 anchors: []
@@ -81,7 +81,8 @@ Terminal-style personal website. Neobrutalist design with responsive layout (320
 
 | Command | What it does |
 |---------|-------------|
-| `npm run dev` | Dev server |
+| `npm run dev` | Dev server (binds 0.0.0.0 for LAN access) |
+| `npm run dev -- --host 127.0.0.1` | Dev server (localhost only) |
 | `npm run build` | Build (prebuild blog index + astro build) |
 | `node scripts/build-blog-posts.mjs` | Build blog index manually |
 | `npm run start` | Start production server |
@@ -110,6 +111,9 @@ Terminal-style personal website. Neobrutalist design with responsive layout (320
 - Interactive pages use Alpine.js x-data directives inline in .astro templates
 - Blog is read-only — edit via Git (.md files + rebuild)
 - No external API calls, no database (except Supabase for auth)
-- Do not run `npm install` (android-arm64 binding breaks)
-- Do not delete `node_modules/`
+- `npm run dev` binds to `0.0.0.0` by default (LAN access). On Termux, os.networkInterfaces is patched in astro.config.mjs to prevent EACCES crash.
+- Do not run `npm install` if node_modules is intact (android-arm64 drops ESM/binding files)
+- Do not delete `node_modules/` (generated native binding shims + ESM wrappers live here)
+- Shiki/mcky.space RSK-001 resolved — switches: Prism for syntax highlight, manual rolldown binding, unstorage ESM wrappers
+- If node_modules is rebuilt from scratch, reapply manual fixes: `npm install @rolldown/binding-linux-arm64-gnu@1.1.2` and regenerate unstorage ESM wrappers
 - Skip tests — no test commands

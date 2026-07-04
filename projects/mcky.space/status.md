@@ -7,8 +7,8 @@ state: active
 documentation_completeness: High
 confidence_level: High
 status: active
-freshness: 2026-07-04
-verified: 2026-07-04
+freshness: 2026-07-05
+verified: 2026-07-05
 expires: null
 superseded_by: null
 anchors: []
@@ -64,6 +64,14 @@ links:
 
 ## Changelog
 
+### 2026-07-05 — RSK-001 resolved, LAN access enabled
+- **RSK-001**: Switched `syntaxHighlight` from shiki to `prism` — eliminates shiki dependency
+- **Rolldown binding**: Installed `@rolldown/binding-linux-arm64-gnu@1.1.2` — npm skip fix
+- **Unstorage**: Generated 22 missing `.mjs` ESM wrappers (npm drops ESM on android-arm64)
+- **Dev server**: Set `server: { host: '0.0.0.0' }` in astro.config.mjs — LAN access by default
+- **Termux fix**: Patched `os.networkInterfaces` in astro.config.mjs to return fake interfaces (EACCES workaround)
+- **Docs**: Updated RSK-001 (resolved), agent.md rules + commands, status.md known issues
+
 ### 2026-07-04 — Auth removal, dark mode refresh, homepage blog section
 - **Auth**: Removed login/logout from layout — auth store, sidebar buttons, floating form all stripped
 - **Dark mode**: Navy → deep grey palette (#141414 bg, #aaa text, #666 borders)
@@ -103,6 +111,15 @@ links:
 ## Known Issues
 
 - Alpine.js loaded from CDN (intentional per stack definition)
-- Dev server broken locally (shiki module corruption) — works on Vercel
-- `npm install` breaks android-arm64 native binding
 - `/api/auth` route exists but no longer referenced (auth removed from layout)
+- `npm install` still drops ESM/binding files on android-arm64 — manual fixes required
+
+## Dev Server Fix (2026-07-05)
+
+RSK-001 resolved. Dev server now works locally:
+- `npm run dev` binds `0.0.0.0` by default (LAN access from other devices)
+- `npm run dev -- --host 127.0.0.1` for localhost-only
+- Switched `syntaxHighlight` from shiki to `prism` in `astro.config.mjs`
+- Installed `@rolldown/binding-linux-arm64-gnu@1.1.2` manually (npm skips it on android-arm64)
+- Generated 22 missing `.mjs` wrapper files for unstorage (npm drops ESM files on android-arm64)
+- Patched `os.networkInterfaces` in config to prevent EACCES crash on Termux
