@@ -4,6 +4,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>OKF Workspace Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/npm/d3@7">
 </script>
 <style>
@@ -21,12 +24,8 @@
     --shadow: 0 2px 8px rgba(0,0,0,0.3);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
-  @font-face {
-    font-family: 'SOV_monomon';
-    src: url('SOV_monomon-hinted.ttf') format('truetype');
-  }
   body {
-    font-family: 'SOV_monomon', 'Courier New', monospace;
+    font-family: 'IBM Plex Sans Thai', -apple-system, BlinkMacSystemFont, sans-serif;
     background: var(--bg); color: var(--text);
     height: 100vh; height: 100dvh; overflow: hidden;
   }
@@ -457,7 +456,7 @@ function renderLegend() {
   const usedTypes = {};
   nodes.forEach(n => { usedTypes[n.type] = (usedTypes[n.type] || 0) + 1; });
   legend.innerHTML = Object.entries(usedTypes).sort().map(([t]) =>
-    '<span class="legend-item" onclick="setFilter(&apos;type:&apos; + t + &apos;&apos;)" style="cursor:pointer;" title="Filter by type: ' + (typeLabelMap[t] || t) + '">' +
+    '<span class="legend-item" onclick="setFilter(&apos;type:' + t + '&apos;)" style="cursor:pointer;" title="Filter by type: ' + (typeLabelMap[t] || t) + '">' +
     '<span class="legend-dot" style="background:' + (typeColorsMap[t] || '#64748b') + '"></span>' +
     '<span>' + (typeLabelMap[t] || t) + '</span></span>'
   ).join(' | ');
