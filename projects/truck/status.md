@@ -2,13 +2,13 @@
 type: project-status
 id: truck-status
 project: truck
-last_updated: 2026-07-04
+last_updated: 2026-07-06
 state: active
 documentation_completeness: High
 confidence_level: High
 status: active
-freshness: 2026-07-04
-verified: 2026-07-04
+freshness: 2026-07-05
+verified: 2026-07-05
 expires: null
 superseded_by: null
 anchors: []
@@ -55,6 +55,13 @@ links:
 
 ## Changelog
 
+### 2026-07-06
+- **SW cache fix**: `FORCE_RELOAD` on activate — reloads all tabs when new SW takes over, preventing cache mismatch after deploy
+
+### 2026-07-05
+- **PWA cleanup**: removed install banner + apple-touch-startup-image splash screen
+- **Auth**: extracted `reauthenticate()` helper — shared across 3 modals
+
 ### 2026-07-03
 - **Edge Functions**: locked down CORS using `ALLOWED_ORIGIN` environment variable
 - **Code Review**: aligned cache invalidation keys, secured math boundaries in calculator
@@ -89,10 +96,10 @@ links:
 
 ## PWA
 
-- **Install banner**: floats above navtab (bottom: 88px), dismissed state in localStorage
-- **SW**: `registerSW({ immediate })`, cache version `ezzy-truck-v3`
+- **SW**: `registerSW({ immediate })`, cache version `ezzy-truck-v4`
 - **Cache strategies**: `/assets/` JS → network-first; non-JS assets → cacheFirstWithFallback; icons/fonts → staleWhileRevalidate; pages/Supabase → networkFirst
 - **Shortcuts**: /daily?today=1, /shifts, /income, /profile
+- **On update**: `activate` event sends `FORCE_RELOAD` to all clients — prevents stale JS/CSS mismatch after deploy
 
 ## Tests
 

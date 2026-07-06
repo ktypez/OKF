@@ -1,8 +1,8 @@
 {
   "meta": {
-    "generated": "2026-07-04T16:53:04.655Z",
-    "total_nodes": 111,
-    "total_edges": 203,
+    "generated": "2026-07-05T07:08:35.342Z",
+    "total_nodes": 118,
+    "total_edges": 225,
     "warnings": 0
   },
   "warnings": [],
@@ -944,6 +944,32 @@
       "last_updated": "2026-07-04"
     },
     {
+      "id": "DEC-007",
+      "type": "decision",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/DEC-007.md",
+      "status": "active",
+      "freshness": "2026-07-05",
+      "verified": "2026-07-05",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/clientdata/app/page.tsx",
+        "/home/clientdata/app/layout.tsx"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "clientdata-status",
+          "_composite": "clientdata/clientdata-status"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-05"
+    },
+    {
       "id": "LSN-001",
       "type": "lesson",
       "project": "clientdata",
@@ -1055,8 +1081,8 @@
       "project": "clientdata",
       "file": "projects/clientdata/status.md",
       "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
+      "freshness": "2026-07-05T00:00:00.000Z",
+      "verified": "2026-07-05T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [
@@ -1083,7 +1109,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
+      "last_updated": "2026-07-05T00:00:00.000Z"
     },
     {
       "id": "clientdata-structure",
@@ -1181,6 +1207,219 @@
           "type": "relates-to",
           "target": "RSK-001",
           "_composite": "clientdata/RSK-001"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-05T00:00:00.000Z"
+    },
+    {
+      "id": "collage-agent",
+      "type": "agent-profile",
+      "project": "collage",
+      "file": "projects/collage/agent.md",
+      "status": "active",
+      "freshness": "2026-07-05T00:00:00.000Z",
+      "verified": "2026-07-05T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "collage-profile",
+          "_composite": "collage/collage-profile"
+        },
+        {
+          "type": "relates-to",
+          "target": "collage-status",
+          "_composite": "collage/collage-status"
+        },
+        {
+          "type": "relates-to",
+          "target": "collage-structure",
+          "_composite": "collage/collage-structure"
+        },
+        {
+          "type": "relates-to",
+          "target": "collage-commands",
+          "_composite": "collage/collage-commands"
+        },
+        {
+          "type": "relates-to",
+          "target": "workspace",
+          "_composite": "workspace"
+        }
+      ],
+      "personality": "barista engineer",
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-05T00:00:00.000Z"
+    },
+    {
+      "id": "collage-commands",
+      "type": "document",
+      "project": "collage",
+      "file": "projects/collage/commands.md",
+      "status": "active",
+      "freshness": "2026-07-05T00:00:00.000Z",
+      "verified": "2026-07-05T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "documents",
+          "target": "collage-agent",
+          "_composite": "collage/collage-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "collage-dependencies",
+          "_composite": "collage/collage-dependencies"
+        },
+        {
+          "type": "relates-to",
+          "target": "collage-structure",
+          "_composite": "collage/collage-structure"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-05T00:00:00.000Z"
+    },
+    {
+      "id": "collage-dependencies",
+      "type": "document",
+      "project": "collage",
+      "file": "projects/collage/dependencies.md",
+      "status": "active",
+      "freshness": "2026-07-05T00:00:00.000Z",
+      "verified": "2026-07-05T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "documents",
+          "target": "collage-profile",
+          "_composite": "collage/collage-profile"
+        },
+        {
+          "type": "relates-to",
+          "target": "collage-structure",
+          "_composite": "collage/collage-structure"
+        },
+        {
+          "type": "relates-to",
+          "target": "collage-commands",
+          "_composite": "collage/collage-commands"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-05T00:00:00.000Z"
+    },
+    {
+      "id": "collage-profile",
+      "type": "project-profile",
+      "project": "collage",
+      "file": "projects/collage/profile.md",
+      "status": "active",
+      "freshness": "2026-07-05T00:00:00.000Z",
+      "verified": "2026-07-05T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "collage-agent",
+          "_composite": "collage/collage-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "collage-status",
+          "_composite": "collage/collage-status"
+        },
+        {
+          "type": "relates-to",
+          "target": "collage-structure",
+          "_composite": "collage/collage-structure"
+        },
+        {
+          "type": "relates-to",
+          "target": "collage-dependencies",
+          "_composite": "collage/collage-dependencies"
+        },
+        {
+          "type": "relates-to",
+          "target": "collage-commands",
+          "_composite": "collage/collage-commands"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-05T00:00:00.000Z"
+    },
+    {
+      "id": "collage-status",
+      "type": "project-status",
+      "project": "collage",
+      "file": "projects/collage/status.md",
+      "status": "active",
+      "freshness": "2026-07-05T00:00:00.000Z",
+      "verified": "2026-07-05T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "collage-agent",
+          "_composite": "collage/collage-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "collage-profile",
+          "_composite": "collage/collage-profile"
+        },
+        {
+          "type": "relates-to",
+          "target": "collage-structure",
+          "_composite": "collage/collage-structure"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-05T00:00:00.000Z"
+    },
+    {
+      "id": "collage-structure",
+      "type": "document",
+      "project": "collage",
+      "file": "projects/collage/structure.md",
+      "status": "active",
+      "freshness": "2026-07-05T00:00:00.000Z",
+      "verified": "2026-07-05T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "documents",
+          "target": "collage-agent",
+          "_composite": "collage/collage-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "collage-profile",
+          "_composite": "collage/collage-profile"
         }
       ],
       "personality": null,
@@ -2208,7 +2447,7 @@
       "personality": "overtime enthusiast",
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
+      "last_updated": "2026-07-05T00:00:00.000Z"
     },
     {
       "id": "truck-assets",
@@ -2582,8 +2821,8 @@
       "project": "truck",
       "file": "projects/truck/status.md",
       "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
+      "freshness": "2026-07-05T00:00:00.000Z",
+      "verified": "2026-07-05T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
@@ -2607,7 +2846,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
+      "last_updated": "2026-07-05T00:00:00.000Z"
     },
     {
       "id": "truck-structure",
@@ -3578,6 +3817,14 @@
       "label": "relates-to"
     },
     {
+      "source": "DEC-007",
+      "sourceProject": "clientdata",
+      "target": "clientdata-status",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
       "source": "LSN-001",
       "sourceProject": "clientdata",
       "target": "TASK-001",
@@ -3742,6 +3989,174 @@
       "sourceProject": "clientdata",
       "target": "RSK-001",
       "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-agent",
+      "sourceProject": "collage",
+      "target": "collage-profile",
+      "targetProject": "collage",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-agent",
+      "sourceProject": "collage",
+      "target": "collage-status",
+      "targetProject": "collage",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-agent",
+      "sourceProject": "collage",
+      "target": "collage-structure",
+      "targetProject": "collage",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-agent",
+      "sourceProject": "collage",
+      "target": "collage-commands",
+      "targetProject": "collage",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-agent",
+      "sourceProject": "collage",
+      "target": "workspace",
+      "targetProject": null,
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-commands",
+      "sourceProject": "collage",
+      "target": "collage-agent",
+      "targetProject": "collage",
+      "type": "documents",
+      "label": "documents"
+    },
+    {
+      "source": "collage-commands",
+      "sourceProject": "collage",
+      "target": "collage-dependencies",
+      "targetProject": "collage",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-commands",
+      "sourceProject": "collage",
+      "target": "collage-structure",
+      "targetProject": "collage",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-dependencies",
+      "sourceProject": "collage",
+      "target": "collage-profile",
+      "targetProject": "collage",
+      "type": "documents",
+      "label": "documents"
+    },
+    {
+      "source": "collage-dependencies",
+      "sourceProject": "collage",
+      "target": "collage-structure",
+      "targetProject": "collage",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-dependencies",
+      "sourceProject": "collage",
+      "target": "collage-commands",
+      "targetProject": "collage",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-profile",
+      "sourceProject": "collage",
+      "target": "collage-agent",
+      "targetProject": "collage",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-profile",
+      "sourceProject": "collage",
+      "target": "collage-status",
+      "targetProject": "collage",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-profile",
+      "sourceProject": "collage",
+      "target": "collage-structure",
+      "targetProject": "collage",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-profile",
+      "sourceProject": "collage",
+      "target": "collage-dependencies",
+      "targetProject": "collage",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-profile",
+      "sourceProject": "collage",
+      "target": "collage-commands",
+      "targetProject": "collage",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-status",
+      "sourceProject": "collage",
+      "target": "collage-agent",
+      "targetProject": "collage",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-status",
+      "sourceProject": "collage",
+      "target": "collage-profile",
+      "targetProject": "collage",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-status",
+      "sourceProject": "collage",
+      "target": "collage-structure",
+      "targetProject": "collage",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-structure",
+      "sourceProject": "collage",
+      "target": "collage-agent",
+      "targetProject": "collage",
+      "type": "documents",
+      "label": "documents"
+    },
+    {
+      "source": "collage-structure",
+      "sourceProject": "collage",
+      "target": "collage-profile",
+      "targetProject": "collage",
       "type": "relates-to",
       "label": "relates-to"
     },
@@ -4714,18 +5129,27 @@
       }
     },
     "clientdata": {
-      "node_count": 20,
+      "node_count": 21,
       "by_type": {
         "agent-profile": 1,
         "document": 4,
         "index": 1,
         "component": 2,
-        "decision": 6,
+        "decision": 7,
         "lesson": 1,
         "risk": 1,
         "project-profile": 1,
         "project-status": 1,
         "task": 2
+      }
+    },
+    "collage": {
+      "node_count": 6,
+      "by_type": {
+        "agent-profile": 1,
+        "document": 3,
+        "project-profile": 1,
+        "project-status": 1
       }
     },
     "habby": {

@@ -59,3 +59,31 @@
 - **Conflicts:** None
 - **Warnings:** None
 - **OKF is already synchronized with the current workspace.**
+
+## 2026-07-06 (Collage KB Sync)
+
+- **Trigger:** User requested collage KB update
+- **Projects Scanned:** collage
+- **Files Updated:**
+  - `projects/collage/profile.md` — deployment targets (webhook on Vercel), added fontkit to major libs
+  - `projects/collage/structure.md` — added `frontend/api/webhook.js`, `frontend/package.json`, `vercel.json`
+  - `projects/collage/dependencies.md` — added fontkit (backend), `@line/bot-sdk` (frontend)
+  - `projects/collage/status.md` — routes split by layer (Vercel vs Render), webhook API note
+- **Files Skipped:** `agent.md`, `commands.md` — no changes needed
+- **Conflicts:** None
+- **Warnings:** None**
+
+## 2026-07-06 (OpenCode Config + Commands)
+
+- **Trigger:** User requested opencode config update for KB integration + make triggers work
+- **Files Updated:**
+  - `~/.config/opencode/config.json` — expanded instructions (added workspace.md), per-project references, default_agent (kb), skills paths
+  - `~/.config/opencode/opencode.jsonc` — added `~/collage/**` to permissions
+- **Files Created:**
+  - `~/.config/opencode/agents/kb-agent.md` — KB management agent (triggers, graph, dashboard)
+  - `~/.config/opencode/commands/update-md.md` — `/update-md` sync project state to KB
+  - `~/.config/opencode/commands/cleanup.md` — `/cleanup` health scan
+  - `~/.config/opencode/commands/doctor-kb.md` — `/doctor-kb` knowledge lifecycle audit
+  - `~/.config/opencode/commands/dispatch.md` — `/dispatch` task operator
+  - `~/.config/opencode/commands/dashboard.md` — `/dashboard` graph dashboard control
+  - `~/.config/opencode/commands/update-config.md` — `/update-config` sync opencode config with KB

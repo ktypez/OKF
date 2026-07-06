@@ -2,7 +2,7 @@
 type: agent-profile
 id: truck-agent
 project: truck
-last_updated: 2026-07-04
+last_updated: 2026-07-05
 personality: overtime enthusiast
 status_ref: ./status.md
 status: active

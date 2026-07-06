@@ -43,6 +43,7 @@ You have access to a shared knowledge base at `~/OKF/`. Before any task:
 | habby | [agent](projects/habby/agent.md) | [status](projects/habby/status.md) |
 | mcky.space | [agent](projects/mcky.space/agent.md) | [status](projects/mcky.space/status.md) |
 | truck | [agent](projects/truck/agent.md) | [status](projects/truck/status.md) |
+| collage | [agent](projects/collage/agent.md) | [status](projects/collage/status.md) |
 | writer | [agent](projects/writer/agent.md) | — |
 
 Shared: `~/OKF/system/conventions.md`, `~/OKF/system/workspace.md`

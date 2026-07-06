@@ -2,10 +2,10 @@
 type: project-status
 id: clientdata-status
 project: clientdata
-last_updated: 2026-07-04
+last_updated: 2026-07-06
 status: active
-freshness: 2026-07-04
-verified: 2026-07-04
+freshness: 2026-07-06
+verified: 2026-07-06
 expires: null
 superseded_by: null
 state: active
@@ -44,6 +44,7 @@ links:
 - `/` — Main SPA (Dashboard / Map / Admin views via History API)
 - `/c/[id]` — Public client page (server wrapper pattern)
 - `/api/clients` — CRUD endpoints
+- `/api/clients/search?q=` — Search by name/shopName
 - `/api/suggestions` — Suggestions CRUD + approve/reject
 - `/api/auth` — Password auth
 
@@ -69,6 +70,7 @@ links:
 | Route | Method | Purpose |
 |-------|--------|---------|
 | `/api/clients` | GET | List all clients (with caching) |
+| `/api/clients/search?q=` | GET | Search clients by name/shopName (ILIKE, max 10) |
 | `/api/clients` | POST | Add client (duplicate check) |
 | `/api/clients/[id]` | DELETE | Delete client |
 | `/api/suggestions` | GET | Get suggestions for client (auth-gated) |
@@ -79,6 +81,16 @@ links:
 | `/api/auth?check=setup` | GET | Check auth setup (graceful error fallback) |
 
 ## Changelog
+
+### 2026-07-06
+- **Search bugfix** (`e8629ac`): reverted default query limit — search needs all clients for client-side filtering
+
+### 2026-07-05
+- **Loading UX overhaul** (commit `033290e`): Split loading gate — app shell (sidebar + header) now renders immediately while only the content area shows a skeleton. Added branded inline splash script in `<head>` (dark bg + centered pulsing icon) to eliminate blank screen between PWA splash and React hydration. Deleted `app/icon.svg` (conflicted with `favicon.svg` metadata). Changed all `dynamic()` loading callbacks from `<LoadingScreen />` to `null`.
+- **Flexible client name validation** (commit `7ff117e`): Changed add/edit form to require name OR shopName (at least one) instead of only name. Updated AddClientForm, SuggestEditForm, validateClient, and suggestions API. Labels adjusted: name no longer `*`, shopName now `*`. Hint text shown when both empty.
+- **Clientdata search API** (`688c203`): `GET /api/clients/search?q=xxx` — ILIKE on name + shopName, max 10 results; URL param `?q=xxx` pre-fills search (`7b51957`)
+- **Performance fixes** (`c23ed82`, `f79280b`): SSR server component shell (`page.tsx`), removed `<Suspense>` boundary, DB index `clients_updated_at_idx` on `updated_at`, all dynamic imports now have skeleton loaders
+- **PWA overhaul** (`8dd06d6`, `768f215`): SW rewritten — network-first shell cache for SPA routes, no offline/outbox/tile/image cache. Deleted `lib/sync/outbox.ts`, `components/OfflineSettings.tsx`, `hooks/useSyncStatus.ts`, `hooks/useStorageUsage.ts`. SW returns cached shell for SPA navigations. SW version stabilized to `v4` with proper cleanup + `SKIP_WAITING` handler (`74c26bd`)
 
 ### 2026-07-01
 - **Code review batch 2**: Deduplicated SuggestionDiff, useGeolocation, useMapDarkMode; fixed empty catch blocks; React.memo SearchDropdown; removed lucide-react; cssVarToHex uses DOM getComputedStyle
