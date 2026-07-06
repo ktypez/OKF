@@ -87,3 +87,8 @@
   - `~/.config/opencode/commands/dispatch.md` — `/dispatch` task operator
   - `~/.config/opencode/commands/dashboard.md` — `/dashboard` graph dashboard control
   - `~/.config/opencode/commands/update-config.md` — `/update-config` sync opencode config with KB
+
+## 2026-07-06
+
+- **Updated:** `clientdata/lib/clients.ts` — `searchClients()` now splits query into individual keywords (AND across keywords, OR across name/shopName). Enables multi-word search like `*ลูกค้า all the wall` matching clients containing all 3 words anywhere in name/shopName.
+- **Updated:** `clientdata/status.md` — added changelog entry for keyword search change

@@ -82,6 +82,9 @@ links:
 
 ## Changelog
 
+### 2026-07-06 (night)
+- **Keyword search**: `searchClients()` now splits query into individual words — each keyword matches via ILIKE on name/shopName, combined with AND. This means `!ลูกค้า all the wall` matches clients containing ALL of "all", "the", "wall" anywhere in name/shopName (not just the full phrase).
+
 ### 2026-07-06 (evening)
 - **Lockfile sync** (`ec81036`): synced `pnpm-lock.yaml` with `package.json` — removed stale `@serwist/*` packages (304 line deletion)
 - **Lint cleanup**: fixed 3 ref-access render errors, 5 warnings — removed unused imports (`setCachedClients`, `useReducer`, `progress`), converted `initialLoadDone` ref to state, fixed MapPicker/MapPreview dep warnings via ref sync in effects
