@@ -82,6 +82,11 @@ links:
 
 ## Changelog
 
+### 2026-07-06 (evening)
+- **Lockfile sync** (`ec81036`): synced `pnpm-lock.yaml` with `package.json` — removed stale `@serwist/*` packages (304 line deletion)
+- **Lint cleanup**: fixed 3 ref-access render errors, 5 warnings — removed unused imports (`setCachedClients`, `useReducer`, `progress`), converted `initialLoadDone` ref to state, fixed MapPicker/MapPreview dep warnings via ref sync in effects
+- **Dep cleanup**: removed stale `@serwist/*` packages, removed unused `turbopack: {}` from next.config.ts
+
 ### 2026-07-06
 - **Search bugfix** (`e8629ac`): reverted default query limit — search needs all clients for client-side filtering
 
@@ -146,6 +151,7 @@ links:
 | hooks/useDebounce.ts | 2 | initial value, delayed update |
 
 **Framework**: Vitest 1.6 + @testing-library/react + jsdom 24
+**Lint**: 0 errors, 0 warnings (ESLint 9)
 
 ## Known Issues
 

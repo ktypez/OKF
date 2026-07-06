@@ -7,8 +7,8 @@ state: active
 documentation_completeness: High
 confidence_level: High
 status: active
-freshness: 2026-07-05
-verified: 2026-07-05
+freshness: 2026-07-06
+verified: 2026-07-06
 expires: null
 superseded_by: null
 anchors: []
@@ -54,6 +54,12 @@ links:
 | `notify-telegram` | Request/approve/reject | Sends Telegram message to admin |
 
 ## Changelog
+
+### 2026-07-06 (evening)
+- **Auth modal**: replaced full-page login screen with modal overlay on main page — app renders behind login, ModalWrapper + focus trap blocks interaction until authenticated
+
+### 2026-07-06 (afternoon)
+- **Dep fix**: restored `workbox-precaching` + `workbox-window` as devDeps (required by vite-plugin-pwa); removed unused `sharp`; moved `@testing-library/dom` from deps to devDeps
 
 ### 2026-07-06
 - **SW cache fix**: `FORCE_RELOAD` on activate — reloads all tabs when new SW takes over, preventing cache mismatch after deploy

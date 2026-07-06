@@ -37,14 +37,14 @@ Client management & CRM — Next.js 16 with Drizzle + Neon Postgres, Cloudflare 
 
 | Layer | Tech |
 |-------|------|
-| Framework | Next.js 16 (App Router, webpack) |
-| Language | React 19 + TypeScript |
-| Database | Neon Postgres (Drizzle ORM) |
-| Storage | Cloudflare R2 |
+| Framework | Next.js 16.2.9 (App Router, webpack) |
+| Language | React 19.2.7 + TypeScript 6.0.3 |
+| Database | Neon Postgres (Drizzle ORM 0.45.2) |
+| Storage | Cloudflare R2 (via @aws-sdk/client-s3) |
 | Auth | scrypt + HMAC tokens |
 | Testing | Vitest 1.6 + @testing-library/react |
-| PWA | Serwist removed (cleanup-only sw) |
-| Styling | Tailwind + CSS custom properties + shadcn/ui components |
+| PWA | Custom service worker (cleanup-only, Serwist removed) |
+| Styling | Tailwind CSS 4.3.1 + shadcn/ui components (Base UI) |
 | Deployment | Vercel |
 
 ## Architecture
@@ -85,12 +85,12 @@ Client management & CRM — Next.js 16 with Drizzle + Neon Postgres, Cloudflare 
 
 | Command | What it does |
 |---------|-------------|
-| `npx next dev -H localhost` | Dev server (port 3002) |
-| `npm run build` | Production build (`next build --webpack`) |
+| `pnpm dev` | Dev server (port 3002, -H 0.0.0.0) |
+| `pnpm build` | Production build (`next build --webpack`) |
 | `pnpm test` | Run tests (16 tests) |
-| `npm run lint` | ESLint |
-| `npm run db:push` | Push Drizzle schema |
-| `npm run db:migrate` | Run migration |
+| `pnpm lint` | ESLint |
+| `pnpm db:push` | Push Drizzle schema |
+| `pnpm db:migrate` | Run migration |
 
 ## Triggers
 
@@ -157,3 +157,4 @@ Client management & CRM — Next.js 16 with Drizzle + Neon Postgres, Cloudflare 
 - `public/sw.js` is cleanup-only script (Serwist removed)
 - sonner removed — no toast library installed
 - All UI edits must use shadcn components — no custom button/modal patterns when shadcn equivalent exists
+- `pnpm-lock.yaml` must be committed when dependencies change (Vercel uses `--frozen-lockfile`)

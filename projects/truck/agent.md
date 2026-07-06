@@ -2,12 +2,12 @@
 type: agent-profile
 id: truck-agent
 project: truck
-last_updated: 2026-07-05
+last_updated: 2026-07-06
 personality: overtime enthusiast
 status_ref: ./status.md
 status: active
-freshness: 2026-07-04
-verified: 2026-07-04
+freshness: 2026-07-06
+verified: 2026-07-06
 expires: null
 superseded_by: null
 anchors: []
@@ -73,7 +73,7 @@ main.tsx → App.tsx (auth gate + session + theme)
 
 ## Key Patterns
 
-- **Auth gate**: checks Supabase session → AuthScreen or main app
+- **Auth gate**: checks Supabase session → shows ModalWrapper with AuthScreen overlay on main app (z-index 9999, non-dismissible)
 - **Toast**: `useToast()` from ToastContext — never `alert()` or `console.log()`
 - **Modal pattern**: `.modal-backdrop` (fadeIn) + `.modal-content` (scaleIn)
 - **Admin gate**: `user_profiles.is_admin` DB query (not hardcoded email)
