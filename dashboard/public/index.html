@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OKF Workspace Dashboard</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/d3@7"></script>
+<style>
+  :root {
+    --bg: #0b1120;
+    --surface: #131c31;
+    --surface-2: #1a2744;
+    --surface-3: #253355;
+    --border: #2a3a5c;
+    --text: #e8edf5;
+    --text-muted: #8892b0;
+    --accent: #5b8def;
+    --accent-hover: #7ba3f5;
+    --radius: 10px;
+    --shadow: 0 2px 8px rgba(0,0,0,0.3);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'IBM Plex Sans Thai', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--bg); color: var(--text);
+    height: 100vh; height: 100dvh; overflow: hidden;
+  }
+  ::-webkit-scrollbar { width: 5px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+  .app { display: flex; height: 100vh; height: 100dvh; }
+  .sidebar {
+    width: 280px; min-width: 280px;
+    background: var(--surface);
+    border-right: 1px solid var(--border);
+    display: flex; flex-direction: column; overflow: hidden;
+    z-index: 20;
+  }
+  .sidebar-header {
+    padding: 14px 16px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .sidebar-header .logo {
+    width: 28px; height: 28px; border-radius: 6px;
+    background: linear-gradient(135deg, var(--accent), #a855f7);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; font-weight: 700; color: #fff; flex-shrink: 0;
+  }
+  .sidebar-header h1 { font-size: 15px; font-weight: 600; }
+  .sidebar-meta {
+    padding: 6px 16px; font-size: 11px; color: var(--text-muted);
+    border-bottom: 1px solid var(--border); display: flex; gap: 12px;
+  }
+  .sidebar-meta span { display: flex; align-items: center; gap: 4px; }
+  .sidebar-meta strong { color: var(--text); font-weight: 600; }
+  .search-box { padding: 8px 12px; }
+  .search-box input {
+    width: 100%; padding: 7px 10px; border-radius: 6px; border: 1px solid var(--border);
+    background: var(--surface-2); color: var(--text); font-size: 12px;
+    outline: none; transition: border-color .15s;
+  }
+  .search-box input:focus { border-color: var(--accent); }
+  .sidebar-nav {
+    padding: 4px 8px; display: flex; gap: 3px; flex-wrap: wrap;
+    border-bottom: 1px solid var(--border);
+  }
+  .sidebar-nav button {
+    background: var(--surface-2); border: none; color: var(--text-muted);
+    padding: 3px 10px; border-radius: 4px; cursor: pointer; font-size: 11px;
+    white-space: nowrap; transition: all .15s;
+  }
+  .sidebar-nav button:hover { background: var(--surface-3); color: var(--text); }
+  .sidebar-nav button.active { background: var(--accent); color: #fff; }
+  .sidebar-content { flex: 1; overflow-y: auto; padding: 4px 0; }
+  .node-list { list-style: none; }
+  .node-item {
+    padding: 6px 12px; cursor: pointer; display: flex; align-items: center;
+    gap: 8px; font-size: 12px; border-left: 2px solid transparent;
+    transition: all .1s;
+  }
+  .node-item:hover { background: var(--surface-2); }
+  .node-item.selected {
+    background: rgba(91,141,239,0.08);
+    border-left-color: var(--accent);
+  }
+  .node-item .icon { font-size: 14px; flex-shrink: 0; width: 18px; text-align: center; }
+  .node-item .id { font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .node-item .project-badge {
+    font-size: 9px; padding: 1px 5px; border-radius: 3px;
+    background: var(--surface-3); color: var(--text-muted); margin-left: auto;
+  }
+  .node-item .dot {
+    width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0;
+  }
+  .main { flex: 1; display: flex; flex-direction: column; overflow: hidden; min-width: 0; }
+  .topbar {
+    display: flex; align-items: center; gap: 12px;
+    padding: 8px 16px; border-bottom: 1px solid var(--border);
+    background: var(--surface); min-height: 44px;
+  }
+  .topbar-title { font-size: 14px; font-weight: 600; }
+  .topbar-title span { color: var(--text-muted); font-weight: 400; }
+  .topbar-stats {
+    margin-left: auto; display: flex; gap: 16px;
+    font-size: 11px; color: var(--text-muted);
+  }
+  .topbar-stats strong { color: var(--text); font-weight: 600; }
+  .project-rail {
+    display: flex; gap: 6px; padding: 6px 10px;
+    overflow-x: auto; border-bottom: 1px solid var(--border);
+    background: var(--surface);
+    scrollbar-width: none;
+  }
+  .project-rail::-webkit-scrollbar { display: none; }
+  .project-card {
+    flex-shrink: 0; min-width: 100px; max-width: 140px;
+    padding: 6px 10px; border-radius: 8px;
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    cursor: pointer; transition: all .15s;
+  }
+  .project-card:hover { border-color: var(--accent); background: var(--surface-3); }
+  .project-card.active { border-color: var(--accent); }
+  .project-card .proj-name { font-size: 11px; font-weight: 600; margin-bottom: 2px; }
+  .project-card .proj-count { font-size: 18px; font-weight: 700; color: var(--text); line-height: 1.1; }
+  .project-card .proj-label { font-size: 9px; color: var(--text-muted); }
+  .project-card .proj-types { display: flex; gap: 2px; margin-top: 4px; flex-wrap: wrap; }
+  .project-card .proj-type-dot { width: 6px; height: 6px; border-radius: 1px; }
+  .workspace-body { flex: 1; display: flex; overflow: hidden; position: relative; }
+  .graph-area { flex: 1; display: flex; flex-direction: column; overflow: hidden; min-width: 0; }
+  .graph-container { flex: 1; position: relative; overflow: hidden; }
+  #graph { width: 100%; height: 100%; }
+  .tooltip {
+    position: absolute; padding: 6px 10px; border-radius: 6px;
+    background: var(--surface-3); border: 1px solid var(--border);
+    font-size: 11px; pointer-events: none; display: none;
+    box-shadow: var(--shadow);
+  }
+  .inspector {
+    width: 0; overflow: hidden; transition: width .2s ease;
+    background: var(--surface); border-left: 1px solid var(--border);
+    flex-shrink: 0;
+  }
+  .inspector.open { width: 340px; overflow-y: auto; }
+  .inspector-header {
+    padding: 10px 14px; border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    font-size: 13px; font-weight: 600;
+    position: sticky; top: 0; background: var(--surface); z-index: 2;
+  }
+  .inspector-close {
+    background: none; border: none; color: var(--text-muted);
+    font-size: 18px; cursor: pointer; padding: 0 4px;
+  }
+  .inspector-close:hover { color: var(--text); }
+  .inspector-body { padding: 12px 14px; }
+  .inspector-empty {
+    color: var(--text-muted); text-align: center; padding: 40px 20px;
+    font-size: 13px; line-height: 1.6;
+  }
+  .detail-field { font-size: 12px; margin: 4px 0; color: var(--text-muted); }
+  .detail-field strong { color: var(--text); font-weight: 500; }
+  .detail-field code {
+    background: var(--surface-2); padding: 1px 5px; border-radius: 3px;
+    font-size: 11px;
+  }
+  .links-list { margin-top: 10px; padding-top: 8px; border-top: 1px solid var(--border); }
+  .links-list > strong { font-size: 11px; color: var(--text-muted); display: block; margin-bottom: 4px; }
+  .link-item {
+    display: inline-flex; align-items: center; gap: 4px;
+    font-size: 11px; padding: 3px 8px; border-radius: 4px; margin: 2px 3px 2px 0;
+    cursor: pointer; transition: opacity .1s;
+  }
+  .link-item:hover { opacity: 0.8; }
+  .badge {
+    display: inline-block; font-size: 10px; padding: 1px 6px; border-radius: 3px;
+    text-transform: uppercase; letter-spacing: 0.3px;
+  }
+  .badge.active { background: rgba(16,185,129,0.15); color: #10b981; }
+  .badge.open { background: rgba(59,130,246,0.15); color: #5b8def; }
+  .badge.closed { background: rgba(148,163,184,0.15); color: #8892b0; }
+  .badge.superseded { background: rgba(245,158,11,0.15); color: #f59e0b; }
+  .badge.expired { background: rgba(239,68,68,0.15); color: #ef4444; }
+  .loading {
+    display: flex; align-items: center; justify-content: center;
+    height: 100%; color: var(--text-muted); font-size: 14px;
+  }
+  .error {
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    height: 100%; color: #ef4444; font-size: 14px; gap: 8px;
+  }
+  .error button {
+    padding: 6px 12px; border-radius: 6px; border: 1px solid var(--border);
+    background: var(--surface-2); color: var(--text); cursor: pointer;
+  }
+  @media (max-width: 768px) {
+    .sidebar {
+      position: fixed; top: 0; left: 0; bottom: 0;
+      transform: translateX(-100%); transition: transform .25s ease;
+      width: 280px;
+    }
+    .sidebar.open { transform: translateX(0); }
+    .inspector.open { width: 100%; position: fixed; inset: 0; z-index: 30; }
+  }
+</style>
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <div class="logo">K</div>
+      <h1>Knowledge Base</h1>
+    </div>
+    <div class="sidebar-meta">
+      <span><strong id="totalNodes">-</strong> nodes</span>
+      <span><strong id="totalEdges">-</strong> edges</span>
+      <span><strong id="totalProjects">-</strong> projects</span>
+    </div>
+    <div class="search-box">
+      <input type="text" id="search" placeholder="Search nodes..." oninput="filterNodes(this.value)">
+    </div>
+    <div class="sidebar-nav" id="filterBar">
+      <button class="active" onclick="setFilter('all')">All</button>
+      <button onclick="setFilter('active')">Active</button>
+      <button onclick="setFilter('open')">Open</button>
+      <button onclick="setFilter('risk')">Risks</button>
+    </div>
+    <div class="sidebar-content" id="nodeList">
+      <div class="loading">Loading...</div>
+    </div>
+  </aside>
+
+  <div class="main">
+    <div class="topbar">
+      <div class="topbar-title">Workspace <span>Dashboard</span></div>
+      <div class="topbar-stats">
+        <span><strong id="visibleCount">0</strong> visible</span>
+        <span><strong id="totalCount">-</strong> total</span>
+      </div>
+    </div>
+    <div class="project-rail" id="projectRail"></div>
+    <div class="workspace-body">
+      <div class="graph-area">
+        <div class="graph-container">
+          <div id="graph"></div>
+        </div>
+      </div>
+      <aside class="inspector" id="inspector">
+        <div class="inspector-header">
+          <span id="inspectorTitle">Node Details</span>
+          <button class="inspector-close" onclick="closeInspector()">&times;</button>
+        </div>
+        <div class="inspector-body" id="inspectorBody">
+          <div class="inspector-empty">
+            Select a node from the graph or sidebar
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</div>
+
+<script>
+const API_BASE = '/api/github';
+const OKF_ROOT = '';
+const typeColors = {
+  'decision': '#f59e0b', 'lesson': '#10b981', 'risk': '#ef4444', 'task': '#3b82f6',
+  'document': '#8b5cf6', 'component': '#ec4899', 'agent-profile': '#6366f1',
+  'project-profile': '#14b8a6', 'project-status': '#f97316'
+};
+const edgeColors = {
+  'relates-to': '#94a3b8', 'documents': '#8b5cf6', 'supersedes': '#f59e0b',
+  'caused-by': '#10b981', 'blocks': '#ef4444', 'fulfills': '#3b82f6',
+  'depends-on': '#f97316', 'part-of': '#ec4899', 'contradicts': '#ef4444'
+};
+const typeLabelMap = {
+  'decision': 'Decision', 'lesson': 'Lesson', 'risk': 'Risk', 'task': 'Task',
+  'document': 'Doc', 'component': 'Component', 'agent-profile': 'Agent',
+  'project-profile': 'Profile', 'project-status': 'Status', 'index': 'Index',
+  'system-doc': 'System', 'skill': 'Skill', 'instruction': 'Instruction',
+  'workspace-index': 'Index', 'goal': 'Goal', 'gap': 'Gap', 'diagram': 'Diagram'
+};
+let nodes = [], allEdges = [], projectNames = [];
+let currentFilter = 'all', selectedNode = null;
+let graphNodeSel = null, graphLinkSel = null;
+
+async function fetchGitHub(path) {
+  const response = await fetch(`${API_BASE}?path=${encodeURIComponent(path)}`);
+  if (!response.ok) throw new Error(`GitHub API error: ${response.status}`);
+  return response.json();
+}
+
+async function loadGraph() {
+  try {
+    const data = await fetchGitHub('graph.json');
+    nodes = data.nodes || [];
+    allEdges = data.edges || [];
+    const projects = {};
+    nodes.forEach(n => {
+      if (n.project) {
+        if (!projects[n.project]) projects[n.project] = { name: n.project, node_count: 0, by_type: {} };
+        projects[n.project].node_count++;
+        projects[n.project].by_type[n.type] = (projects[n.project].by_type[n.type] || 0) + 1;
+      }
+    });
+    projectNames = Object.values(projects);
+    document.getElementById('totalNodes').textContent = nodes.length;
+    document.getElementById('totalEdges').textContent = allEdges.length;
+    document.getElementById('totalProjects').textContent = projectNames.length;
+    document.getElementById('totalCount').textContent = nodes.length;
+    renderProjectCards();
+    renderList(nodes);
+    renderGraph();
+  } catch (error) {
+    document.getElementById('nodeList').innerHTML = `<div class="error">Failed to load graph<button onclick="loadGraph()">Retry</button></div>`;
+  }
+}
+
+function getTypeIcon(type) {
+  const icons = {
+    'decision': '🧠', 'lesson': '📖', 'risk': '⚠️', 'task': '✅',
+    'document': '📄', 'component': '🏗️', 'agent-profile': '🤖',
+    'project-profile': '📋', 'project-status': '📊', 'index': '📑',
+    'system-doc': '🔧', 'skill': '🛠️', 'instruction': '📝',
+    'workspace-index': '📌', 'goal': '🎯', 'gap': '🔍', 'diagram': '📐'
+  };
+  return icons[type] || '📄';
+}
+
+function getProjectColor(name) {
+  const colors = ['#5b8def', '#a855f7', '#10b981', '#f59e0b', '#ef4444', '#ec4899', '#14b8a6'];
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) hash = ((hash << 5) - hash) + name.charCodeAt(i);
+  return colors[Math.abs(hash) % colors.length];
+}
+
+function renderProjectCards() {
+  const rail = document.getElementById('projectRail');
+  const totalNodes = nodes.length;
+  rail.innerHTML = `<div class="project-card" onclick="setFilter('all')" style="background:var(--surface-3);border-color:transparent;">
+    <div class="proj-name" style="color:var(--text-muted)">All Projects</div>
+    <div class="proj-count">${totalNodes}</div>
+    <div class="proj-label">total nodes</div>
+  </div>` + projectNames.map(p => {
+    const color = getProjectColor(p.name);
+    const typeDots = Object.entries(p.by_type || {}).slice(0, 5).map(([t]) =>
+      `<span class="proj-type-dot" style="background:${typeColors[t] || '#64748b'}" title="${t}"></span>`
+    ).join('');
+    return `<div class="project-card" onclick="setFilter('project:${p.name}')" title="Filter by ${p.name}">
+      <div class="proj-name" style="color:${color}">${p.name}</div>
+      <div class="proj-count">${p.node_count}</div>
+      <div class="proj-label">nodes</div>
+      <div class="proj-types">${typeDots}</div>
+    </div>`;
+  }).join('');
+}
+
+function renderList(nodesList) {
+  const list = document.getElementById('nodeList');
+  list.innerHTML = '<ul class="node-list">' + nodesList.map(n => {
+    const searchText = (n.id + ' ' + n.type + ' ' + (n.project || '') + ' ' + (n.status || '')).toLowerCase();
+    return `<li class="node-item" data-id="${n.id}" data-project="${n.project || ''}" data-type="${n.type}" data-status="${n.status}" data-search="${searchText}" onclick="selectNode('${n.id}')">
+      <span class="icon">${getTypeIcon(n.type)}</span>
+      <span class="dot" style="background:${typeColors[n.type] || '#64748b'}"></span>
+      <span class="id">${n.id}</span>
+      <span class="project-badge">${n.project || ''}</span>
+    </li>`;
+  }).join('') + '</ul>';
+  updateStats();
+}
+
+function updateStats() {
+  const visible = document.querySelectorAll('.node-item:not([style*="display: none"])');
+  document.getElementById('visibleCount').textContent = visible.length;
+}
+
+function filterNodes(q) {
+  const items = document.querySelectorAll('.node-item');
+  const search = (q || '').toLowerCase();
+  items.forEach(item => {
+    const text = item.dataset.search;
+    const matchesFilter = matchesCurrentFilter(item.dataset);
+    const matchesSearch = !search || text.includes(search);
+    item.style.display = (matchesFilter && matchesSearch) ? '' : 'none';
+  });
+  updateStats();
+}
+
+function matchesCurrentFilter(data) {
+  if (currentFilter === 'all') return true;
+  if (currentFilter === 'active') return data.status === 'active';
+  if (currentFilter === 'open') return data.type === 'task' && data.status === 'open';
+  if (currentFilter === 'risk') return data.type === 'risk';
+  if (currentFilter.startsWith('project:')) return data.project === currentFilter.replace('project:', '');
+  return true;
+}
+
+function setFilter(f) {
+  document.querySelectorAll('.sidebar-nav button').forEach(b => b.classList.remove('active'));
+  currentFilter = f;
+  filterNodes(document.getElementById('search').value);
+  applyGraphFilter();
+}
+
+function applyGraphFilter() {
+  if (!graphNodeSel || !graphLinkSel) return;
+  graphNodeSel.select('circle').attr('opacity', d => matchesCurrentFilter({project: d.project || '', type: d.type || '', status: d.status || ''}) ? 1 : 0.08);
+  graphNodeSel.selectAll('text').attr('opacity', d => matchesCurrentFilter({project: d.project || '', type: d.type || '', status: d.status || ''}) ? 1 : 0.08);
+  graphLinkSel.attr('opacity', d => {
+    const src = matchesCurrentFilter({project: (d.source.project || ''), type: (d.source.type || ''), status: (d.source.status || '')});
+    const tgt = matchesCurrentFilter({project: (d.target.project || ''), type: (d.target.type || ''), status: (d.target.status || '')});
+    return (src && tgt) ? 0.4 : 0.02;
+  });
+}
+
+function closeInspector() {
+  document.getElementById('inspector').classList.remove('open');
+}
+
+async function selectNode(id) {
+  selectedNode = id;
+  document.querySelectorAll('.node-item').forEach(i => i.classList.toggle('selected', i.dataset.id === id));
+  const node = nodes.find(n => n.id === id);
+  if (!node) return;
+  const insp = document.getElementById('inspector');
+  insp.classList.add('open');
+  document.getElementById('inspectorTitle').textContent = getTypeIcon(node.type) + ' ' + node.id;
+  const related = allEdges.filter(e => e.source === id || e.target === id);
+  let html = `<div style="margin-bottom:10px;">
+    <span class="badge ${node.status || 'active'}">${node.status || 'active'}</span>
+    <span style="font-size:11px;color:var(--text-muted);margin-left:8px;">${node.type}</span>
+  </div>`;
+  html += `<div class="detail-field"><strong>Project:</strong> ${node.project || '(global)'}</div>`;
+  if (node.file) html += `<div class="detail-field"><strong>File:</strong> <code>${node.file}</code></div>`;
+  if (related.length > 0) {
+    html += `<div class="links-list"><strong>Links (${related.length})</strong><br>`;
+    html += related.map(e => {
+      const other = e.source === id ? e.target : e.source;
+      const color = edgeColors[e.type] || '#94a3b8';
+      return `<span class="link-item" style="background:${color}18;border:1px solid ${color}44;color:${color};" onclick="selectNode('${other}')">${e.type} &rarr; ${other}</span>`;
+    }).join(' ');
+    html += '</div>';
+  }
+  document.getElementById('inspectorBody').innerHTML = html;
+}
+
+function renderGraph() {
+  const container = document.getElementById('graph');
+  const width = container.clientWidth;
+  const height = container.clientHeight;
+  d3.select('#graph').selectAll('*').remove();
+  const svg = d3.select('#graph').append('svg').attr('width', width).attr('height', height).style('background', 'var(--bg)');
+  const defs = svg.append('defs');
+  defs.append('pattern').attr('id', 'grid').attr('width', 30).attr('height', 30)
+    .attr('patternUnits', 'userSpaceOnUse')
+    .append('path').attr('d', 'M 30 0 L 0 0 0 30').attr('fill', 'none').attr('stroke', 'var(--surface-2)').attr('stroke-width', 0.5);
+  svg.append('rect').attr('width', '100%').attr('height', '100%').attr('fill', 'url(#grid)').attr('pointer-events', 'none');
+  const g = svg.append('g');
+  const zoom = d3.zoom().scaleExtent([0.1, 4]).on('zoom', (event) => g.attr('transform', event.transform));
+  svg.call(zoom);
+  const skipTypes = ['system-doc', 'skill', 'instruction', 'index', 'workspace-index'];
+  const activeNodes = nodes.filter(n => !skipTypes.includes(n.type));
+  const nodeIds = new Set(activeNodes.map(n => n.id));
+  const visibleEdges = allEdges.filter(e => nodeIds.has(e.source) && nodeIds.has(e.target));
+  const sim = d3.forceSimulation(activeNodes)
+    .force('link', d3.forceLink(visibleEdges).id(d => d.id).distance(110).strength(0.15))
+    .force('charge', d3.forceManyBody().strength(-180))
+    .force('center', d3.forceCenter(width / 2, height / 2))
+    .force('collision', d3.forceCollide().radius(28));
+  const link = g.append('g').selectAll('line').data(visibleEdges).join('line')
+    .attr('stroke', d => (edgeColors[d.type] || '#94a3b8') + '33')
+    .attr('stroke-width', 1)
+    .attr('stroke-dasharray', d => d.type === 'relates-to' ? '3,3' : 'none');
+  graphLinkSel = link;
+  const node = g.append('g').selectAll('g').data(activeNodes).join('g')
+    .call(d3.drag()
+      .on('start', (event, d) => { if (!event.active) sim.alphaTarget(0.3).restart(); d.fx = d.x; d.fy = d.y; })
+      .on('drag', (event, d) => { d.fx = event.x; d.fy = event.y; })
+      .on('end', (event, d) => { if (!event.active) sim.alphaTarget(0); d.fx = null; d.fy = null; })
+    )
+    .on('click', (event, d) => { selectNode(d.id); });
+  graphNodeSel = node;
+  node.append('circle')
+    .attr('r', d => d.type === 'task' ? 7 : d.type === 'decision' ? 9 : d.type === 'risk' ? 7 : 5)
+    .attr('fill', d => (typeColors[d.type] || '#64748b') + '99')
+    .attr('stroke', d => typeColors[d.type] || '#64748b')
+    .attr('stroke-width', 1.5)
+    .attr('cursor', 'pointer');
+  node.append('text').text(d => getTypeIcon(d.type)).attr('x', 8).attr('y', 3).attr('font-size', 10).attr('pointer-events', 'none');
+  node.append('text').text(d => d.id).attr('x', 20).attr('y', 3).attr('font-size', 9).attr('fill', 'var(--text-muted)').attr('pointer-events', 'none');
+  sim.on('tick', () => {
+    link.attr('x1', d => d.source.x).attr('y1', d => d.source.y).attr('x2', d => d.target.x).attr('y2', d => d.target.y);
+    node.attr('transform', d => `translate(${d.x},${d.y})`);
+  });
+}
+
+loadGraph();
+</script>
+</body>
+</html>
