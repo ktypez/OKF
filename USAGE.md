@@ -93,3 +93,8 @@ Shared: `~/OKF/system/conventions.md`, `~/OKF/system/workspace.md`
 | `update .md` or `update kb` | Read project state → update status.md → sync agent.md |
 | `cleanup` | Scan unused files/deps → health check → present findings → update KB |
 | `wrap-day` | Read git diff → add changelog entry → update status → commit (truck only) |
+| `dispatch` | Operator — list open tasks, claim, plan, execute | Per project |
+| `doctor-kb` | Knowledge lifecycle audit — stale, expired, broken links | All |
+| `backfill` | Seed KB from git history + code structure | Per project |
+| `dashboard` | Start/stop/restart/rebuild the graph dashboard | OKF |
+| `deploy-mcp` | Deploy MCP server to Cloudflare Workers | OKF |
