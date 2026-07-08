@@ -51,7 +51,7 @@ export default async function handler(req, res) {
 
     // If it's a file with base64 content, decode it
     if (data.encoding === "base64" && data.content) {
-      data.content = atob(data.content.replace(/\n/g, ""));
+      data.content = Buffer.from(data.content.replace(/\n/g, ""), "base64").toString("utf-8");
     }
 
     return res.status(200).json(data);
