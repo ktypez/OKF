@@ -65,7 +65,7 @@ See `~/.opencode/rules/okf-format.md` for full schema reference.
 
 | What changes | Action |
 |-------------|--------|
-| KB files (projects/, system/) | Edit locally, push when ready |
+| KB files (projects/, system/) | Edit locally, push when asked |
 | `mcp-server/src/*.ts` or `wrangler.jsonc` | `deploy-mcp` |
 | `dashboard/public/index.html` or `api/github.js` | `deploy-dashboard` |
 
