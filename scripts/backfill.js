@@ -20,7 +20,6 @@ const GRAPH_PATH = path.join(OKF_ROOT, 'graph.json');
 // Project root directory mappings
 const PROJECT_ROOTS = {
   cafe: '/home/cafe',
-  'cafe-v2': '/home/cafe-v2',
   clientdata: '/home/clientdata',
   habby: '/home/habby',
   'mcky.space': '/home/mcky.space',

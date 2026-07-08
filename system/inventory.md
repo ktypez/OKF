@@ -41,7 +41,7 @@ last_updated: 2026-07-04
 ### blog-post
 
 1. Write the post content
-2. **Censor internal project names** — replace cafe, cafe-v2, clientdata, habby, truck, and project-specific identifiers with generic descriptors ("a project", "another project", etc.)
+2. **Censor internal project names** — replace cafe, clientdata, habby, truck, and project-specific identifiers with generic descriptors ("a project", "another project", etc.)
 3. Save to `mcky.space/src/data/blog/<slug>.md` with frontmatter (title, date, slug)
 4. Regenerate blog index: `node scripts/build-blog-posts.mjs`
 5. Verify build passes

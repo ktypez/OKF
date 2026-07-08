@@ -21,6 +21,7 @@ last_updated: 2026-07-05
 | mcky.space | [profile](./projects/mcky.space/profile.md) | [agent](./projects/mcky.space/agent.md) | [status](./projects/mcky.space/status.md) | active | Astro 7, Alpine.js, Supabase |
 | truck | [profile](./projects/truck/profile.md) | [agent](./projects/truck/agent.md) | [status](./projects/truck/status.md) | active | React 19, Vite 8, Supabase, PWA |
 | collage | [profile](./projects/collage/profile.md) | [agent](./projects/collage/agent.md) | [status](./projects/collage/status.md) | active | Express, Sharp, R2, LIFF |
+| astryx | [status](./projects/astryx/status.md) | — | [status](./projects/astryx/status.md) | active | — |
 | writer | [profile](./projects/writer/profile.md) | [agent](./projects/writer/agent.md) | — | global | Markdown, AI agent system |
 
 ## Graph (Knowledge Graph)
@@ -28,9 +29,9 @@ The entire KB is connected as a graph with typed edges. Every node has a stable 
 
 | Metric | Count |
 |--------|-------|
-| Total nodes | 118 |
-| Total edges | 225 |
-| Projects covered | 7 |
+| Total nodes | 122 |
+| Total edges | 233 |
+| Projects covered | 8 |
 | Knowledge types | decision, lesson, risk, component, task, document |
 
 - **Graph index:** `graph.json` — auto-generated registry with all nodes and edges
@@ -54,7 +55,7 @@ The entire KB is connected as a graph with typed edges. Every node has a stable 
 - **Frameworks:** Next.js, React, Astro, Express, Vite.
 - **Databases:** Supabase (PostgreSQL), Neon (PostgreSQL), Redis (Upstash).
 - **Integrations:** LINE Platform (LIFF), Telegram Bot API.
-- **Image Processing:** Sharp, Sharp.
+- **Image Processing:** Sharp.
 - **Storage:** Cloudflare R2.
 
 ## Documentation Coverage
@@ -64,7 +65,7 @@ The entire KB is connected as a graph with typed edges. Every node has a stable 
 - **Dependencies:** 100%
 - **Commands:** 100%
 - **Status:** 100%
-- **Knowledge Graph:** 115 nodes, 219 edges
+- **Knowledge Graph:** 122 nodes, 233 edges
 
 ## Triggers
 

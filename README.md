@@ -31,8 +31,12 @@ OKF/
 |---------|--------|
 | `update .md` | Sync KB with latest project state |
 | `cleanup` | Health check — unused deps, stale files |
-| `blog-post` | Write a blog post for the public site |
-| `write-readme` | Write a README for any repo |
+| `wrap-day` | Read diff, update changelog + status, commit (truck only) |
+| `dispatch` | Operator — list open tasks, claim, plan, execute |
+| `doctor-kb` | Knowledge lifecycle audit — stale, expired, broken links |
+| `backfill` | Seed KB from git history + code structure |
+| `deploy-dashboard` | Deploy dashboard to Vercel |
+| `deploy-mcp` | Deploy MCP server to Cloudflare Workers |
 
 ## Quick Start
 

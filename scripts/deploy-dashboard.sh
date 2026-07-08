@@ -1,6 +1,6 @@
 #!/bin/bash
 # OKF Dashboard — deploy to Vercel
-# Usage: bash scripts/deploy-dashboard.sh [dev|prod]
+# Usage: bash scripts/deploy-dashboard.sh [dev|preview|prod]
 
 OKF_ROOT="$( cd "$( dirname "${BASH_SOURCE[0]}" )/.." && pwd )"
 DASHBOARD_DIR="$OKF_ROOT/dashboard"

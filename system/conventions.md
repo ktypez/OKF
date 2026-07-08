@@ -58,8 +58,9 @@ See `~/.opencode/rules/okf-format.md` for full schema reference.
 
 ## Git Rules
 
-- No push without explicit instruction
+- No push of KB files (`~/OKF/`) without explicit instruction
 - Commit only when asked
+- Project code (~/truck/, ~/cafe/, etc.) — follow project conventions
 
 ## Deployment Rules
 
@@ -82,3 +83,5 @@ External directories allowed:
 - `~/clientdata/**`
 - `~/habby/**`
 - `~/cafe/**`
+- `~/collage/**`
+- `~/astryx/**`

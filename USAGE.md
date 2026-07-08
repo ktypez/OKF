@@ -82,8 +82,13 @@ Shared: `~/OKF/system/conventions.md`, `~/OKF/system/workspace.md`
 │   └── sync-log.md         ← Change history
 ├── skills/                 ← Specialized skills
 │   └── INDEX.md
-└── templates/              ← Templates
-    └── project-template.md
+├── templates/              ← Templates
+│   └── project-template.md
+├── graph.json              ← Knowledge graph registry (auto-generated)
+└── dashboard/              ← Vercel-deployed dashboard
+    ├── public/index.html   ← Dashboard UI (D3 force graph)
+    ├── api/github.js       ← GitHub API proxy
+    └── DEPLOY.md           ← Deployment guide
 ```
 
 ## Triggers
