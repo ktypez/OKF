@@ -68,16 +68,16 @@ The entire KB is connected as a graph with typed edges. Every node has a stable 
 
 ## Triggers
 
-| Trigger | Action | Projects |
-|---------|--------|----------|
+| Trigger | Action | When |
+|---------|--------|------|
 | `update .md` | Read project KB files, update status + agent context | All |
 | `cleanup` | Scan unused deps/files, health check, update KB | All |
 | `wrap-day` | Read diff, update changelog + status, commit | truck only |
 | `dispatch` | Operator — list open tasks, claim, plan, execute | Per project |
 | `doctor-kb` | Knowledge lifecycle audit — stale, expired, broken links | All |
 | `backfill` | Seed KB from git history + code structure | Per project |
-| `deploy-dashboard` | Deploy dashboard to Vercel (dev/preview/prod) | OKF |
-| `deploy-mcp` | Deploy MCP server to Cloudflare Workers | OKF |
+| `deploy-dashboard` | Deploy dashboard to Vercel (dev/preview/prod) | `dashboard/public/index.html` or `api/github.js` changes |
+| `deploy-mcp` | Deploy MCP server to Cloudflare Workers | Any `mcp-server/src/*.ts` or `wrangler.jsonc` changes |
 
 ## Scripts
 
