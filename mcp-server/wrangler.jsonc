@@ -1,6 +1,7 @@
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "okf-mcp-server",
+  "name": "okf-mcp-server-v2",
+  "account_id": "ea606a9e6ed1254ee546bd8eec192616",
   "main": "src/index.ts",
   "compatibility_date": "2025-03-10",
   "compatibility_flags": ["nodejs_compat"],

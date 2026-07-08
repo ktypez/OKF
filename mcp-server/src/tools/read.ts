@@ -34,7 +34,7 @@ export function registerReadTools(
       handler: (args: Record<string, unknown>) => Promise<unknown>
     ) => void;
   },
-  github: GitHubAPI
+  getGitHub: () => GitHubAPI
 ) {
   // Tool: List all projects
   server.registerTool(
@@ -45,7 +45,7 @@ export function registerReadTools(
     },
     async () => {
       try {
-        const tree = await github.getTree();
+        const tree = await getGitHub().getTree();
         const projectDirs = tree
           .filter((item) => item.type === "tree" && item.path.startsWith("projects/"))
           .map((item) => item.path.replace("projects/", "").split("/")[0])
@@ -87,7 +87,7 @@ export function registerReadTools(
 
         // Try to get profile
         try {
-          const profile = await github.getFile(`projects/${name}/profile.md`);
+          const profile = await getGitHub().getFile(`projects/${name}/profile.md`);
           results.profile = parseOKFFile(profile.content);
         } catch {
           // Profile not found
@@ -95,7 +95,7 @@ export function registerReadTools(
 
         // Try to get agent
         try {
-          const agent = await github.getFile(`projects/${name}/agent.md`);
+          const agent = await getGitHub().getFile(`projects/${name}/agent.md`);
           results.agent = parseOKFFile(agent.content);
         } catch {
           // Agent not found
@@ -103,7 +103,7 @@ export function registerReadTools(
 
         // Try to get status
         try {
-          const status = await github.getFile(`projects/${name}/status.md`);
+          const status = await getGitHub().getFile(`projects/${name}/status.md`);
           results.status = parseOKFFile(status.content);
         } catch {
           // Status not found
@@ -111,7 +111,7 @@ export function registerReadTools(
 
         // Try to get todos
         try {
-          const todos = await github.getFile(`projects/${name}/todos.md`);
+          const todos = await getGitHub().getFile(`projects/${name}/todos.md`);
           results.todos = parseOKFFile(todos.content);
         } catch {
           // Todos not found
@@ -151,7 +151,7 @@ export function registerReadTools(
     },
     async ({ type, status, project }: { type?: string; status?: string; project?: string }) => {
       try {
-        const tree = await github.getTree();
+        const tree = await getGitHub().getTree();
         const mdFiles = tree.filter(
           (item) =>
             item.type === "blob" &&
@@ -168,7 +168,7 @@ export function registerReadTools(
 
         for (const file of filesToQuery) {
           try {
-            const content = await github.getFile(file.path);
+            const content = await getGitHub().getFile(file.path);
             const parsed = parseOKFFile(content.content);
 
             if (parsed.frontmatter.id) {
@@ -232,7 +232,7 @@ export function registerReadTools(
     },
     async ({ id }: { id: string }) => {
       try {
-        const tree = await github.getTree();
+        const tree = await getGitHub().getTree();
         const mdFiles = tree.filter(
           (item) =>
             item.type === "blob" &&
@@ -242,7 +242,7 @@ export function registerReadTools(
 
         for (const file of mdFiles) {
           try {
-            const content = await github.getFile(file.path);
+            const content = await getGitHub().getFile(file.path);
             const parsed = parseOKFFile(content.content);
 
             if (parsed.frontmatter.id === id) {
@@ -306,10 +306,10 @@ export function registerReadTools(
     async ({ query, limit = 20 }: { query: string; limit?: number }) => {
       try {
         // Use GitHub search API
-        const searchResults = await github.searchFiles(query);
+        const searchResults = await getGitHub().searchFiles(query);
 
         // Also search in common knowledge directories
-        const tree = await github.getTree();
+        const tree = await getGitHub().getTree();
         const mdFiles = tree.filter(
           (item) =>
             item.type === "blob" &&
@@ -329,7 +329,7 @@ export function registerReadTools(
           const filesToCheck = mdFiles.slice(0, 100); // Limit files to check
           for (const file of filesToCheck) {
             try {
-              const content = await github.getFile(file.path);
+              const content = await getGitHub().getFile(file.path);
               const lowerContent = content.content.toLowerCase();
               const lowerQuery = query.toLowerCase();
 
@@ -376,7 +376,7 @@ export function registerReadTools(
     },
     async ({ path }: { path: string }) => {
       try {
-        const file = await github.getFile(path);
+        const file = await getGitHub().getFile(path);
         return {
           content: [
             {

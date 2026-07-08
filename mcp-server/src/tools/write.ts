@@ -18,7 +18,7 @@ export function registerWriteTools(
       handler: (args: Record<string, unknown>) => Promise<unknown>
     ) => void;
   },
-  github: GitHubAPI
+  getGitHub: () => GitHubAPI
 ) {
   // Tool: Create a new knowledge node
   server.registerTool(
@@ -70,7 +70,7 @@ export function registerWriteTools(
 
         // Create file via GitHub API
         const commitMessage = `feat(${project}): add ${type} node ${nodeId}`;
-        const result = await github.writeFile(filePath, fileContent, commitMessage);
+        const result = await getGitHub().writeFile(filePath, fileContent, commitMessage);
 
         return {
           content: [
@@ -121,7 +121,7 @@ export function registerWriteTools(
     async ({ id, content, status, freshness, verified, expires, superseded_by }: Record<string, unknown>) => {
       try {
         // Find the node file
-        const tree = await github.getTree();
+        const tree = await getGitHub().getTree();
         const mdFiles = tree.filter(
           (item) =>
             item.type === "blob" &&
@@ -130,7 +130,7 @@ export function registerWriteTools(
         );
 
         for (const file of mdFiles) {
-          const fileContent = await github.getFile(file.path);
+          const fileContent = await getGitHub().getFile(file.path);
           const parsed = parseOKFFile(fileContent.content);
 
           if (parsed.frontmatter.id === id) {
@@ -148,7 +148,7 @@ export function registerWriteTools(
             // Serialize and update
             const updatedContent = serializeOKFFile(parsed.frontmatter, newBody);
             const commitMessage = `fix(${parsed.frontmatter.project}): update node ${id}`;
-            const result = await github.writeFile(file.path, updatedContent, commitMessage, fileContent.sha);
+            const result = await getGitHub().writeFile(file.path, updatedContent, commitMessage, fileContent.sha);
 
             return {
               content: [
@@ -205,7 +205,7 @@ export function registerWriteTools(
     async ({ id, status }: { id: string; status: string }) => {
       try {
         // Find the node file
-        const tree = await github.getTree();
+        const tree = await getGitHub().getTree();
         const mdFiles = tree.filter(
           (item) =>
             item.type === "blob" &&
@@ -214,7 +214,7 @@ export function registerWriteTools(
         );
 
         for (const file of mdFiles) {
-          const fileContent = await github.getFile(file.path);
+          const fileContent = await getGitHub().getFile(file.path);
           const parsed = parseOKFFile(fileContent.content);
 
           if (parsed.frontmatter.id === id) {
@@ -230,7 +230,7 @@ export function registerWriteTools(
             // Serialize and update
             const updatedContent = serializeOKFFile(parsed.frontmatter, parsed.body);
             const commitMessage = `fix(${parsed.frontmatter.project}): update status of ${id} to ${status}`;
-            const result = await github.writeFile(file.path, updatedContent, commitMessage, fileContent.sha);
+            const result = await getGitHub().writeFile(file.path, updatedContent, commitMessage, fileContent.sha);
 
             return {
               content: [
@@ -288,7 +288,7 @@ export function registerWriteTools(
     async ({ sourceId, targetId, linkType }: { sourceId: string; targetId: string; linkType: string }) => {
       try {
         // Find the source node file
-        const tree = await github.getTree();
+        const tree = await getGitHub().getTree();
         const mdFiles = tree.filter(
           (item) =>
             item.type === "blob" &&
@@ -297,7 +297,7 @@ export function registerWriteTools(
         );
 
         for (const file of mdFiles) {
-          const fileContent = await github.getFile(file.path);
+          const fileContent = await getGitHub().getFile(file.path);
           const parsed = parseOKFFile(fileContent.content);
 
           if (parsed.frontmatter.id === sourceId) {
@@ -337,7 +337,7 @@ export function registerWriteTools(
             // Serialize and update
             const updatedContent = serializeOKFFile(parsed.frontmatter, parsed.body);
             const commitMessage = `feat(${parsed.frontmatter.project}): add link ${sourceId} -> ${targetId}`;
-            const result = await github.writeFile(file.path, updatedContent, commitMessage, fileContent.sha);
+            const result = await getGitHub().writeFile(file.path, updatedContent, commitMessage, fileContent.sha);
 
             return {
               content: [
@@ -395,7 +395,7 @@ export function registerWriteTools(
     async ({ id, claimedBy = "agent" }: { id: string; claimedBy?: string }) => {
       try {
         // Find the task file
-        const tree = await github.getTree();
+        const tree = await getGitHub().getTree();
         const mdFiles = tree.filter(
           (item) =>
             item.type === "blob" &&
@@ -404,7 +404,7 @@ export function registerWriteTools(
         );
 
         for (const file of mdFiles) {
-          const fileContent = await github.getFile(file.path);
+          const fileContent = await getGitHub().getFile(file.path);
           const parsed = parseOKFFile(fileContent.content);
 
           if (parsed.frontmatter.id === id) {
@@ -442,7 +442,7 @@ export function registerWriteTools(
             // Serialize and update
             const updatedContent = serializeOKFFile(parsed.frontmatter, parsed.body);
             const commitMessage = `feat(${parsed.frontmatter.project}): claim task ${id}`;
-            const result = await github.writeFile(file.path, updatedContent, commitMessage, fileContent.sha);
+            const result = await getGitHub().writeFile(file.path, updatedContent, commitMessage, fileContent.sha);
 
             return {
               content: [
@@ -499,7 +499,7 @@ export function registerWriteTools(
     async ({ id, lesson }: { id: string; lesson?: string }) => {
       try {
         // Find the task file
-        const tree = await github.getTree();
+        const tree = await getGitHub().getTree();
         const mdFiles = tree.filter(
           (item) =>
             item.type === "blob" &&
@@ -508,7 +508,7 @@ export function registerWriteTools(
         );
 
         for (const file of mdFiles) {
-          const fileContent = await github.getFile(file.path);
+          const fileContent = await getGitHub().getFile(file.path);
           const parsed = parseOKFFile(fileContent.content);
 
           if (parsed.frontmatter.id === id) {
@@ -520,7 +520,7 @@ export function registerWriteTools(
             // Serialize and update
             const updatedContent = serializeOKFFile(parsed.frontmatter, parsed.body);
             const commitMessage = `feat(${parsed.frontmatter.project}): complete task ${id}`;
-            const result = await github.writeFile(file.path, updatedContent, commitMessage, fileContent.sha);
+            const result = await getGitHub().writeFile(file.path, updatedContent, commitMessage, fileContent.sha);
 
             // If lesson provided, create a lesson node
             let lessonResult = null;
@@ -543,7 +543,7 @@ export function registerWriteTools(
               const lessonBody = `\n# ${lessonId}: Lesson from ${id}\n\n${lesson}\n`;
               const lessonContent = serializeOKFFile(lessonFrontmatter, lessonBody);
               const lessonPath = `projects/${parsed.frontmatter.project}/knowledge/${lessonId}.md`;
-              lessonResult = await github.writeFile(lessonPath, lessonContent, `feat(${parsed.frontmatter.project}): add lesson ${lessonId}`);
+              lessonResult = await getGitHub().writeFile(lessonPath, lessonContent, `feat(${parsed.frontmatter.project}): add lesson ${lessonId}`);
             }
 
             return {

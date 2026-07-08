@@ -46,6 +46,7 @@ export class GitHubAPI {
       Authorization: `Bearer ${this.config.token}`,
       Accept: "application/vnd.github+json",
       "X-GitHub-Api-Version": "2022-11-28",
+      "User-Agent": "okf-mcp-server",
     };
   }
 

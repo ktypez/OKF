@@ -8,22 +8,23 @@ import { registerWriteTools } from "./tools/write";
 export class OKFMCP extends McpAgent {
   server = new McpServer({
     name: "OKF Knowledge Base",
-    version: "1.0.0",
+    version: "1.0.1",
   });
 
-  async init() {
-    // Initialize GitHub API client with environment variables
-    const github = new GitHubAPI({
+  private getGitHub(): GitHubAPI {
+    return new GitHubAPI({
       owner: (this.env as Record<string, string>).GITHUB_OWNER,
       repo: (this.env as Record<string, string>).GITHUB_REPO,
       token: (this.env as Record<string, string>).GITHUB_TOKEN,
     });
+  }
 
-    // Register all read tools
-    registerReadTools(this.server, github);
+  async init() {
+    // Register all read tools (pass env to create fresh client per call)
+    registerReadTools(this.server, () => this.getGitHub());
 
     // Register all write tools
-    registerWriteTools(this.server, github);
+    registerWriteTools(this.server, () => this.getGitHub());
   }
 }
 
