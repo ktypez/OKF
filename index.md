@@ -35,9 +35,7 @@ The entire KB is connected as a graph with typed edges. Every node has a stable 
 
 - **Graph index:** `graph.json` — auto-generated registry with all nodes and edges
 - **Rebuild:** `node ~/OKF/scripts/build-graph.js`
-- **Dashboard:** `dashboard.html` — interactive D3 force-directed graph visualization
-- **Dashboard commands:** `bash scripts/dashboard.sh <start|stop|restart|rebuild>`
-- **View:** [http://localhost:8080](http://localhost:8080) after `start`
+- **Dashboard:** Vercel — `deploy-dashboard` trigger to deploy
 - **Schema:** [`.opencode/rules/okf-format.md`](./.opencode/rules/okf-format.md)
 
 ## Agent Roles
@@ -78,7 +76,6 @@ The entire KB is connected as a graph with typed edges. Every node has a stable 
 | `dispatch` | Operator — list open tasks, claim, plan, execute | Per project |
 | `doctor-kb` | Knowledge lifecycle audit — stale, expired, broken links | All |
 | `backfill` | Seed KB from git history + code structure | Per project |
-| `dashboard` | Start/stop/restart/rebuild the graph dashboard | OKF |
 | `deploy-dashboard` | Deploy dashboard to Vercel (dev/preview/prod) | OKF |
 | `deploy-mcp` | Deploy MCP server to Cloudflare Workers | OKF |
 
@@ -87,8 +84,6 @@ The entire KB is connected as a graph with typed edges. Every node has a stable 
 | Script | Purpose |
 |--------|---------|
 | `scripts/build-graph.js` | Rebuild `graph.json` from all KB files |
-| `scripts/build-dashboard.js` | Generate `dashboard.html` |
-| `scripts/dashboard.sh` | Start/stop/restart/rebuild the graph dashboard |
 | `scripts/deploy-dashboard.sh` | Deploy dashboard to Vercel |
 | `scripts/dispatch.js` | List open tasks and context |
 | `scripts/claim-task.js` | Atomically claim a task |
