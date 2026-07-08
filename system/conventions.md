@@ -61,6 +61,18 @@ See `~/.opencode/rules/okf-format.md` for full schema reference.
 - No push without explicit instruction
 - Commit only when asked
 
+## Deployment Rules
+
+| What changes | Action |
+|-------------|--------|
+| KB files (projects/, system/) | Edit locally, push when ready |
+| `mcp-server/src/*.ts` or `wrangler.jsonc` | `deploy-mcp` |
+| `dashboard/public/index.html` or `api/github.js` | `deploy-dashboard` |
+
+## MCP Sync Rule
+
+After using MCP to create/update KB nodes → run `git pull` to sync local.
+
 ## OpenCode Permissions
 
 External directories allowed:
