@@ -1,16 +1,11 @@
 {
   "meta": {
-    "generated": "2026-07-06T03:23:53.283Z",
-    "total_nodes": 117,
-    "total_edges": 216,
-    "warnings": 4
+    "generated": "2026-07-07T07:13:13.538Z",
+    "total_nodes": 122,
+    "total_edges": 233,
+    "warnings": 0
   },
-  "warnings": [
-    "collage-commands → collage-agent (not found)",
-    "collage-profile → collage-agent (not found)",
-    "collage-status → collage-agent (not found)",
-    "collage-structure → collage-agent (not found)"
-  ],
+  "warnings": [],
   "nodes": [
     {
       "id": "okf-format-rule",
@@ -62,6 +57,43 @@
       "name": null,
       "description": null,
       "last_updated": "2026-07-05T00:00:00.000Z"
+    },
+    {
+      "id": "astryx-status",
+      "type": "project-status",
+      "project": "astryx",
+      "file": "projects/astryx/status.md",
+      "status": "active",
+      "freshness": "2026-07-07T00:00:00.000Z",
+      "verified": "2026-07-07T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/astryx/app/",
+        "/home/astryx/components/",
+        "/home/astryx/lib/"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "clientdata-status",
+          "_composite": "clientdata/clientdata-status"
+        },
+        {
+          "type": "relates-to",
+          "target": "DEC-008",
+          "_composite": "clientdata/DEC-008"
+        },
+        {
+          "type": "relates-to",
+          "target": "TASK-003",
+          "_composite": "clientdata/TASK-003"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-07T00:00:00.000Z"
     },
     {
       "id": "cafe-agent",
@@ -951,28 +983,50 @@
     {
       "id": "DEC-007",
       "type": "decision",
-      "project": "clientdata",
+      "project": null,
       "file": "projects/clientdata/knowledge/DEC-007.md",
       "status": "active",
-      "freshness": "2026-07-05",
-      "verified": "2026-07-05",
+      "freshness": "2026-07-07T00:00:00.000Z",
+      "verified": "2026-07-07T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-07T00:00:00.000Z"
+    },
+    {
+      "id": "DEC-008",
+      "type": "decision",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/DEC-008.md",
+      "status": "active",
+      "freshness": "2026-07-07T00:00:00.000Z",
+      "verified": "2026-07-07T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [
-        "/home/clientdata/app/page.tsx",
-        "/home/clientdata/app/layout.tsx"
+        "/home/clientdata/components/",
+        "/home/clientdata/app/globals.css"
       ],
       "links": [
         {
           "type": "relates-to",
-          "target": "clientdata-status",
-          "_composite": "clientdata/clientdata-status"
+          "target": "TASK-003",
+          "_composite": "clientdata/TASK-003"
+        },
+        {
+          "type": "relates-to",
+          "target": "LSN-002",
+          "_composite": "clientdata/LSN-002"
         }
       ],
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-05"
+      "last_updated": "2026-07-07T00:00:00.000Z"
     },
     {
       "id": "LSN-001",
@@ -1003,6 +1057,37 @@
       "name": null,
       "description": null,
       "last_updated": "2026-07-04T00:00:00.000Z"
+    },
+    {
+      "id": "LSN-002",
+      "type": "lesson",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/LSN-002.md",
+      "status": "active",
+      "freshness": "2026-07-07T00:00:00.000Z",
+      "verified": "2026-07-07T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/clientdata/components/",
+        "/home/clientdata/app/globals.css"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "TASK-003",
+          "_composite": "clientdata/TASK-003"
+        },
+        {
+          "type": "relates-to",
+          "target": "DEC-008",
+          "_composite": "clientdata/DEC-008"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-07T00:00:00.000Z"
     },
     {
       "id": "RSK-001",
@@ -1086,8 +1171,8 @@
       "project": "clientdata",
       "file": "projects/clientdata/status.md",
       "status": "active",
-      "freshness": "2026-07-06T00:00:00.000Z",
-      "verified": "2026-07-06T00:00:00.000Z",
+      "freshness": "2026-07-07T00:00:00.000Z",
+      "verified": "2026-07-07T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [
@@ -1114,7 +1199,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-06T00:00:00.000Z"
+      "last_updated": "2026-07-07T00:00:00.000Z"
     },
     {
       "id": "clientdata-structure",
@@ -1220,6 +1305,81 @@
       "last_updated": "2026-07-05T00:00:00.000Z"
     },
     {
+      "id": "TASK-003",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/tasks/TASK-003.md",
+      "status": "closed",
+      "freshness": "2026-07-07T00:00:00.000Z",
+      "verified": "2026-07-07T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/clientdata/app/",
+        "/home/clientdata/components/",
+        "/home/clientdata/lib/"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "DEC-008",
+          "_composite": "clientdata/DEC-008"
+        },
+        {
+          "type": "relates-to",
+          "target": "LSN-002",
+          "_composite": "clientdata/LSN-002"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-07T00:00:00.000Z"
+    },
+    {
+      "id": "collage-agent",
+      "type": "agent-profile",
+      "project": "collage",
+      "file": "projects/collage/agent.md",
+      "status": "active",
+      "freshness": "2026-07-05T00:00:00.000Z",
+      "verified": "2026-07-05T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "collage-profile",
+          "_composite": "collage/collage-profile"
+        },
+        {
+          "type": "relates-to",
+          "target": "collage-status",
+          "_composite": "collage/collage-status"
+        },
+        {
+          "type": "relates-to",
+          "target": "collage-structure",
+          "_composite": "collage/collage-structure"
+        },
+        {
+          "type": "relates-to",
+          "target": "collage-commands",
+          "_composite": "collage/collage-commands"
+        },
+        {
+          "type": "relates-to",
+          "target": "workspace",
+          "_composite": "workspace"
+        }
+      ],
+      "personality": "barista engineer",
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-05T00:00:00.000Z"
+    },
+    {
       "id": "collage-commands",
       "type": "document",
       "project": "collage",
@@ -1233,7 +1393,8 @@
       "links": [
         {
           "type": "documents",
-          "target": "collage-agent"
+          "target": "collage-agent",
+          "_composite": "collage/collage-agent"
         },
         {
           "type": "relates-to",
@@ -1298,7 +1459,8 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "collage-agent"
+          "target": "collage-agent",
+          "_composite": "collage/collage-agent"
         },
         {
           "type": "relates-to",
@@ -1340,7 +1502,8 @@
       "links": [
         {
           "type": "relates-to",
-          "target": "collage-agent"
+          "target": "collage-agent",
+          "_composite": "collage/collage-agent"
         },
         {
           "type": "relates-to",
@@ -1372,7 +1535,8 @@
       "links": [
         {
           "type": "documents",
-          "target": "collage-agent"
+          "target": "collage-agent",
+          "_composite": "collage/collage-agent"
         },
         {
           "type": "relates-to",
@@ -2370,8 +2534,8 @@
       "project": "truck",
       "file": "projects/truck/agent.md",
       "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
+      "freshness": "2026-07-06T00:00:00.000Z",
+      "verified": "2026-07-06T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
@@ -2405,7 +2569,7 @@
       "personality": "overtime enthusiast",
       "name": null,
       "description": null,
-      "last_updated": "2026-07-05T00:00:00.000Z"
+      "last_updated": "2026-07-06T00:00:00.000Z"
     },
     {
       "id": "truck-assets",
@@ -2779,8 +2943,8 @@
       "project": "truck",
       "file": "projects/truck/status.md",
       "status": "active",
-      "freshness": "2026-07-05T00:00:00.000Z",
-      "verified": "2026-07-05T00:00:00.000Z",
+      "freshness": "2026-07-06T00:00:00.000Z",
+      "verified": "2026-07-06T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
@@ -3270,6 +3434,30 @@
     }
   ],
   "edges": [
+    {
+      "source": "astryx-status",
+      "sourceProject": "astryx",
+      "target": "clientdata-status",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "astryx-status",
+      "sourceProject": "astryx",
+      "target": "DEC-008",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "astryx-status",
+      "sourceProject": "astryx",
+      "target": "TASK-003",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
     {
       "source": "cafe-agent",
       "sourceProject": "cafe",
@@ -3775,9 +3963,17 @@
       "label": "relates-to"
     },
     {
-      "source": "DEC-007",
+      "source": "DEC-008",
       "sourceProject": "clientdata",
-      "target": "clientdata-status",
+      "target": "TASK-003",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "DEC-008",
+      "sourceProject": "clientdata",
+      "target": "LSN-002",
       "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
@@ -3794,6 +3990,22 @@
       "source": "LSN-001",
       "sourceProject": "clientdata",
       "target": "DEC-001",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "LSN-002",
+      "sourceProject": "clientdata",
+      "target": "TASK-003",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "LSN-002",
+      "sourceProject": "clientdata",
+      "target": "DEC-008",
       "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
@@ -3949,6 +4161,70 @@
       "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
+    },
+    {
+      "source": "TASK-003",
+      "sourceProject": "clientdata",
+      "target": "DEC-008",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-003",
+      "sourceProject": "clientdata",
+      "target": "LSN-002",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-agent",
+      "sourceProject": "collage",
+      "target": "collage-profile",
+      "targetProject": "collage",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-agent",
+      "sourceProject": "collage",
+      "target": "collage-status",
+      "targetProject": "collage",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-agent",
+      "sourceProject": "collage",
+      "target": "collage-structure",
+      "targetProject": "collage",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-agent",
+      "sourceProject": "collage",
+      "target": "collage-commands",
+      "targetProject": "collage",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-agent",
+      "sourceProject": "collage",
+      "target": "workspace",
+      "targetProject": null,
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-commands",
+      "sourceProject": "collage",
+      "target": "collage-agent",
+      "targetProject": "collage",
+      "type": "documents",
+      "label": "documents"
     },
     {
       "source": "collage-commands",
@@ -3986,6 +4262,14 @@
       "source": "collage-dependencies",
       "sourceProject": "collage",
       "target": "collage-commands",
+      "targetProject": "collage",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-profile",
+      "sourceProject": "collage",
+      "target": "collage-agent",
       "targetProject": "collage",
       "type": "relates-to",
       "label": "relates-to"
@@ -4025,6 +4309,14 @@
     {
       "source": "collage-status",
       "sourceProject": "collage",
+      "target": "collage-agent",
+      "targetProject": "collage",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "collage-status",
+      "sourceProject": "collage",
       "target": "collage-profile",
       "targetProject": "collage",
       "type": "relates-to",
@@ -4037,6 +4329,14 @@
       "targetProject": "collage",
       "type": "relates-to",
       "label": "relates-to"
+    },
+    {
+      "source": "collage-structure",
+      "sourceProject": "collage",
+      "target": "collage-agent",
+      "targetProject": "collage",
+      "type": "documents",
+      "label": "documents"
     },
     {
       "source": "collage-structure",
@@ -5000,6 +5300,12 @@
     }
   ],
   "projects": {
+    "astryx": {
+      "node_count": 1,
+      "by_type": {
+        "project-status": 1
+      }
+    },
     "cafe": {
       "node_count": 17,
       "by_type": {
@@ -5015,23 +5321,24 @@
       }
     },
     "clientdata": {
-      "node_count": 21,
+      "node_count": 23,
       "by_type": {
         "agent-profile": 1,
         "document": 4,
         "index": 1,
         "component": 2,
         "decision": 7,
-        "lesson": 1,
+        "lesson": 2,
         "risk": 1,
         "project-profile": 1,
         "project-status": 1,
-        "task": 2
+        "task": 3
       }
     },
     "collage": {
-      "node_count": 5,
+      "node_count": 6,
       "by_type": {
+        "agent-profile": 1,
         "document": 3,
         "project-profile": 1,
         "project-status": 1

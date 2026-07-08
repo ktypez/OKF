@@ -8,8 +8,6 @@ verified: 2026-07-05
 personality: barista engineer
 status_ref: ./status.md
 status: active
-freshness: 2026-07-05
-verified: 2026-07-05
 expires: null
 superseded_by: null
 anchors: []

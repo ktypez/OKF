@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OKF Reader</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      typography: {
+        DEFAULT: {
+          css: {
+            '--tw-prose-body': '#c9d1d9',
+            '--tw-prose-headings': '#f0f6fc',
+            '--tw-prose-links': '#58a6ff',
+            '--tw-prose-bold': '#f0f6fc',
+            '--tw-prose-counters': '#8b949e',
+            '--tw-prose-bullets': '#8b949e',
+            '--tw-prose-hr': '#21262d',
+            '--tw-prose-quotes': '#c9d1d9',
+            '--tw-prose-quote-borders': '#3b434b',
+            '--tw-prose-code': '#c9d1d9',
+            '--tw-prose-pre-code': '#c9d1d9',
+            '--tw-prose-pre-bg': '#161b22',
+            '--tw-prose-th': '#f0f6fc',
+            '--tw-prose-td': '#c9d1d9',
+            '--tw-prose-th-borders': '#30363d',
+            '--tw-prose-td-borders': '#30363d',
+          }
+        }
+      }
+    }
+  }
+}
+</script>
+<style>
+:root{--bg:#0d1117;--surface:#161b22;--surface-2:#21262d;--border:#30363d;--text:#c9d1d9;--text-muted:#8b949e;--accent:#58a6ff}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;background:var(--bg);color:var(--text);height:100dvh;overflow:hidden}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:transparent}
+::-webkit-scrollbar-thumb{background:var(--border);border-radius:3px}
+::selection{background:var(--accent);color:#fff}
+.app{display:flex;height:100dvh}
+.sidebar{width:260px;min-width:260px;background:var(--surface);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden;transition:transform .2s}
+.sidebar-header{padding:10px 14px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px}
+.back-link{color:var(--accent);text-decoration:none;font-size:12px;display:flex;align-items:center;gap:4px}
+.back-link:hover{text-decoration:underline}
+.sidebar-title{font-size:12px;font-weight:600;color:var(--text-muted);margin-left:auto}
+.sidebar-close{display:none;background:none;border:none;color:var(--text-muted);font-size:18px;cursor:pointer}
+.sidebar-search{padding:8px 12px;border-bottom:1px solid var(--border)}
+.sidebar-search input{width:100%;padding:6px 10px;border-radius:6px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:12px;outline:none}
+.sidebar-search input:focus{border-color:var(--accent)}
+.sidebar-search input::placeholder{color:var(--text-muted)}
+.file-tree{flex:1;overflow-y:auto;padding:4px 0}
+.tree-item{padding:3px 12px;cursor:pointer;display:flex;align-items:center;gap:6px;font-size:12px;color:var(--text-muted);transition:background .1s}
+.tree-item:hover{background:var(--surface-2);color:var(--text)}
+.tree-item.active{background:rgba(88,166,255,0.1);color:var(--accent);border-right:2px solid var(--accent)}
+.tree-item.folder{font-weight:500}
+.tree-icon{font-size:12px;flex-shrink:0;width:16px;text-align:center}
+.tree-name{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tree-children{display:none}
+.tree-children.open{display:block}
+.tree-item[data-level="1"]{padding-left:24px}
+.tree-item[data-level="2"]{padding-left:36px}
+.tree-item[data-level="3"]{padding-left:48px}
+.main{flex:1;display:flex;flex-direction:column;overflow:hidden;min-width:0}
+.topbar{display:flex;align-items:center;gap:12px;padding:8px 16px;border-bottom:1px solid var(--border);background:var(--surface);min-height:40px}
+.hamburger{display:none;background:none;border:none;color:var(--text);font-size:18px;cursor:pointer;padding:2px}
+.breadcrumb{font-size:12px;color:var(--text-muted);display:flex;align-items:center;gap:4px;overflow-x:auto;white-space:nowrap}
+.breadcrumb span{color:var(--text-muted)}
+.breadcrumb .current{color:var(--text);font-weight:500}
+.content-area{flex:1;overflow-y:auto;padding:24px 32px}
+.content-loading{display:flex;align-items:center;justify-content:center;height:100%;color:var(--text-muted);font-size:13px}
+.sidebar-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:19}
+@media(max-width:768px){
+  .sidebar{position:fixed;top:0;left:0;bottom:0;transform:translateX(-100%);width:280px;z-index:20}
+  .sidebar.open{transform:translateX(0)}
+  .sidebar-close{display:block}
+  .sidebar-overlay.open{display:block}
+  .hamburger{display:block}
+  .content-area{padding:16px}
+}
+</style>
+</head>
+<body>
+<div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleSidebar()"></div>
+<div class="app">
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="/" class="back-link">← Dashboard</a>
+      <span class="sidebar-title">Files</span>
+      <button class="sidebar-close" onclick="toggleSidebar()">&times;</button>
+    </div>
+    <div class="sidebar-search">
+      <input type="text" id="fileSearch" placeholder="Search files..." oninput="filterTree(this.value)">
+    </div>
+    <div class="file-tree" id="fileTree">
+      <div class="content-loading">Loading...</div>
+    </div>
+  </aside>
+  <div class="main">
+    <div class="topbar">
+      <button class="hamburger" onclick="toggleSidebar()">&#9776;</button>
+      <div class="breadcrumb" id="breadcrumb">
+        <span>Select a file</span>
+      </div>
+    </div>
+    <div class="content-area" id="contentArea">
+      <div class="content-loading">Select a file from the sidebar to read</div>
+    </div>
+  </div>
+</div>
+<script>
+const API_BASE='/api/github';
+const TREE_API='/api/tree';
+let fileTree=[];
+let currentFile=null;
+
+function toggleSidebar(){document.getElementById('sidebar').classList.toggle('open');document.getElementById('sidebarOverlay').classList.toggle('open')}
+
+function getFileIcon(name){
+  if(name.endsWith('.md'))return'📄';
+  if(name.endsWith('.js')||name.endsWith('.ts'))return'📜';
+  if(name.endsWith('.json')||name.endsWith('.jsonc'))return'📋';
+  if(name.endsWith('.css'))return'🎨';
+  if(name.endsWith('.html'))return'🌐';
+  return'📄';
+}
+
+function buildTree(items){
+  const root={name:'',children:{},type:'tree'};
+  items.forEach(item=>{
+    const parts=item.path.split('/');
+    let current=root;
+    parts.forEach((part,i)=>{
+      if(!current.children[part]){
+        current.children[part]={name:part,children:{},type:i===parts.length-1?item.type:'tree',path:item.path};
+      }
+      current=current.children[part];
+    });
+  });
+  return root;
+}
+
+function renderTree(node,level=0,parentPath=''){
+  let html='';
+  const sorted=Object.values(node.children).sort((a,b)=>{
+    if(a.type==='tree'&&b.type!=='tree')return-1;
+    if(a.type!=='tree'&&b.type==='tree')return 1;
+    return a.name.localeCompare(b.name);
+  });
+  sorted.forEach(item=>{
+    const isFolder=item.type==='tree';
+    const fullPath=parentPath?parentPath+'/'+item.name:item.name;
+    const indent=level;
+    if(isFolder){
+      html+=`<div class="tree-item folder" data-level="${indent}" data-path="${fullPath}" onclick="toggleFolder(this)">
+        <span class="tree-icon">▶</span>
+        <span class="tree-name">${item.name}</span>
+      </div>`;
+      html+=`<div class="tree-children" data-parent="${fullPath}">`;
+      html+=renderTree(item,level+1,fullPath);
+      html+=`</div>`;
+    }else{
+      html+=`<div class="tree-item file" data-level="${indent}" data-path="${fullPath}" onclick="loadFile('${fullPath}')">
+        <span class="tree-icon">${getFileIcon(item.name)}</span>
+        <span class="tree-name">${item.name}</span>
+      </div>`;
+    }
+  });
+  return html;
+}
+
+function toggleFolder(el){
+  const path=el.dataset.path;
+  const children=document.querySelector(`.tree-children[data-parent="${path}"]`);
+  if(!children)return;
+  const isOpen=children.classList.toggle('open');
+  el.querySelector('.tree-icon').innerHTML=isOpen?'▼':'▶';
+}
+
+function filterTree(q){
+  const items=document.querySelectorAll('.tree-item');
+  const search=(q||'').toLowerCase();
+  items.forEach(item=>{
+    if(!search){item.style.display='';return}
+    const name=item.querySelector('.tree-name')?.textContent.toLowerCase()||'';
+    const path=(item.dataset.path||'').toLowerCase();
+    const match=name.includes(search)||path.includes(search);
+    item.style.display=match?'':'none';
+    if(match&&item.classList.contains('file')){
+      let parent=item.parentElement;
+      while(parent&&parent.classList.contains('tree-children')){
+        parent.style.display='block';
+        parent.classList.add('open');
+        const toggle=document.querySelector(`.tree-item[data-path="${parent.dataset.parent}"]`);
+        if(toggle)toggle.querySelector('.tree-icon').innerHTML='▼';
+        parent=parent.parentElement?.parentElement;
+      }
+    }
+  });
+}
+
+function updateBreadcrumb(path){
+  const parts=path.split('/');
+  let html='';
+  parts.forEach((part,i)=>{
+    if(i===parts.length-1){
+      html+=`<span class="current">${part}</span>`;
+    }else{
+      html+=`<span>${part}</span><span>/</span>`;
+    }
+  });
+  document.getElementById('breadcrumb').innerHTML=html;
+}
+
+function renderMarkdown(md){
+  let h='';let lines=md.split('\n');let inCode=false,buf=[];let codeLang='';
+  for(let l of lines){
+    if(l.startsWith('```')){
+      if(inCode){h+='<pre><code class="language-'+codeLang+'">'+buf.join('\n')+'</code></pre>';buf=[];codeLang=''}
+      inCode=!inCode;
+      if(inCode)codeLang=l.slice(3).trim();
+      continue;
+    }
+    if(inCode){buf.push(l);continue}
+    if(!l.trim()){h+='<br>';continue}
+    if(/^#{1,6}\s/.test(l)){const n=l.match(/^(#+)\s/)[1].length;h+='<h'+n+'>'+l.replace(/^#+\s/,'')+'</h'+n+'>';continue}
+    if(/^- /.test(l)){h+='<li>'+l.replace(/^- /,'')+'</li>';continue}
+    if(/^\d+\.\s/.test(l)){h+='<li>'+l.replace(/^\d+\.\s/,'')+'</li>';continue}
+    if(/^---/.test(l)){h+='<hr>';continue}
+    if(/^>/.test(l)){h+='<blockquote>'+l.replace(/^>\s?/,'')+'</blockquote>';continue}
+    h+='<p>'+l.replace(/\*\*(.+?)\*\*/g,'<strong>$1</strong>').replace(/`(.+?)`/g,'<code>$1</code>').replace(/\[(.+?)\]\((.+?)\)/g,'<a href="$2" target="_blank">$1</a>')+'</p>';
+  }
+  if(inCode)h+='<pre><code class="language-'+codeLang+'">'+buf.join('\n')+'</code></pre>';
+  return h;
+}
+
+async function loadFile(path){
+  currentFile=path;
+  document.querySelectorAll('.tree-item').forEach(i=>i.classList.toggle('active',i.dataset.path===path));
+  updateBreadcrumb(path);
+  document.getElementById('contentArea').innerHTML='<div class="content-loading">Loading...</div>';
+  try{
+    const r=await fetch(`${API_BASE}?path=${encodeURIComponent(path)}`);
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    const data=await r.json();
+    const content=typeof data.content==='string'?data.content:'';
+    document.getElementById('contentArea').innerHTML='<div class="prose prose-invert prose-sm max-w-none">'+renderMarkdown(content)+'</div>';
+  }catch(e){
+    document.getElementById('contentArea').innerHTML='<div style="color:#f85149">Failed to load: '+e.message+'</div>';
+  }
+  if(window.innerWidth<=768){document.getElementById('sidebar').classList.remove('open');document.getElementById('sidebarOverlay').classList.remove('open')}
+}
+
+async function loadTree(){
+  try{
+    const r=await fetch(TREE_API);
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    const data=await r.json();
+    fileTree=data.tree||[];
+    const mdFiles=fileTree.filter(f=>f.path.endsWith('.md')&&(f.path.startsWith('projects/')||f.path.startsWith('system/')||f.path.startsWith('skills/')));
+    const tree=buildTree(mdFiles);
+    document.getElementById('fileTree').innerHTML=renderTree(tree);
+    const params=new URLSearchParams(window.location.search);
+    const filePath=params.get('path');
+    if(filePath)loadFile(filePath);
+  }catch(e){
+    document.getElementById('fileTree').innerHTML='<div style="color:#f85149;padding:12px;font-size:12px">Failed to load: '+e.message+'</div>';
+  }
+}
+
+loadTree();
+</script>
+</body>
+</html>

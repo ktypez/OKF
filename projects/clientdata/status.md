@@ -2,10 +2,11 @@
 type: project-status
 id: clientdata-status
 project: clientdata
-last_updated: 2026-07-06
+last_updated: 2026-07-07
+version: 2
 status: active
-freshness: 2026-07-06
-verified: 2026-07-06
+freshness: 2026-07-07
+verified: 2026-07-07
 expires: null
 superseded_by: null
 state: active
@@ -29,15 +30,16 @@ links:
 
 - **Framework**: Next.js 16.2.9 (App Router)
 - **UI Library**: React 19.2.7, TypeScript 6.0.3
-- **Styling**: Tailwind CSS 4.3.1 + PostCSS + shadcn/ui components (Base UI)
+- **UI System**: shadcn/ui + Base UI + Phosphor Icons
+- **Styling**: Tailwind CSS 4.3.1 + PostCSS
 - **Database**: Neon (Postgres) via server actions + API routes
 - **Maps**: MapLibre GL JS (lazy-loaded via `next/dynamic`)
 - **Auth**: Password-based (SHA-256), admin + viewer roles
 - **Storage**: Supabase Storage (client images)
-- **Deploy**: Vercel (serverless)
+- **Deploy**: Vercel (serverless) — `master` → `data.mcky.space`
 - **Font**: IBM Plex Sans Thai via `next/font/google`
 - **Testing**: Vitest 1.6 + @testing-library/react + jsdom 24
-- **Dark mode**: `next-themes` with `@custom-variant dark` in globals.css
+- **Dark mode**: `next-themes` with `@custom-variant dark` in globals.css + Astryx theme
 
 ## Routes
 
@@ -53,14 +55,14 @@ links:
 | Component | Purpose |
 |-----------|---------|
 | Button | shadcn Button — variants: default, outline, secondary, ghost, destructive, link |
-| Card | shadcn Card — `data-slot="card"`, `ring-1 ring-foreground/10` |
+| Card | shadcn Card |
 | Dialog | shadcn Dialog — `@base-ui/react/dialog`, `showCloseButton` prop |
 | Sheet | shadcn Sheet — side panel overlay |
 | Skeleton | Base animated skeleton primitive |
 | TableSkeleton | Table row loading placeholder |
 | SearchDropdown | Map view search results dropdown |
 | MapPreviewDynamic | Lazy-loaded map preview wrapper |
-| Sidebar | Sheet drawer with collapsible groups |
+| Sidebar | SideNav-based layout with collapsible sections |
 | ThemePresetPicker | Dropdown with color swatches for 14 tweakcn theme presets |
 | PhotoRequestDialog | Photo upload + send dialog (8 states self-contained) |
 | Lightbox | Full-screen image viewer with prev/next navigation |
@@ -81,6 +83,9 @@ links:
 | `/api/auth?check=setup` | GET | Check auth setup (graceful error fallback) |
 
 ## Changelog
+
+### 2026-07-07
+- **Astryx spun off** (TASK-003, DEC-008): Astryx migration moved to separate repo `ktypez/astryx` with its own Vercel project at `astryx.mcky.space`. `master` stays on shadcn/ui + Base UI + Phosphor Icons, deployed at `data.mcky.space`.
 
 ### 2026-07-06 (night)
 - **Keyword search**: `searchClients()` now splits query into individual words — each keyword matches via ILIKE on name/shopName, combined with AND. This means `!ลูกค้า all the wall` matches clients containing ALL of "all", "the", "wall" anywhere in name/shopName (not just the full phrase).
@@ -131,7 +136,6 @@ links:
 - **Dark**: `--background: oklch(0.145 0 0)`
 - **IBM Plex Sans Thai** primary font, applied as `--font-ibm-plex` CSS variable
 - **Theme Preset Picker** — 14 tweakcn presets, swaps CSS vars for colors + shadows + spacing + tracking
-- All inputs at `text-[14px] font-sans`
 
 ## Data Model
 
@@ -158,7 +162,5 @@ links:
 
 ## Known Issues
 
-- `/usr/bin/env` broken on Termux
 - `useReducer` refactor of page.tsx deferred (30 tightly coupled useState hooks)
-- Delete is immediate without undo (sonner removed)
-- Cannot build locally (Node.js 18.19.1 too old for Next.js 16)
+- Delete is immediate without undo (no toast/undo)
