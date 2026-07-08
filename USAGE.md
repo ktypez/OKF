@@ -97,4 +97,5 @@ Shared: `~/OKF/system/conventions.md`, `~/OKF/system/workspace.md`
 | `doctor-kb` | Knowledge lifecycle audit — stale, expired, broken links | All |
 | `backfill` | Seed KB from git history + code structure | Per project |
 | `dashboard` | Start/stop/restart/rebuild the graph dashboard | OKF |
+| `deploy-dashboard` | Deploy dashboard to Vercel (dev/preview/prod) | OKF |
 | `deploy-mcp` | Deploy MCP server to Cloudflare Workers | OKF |

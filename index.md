@@ -79,6 +79,7 @@ The entire KB is connected as a graph with typed edges. Every node has a stable 
 | `doctor-kb` | Knowledge lifecycle audit — stale, expired, broken links | All |
 | `backfill` | Seed KB from git history + code structure | Per project |
 | `dashboard` | Start/stop/restart/rebuild the graph dashboard | OKF |
+| `deploy-dashboard` | Deploy dashboard to Vercel (dev/preview/prod) | OKF |
 | `deploy-mcp` | Deploy MCP server to Cloudflare Workers | OKF |
 
 ## Scripts
@@ -88,6 +89,7 @@ The entire KB is connected as a graph with typed edges. Every node has a stable 
 | `scripts/build-graph.js` | Rebuild `graph.json` from all KB files |
 | `scripts/build-dashboard.js` | Generate `dashboard.html` |
 | `scripts/dashboard.sh` | Start/stop/restart/rebuild the graph dashboard |
+| `scripts/deploy-dashboard.sh` | Deploy dashboard to Vercel |
 | `scripts/dispatch.js` | List open tasks and context |
 | `scripts/claim-task.js` | Atomically claim a task |
 | `scripts/complete-task.js` | Close a task and record lesson |
