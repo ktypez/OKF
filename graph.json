@@ -1,14 +1,31 @@
 {
   "meta": {
-    "generated": "2026-07-08T15:45:22.999Z",
-    "total_nodes": 145,
-    "total_edges": 247,
+    "generated": "2026-07-08T18:45:15.950Z",
+    "total_nodes": 170,
+    "total_edges": 238,
     "warnings": 1
   },
   "warnings": [
     "astryx-status → TASK-003 (cross-project: clientdata, truck)"
   ],
   "nodes": [
+    {
+      "id": "PLAN-wiki-migration",
+      "type": "plan",
+      "project": "okf",
+      "file": ".opencode/plans/wiki-migration.md",
+      "status": "proposed",
+      "freshness": null,
+      "verified": null,
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": null
+    },
     {
       "id": "okf-format-rule",
       "type": "rule",
@@ -96,503 +113,6 @@
       "name": null,
       "description": null,
       "last_updated": "2026-07-07T00:00:00.000Z"
-    },
-    {
-      "id": "cafe-agent",
-      "type": "agent-profile",
-      "project": "cafe",
-      "file": "projects/cafe/agent.md",
-      "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [],
-      "links": [
-        {
-          "type": "relates-to",
-          "target": "cafe-profile",
-          "_composite": "cafe/cafe-profile"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-status",
-          "_composite": "cafe/cafe-status"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-structure",
-          "_composite": "cafe/cafe-structure"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-commands",
-          "_composite": "cafe/cafe-commands"
-        },
-        {
-          "type": "relates-to",
-          "target": "workspace",
-          "_composite": "workspace"
-        }
-      ],
-      "personality": "barista engineer",
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
-    },
-    {
-      "id": "cafe-assets",
-      "type": "document",
-      "project": "cafe",
-      "file": "projects/cafe/assets.md",
-      "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [],
-      "links": [
-        {
-          "type": "relates-to",
-          "target": "cafe-structure",
-          "_composite": "cafe/cafe-structure"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
-    },
-    {
-      "id": "cafe-commands",
-      "type": "document",
-      "project": "cafe",
-      "file": "projects/cafe/commands.md",
-      "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [],
-      "links": [
-        {
-          "type": "documents",
-          "target": "cafe-agent",
-          "_composite": "cafe/cafe-agent"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-dependencies",
-          "_composite": "cafe/cafe-dependencies"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-structure",
-          "_composite": "cafe/cafe-structure"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
-    },
-    {
-      "id": "cafe-decisions",
-      "type": "index",
-      "project": "cafe",
-      "file": "projects/cafe/decisions.md",
-      "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [],
-      "links": [
-        {
-          "type": "relates-to",
-          "target": "cafe-agent",
-          "_composite": "cafe/cafe-agent"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
-    },
-    {
-      "id": "cafe-dependencies",
-      "type": "document",
-      "project": "cafe",
-      "file": "projects/cafe/dependencies.md",
-      "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [],
-      "links": [
-        {
-          "type": "documents",
-          "target": "cafe-profile",
-          "_composite": "cafe/cafe-profile"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-structure",
-          "_composite": "cafe/cafe-structure"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-commands",
-          "_composite": "cafe/cafe-commands"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
-    },
-    {
-      "id": "COMP-001",
-      "type": "component",
-      "project": "cafe",
-      "file": "projects/cafe/knowledge/COMP-001.md",
-      "status": "active",
-      "freshness": "2026-07-04",
-      "verified": "2026-07-04",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [
-        "/home/cafe/app/api",
-        "/home/cafe/app/liff",
-        "/home/cafe/app/settings",
-        "/home/cafe/components/admin",
-        "/home/cafe/components/settings",
-        "/home/cafe/components/ui"
-      ],
-      "links": [
-        {
-          "type": "relates-to",
-          "target": "cafe-profile",
-          "_composite": "cafe/cafe-profile"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04"
-    },
-    {
-      "id": "DEC-001",
-      "type": "decision",
-      "project": "cafe",
-      "file": "projects/cafe/knowledge/DEC-001.md",
-      "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [
-        "/home/cafe/app/page.tsx"
-      ],
-      "links": [
-        {
-          "type": "relates-to",
-          "target": "cafe-agent",
-          "_composite": "cafe/cafe-agent"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-status",
-          "_composite": "cafe/cafe-status"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
-    },
-    {
-      "id": "DEC-002",
-      "type": "decision",
-      "project": "cafe",
-      "file": "projects/cafe/knowledge/DEC-002.md",
-      "status": "active",
-      "freshness": "2026-07-04",
-      "verified": "2026-07-04",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [],
-      "links": [
-        {
-          "type": "relates-to",
-          "target": "cafe-agent",
-          "_composite": "cafe/cafe-agent"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04"
-    },
-    {
-      "id": "DEC-003",
-      "type": "decision",
-      "project": "cafe",
-      "file": "projects/cafe/knowledge/DEC-003.md",
-      "status": "active",
-      "freshness": "2026-07-04",
-      "verified": "2026-07-04",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [],
-      "links": [
-        {
-          "type": "relates-to",
-          "target": "cafe-agent",
-          "_composite": "cafe/cafe-agent"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04"
-    },
-    {
-      "id": "DEC-004",
-      "type": "decision",
-      "project": "cafe",
-      "file": "projects/cafe/knowledge/DEC-004.md",
-      "status": "active",
-      "freshness": "2026-07-04",
-      "verified": "2026-07-04",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [],
-      "links": [
-        {
-          "type": "relates-to",
-          "target": "cafe-agent",
-          "_composite": "cafe/cafe-agent"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04"
-    },
-    {
-      "id": "DEC-005",
-      "type": "decision",
-      "project": "cafe",
-      "file": "projects/cafe/knowledge/DEC-005.md",
-      "status": "active",
-      "freshness": "2026-07-04",
-      "verified": "2026-07-04",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [],
-      "links": [
-        {
-          "type": "relates-to",
-          "target": "cafe-agent",
-          "_composite": "cafe/cafe-agent"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04"
-    },
-    {
-      "id": "DEC-006",
-      "type": "decision",
-      "project": "cafe",
-      "file": "projects/cafe/knowledge/DEC-006.md",
-      "status": "active",
-      "freshness": "2026-07-04",
-      "verified": "2026-07-04",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [],
-      "links": [
-        {
-          "type": "relates-to",
-          "target": "cafe-agent",
-          "_composite": "cafe/cafe-agent"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04"
-    },
-    {
-      "id": "LSN-001",
-      "type": "lesson",
-      "project": "cafe",
-      "file": "projects/cafe/knowledge/LSN-001.md",
-      "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [
-        "/home/cafe/components/ReceiptViewer.tsx"
-      ],
-      "links": [
-        {
-          "type": "relates-to",
-          "target": "cafe-agent",
-          "_composite": "cafe/cafe-agent"
-        },
-        {
-          "type": "relates-to",
-          "target": "DEC-001",
-          "_composite": "cafe/DEC-001"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
-    },
-    {
-      "id": "cafe-profile",
-      "type": "project-profile",
-      "project": "cafe",
-      "file": "projects/cafe/profile.md",
-      "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [],
-      "links": [
-        {
-          "type": "relates-to",
-          "target": "cafe-agent",
-          "_composite": "cafe/cafe-agent"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-status",
-          "_composite": "cafe/cafe-status"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-structure",
-          "_composite": "cafe/cafe-structure"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-dependencies",
-          "_composite": "cafe/cafe-dependencies"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-commands",
-          "_composite": "cafe/cafe-commands"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
-    },
-    {
-      "id": "cafe-status",
-      "type": "project-status",
-      "project": "cafe",
-      "file": "projects/cafe/status.md",
-      "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [],
-      "links": [
-        {
-          "type": "relates-to",
-          "target": "cafe-agent",
-          "_composite": "cafe/cafe-agent"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-profile",
-          "_composite": "cafe/cafe-profile"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-structure",
-          "_composite": "cafe/cafe-structure"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
-    },
-    {
-      "id": "cafe-structure",
-      "type": "document",
-      "project": "cafe",
-      "file": "projects/cafe/structure.md",
-      "status": "active",
-      "freshness": "2026-07-04T00:00:00.000Z",
-      "verified": "2026-07-04T00:00:00.000Z",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [],
-      "links": [
-        {
-          "type": "documents",
-          "target": "cafe-agent",
-          "_composite": "cafe/cafe-agent"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-profile",
-          "_composite": "cafe/cafe-profile"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-04T00:00:00.000Z"
-    },
-    {
-      "id": "TASK-001",
-      "type": "task",
-      "project": "cafe",
-      "file": "projects/cafe/tasks/TASK-001.md",
-      "status": "closed",
-      "freshness": "2026-07-05T00:00:00.000Z",
-      "verified": "2026-07-05T00:00:00.000Z",
-      "expires": null,
-      "superseded_by": null,
-      "anchors": [],
-      "links": [
-        {
-          "type": "relates-to",
-          "target": "cafe-agent",
-          "_composite": "cafe/cafe-agent"
-        },
-        {
-          "type": "relates-to",
-          "target": "cafe-status",
-          "_composite": "cafe/cafe-status"
-        },
-        {
-          "type": "relates-to",
-          "target": "LSN-001",
-          "_composite": "cafe/LSN-001"
-        }
-      ],
-      "personality": null,
-      "name": null,
-      "description": null,
-      "last_updated": "2026-07-05T00:00:00.000Z"
     },
     {
       "id": "clientdata-agent",
@@ -1092,6 +612,305 @@
       "last_updated": "2026-07-07T00:00:00.000Z"
     },
     {
+      "id": "LSN-003",
+      "type": "lesson",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/LSN-003.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "caused-by",
+          "target": "TASK-004",
+          "_composite": "clientdata/TASK-004"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "LSN-004",
+      "type": "lesson",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/LSN-004.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "caused-by",
+          "target": "TASK-005",
+          "_composite": "clientdata/TASK-005"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "LSN-005",
+      "type": "lesson",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/LSN-005.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "caused-by",
+          "target": "TASK-006",
+          "_composite": "clientdata/TASK-006"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "LSN-006",
+      "type": "lesson",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/LSN-006.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "caused-by",
+          "target": "TASK-011",
+          "_composite": "clientdata/TASK-011"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "LSN-007",
+      "type": "lesson",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/LSN-007.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "caused-by",
+          "target": "TASK-012",
+          "_composite": "clientdata/TASK-012"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "LSN-008",
+      "type": "lesson",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/LSN-008.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "caused-by",
+          "target": "TASK-014",
+          "_composite": "clientdata/TASK-014"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "LSN-009",
+      "type": "lesson",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/LSN-009.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "caused-by",
+          "target": "TASK-015",
+          "_composite": "clientdata/TASK-015"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "LSN-010",
+      "type": "lesson",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/LSN-010.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "caused-by",
+          "target": "TASK-016",
+          "_composite": "clientdata/TASK-016"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "LSN-011",
+      "type": "lesson",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/LSN-011.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "caused-by",
+          "target": "TASK-013",
+          "_composite": "clientdata/TASK-013"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "LSN-012",
+      "type": "lesson",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/LSN-012.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "caused-by",
+          "target": "TASK-010",
+          "_composite": "clientdata/TASK-010"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "LSN-013",
+      "type": "lesson",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/LSN-013.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "caused-by",
+          "target": "TASK-017",
+          "_composite": "clientdata/TASK-017"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "LSN-014",
+      "type": "lesson",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/LSN-014.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "caused-by",
+          "target": "TASK-008",
+          "_composite": "clientdata/TASK-008"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "LSN-015",
+      "type": "lesson",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/LSN-015.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [
+        {
+          "type": "caused-by",
+          "target": "TASK-009",
+          "_composite": "clientdata/TASK-009"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
       "id": "RSK-001",
       "type": "risk",
       "project": "clientdata",
@@ -1120,6 +939,244 @@
       "name": null,
       "description": null,
       "last_updated": "2026-07-05T00:00:00.000Z"
+    },
+    {
+      "id": "TAS-1783532888693",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/TAS-1783532888693.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783532890999",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/TAS-1783532890999.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783532892224",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/TAS-1783532892224.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783532894325",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/TAS-1783532894325.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783532895707",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/TAS-1783532895707.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783532896844",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/TAS-1783532896844.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783532898036",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/TAS-1783532898036.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783532900283",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/TAS-1783532900283.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783532901766",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/TAS-1783532901766.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783532902890",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/TAS-1783532902890.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783532904168",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/TAS-1783532904168.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783532910323",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/TAS-1783532910323.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783532911531",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/TAS-1783532911531.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783532912736",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/knowledge/TAS-1783532912736.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
     },
     {
       "id": "clientdata-profile",
@@ -1337,6 +1394,356 @@
       "name": null,
       "description": null,
       "last_updated": "2026-07-07T00:00:00.000Z"
+    },
+    {
+      "id": "TASK-004",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/tasks/TASK-004.md",
+      "status": "closed",
+      "freshness": "2026-07-08T00:00:00.000Z",
+      "verified": "2026-07-08T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/clientdata/app/api/clients/route.ts"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TASK-005",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/tasks/TASK-005.md",
+      "status": "closed",
+      "freshness": "2026-07-08T00:00:00.000Z",
+      "verified": "2026-07-08T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/clientdata/app/api/suggestions/[id]/route.ts"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TASK-006",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/tasks/TASK-006.md",
+      "status": "closed",
+      "freshness": "2026-07-08T00:00:00.000Z",
+      "verified": "2026-07-08T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/clientdata/app/api/suggestions/[id]/route.ts"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TASK-007",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/tasks/TASK-007.md",
+      "status": "open",
+      "freshness": "2026-07-08T00:00:00.000Z",
+      "verified": "2026-07-08T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/clientdata/app/api/"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08T00:00:00.000Z"
+    },
+    {
+      "id": "TASK-008",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/tasks/TASK-008.md",
+      "status": "closed",
+      "freshness": "2026-07-08T00:00:00.000Z",
+      "verified": "2026-07-08T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/clientdata/components/ClientDetail.tsx"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TASK-009",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/tasks/TASK-009.md",
+      "status": "closed",
+      "freshness": "2026-07-08T00:00:00.000Z",
+      "verified": "2026-07-08T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/clientdata/components/ClientDetail.tsx"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TASK-010",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/tasks/TASK-010.md",
+      "status": "closed",
+      "freshness": "2026-07-08T00:00:00.000Z",
+      "verified": "2026-07-08T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/clientdata/components/PhotoRequestDialog.tsx"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TASK-011",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/tasks/TASK-011.md",
+      "status": "closed",
+      "freshness": "2026-07-08T00:00:00.000Z",
+      "verified": "2026-07-08T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/clientdata/app/api/clients/route.ts"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TASK-012",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/tasks/TASK-012.md",
+      "status": "closed",
+      "freshness": "2026-07-08T00:00:00.000Z",
+      "verified": "2026-07-08T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/clientdata/app/api/clients/route.ts"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TASK-013",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/tasks/TASK-013.md",
+      "status": "closed",
+      "freshness": "2026-07-08T00:00:00.000Z",
+      "verified": "2026-07-08T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/clientdata/app/api/suggestions/route.ts"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TASK-014",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/tasks/TASK-014.md",
+      "status": "closed",
+      "freshness": "2026-07-08T00:00:00.000Z",
+      "verified": "2026-07-08T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/clientdata/app/api/auth/route.ts"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TASK-015",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/tasks/TASK-015.md",
+      "status": "closed",
+      "freshness": "2026-07-08T00:00:00.000Z",
+      "verified": "2026-07-08T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/clientdata/app/api/auth/route.ts"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TASK-016",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/tasks/TASK-016.md",
+      "status": "closed",
+      "freshness": "2026-07-08T00:00:00.000Z",
+      "verified": "2026-07-08T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/clientdata/lib/auth.ts"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TASK-017",
+      "type": "task",
+      "project": "clientdata",
+      "file": "projects/clientdata/tasks/TASK-017.md",
+      "status": "closed",
+      "freshness": "2026-07-08T00:00:00.000Z",
+      "verified": "2026-07-08T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "/home/clientdata/lib/r2.ts"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "clientdata-agent",
+          "_composite": "clientdata/clientdata-agent"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
     },
     {
       "id": "collage-agent",
@@ -3217,8 +3624,8 @@
       "project": "truck",
       "file": "projects/truck/status.md",
       "status": "active",
-      "freshness": "2026-07-06T00:00:00.000Z",
-      "verified": "2026-07-06T00:00:00.000Z",
+      "freshness": "2026-07-08T00:00:00.000Z",
+      "verified": "2026-07-08T00:00:00.000Z",
       "expires": null,
       "superseded_by": null,
       "anchors": [],
@@ -3242,7 +3649,7 @@
       "personality": null,
       "name": null,
       "description": null,
-      "last_updated": "2026-07-06T00:00:00.000Z"
+      "last_updated": "2026-07-08T00:00:00.000Z"
     },
     {
       "id": "truck-structure",
@@ -3976,294 +4383,6 @@
       "label": "relates-to"
     },
     {
-      "source": "cafe-agent",
-      "sourceProject": "cafe",
-      "target": "cafe-profile",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-agent",
-      "sourceProject": "cafe",
-      "target": "cafe-status",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-agent",
-      "sourceProject": "cafe",
-      "target": "cafe-structure",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-agent",
-      "sourceProject": "cafe",
-      "target": "cafe-commands",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-agent",
-      "sourceProject": "cafe",
-      "target": "workspace",
-      "targetProject": null,
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-assets",
-      "sourceProject": "cafe",
-      "target": "cafe-structure",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-commands",
-      "sourceProject": "cafe",
-      "target": "cafe-agent",
-      "targetProject": "cafe",
-      "type": "documents",
-      "label": "documents"
-    },
-    {
-      "source": "cafe-commands",
-      "sourceProject": "cafe",
-      "target": "cafe-dependencies",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-commands",
-      "sourceProject": "cafe",
-      "target": "cafe-structure",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-decisions",
-      "sourceProject": "cafe",
-      "target": "cafe-agent",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-dependencies",
-      "sourceProject": "cafe",
-      "target": "cafe-profile",
-      "targetProject": "cafe",
-      "type": "documents",
-      "label": "documents"
-    },
-    {
-      "source": "cafe-dependencies",
-      "sourceProject": "cafe",
-      "target": "cafe-structure",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-dependencies",
-      "sourceProject": "cafe",
-      "target": "cafe-commands",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "COMP-001",
-      "sourceProject": "cafe",
-      "target": "cafe-profile",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "DEC-001",
-      "sourceProject": "cafe",
-      "target": "cafe-agent",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "DEC-001",
-      "sourceProject": "cafe",
-      "target": "cafe-status",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "DEC-002",
-      "sourceProject": "cafe",
-      "target": "cafe-agent",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "DEC-003",
-      "sourceProject": "cafe",
-      "target": "cafe-agent",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "DEC-004",
-      "sourceProject": "cafe",
-      "target": "cafe-agent",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "DEC-005",
-      "sourceProject": "cafe",
-      "target": "cafe-agent",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "DEC-006",
-      "sourceProject": "cafe",
-      "target": "cafe-agent",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "LSN-001",
-      "sourceProject": "cafe",
-      "target": "cafe-agent",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "LSN-001",
-      "sourceProject": "cafe",
-      "target": "DEC-001",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-profile",
-      "sourceProject": "cafe",
-      "target": "cafe-agent",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-profile",
-      "sourceProject": "cafe",
-      "target": "cafe-status",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-profile",
-      "sourceProject": "cafe",
-      "target": "cafe-structure",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-profile",
-      "sourceProject": "cafe",
-      "target": "cafe-dependencies",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-profile",
-      "sourceProject": "cafe",
-      "target": "cafe-commands",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-status",
-      "sourceProject": "cafe",
-      "target": "cafe-agent",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-status",
-      "sourceProject": "cafe",
-      "target": "cafe-profile",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-status",
-      "sourceProject": "cafe",
-      "target": "cafe-structure",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "cafe-structure",
-      "sourceProject": "cafe",
-      "target": "cafe-agent",
-      "targetProject": "cafe",
-      "type": "documents",
-      "label": "documents"
-    },
-    {
-      "source": "cafe-structure",
-      "sourceProject": "cafe",
-      "target": "cafe-profile",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "TASK-001",
-      "sourceProject": "cafe",
-      "target": "cafe-agent",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "TASK-001",
-      "sourceProject": "cafe",
-      "target": "cafe-status",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
-      "source": "TASK-001",
-      "sourceProject": "cafe",
-      "target": "LSN-001",
-      "targetProject": "cafe",
-      "type": "relates-to",
-      "label": "relates-to"
-    },
-    {
       "source": "clientdata-agent",
       "sourceProject": "clientdata",
       "target": "clientdata-profile",
@@ -4528,6 +4647,110 @@
       "label": "relates-to"
     },
     {
+      "source": "LSN-003",
+      "sourceProject": "clientdata",
+      "target": "TASK-004",
+      "targetProject": "clientdata",
+      "type": "caused-by",
+      "label": "caused-by"
+    },
+    {
+      "source": "LSN-004",
+      "sourceProject": "clientdata",
+      "target": "TASK-005",
+      "targetProject": "clientdata",
+      "type": "caused-by",
+      "label": "caused-by"
+    },
+    {
+      "source": "LSN-005",
+      "sourceProject": "clientdata",
+      "target": "TASK-006",
+      "targetProject": "clientdata",
+      "type": "caused-by",
+      "label": "caused-by"
+    },
+    {
+      "source": "LSN-006",
+      "sourceProject": "clientdata",
+      "target": "TASK-011",
+      "targetProject": "clientdata",
+      "type": "caused-by",
+      "label": "caused-by"
+    },
+    {
+      "source": "LSN-007",
+      "sourceProject": "clientdata",
+      "target": "TASK-012",
+      "targetProject": "clientdata",
+      "type": "caused-by",
+      "label": "caused-by"
+    },
+    {
+      "source": "LSN-008",
+      "sourceProject": "clientdata",
+      "target": "TASK-014",
+      "targetProject": "clientdata",
+      "type": "caused-by",
+      "label": "caused-by"
+    },
+    {
+      "source": "LSN-009",
+      "sourceProject": "clientdata",
+      "target": "TASK-015",
+      "targetProject": "clientdata",
+      "type": "caused-by",
+      "label": "caused-by"
+    },
+    {
+      "source": "LSN-010",
+      "sourceProject": "clientdata",
+      "target": "TASK-016",
+      "targetProject": "clientdata",
+      "type": "caused-by",
+      "label": "caused-by"
+    },
+    {
+      "source": "LSN-011",
+      "sourceProject": "clientdata",
+      "target": "TASK-013",
+      "targetProject": "clientdata",
+      "type": "caused-by",
+      "label": "caused-by"
+    },
+    {
+      "source": "LSN-012",
+      "sourceProject": "clientdata",
+      "target": "TASK-010",
+      "targetProject": "clientdata",
+      "type": "caused-by",
+      "label": "caused-by"
+    },
+    {
+      "source": "LSN-013",
+      "sourceProject": "clientdata",
+      "target": "TASK-017",
+      "targetProject": "clientdata",
+      "type": "caused-by",
+      "label": "caused-by"
+    },
+    {
+      "source": "LSN-014",
+      "sourceProject": "clientdata",
+      "target": "TASK-008",
+      "targetProject": "clientdata",
+      "type": "caused-by",
+      "label": "caused-by"
+    },
+    {
+      "source": "LSN-015",
+      "sourceProject": "clientdata",
+      "target": "TASK-009",
+      "targetProject": "clientdata",
+      "type": "caused-by",
+      "label": "caused-by"
+    },
+    {
       "source": "RSK-001",
       "sourceProject": "clientdata",
       "target": "DEC-001",
@@ -4691,6 +4914,118 @@
       "source": "TASK-003",
       "sourceProject": "clientdata",
       "target": "LSN-002",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-004",
+      "sourceProject": "clientdata",
+      "target": "clientdata-agent",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-005",
+      "sourceProject": "clientdata",
+      "target": "clientdata-agent",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-006",
+      "sourceProject": "clientdata",
+      "target": "clientdata-agent",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-007",
+      "sourceProject": "clientdata",
+      "target": "clientdata-agent",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-008",
+      "sourceProject": "clientdata",
+      "target": "clientdata-agent",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-009",
+      "sourceProject": "clientdata",
+      "target": "clientdata-agent",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-010",
+      "sourceProject": "clientdata",
+      "target": "clientdata-agent",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-011",
+      "sourceProject": "clientdata",
+      "target": "clientdata-agent",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-012",
+      "sourceProject": "clientdata",
+      "target": "clientdata-agent",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-013",
+      "sourceProject": "clientdata",
+      "target": "clientdata-agent",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-014",
+      "sourceProject": "clientdata",
+      "target": "clientdata-agent",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-015",
+      "sourceProject": "clientdata",
+      "target": "clientdata-agent",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-016",
+      "sourceProject": "clientdata",
+      "target": "clientdata-agent",
+      "targetProject": "clientdata",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-017",
+      "sourceProject": "clientdata",
+      "target": "clientdata-agent",
       "targetProject": "clientdata",
       "type": "relates-to",
       "label": "relates-to"
@@ -5929,39 +6264,31 @@
     }
   ],
   "projects": {
+    "okf": {
+      "node_count": 1,
+      "by_type": {
+        "plan": 1
+      }
+    },
     "astryx": {
       "node_count": 1,
       "by_type": {
         "project-status": 1
       }
     },
-    "cafe": {
-      "node_count": 17,
-      "by_type": {
-        "agent-profile": 1,
-        "document": 4,
-        "index": 1,
-        "component": 1,
-        "decision": 6,
-        "lesson": 1,
-        "project-profile": 1,
-        "project-status": 1,
-        "task": 1
-      }
-    },
     "clientdata": {
-      "node_count": 23,
+      "node_count": 64,
       "by_type": {
         "agent-profile": 1,
         "document": 4,
         "index": 1,
         "component": 2,
         "decision": 7,
-        "lesson": 2,
+        "lesson": 15,
         "risk": 1,
+        "task": 31,
         "project-profile": 1,
-        "project-status": 1,
-        "task": 3
+        "project-status": 1
       }
     },
     "collage": {

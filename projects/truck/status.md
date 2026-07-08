@@ -2,13 +2,13 @@
 type: project-status
 id: truck-status
 project: truck
-last_updated: 2026-07-06
+last_updated: 2026-07-08
 state: active
 documentation_completeness: High
 confidence_level: High
 status: active
-freshness: 2026-07-06
-verified: 2026-07-06
+freshness: 2026-07-08
+verified: 2026-07-08
 expires: null
 superseded_by: null
 anchors: []
@@ -54,6 +54,9 @@ links:
 | `notify-telegram` | Request/approve/reject | Sends Telegram message to admin |
 
 ## Changelog
+
+### 2026-07-08
+- **Code quality refactor**: 7 audit tasks — typed interfaces (src/types/log.ts), removed all eslint-disable blocks (set-state-in-effect, exhaustive-deps fixed), env var validation in supabase.ts, dev-only error logging (src/utils/error.ts), async useEffect cancellation flags, ConfirmModal for exit, inline CSS extracted, crypto.randomUUID for toast IDs
 
 ### 2026-07-06 (evening)
 - **Auth modal**: replaced full-page login screen with modal overlay on main page — app renders behind login, ModalWrapper + focus trap blocks interaction until authenticated

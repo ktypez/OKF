@@ -15,7 +15,6 @@ last_updated: 2026-07-05
 
 | Project | Profile | Agent | Status | Role | Tech Stack |
 |---------|---------|-------|--------|------|------------|
-| cafe | [profile](./projects/cafe/profile.md) | [agent](./projects/cafe/agent.md) | [status](./projects/cafe/status.md) | active | Next.js 15, React 19, Supabase, LINE |
 | clientdata | [profile](./projects/clientdata/profile.md) | [agent](./projects/clientdata/agent.md) | [status](./projects/clientdata/status.md) | active | Next.js 16, React 19, Neon, Drizzle |
 | habby | [profile](./projects/habby/profile.md) | [agent](./projects/habby/agent.md) | [status](./projects/habby/status.md) | active | Vite 6, Express, Redis |
 | mcky.space | [profile](./projects/mcky.space/profile.md) | [agent](./projects/mcky.space/agent.md) | [status](./projects/mcky.space/status.md) | active | Astro 7, Alpine.js, Supabase |
@@ -29,9 +28,9 @@ The entire KB is connected as a graph with typed edges. Every node has a stable 
 
 | Metric | Count |
 |--------|-------|
-| Total nodes | 122 |
-| Total edges | 233 |
-| Projects covered | 8 |
+| Total nodes | 106 |
+| Total edges | 208 |
+| Projects covered | 7 |
 | Knowledge types | decision, lesson, risk, component, task, document |
 
 - **Graph index:** `graph.json` — auto-generated registry with all nodes and edges
@@ -43,7 +42,6 @@ The entire KB is connected as a graph with typed edges. Every node has a stable 
 
 | Project | Role | Personality |
 |---------|------|-------------|
-| cafe | barista engineer | — |
 | clientdata | data goblin | — |
 | habby | trophy goblin | — |
 | mcky.space | terminal hipster | — |
