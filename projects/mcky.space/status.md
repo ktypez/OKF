@@ -58,11 +58,17 @@ links:
 
 ## API
 
-| Route | Method | Auth Required | Purpose |
-|-------|--------|---------------|---------|
-| `/api/auth` | POST | No | Password verification, returns `hash` on success |
+No API routes remain. The site is fully static — blog content is compiled from markdown at build time. The former `/api/auth` and `/api/habits/*` routes (Supabase-backed, client-hash auth) were removed on 2026-07-08 when auth was stripped from the project.
 
 ## Changelog
+
+### 2026-07-08 — Security + cleanup pass
+- **B2 (deleted)**: Removed orphaned `/api/auth`, `/api/habits/*`, `require-auth.ts`, `supabase.ts` — client-hash auth was spoofable and auth was already stripped from the UI
+- **B1 (XSS fix)**: Blog posts now rendered via `marked` + Prism and sanitized with DOMPurify before `set:html`
+- **B7 (CSP)**: Added `Content-Security-Policy` to `vercel.json` (script-src allows self + Alpine CDN + unsafe-inline)
+- **B4 (Prism)**: Wired `marked-highlight` + `prismjs` so blog code blocks actually get syntax highlighting (claimed since 2026-07-05 but was not applied to runtime `marked` output)
+- **B5 (content)**: Corrected stale blog posts that described a React/Next.js stack and a live Supabase backend — site is static Astro
+- **B6 (docs)**: Filled mcky.space profile repo/owner (`ktypez/mcky.space`); removed misleading `supabase` tag from homepage/projects
 
 ### 2026-07-05 — RSK-001 resolved, LAN access enabled
 - **RSK-001**: Switched `syntaxHighlight` from shiki to `prism` — eliminates shiki dependency
@@ -111,7 +117,6 @@ links:
 ## Known Issues
 
 - Alpine.js loaded from CDN (intentional per stack definition)
-- `/api/auth` route exists but no longer referenced (auth removed from layout)
 - `npm install` still drops ESM/binding files on android-arm64 — manual fixes required
 
 ## Dev Server Fix (2026-07-05)

@@ -29,8 +29,8 @@ links:
 - **Display Name:** mcky.space
 - **Description:** Terminal-style personal website.
 - **Purpose:** Personal portfolio and blog.
-- **Repository:** Unknown
-- **Owner:** Unknown
+- **Repository:** mcky.space
+- **Owner:** ktypez (https://github.com/ktypez/mcky.space)
 
 ## Technology
 - **Languages:** TypeScript, JavaScript
