@@ -1,11 +1,13 @@
 {
   "meta": {
-    "generated": "2026-07-07T07:13:13.538Z",
-    "total_nodes": 122,
-    "total_edges": 233,
-    "warnings": 0
+    "generated": "2026-07-08T15:45:22.999Z",
+    "total_nodes": 145,
+    "total_edges": 247,
+    "warnings": 1
   },
-  "warnings": [],
+  "warnings": [
+    "astryx-status → TASK-003 (cross-project: clientdata, truck)"
+  ],
   "nodes": [
     {
       "id": "okf-format-rule",
@@ -2382,6 +2384,244 @@
       "last_updated": "2026-07-05T00:00:00.000Z"
     },
     {
+      "id": "TAS-1783520771509",
+      "type": "task",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/knowledge/TAS-1783520771509.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783520775025",
+      "type": "task",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/knowledge/TAS-1783520775025.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783520775866",
+      "type": "task",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/knowledge/TAS-1783520775866.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783520778184",
+      "type": "task",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/knowledge/TAS-1783520778184.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783520780921",
+      "type": "task",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/knowledge/TAS-1783520780921.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783520786994",
+      "type": "task",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/knowledge/TAS-1783520786994.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783520797568",
+      "type": "task",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/knowledge/TAS-1783520797568.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783521005458",
+      "type": "task",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/knowledge/TAS-1783521005458.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783521045464",
+      "type": "task",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/knowledge/TAS-1783521045464.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783521047754",
+      "type": "task",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/knowledge/TAS-1783521047754.md",
+      "status": "closed",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783521050612",
+      "type": "task",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/knowledge/TAS-1783521050612.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783521057411",
+      "type": "task",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/knowledge/TAS-1783521057411.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783521061070",
+      "type": "task",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/knowledge/TAS-1783521061070.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783521065777",
+      "type": "task",
+      "project": "mcky.space",
+      "file": "projects/mcky.space/knowledge/TAS-1783521065777.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
       "id": "mcky-space-profile",
       "type": "project-profile",
       "project": "mcky.space",
@@ -2895,6 +3135,40 @@
       "last_updated": "2026-07-04T00:00:00.000Z"
     },
     {
+      "id": "TAS-1783513125847",
+      "type": "task",
+      "project": "truck",
+      "file": "projects/truck/knowledge/TAS-1783513125847.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
+      "id": "TAS-1783513128459",
+      "type": "task",
+      "project": "truck",
+      "file": "projects/truck/knowledge/TAS-1783513128459.md",
+      "status": "active",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [],
+      "links": [],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08"
+    },
+    {
       "id": "truck-profile",
       "type": "project-profile",
       "project": "truck",
@@ -3030,6 +3304,249 @@
       "name": null,
       "description": null,
       "last_updated": "2026-07-05T00:00:00.000Z"
+    },
+    {
+      "id": "TASK-002",
+      "type": "task",
+      "project": "truck",
+      "file": "projects/truck/tasks/TASK-002.md",
+      "status": "open",
+      "freshness": "2026-07-08T00:00:00.000Z",
+      "verified": null,
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "src/lib/offlineQueue.ts:17",
+        "src/lib/offlineQueue.ts:74",
+        "src/lib/offlineQueue.ts:115",
+        "src/lib/offlineQueue.ts:168",
+        "src/components/DailyView.tsx:205",
+        "src/components/DailyView.tsx:275",
+        "src/components/History.tsx:48",
+        "src/components/ProfilePage.tsx:116"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "truck-agent",
+          "_composite": "truck/truck-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-status",
+          "_composite": "truck/truck-status"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08T00:00:00.000Z"
+    },
+    {
+      "id": "TASK-003",
+      "type": "task",
+      "project": "truck",
+      "file": "projects/truck/tasks/TASK-003.md",
+      "status": "open",
+      "freshness": "2026-07-08T00:00:00.000Z",
+      "verified": null,
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "src/App.tsx:59",
+        "src/components/DailyView.tsx:130",
+        "src/components/DailyView.tsx:135",
+        "src/components/profile/UserManagement.tsx:107",
+        "src/components/profile/UserManagement.tsx:109",
+        "src/components/ToastContext.tsx:1"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "truck-agent",
+          "_composite": "truck/truck-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-status",
+          "_composite": "truck/truck-status"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08T00:00:00.000Z"
+    },
+    {
+      "id": "TASK-004",
+      "type": "task",
+      "project": "truck",
+      "file": "projects/truck/tasks/TASK-004.md",
+      "status": "open",
+      "freshness": "2026-07-08T00:00:00.000Z",
+      "verified": null,
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "src/lib/supabase.ts:4",
+        "src/lib/supabase.ts:5"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "truck-agent",
+          "_composite": "truck/truck-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-status",
+          "_composite": "truck/truck-status"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08T00:00:00.000Z"
+    },
+    {
+      "id": "TASK-005",
+      "type": "task",
+      "project": "truck",
+      "file": "projects/truck/tasks/TASK-005.md",
+      "status": "open",
+      "freshness": "2026-07-08T00:00:00.000Z",
+      "verified": null,
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "src/App.tsx:106",
+        "src/App.tsx:115",
+        "src/components/ProfilePage.tsx:63",
+        "src/components/ProfilePage.tsx:73",
+        "src/components/ProfilePage.tsx:78",
+        "src/components/ProfilePage.tsx:180",
+        "src/components/ErrorBoundary.tsx:20",
+        "src/components/profile/UserManagement.tsx:70"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "truck-agent",
+          "_composite": "truck/truck-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-status",
+          "_composite": "truck/truck-status"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08T00:00:00.000Z"
+    },
+    {
+      "id": "TASK-006",
+      "type": "task",
+      "project": "truck",
+      "file": "projects/truck/tasks/TASK-006.md",
+      "status": "open",
+      "freshness": "2026-07-08T00:00:00.000Z",
+      "verified": null,
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "src/App.tsx:99",
+        "src/App.tsx:111",
+        "src/components/ProfilePage.tsx:56",
+        "src/components/ProfilePage.tsx:67",
+        "src/AppRoutes.tsx:19"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "truck-agent",
+          "_composite": "truck/truck-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-status",
+          "_composite": "truck/truck-status"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08T00:00:00.000Z"
+    },
+    {
+      "id": "TASK-007",
+      "type": "task",
+      "project": "truck",
+      "file": "projects/truck/tasks/TASK-007.md",
+      "status": "open",
+      "freshness": "2026-07-08T00:00:00.000Z",
+      "verified": null,
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "src/App.tsx:82",
+        "src/components/MonthYearSelector.tsx:33",
+        "src/components/daily/LeaveCard.tsx:37",
+        "src/lib/offlineQueue.ts:27",
+        "src/components/ToastContext.tsx:26"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "truck-agent",
+          "_composite": "truck/truck-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-status",
+          "_composite": "truck/truck-status"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08T00:00:00.000Z"
+    },
+    {
+      "id": "TASK-008",
+      "type": "task",
+      "project": "truck",
+      "file": "projects/truck/tasks/TASK-008.md",
+      "status": "open",
+      "freshness": "2026-07-08T00:00:00.000Z",
+      "verified": null,
+      "expires": null,
+      "superseded_by": null,
+      "anchors": [
+        "src/App.tsx:99",
+        "src/App.tsx:111",
+        "src/components/DailyView.tsx:92",
+        "src/components/profile/UserManagement.tsx:106",
+        "src/components/ThemeEffects.tsx:10",
+        "src/App.tsx:85"
+      ],
+      "links": [
+        {
+          "type": "relates-to",
+          "target": "truck-agent",
+          "_composite": "truck/truck-agent"
+        },
+        {
+          "type": "relates-to",
+          "target": "truck-status",
+          "_composite": "truck/truck-status"
+        }
+      ],
+      "personality": null,
+      "name": null,
+      "description": null,
+      "last_updated": "2026-07-08T00:00:00.000Z"
     },
     {
       "id": "writer-agent",
@@ -5235,6 +5752,118 @@
       "label": "relates-to"
     },
     {
+      "source": "TASK-002",
+      "sourceProject": "truck",
+      "target": "truck-agent",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-002",
+      "sourceProject": "truck",
+      "target": "truck-status",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-003",
+      "sourceProject": "truck",
+      "target": "truck-agent",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-003",
+      "sourceProject": "truck",
+      "target": "truck-status",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-004",
+      "sourceProject": "truck",
+      "target": "truck-agent",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-004",
+      "sourceProject": "truck",
+      "target": "truck-status",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-005",
+      "sourceProject": "truck",
+      "target": "truck-agent",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-005",
+      "sourceProject": "truck",
+      "target": "truck-status",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-006",
+      "sourceProject": "truck",
+      "target": "truck-agent",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-006",
+      "sourceProject": "truck",
+      "target": "truck-status",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-007",
+      "sourceProject": "truck",
+      "target": "truck-agent",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-007",
+      "sourceProject": "truck",
+      "target": "truck-status",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-008",
+      "sourceProject": "truck",
+      "target": "truck-agent",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
+      "source": "TASK-008",
+      "sourceProject": "truck",
+      "target": "truck-status",
+      "targetProject": "truck",
+      "type": "relates-to",
+      "label": "relates-to"
+    },
+    {
       "source": "writer-agent",
       "sourceProject": "writer",
       "target": "writer-profile",
@@ -5357,7 +5986,7 @@
       }
     },
     "mcky.space": {
-      "node_count": 18,
+      "node_count": 32,
       "by_type": {
         "agent-profile": 1,
         "document": 4,
@@ -5366,13 +5995,13 @@
         "decision": 6,
         "lesson": 1,
         "risk": 1,
+        "task": 15,
         "project-profile": 1,
-        "project-status": 1,
-        "task": 1
+        "project-status": 1
       }
     },
     "truck": {
-      "node_count": 17,
+      "node_count": 26,
       "by_type": {
         "agent-profile": 1,
         "document": 4,
@@ -5380,9 +6009,9 @@
         "component": 1,
         "decision": 6,
         "lesson": 1,
+        "task": 10,
         "project-profile": 1,
-        "project-status": 1,
-        "task": 1
+        "project-status": 1
       }
     },
     "writer": {
