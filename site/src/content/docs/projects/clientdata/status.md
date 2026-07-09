@@ -63,8 +63,15 @@ description: project-status from clientdata
 
 ## Changelog
 
+### 2026-07-08
+- **Back-navigation removed**: removed nav stack + "stay where user left" persistence (popstate handler, history tracking)
+- **Query perf**: combined 2 DB queries into 1, show cached data from localStorage while API response is pending
+- **Gitignore cleanup**: cleaned up stale .gitignore entries
+
 ### 2026-07-07
 - **Astryx spun off** (TASK-003, DEC-008): Astryx migration moved to separate repo `ktypez/astryx` with its own Vercel project at `astryx.mcky.space`. `master` stays on shadcn/ui + Base UI + Phosphor Icons, deployed at `data.mcky.space`.
+- **Preset theme revert**: removed ThemePresetPicker/useThemePreset system, then reverted — preset picker restored
+- **Search back fix**: reset search/filter state on browser back navigation (popstate handler)
 
 ### 2026-07-06 (night)
 - **Keyword search**: `searchClients()` now splits query into individual words — each keyword matches via ILIKE on name/shopName, combined with AND. This means `!ลูกค้า all the wall` matches clients containing ALL of "all", "the", "wall" anywhere in name/shopName (not just the full phrase).

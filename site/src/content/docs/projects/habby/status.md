@@ -26,6 +26,12 @@ description: project-status from habby
 
 ## Changelog
 
+### 2026-07-08
+- **AGENTS.md**: added project AGENTS.md; cleaned up .gitignore
+
+### 2026-07-04
+- **Test suite**: Added Vitest + testing-library — 21 tests covering streak/XP logic, habit check-in, level-up, XP rewards
+
 ### Week 2026-07-02
 - **Redesign**: adopted mcky.space design system (DESIGN.md)
 - Replaced Google Fonts with self-hosted JetBrains Mono

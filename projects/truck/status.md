@@ -2,13 +2,13 @@
 type: project-status
 id: truck-status
 project: truck
-last_updated: 2026-07-08
+last_updated: '2026-07-09'
 state: active
 documentation_completeness: High
 confidence_level: High
 status: active
-freshness: 2026-07-08
-verified: 2026-07-08
+freshness: '2026-07-09'
+verified: '2026-07-09'
 expires: null
 superseded_by: null
 anchors: []
@@ -20,6 +20,7 @@ links:
   - type: relates-to
     target: truck-structure
 ---
+
 
 # Project Status — truck
 
@@ -126,3 +127,4 @@ links:
 - localStorage key pattern: `last-saved-{userId}-{year}-{month}-{day}`
 - Reauthentication: `signInWithPassword()` before `updateUser()`
 - Avatar: Supabase Storage bucket `avatars`, path `{userId}/avatar.{ext}`, ≤2MB
+

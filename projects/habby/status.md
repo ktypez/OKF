@@ -2,13 +2,13 @@
 type: project-status
 id: habby-status
 project: habby
-last_updated: 2026-07-04
+last_updated: '2026-07-09'
 state: active
 documentation_completeness: Medium
 confidence_level: High
 status: active
-freshness: 2026-07-04
-verified: 2026-07-04
+freshness: '2026-07-09'
+verified: 2026-07-04T00:00:00.000Z
 expires: null
 superseded_by: null
 anchors: []
@@ -20,6 +20,8 @@ links:
   - type: relates-to
     target: habby-structure
 ---
+
+
 
 # Project Status — habby
 
@@ -43,6 +45,12 @@ links:
 | `/settings` | Auth, notifications config, theme picker |
 
 ## Changelog
+
+### 2026-07-08
+- **AGENTS.md**: added project AGENTS.md; cleaned up .gitignore
+
+### 2026-07-04
+- **Test suite**: Added Vitest + testing-library — 21 tests covering streak/XP logic, habit check-in, level-up, XP rewards
 
 ### Week 2026-07-02
 - **Redesign**: adopted mcky.space design system (DESIGN.md)
@@ -85,3 +93,4 @@ notifications:time → HH:MM string
 ## Known Issues
 
 None currently.
+
