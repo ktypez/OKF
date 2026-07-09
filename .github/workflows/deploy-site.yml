@@ -28,7 +28,7 @@ jobs:
         run: node scripts/build-site.js
 
       - name: Deploy to Vercel
-        run: npx vercel deploy --prod --yes --token ${{ secrets.VERCEL_TOKEN }}
+        run: cd site && npx vercel deploy --prod --yes --token ${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_ORG_ID: team_xWYnJlpmKenca1NC2UI7VQzV
           VERCEL_PROJECT_ID: prj_RpBHnpmfVfWY7xq8AmH6FUScEDRI
