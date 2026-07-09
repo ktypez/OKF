@@ -19,24 +19,12 @@ last_updated: 2026-07-05
 | habby | [profile](./projects/habby/profile.md) | [agent](./projects/habby/agent.md) | [status](./projects/habby/status.md) | active | Vite 6, Express, Redis |
 | mcky.space | [profile](./projects/mcky.space/profile.md) | [agent](./projects/mcky.space/agent.md) | [status](./projects/mcky.space/status.md) | active | Astro 7, Alpine.js, Supabase |
 | truck | [profile](./projects/truck/profile.md) | [agent](./projects/truck/agent.md) | [status](./projects/truck/status.md) | active | React 19, Vite 8, Supabase, PWA |
-| collage | [profile](./projects/collage/profile.md) | [agent](./projects/collage/agent.md) | [status](./projects/collage/status.md) | active | Express, Sharp, R2, LIFF |
-| astryx | [status](./projects/astryx/status.md) | — | [status](./projects/astryx/status.md) | active | — |
 | writer | [profile](./projects/writer/profile.md) | [agent](./projects/writer/agent.md) | — | global | Markdown, AI agent system |
 
-## Graph (Knowledge Graph)
-The entire KB is connected as a graph with typed edges. Every node has a stable ID.
+## Schema
 
-| Metric | Count |
-|--------|-------|
-| Total nodes | 106 |
-| Total edges | 208 |
-| Projects covered | 7 |
-| Knowledge types | decision, lesson, risk, component, task, document |
-
-- **Graph index:** `graph.json` — auto-generated registry with all nodes and edges
-- **Rebuild:** `node ~/OKF/scripts/build-graph.js`
-- **Dashboard:** Vercel — `deploy-dashboard` trigger to deploy
-- **Schema:** [`.opencode/rules/okf-format.md`](./.opencode/rules/okf-format.md)
+- **Format:** [`.opencode/rules/okf-format.md`](./.opencode/rules/okf-format.md)
+- **Setup:** [`SETUP.md`](./SETUP.md) — quick start for new environments
 
 ## Agent Roles
 
@@ -63,7 +51,7 @@ The entire KB is connected as a graph with typed edges. Every node has a stable 
 - **Dependencies:** 100%
 - **Commands:** 100%
 - **Status:** 100%
-- **Knowledge Graph:** 122 nodes, 233 edges
+- **Knowledge Nodes:** 122
 
 ## Triggers
 
@@ -72,24 +60,34 @@ The entire KB is connected as a graph with typed edges. Every node has a stable 
 | `update .md` | Read project KB files, update status + agent context | All |
 | `cleanup` | Scan unused deps/files, health check, update KB | All |
 | `wrap-day` | Read diff, update changelog + status, commit | truck only |
-| `dispatch` | Operator — list open tasks, claim, plan, execute | Per project |
-| `doctor-kb` | Knowledge lifecycle audit — stale, expired, broken links | All |
+| `doctor-kb` | Knowledge lifecycle audit — stale, expired | All |
 | `backfill` | Seed KB from git history + code structure | Per project |
-| `deploy-dashboard` | Deploy dashboard to Vercel (dev/preview/prod) | `dashboard/public/index.html` or `api/github.js` changes |
-| `deploy-mcp` | Deploy MCP server to Cloudflare Workers | Any `mcp-server/src/*.ts` or `wrangler.jsonc` changes |
 
 ## Scripts
 
 | Script | Purpose |
 |--------|---------|
-| `scripts/build-graph.js` | Rebuild `graph.json` from all KB files |
-| `scripts/deploy-dashboard.sh` | Deploy dashboard to Vercel |
-| `scripts/dispatch.js` | List open tasks and context |
-| `scripts/claim-task.js` | Atomically claim a task |
-| `scripts/complete-task.js` | Close a task and record lesson |
 | `scripts/doctor-kb.js` | Knowledge lifecycle audit |
 | `scripts/backfill.js` | Seed KB from git/code/docs |
-| `mcp-server/` | MCP server — Cloudflare Workers + Durable Object |
+
+## MCP Tools
+
+Local MCP server at `~/OKF/mcp-server/`. Use these tools to query and manage the KB.
+
+| Tool | Description |
+|------|-------------|
+| `okf_list_projects` | List all projects with file counts |
+| `okf_get_project` | Get profile + agent + status for a project |
+| `okf_query_nodes` | Filter nodes by type/status/project |
+| `okf_get_node` | Read single node by ID (frontmatter + body) |
+| `okf_search` | Full-text search across all .md files |
+| `okf_get_file` | Raw content of any OKF file |
+| `okf_create_node` | Create node with auto-generated ID |
+| `okf_update_node` | Update frontmatter fields and/or body |
+| `okf_update_status` | Set lifecycle status on a node |
+| `okf_add_edge` | Add typed link between two nodes |
+| `okf_doctor` | Run lifecycle audit (stale, expired, superseded) |
+| `okf_list_dir` | List OKF directory structure |
 
 ## System Files
 - [Conventions](./system/conventions.md) — user profile, Termux setup, communication rules

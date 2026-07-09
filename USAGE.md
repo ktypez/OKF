@@ -38,12 +38,10 @@ You have access to a shared knowledge base at `~/OKF/`. Before any task:
 
 | Project | Agent | Status |
 |---------|-------|--------|
-| cafe | [agent](projects/cafe/agent.md) | [status](projects/cafe/status.md) |
 | clientdata | [agent](projects/clientdata/agent.md) | [status](projects/clientdata/status.md) |
 | habby | [agent](projects/habby/agent.md) | [status](projects/habby/status.md) |
 | mcky.space | [agent](projects/mcky.space/agent.md) | [status](projects/mcky.space/status.md) |
 | truck | [agent](projects/truck/agent.md) | [status](projects/truck/status.md) |
-| collage | [agent](projects/collage/agent.md) | [status](projects/collage/status.md) |
 | writer | [agent](projects/writer/agent.md) | — |
 
 Shared: `~/OKF/system/conventions.md`, `~/OKF/system/workspace.md`
@@ -84,11 +82,6 @@ Shared: `~/OKF/system/conventions.md`, `~/OKF/system/workspace.md`
 │   └── INDEX.md
 ├── templates/              ← Templates
 │   └── project-template.md
-├── graph.json              ← Knowledge graph registry (auto-generated)
-└── dashboard/              ← Vercel-deployed dashboard
-    ├── public/index.html   ← Dashboard UI (D3 force graph)
-    ├── api/github.js       ← GitHub API proxy
-    └── DEPLOY.md           ← Deployment guide
 ```
 
 ## Triggers
@@ -98,8 +91,24 @@ Shared: `~/OKF/system/conventions.md`, `~/OKF/system/workspace.md`
 | `update .md` or `update kb` | Read project state → update status.md → sync agent.md | |
 | `cleanup` | Scan unused files/deps → health check → present findings → update KB | |
 | `wrap-day` | Read git diff → add changelog entry → update status → commit (truck only) | |
-| `dispatch` | Operator — list open tasks, claim, plan, execute | Per project |
-| `doctor-kb` | Knowledge lifecycle audit — stale, expired, broken links | All |
+| `doctor-kb` | Knowledge lifecycle audit — stale, expired | All |
 | `backfill` | Seed KB from git history + code structure | Per project |
-| `deploy-dashboard` | Deploy dashboard to Vercel (dev/preview/prod) | `dashboard/public/index.html` or `api/github.js` changes |
-| `deploy-mcp` | Deploy MCP server to Cloudflare Workers | Any `mcp-server/src/*.ts` or `wrangler.jsonc` changes |
+
+## MCP Tools
+
+Local MCP server at `~/OKF/mcp-server/`. Use these tools to query and manage the KB.
+
+| Tool | Description |
+|------|-------------|
+| `okf_list_projects` | List all projects with file counts |
+| `okf_get_project` | Get profile + agent + status for a project |
+| `okf_query_nodes` | Filter nodes by type/status/project |
+| `okf_get_node` | Read single node by ID (frontmatter + body) |
+| `okf_search` | Full-text search across all .md files |
+| `okf_get_file` | Raw content of any OKF file |
+| `okf_create_node` | Create node with auto-generated ID |
+| `okf_update_node` | Update frontmatter fields and/or body |
+| `okf_update_status` | Set lifecycle status on a node |
+| `okf_add_edge` | Add typed link between two nodes |
+| `okf_doctor` | Run lifecycle audit (stale, expired, superseded) |
+| `okf_list_dir` | List OKF directory structure |

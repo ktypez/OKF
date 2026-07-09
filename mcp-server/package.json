@@ -1,26 +1,16 @@
 {
-	"name": "okf-mcp-server",
-	"version": "1.0.0",
-	"private": true,
-	"scripts": {
-		"deploy": "wrangler deploy",
-		"dev": "wrangler dev",
-		"format": "oxfmt --write .",
-		"lint:fix": "oxlint --fix",
-		"start": "wrangler dev",
-		"cf-typegen": "wrangler types",
-		"type-check": "tsc --noEmit"
-	},
-	"dependencies": {
-		"agents": "^0.17.1",
-		"js-yaml": "^4.1.0",
-		"zod": "^4.4.3"
-	},
-	"devDependencies": {
-		"@types/js-yaml": "^4.0.9",
-		"oxfmt": "^0.56.0",
-		"oxlint": "^1.71.0",
-		"typescript": "6.0.3",
-		"wrangler": "^4.105.0"
-	}
+  "name": "okf-mcp-server",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Local MCP server for OKF knowledge base",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.1",
+    "js-yaml": "^4.1.0",
+    "zod": "^3.25.1"
+  }
 }

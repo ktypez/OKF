@@ -32,10 +32,8 @@ expires: null               # optional expiry date
 superseded_by: null         # id of node that replaces this one
 anchors: []                 # file:line paths this node concerns
 links:                      # typed edges to other nodes
-  - type: supersedes
-    target: DEC-003
   - type: relates-to
-    target: TASK-012
+    target: DEC-003
 ---
 ```
 
@@ -60,19 +58,39 @@ See `~/.opencode/rules/okf-format.md` for full schema reference.
 
 - No push of KB files (`~/OKF/`) without explicit instruction
 - Commit only when asked
-- Project code (~/truck/, ~/cafe/, etc.) — follow project conventions
+- Project code (~/truck/, etc.) — follow project conventions
 
 ## Deployment Rules
 
 | What changes | Action |
 |-------------|--------|
 | KB files (projects/, system/) | Edit locally, push when asked |
-| `mcp-server/src/*.ts` or `wrangler.jsonc` | `deploy-mcp` |
-| `dashboard/public/index.html` or `api/github.js` | `deploy-dashboard` |
 
-## MCP Sync Rule
+## MCP Integration
 
-After using MCP to create/update KB nodes → run `git pull` to sync local.
+Use MCP tools to read/write KB nodes. Do NOT manually edit .md files for knowledge nodes — use the tools.
+
+**Query workflow:**
+1. `okf_list_projects` — discover projects
+2. `okf_query_nodes` — filter by type/status/project
+3. `okf_get_node` — read specific node by ID
+4. `okf_search` — full-text search across KB
+
+**Write workflow:**
+1. `okf_create_node` — create with auto-generated ID
+2. `okf_update_node` — update frontmatter or body
+3. `okf_add_edge` — link to other nodes
+4. `okf_update_status` — set lifecycle status (active/expired/superseded/archived)
+
+**Maintenance:**
+- `okf_doctor` — run lifecycle audit, auto-fix expired nodes
+- `okf_list_dir` — browse KB structure
+
+**Rules:**
+- Always use `project` param to scope queries
+- Node IDs are per-project (DEC-001 in truck != DEC-001 in clientdata)
+- Dates are always YYYY-MM-DD format
+- Prefer `okf_query_nodes` over `okf_search` for structured queries
 
 ## OpenCode Permissions
 
@@ -82,6 +100,3 @@ External directories allowed:
 - `~/mcky.space/**`
 - `~/clientdata/**`
 - `~/habby/**`
-- `~/cafe/**`
-- `~/collage/**`
-- `~/astryx/**`

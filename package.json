@@ -1,12 +1,11 @@
 {
   "name": "okf",
   "private": true,
-  "description": "Open Knowledge Framework — workspace knowledge graph tools",
+  "description": "Open Knowledge Framework — workspace knowledge base tools",
   "scripts": {
-    "build:graph": "node scripts/build-graph.js",
     "doctor": "node scripts/doctor-kb.js",
-    "dispatch": "node scripts/dispatch.js",
-    "backfill": "node scripts/backfill.js"
+    "backfill": "node scripts/backfill.js",
+    "build-site": "node scripts/build-site.js"
   },
   "dependencies": {
     "js-yaml": "^4.1.0"
