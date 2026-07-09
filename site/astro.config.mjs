@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
 import starlightSidebarTopics from 'starlight-sidebar-topics';
-import starlightRosePine from 'starlight-theme-rose-pine';
 
 const projects = ['clientdata', 'habby', 'mcky.space', 'truck', 'writer'];
 
@@ -32,7 +31,7 @@ export default defineConfig({
     starlight({
       title: 'OKF Knowledge Base',
       description: 'Open Knowledge Framework — structured context for every project',
-      plugins: [starlightRosePine(), starlightSidebarTopics(topics)],
+      plugins: [starlightSidebarTopics(topics)],
       social: [
         { icon: 'github', label: 'GitHub', href: 'https://github.com/ktypez/OKF' },
       ],
