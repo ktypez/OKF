@@ -42,13 +42,19 @@
   --neo-shadow-light: 4px 4px 0 #c03338;
   --neo-border: 3px solid #1a1a1f;
 
-  --sl-color-bg: #fffbf5;
-  --sl-color-bg-sidebar: #fffbf5;
-  --sl-color-bg-nav: #fffbf5;
+  --sl-color-bg: #ffffff;
+  --sl-color-bg-sidebar: #ffffff;
+  --sl-color-bg-nav: #ffffff;
   --sl-color-bg-inline-code: #f5f0e8;
 
+  /* --- Explicit text colors: BLACK ON WHITE (light) --- */
+  --sl-color-text: #1a1a1f;            /* body text 15.8:1 on #fff */
+  --sl-color-text-inline-code: #1a1a1f;
+  --sl-color-heading: #1a1a1f;
+  --sl-color-gray: #1a1a1f;            /* alias Starlight uses for text */
   --sl-color-text-accent: var(--sl-color-accent);
   --sl-color-link: var(--sl-color-accent);
+  --sl-color-link-accent: var(--sl-color-accent);
 }
 
 /* ---------- Dark Theme ---------- */
@@ -68,19 +74,29 @@
   --sl-color-gray-9: #f4f4f8;
   --sl-color-gray-10: #ffffff;
 
-  --sl-color-bg: #1a1a1f;
-  --sl-color-bg-sidebar: #1a1a1f;
-  --sl-color-bg-nav: #1a1a1f;
+  --sl-color-bg: #0f0f12;
+  --sl-color-bg-sidebar: #0f0f12;
+  --sl-color-bg-nav: #0f0f12;
   --sl-color-bg-inline-code: #24242b;
 
+  /* --- Explicit text colors: WHITE ON BLACK (dark) --- */
+  --sl-color-text: #f4f4f8;            /* body text 16.5:1 on #0f0f12 */
+  --sl-color-text-inline-code: #f4f4f8;
+  --sl-color-heading: #ffffff;
+  --sl-color-gray: #f4f4f8;            /* alias Starlight uses for text */
+  --sl-color-text-accent: var(--sl-color-accent);
+  --sl-color-link: var(--sl-color-accent);
+  --sl-color-link-accent: var(--sl-color-accent);
+
   --neo-shadow: 4px 4px 0 #ff5a5f;
-  --neo-border: 3px solid #ececf2;
+  --neo-border: 3px solid #f4f4f8;
 }
 
 /* ---------- Base typography ---------- */
 .sl-markdown-content {
   font-family: var(--sl-font);
   line-height: 1.6;
+  color: var(--sl-color-text);
 }
 
 /* ---------- Headings ---------- */
@@ -91,6 +107,19 @@
   font-weight: 800;
   letter-spacing: -0.02em;
   text-transform: uppercase;
+  color: var(--sl-color-heading);
+}
+
+/* ---------- Global text safety (Starlight UI chrome) ---------- */
+.site-title,
+.sidebar a,
+.header a,
+.toc a,
+.breadcrumb a,
+.pagination a,
+.sl-link-card h2,
+.sl-link-card p {
+  color: var(--sl-color-text);
 }
 
 /* ---------- Cards (link cards, card grid) ---------- */
@@ -116,10 +145,7 @@
   border: 2px solid var(--sl-color-gray-4);
   border-radius: 0;
   font-weight: 600;
-  color: var(--sl-color-gray-7);
-}
-:root[data-theme='dark'] .sl-markdown-content code {
-  color: var(--sl-color-gray-9);
+  color: var(--sl-color-text);
 }
 
 /* ---------- Code blocks ---------- */
