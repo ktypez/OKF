@@ -53,6 +53,28 @@ See `~/.opencode/rules/okf-format.md` for full schema reference.
 | **cwebp** | Available — `cwebp -q 80 input.jpg -o output.webp` |
 | **sharp / ffmpeg** | Not available |
 
+## Plan Workflow
+
+For multi-step tasks:
+
+1. **Create** `~/OKF/plan/<todo-name>.md` — YAML frontmatter (id, version, status, created, updated) + goal, steps (checkboxes), files, verification
+2. **Execute** — use opencode's todowrite for in-session progress tracking
+3. **Update** plan.md at milestones — commit each update (git history = version log)
+4. **Persist** — plans stay in `plan/` directory after completion
+5. **Name** — one file per task, named after the todo (kebab-case)
+
+```markdown
+---
+id: plan-my-task
+version: 1
+status: in_progress
+created: 2026-07-09
+updated: 2026-07-09
+---
+
+# Plan: My Task
+```
+
 ## Git Rules
 
 - Project code (~/truck/, etc.) — follow project conventions

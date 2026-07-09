@@ -112,6 +112,13 @@ function buildSidebar(projects, systemFiles) {
     });
   }
 
+  // Plans section
+  sidebar.push({
+    label: 'Plans',
+    collapsed: true,
+    items: [{ autogenerate: { directory: 'plans', collapsed: true } }],
+  });
+
   // Project sections
   for (const proj of projects) {
     const projFiles = getProjectFiles(proj);
@@ -207,7 +214,26 @@ function main() {
     console.log('\n  Copied SETUP.md');
   }
 
-  // 4. Generate sidebar
+  // 4. Copy plan files
+  const planDir = path.join(OKF_ROOT, 'plan');
+  const planDocsDir = path.join(DOCS_DIR, 'plans');
+  if (!fs.existsSync(planDocsDir)) fs.mkdirSync(planDocsDir, { recursive: true });
+
+  if (fs.existsSync(planDir)) {
+    console.log('\n  Copying plan docs...');
+    const planFiles = fs.readdirSync(planDir).filter(f => f.endsWith('.md')).sort();
+    for (const f of planFiles) {
+      const content = fs.readFileSync(path.join(planDir, f), 'utf-8');
+      const { fm, body } = parseFrontmatter(content);
+      const title = extractTitle(fm, body, path.basename(f, '.md'));
+      const out = serializeStarlightFm(title, fm, body);
+      fs.writeFileSync(path.join(planDocsDir, f), out);
+      totalFiles++;
+      console.log(`    ${f}`);
+    }
+  }
+
+  // 5. Generate sidebar
   console.log('\n  Generating sidebar...');
   const sidebar = buildSidebar(projects, systemFiles);
   fs.writeFileSync(SIDEBAR_OUT, JSON.stringify(sidebar, null, 2));
