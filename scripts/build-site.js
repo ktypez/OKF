@@ -101,7 +101,6 @@ function getProjectFiles(project) {
 
 function buildSidebar(projects, systemFiles) {
   const sidebar = [
-    { label: 'Home', slug: '' },
     { label: 'Setup', slug: 'setup' },
   ];
 
