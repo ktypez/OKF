@@ -15,6 +15,7 @@
   },
   {
     "label": "clientdata",
+    "collapsed": true,
     "items": [
       {
         "autogenerate": {
@@ -25,6 +26,7 @@
   },
   {
     "label": "habby",
+    "collapsed": true,
     "items": [
       {
         "autogenerate": {
@@ -35,6 +37,7 @@
   },
   {
     "label": "mcky.space",
+    "collapsed": true,
     "items": [
       {
         "autogenerate": {
@@ -45,6 +48,7 @@
   },
   {
     "label": "truck",
+    "collapsed": true,
     "items": [
       {
         "autogenerate": {
@@ -55,6 +59,7 @@
   },
   {
     "label": "writer",
+    "collapsed": true,
     "items": [
       {
         "autogenerate": {
