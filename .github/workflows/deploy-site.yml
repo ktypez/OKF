@@ -28,11 +28,7 @@ jobs:
         run: node scripts/build-site.js
 
       - name: Deploy to Vercel
-        id: deploy
-        run: echo "url=$(npx vercel deploy --prod --yes --token ${{ secrets.VERCEL_TOKEN }})" >> "$GITHUB_OUTPUT"
+        run: npx vercel deploy --prod --yes --token ${{ secrets.VERCEL_TOKEN }}
         env:
           VERCEL_ORG_ID: team_xWYnJlpmKenca1NC2UI7VQzV
           VERCEL_PROJECT_ID: prj_RpBHnpmfVfWY7xq8AmH6FUScEDRI
-
-      - name: Assign custom domain
-        run: npx vercel alias set ${{ steps.deploy.outputs.url }} kb.mcky.space --token ${{ secrets.VERCEL_TOKEN }}
