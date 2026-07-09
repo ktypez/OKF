@@ -11,5 +11,3 @@ dist/
 site/node_modules/
 site/dist/
 site/.vercel/
-site/src/content/docs/
-site/src/data/
