@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import starlightThemeNova from 'starlight-theme-nova';
 import starlightThemeRapide from 'starlight-theme-rapide';
 import starlightSidebarTopics from 'starlight-sidebar-topics';
 
@@ -33,7 +32,7 @@ export default defineConfig({
     starlight({
       title: 'OKF Knowledge Base',
       description: 'Open Knowledge Framework — structured context for every project',
-      plugins: [starlightThemeNova(), starlightThemeRapide(), starlightSidebarTopics(topics)],
+      plugins: [starlightThemeRapide(), starlightSidebarTopics(topics)],
       social: [
         { icon: 'github', label: 'GitHub', href: 'https://github.com/ktypez/OKF' },
       ],
