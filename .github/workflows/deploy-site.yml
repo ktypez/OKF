@@ -20,12 +20,8 @@ jobs:
         with:
           node-version: 20
 
-      - uses: pnpm/action-setup@v4
-        with:
-          version: 9
-
       - name: Install site dependencies
-        run: pnpm install
+        run: npm install
         working-directory: site
 
       - name: Link Vercel project
