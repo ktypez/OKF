@@ -56,8 +56,6 @@ See `~/.opencode/rules/okf-format.md` for full schema reference.
 
 ## Git Rules
 
-- No push of KB files (`~/OKF/`) without explicit instruction
-- Commit only when asked
 - Project code (~/truck/, etc.) — follow project conventions
 
 ## Deployment Rules
