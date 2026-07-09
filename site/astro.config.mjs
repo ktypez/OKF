@@ -1,29 +1,7 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import starlightSidebarTopics from 'starlight-sidebar-topics';
-
-const projects = ['clientdata', 'habby', 'mcky.space', 'truck', 'writer'];
-
-const topics = [
-  {
-    label: 'Setup',
-    link: '/setup',
-    icon: 'rocket',
-    items: ['setup'],
-  },
-  {
-    label: 'System',
-    link: '/system/conventions',
-    icon: 'information',
-    items: [{ autogenerate: { directory: 'system' } }],
-  },
-  ...projects.map((proj) => ({
-    label: proj,
-    link: `/projects/${proj}/profile`,
-    icon: 'document',
-    items: [{ autogenerate: { directory: `projects/${proj}` } }],
-  })),
-];
+import starlightRosePine from 'starlight-theme-rose-pine';
+import sidebar from './src/data/sidebar.json';
 
 export default defineConfig({
   output: 'static',
@@ -31,7 +9,8 @@ export default defineConfig({
     starlight({
       title: 'OKF Knowledge Base',
       description: 'Open Knowledge Framework — structured context for every project',
-      plugins: [starlightSidebarTopics(topics)],
+      sidebar,
+      plugins: [starlightRosePine()],
       social: [
         { icon: 'github', label: 'GitHub', href: 'https://github.com/ktypez/OKF' },
       ],
