@@ -5,7 +5,8 @@
   "scripts": {
     "doctor": "node scripts/doctor-kb.js",
     "backfill": "node scripts/backfill.js",
-    "build-site": "node scripts/build-site.js"
+    "build-site": "node scripts/build-site.js",
+    "deploy-site": "bash scripts/deploy-site.sh"
   },
   "dependencies": {
     "js-yaml": "^4.1.0"
