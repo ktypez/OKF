@@ -24,12 +24,6 @@ jobs:
         run: npm install
         working-directory: site
 
-      - name: Link Vercel project
-        run: npx vercel link --yes --token ${{ secrets.VERCEL_TOKEN }}
-        env:
-          VERCEL_ORG_ID: team_xWYnJlpmKenca1NC2UI7VQzV
-          VERCEL_PROJECT_ID: prj_RpBHnpmfVfWY7xq8AmH6FUScEDRI
-
       - name: Build site from KB
         run: node scripts/build-site.js
 
