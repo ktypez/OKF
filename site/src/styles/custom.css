@@ -1,0 +1,200 @@
+/* ============================================================
+   OKF Knowledge Base — Custom Starlight Theme
+   Neobrutalist design system based on mcky.space DESIGN.md
+   - JetBrains Mono everywhere
+   - 3px solid borders
+   - 4px 4px 0 hard shadows
+   - Pink #E5484D accent
+   ============================================================ */
+
+/* ---------- Fonts ---------- */
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700;800&display=swap');
+
+/* ---------- Light Theme (default) ---------- */
+:root {
+  --sl-font: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+  --sl-font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /* Accent — pink family from DESIGN.md (#E5484D) */
+  --sl-color-accent-low: #fcebed;
+  --sl-color-accent: #e5484d;
+  --sl-color-accent-high: #8a1c20;
+
+  /* Grays — warm whites / charcoal */
+  --sl-color-white: #ffffff;
+  --sl-color-black: #1a1a1f;
+
+  --sl-color-gray-1: #fffbf5;
+  --sl-color-gray-2: #f5f0e8;
+  --sl-color-gray-3: #e8e0d4;
+  --sl-color-gray-4: #d4cabc;
+  --sl-color-gray-5: #a89e8c;
+  --sl-color-gray-6: #6e6657;
+  --sl-color-gray-7: #423c30;
+  --sl-color-gray-8: #2a2620;
+  --sl-color-gray-9: #1a1a1f;
+  --sl-color-gray-10: #0f0f12;
+
+  /* Borders + shadows (neobrutalist) */
+  --sl-border-width: 3px;
+  --neo-shadow: 4px 4px 0 #1a1a1f;
+  --neo-shadow-light: 4px 4px 0 #e5484d;
+  --neo-border: 3px solid #1a1a1f;
+
+  --sl-color-bg: #fffbf5;
+  --sl-color-bg-sidebar: #fffbf5;
+  --sl-color-bg-nav: #fffbf5;
+  --sl-color-bg-inline-code: #f5f0e8;
+
+  --sl-color-text-accent: var(--sl-color-accent);
+  --sl-color-link: var(--sl-color-accent);
+}
+
+/* ---------- Dark Theme ---------- */
+:root[data-theme='dark'] {
+  --sl-color-accent-low: #2a1214;
+  --sl-color-accent: #ff5a5f;
+  --sl-color-accent-high: #ffd4d6;
+
+  --sl-color-gray-1: #1a1a1f;
+  --sl-color-gray-2: #24242b;
+  --sl-color-gray-3: #2e2e37;
+  --sl-color-gray-4: #3a3a45;
+  --sl-color-gray-5: #5c5c69;
+  --sl-color-gray-6: #8a8a99;
+  --sl-color-gray-7: #b5b5c0;
+  --sl-color-gray-8: #d4d4dc;
+  --sl-color-gray-9: #ececf2;
+  --sl-color-gray-10: #ffffff;
+
+  --sl-color-bg: #1a1a1f;
+  --sl-color-bg-sidebar: #1a1a1f;
+  --sl-color-bg-nav: #1a1a1f;
+  --sl-color-bg-inline-code: #24242b;
+
+  --neo-shadow: 4px 4px 0 #ff5a5f;
+  --neo-border: 3px solid #ececf2;
+}
+
+/* ---------- Base typography ---------- */
+.sl-markdown-content {
+  font-family: var(--sl-font);
+  line-height: 1.6;
+}
+
+/* ---------- Headings ---------- */
+.sl-markdown-content h1,
+.sl-markdown-content h2,
+.sl-markdown-content h3,
+.sl-markdown-content h4 {
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+/* ---------- Cards (link cards, card grid) ---------- */
+.card,
+.link-card,
+.sl-link-card {
+  border: var(--neo-border) !important;
+  border-radius: 0 !important;
+  box-shadow: var(--neo-shadow) !important;
+  background: var(--sl-color-bg) !important;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.card:hover,
+.link-card:hover,
+.sl-link-card:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--sl-color-accent) !important;
+}
+
+/* ---------- Inline code ---------- */
+.sl-markdown-content code {
+  border: 2px solid var(--sl-color-gray-4);
+  border-radius: 0;
+  font-weight: 600;
+}
+
+/* ---------- Code blocks ---------- */
+.astro-code,
+.expressive-code pre {
+  border: var(--neo-border) !important;
+  border-radius: 0 !important;
+  box-shadow: var(--neo-shadow) !important;
+}
+
+/* ---------- Asides ---------- */
+.sl-aside {
+  border: var(--neo-border) !important;
+  border-radius: 0 !important;
+  box-shadow: var(--neo-shadow) !important;
+}
+
+/* ---------- Sidebar ---------- */
+.sidebar {
+  border-right: var(--neo-border) !important;
+}
+
+/* ---------- Table of contents ---------- */
+.right-sidebar {
+  border-left: var(--neo-border) !important;
+}
+
+/* ---------- Header nav ---------- */
+.header {
+  border-bottom: var(--neo-border) !important;
+}
+
+/* ---------- Search box ---------- */
+.search-input {
+  border: var(--neo-border) !important;
+  border-radius: 0 !important;
+}
+
+/* ---------- Badges ---------- */
+.badge {
+  border: 2px solid var(--sl-color-gray-4);
+  border-radius: 0;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/* ---------- Hero (home page) ---------- */
+.hero {
+  border: var(--neo-border) !important;
+  border-radius: 0 !important;
+  box-shadow: var(--neo-shadow) !important;
+  background: var(--sl-color-bg) !important;
+}
+
+/* ---------- Tables ---------- */
+.sl-markdown-content table {
+  border: var(--neo-border) !important;
+  border-radius: 0 !important;
+}
+
+.sl-markdown-content th {
+  background: var(--sl-color-gray-2);
+  border-bottom: var(--neo-border) !important;
+  text-transform: uppercase;
+  font-weight: 800;
+}
+
+.sl-markdown-content td,
+.sl-markdown-content th {
+  border: 2px solid var(--sl-color-gray-4) !important;
+}
+
+/* ---------- Active/selected sidebar item ---------- */
+.sidebar a[aria-current='page'] {
+  font-weight: 800;
+  border-left: 4px solid var(--sl-color-accent) !important;
+}
+
+/* ---------- Selection ---------- */
+::selection {
+  background: var(--sl-color-accent);
+  color: #fff;
+}

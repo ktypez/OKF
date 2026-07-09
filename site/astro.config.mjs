@@ -1,6 +1,5 @@
 import { defineConfig } from 'astro/config';
 import starlight from '@astrojs/starlight';
-import starlightThemeRapide from 'starlight-theme-rapide';
 import starlightSidebarTopics from 'starlight-sidebar-topics';
 
 const projects = ['clientdata', 'habby', 'mcky.space', 'truck', 'writer'];
@@ -32,11 +31,11 @@ export default defineConfig({
     starlight({
       title: 'OKF Knowledge Base',
       description: 'Open Knowledge Framework — structured context for every project',
-      plugins: [starlightThemeRapide(), starlightSidebarTopics(topics)],
+      plugins: [starlightSidebarTopics(topics)],
       social: [
         { icon: 'github', label: 'GitHub', href: 'https://github.com/ktypez/OKF' },
       ],
-      customCss: [],
+      customCss: ['./src/styles/custom.css'],
     }),
   ],
 });
