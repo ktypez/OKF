@@ -1,0 +1,162 @@
+---
+title: OKF Setup Guide
+description: OKF knowledge base
+---
+
+# OKF Setup Guide
+
+Quick start for agents and humans cloning this repo.
+
+## What Is This
+
+OKF (Open Knowledge Framework) is a portable knowledge base at `~/OKF/`. It stores project context as markdown files with YAML frontmatter — decisions, lessons, components, and more.
+
+## Quick Setup
+
+### 1. Clone & Install MCP
+
+```bash
+git clone <repo-url> ~/OKF
+cd ~/OKF/mcp-server && npm install
+```
+
+### 2. Configure OpenCode
+
+Add to `~/.config/opencode/opencode.jsonc`:
+
+```jsonc
+{
+  "mcp": {
+    "okf": {
+      "type": "local",
+      "command": ["node", "/root/OKF/mcp-server/index.js"],
+      "enabled": true
+    }
+  }
+}
+```
+
+Restart opencode after adding.
+
+### 3. Verify
+
+```bash
+# Test MCP server
+echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"test","version":"1.0.0"}}}' | node ~/OKF/mcp-server/index.js
+
+# Run health audit
+node ~/OKF/scripts/doctor-kb.js
+```
+
+## Directory Layout
+
+```
+~/OKF/
+├── index.md                          ← Start here — project roster
+├── projects/<project>/
+│   ├── profile.md                    ← Tech stack, architecture
+│   ├── agent.md                      ← Agent personality, triggers
+│   ├── status.md                     ← Live status, changelog
+│   ├── knowledge/                    ← Numbered nodes (DEC, LSN, COMP)
+│   │   ├── DEC-001.md
+│   │   ├── LSN-001.md
+│   │   └── COMP-001.md
+│   └── tasks/                        ← Task nodes
+├── system/
+│   ├── conventions.md                ← Communication rules
+│   ├── workspace.md                  ← Cross-project comparison
+│   └── inventory.md                  ← Task triggers
+├── mcp-server/                       ← Local MCP server
+│   ├── index.js
+│   └── lib/
+├── scripts/
+│   ├── doctor-kb.js                  ← Health audit
+│   └── backfill.js                   ← Seed from git/code
+└── skills/                           ← Specialized skills
+```
+
+## How the KB Works
+
+Every `.md` file is a **node** with YAML frontmatter:
+
+```yaml
+---
+type: decision          # node type
+id: DEC-001             # unique ID (per project)
+project: truck          # which project
+status: active          # active | expired | superseded | archived
+freshness: 2026-07-05   # last content change
+verified: 2026-07-05    # last confirmed accurate
+links:                  # connections to other nodes
+  - type: relates-to
+    target: DEC-003
+---
+```
+
+### Node Types
+
+| Type | Prefix | Where | Purpose |
+|------|--------|-------|---------|
+| decision | DEC- | knowledge/ | Architecture/design choices |
+| lesson | LSN- | knowledge/ | Things learned the hard way |
+| component | COMP- | knowledge/ | System structure |
+| document | — | project root | Specs, audits, references |
+| risk | RSK- | knowledge/ | Known risks |
+| project-profile | — | project root | Tech stack |
+| agent-profile | — | project root | Agent context |
+| project-status | — | project root | Live status |
+
+### Link Types
+
+`relates-to`, `supersedes`, `caused-by`, `blocks`, `fulfills`, `documents`, `depends-on`, `part-of`
+
+## Using MCP Tools
+
+The MCP server exposes 12 tools for reading and writing the KB. Use these instead of manually editing .md files.
+
+### Query
+
+```
+okf_list_projects          → see all projects
+okf_get_project truck      → read truck's profile + agent + status
+okf_query_nodes            → filter by type/status/project
+okf_get_node truck DEC-001 → read specific node
+okf_search "Supabase"      → full-text search
+okf_list_dir               → browse structure
+```
+
+### Write
+
+```
+okf_create_node            → create node with auto-generated ID
+okf_update_node            → update frontmatter/body
+okf_update_status          → change lifecycle status
+okf_add_edge               → link two nodes
+```
+
+### Maintenance
+
+```
+okf_doctor                 → health audit (stale, expired, superseded)
+```
+
+## Using Scripts
+
+For offline/CLI use without MCP:
+
+```bash
+# Health audit
+node ~/OKF/scripts/doctor-kb.js [project]
+
+# Seed from codebase
+node ~/OKF/scripts/backfill.js <project> [--dry-run]
+```
+
+## Rules
+
+- Use MCP tools to read/write nodes — don't manually edit knowledge/ files
+- Node IDs are per-project (DEC-001 in truck != DEC-001 in clientdata)
+- Dates are always YYYY-MM-DD
+- No Chinese characters — Thai or English only
+- Don't push KB changes without explicit instruction
+- Don't commit unless asked

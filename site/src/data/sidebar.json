@@ -1,0 +1,66 @@
+[
+  {
+    "label": "Setup",
+    "slug": "setup"
+  },
+  {
+    "label": "System",
+    "items": [
+      {
+        "autogenerate": {
+          "directory": "system"
+        }
+      }
+    ]
+  },
+  {
+    "label": "clientdata",
+    "items": [
+      {
+        "autogenerate": {
+          "directory": "projects/clientdata"
+        }
+      }
+    ]
+  },
+  {
+    "label": "habby",
+    "items": [
+      {
+        "autogenerate": {
+          "directory": "projects/habby"
+        }
+      }
+    ]
+  },
+  {
+    "label": "mcky.space",
+    "items": [
+      {
+        "autogenerate": {
+          "directory": "projects/mcky.space"
+        }
+      }
+    ]
+  },
+  {
+    "label": "truck",
+    "items": [
+      {
+        "autogenerate": {
+          "directory": "projects/truck"
+        }
+      }
+    ]
+  },
+  {
+    "label": "writer",
+    "items": [
+      {
+        "autogenerate": {
+          "directory": "projects/writer"
+        }
+      }
+    ]
+  }
+]

@@ -1,0 +1,44 @@
+---
+title: OKF Knowledge Base
+description: Open Knowledge Framework — structured context for every project
+template: splash
+hero:
+  tagline: A self-documenting knowledge base for AI coding agents. Structured context, project metadata, and lifecycle tools — all from markdown files.
+  actions:
+    - text: Get Started
+      link: /setup
+      icon: right-arrow
+    - text: GitHub
+      link: https://github.com/ktypez/OKF
+      icon: external
+      variant: minimal
+---
+
+import { CardGrid, Card, LinkCard } from '@astrojs/starlight/components';
+
+## Projects
+
+<CardGrid>
+  <Card title="clientdata" icon="puzzle">
+    Client management & CRM — Next.js 16, React 19, Neon, Drizzle
+  </Card>
+  <Card title="truck" icon="seti:javascript">
+    Shift logging & income PWA — React 19, Vite 8, Supabase
+  </Card>
+  <Card title="mcky.space" icon="terminal">
+    Terminal-style personal site — Astro 7, Alpine.js, Supabase
+  </Card>
+  <Card title="habby" icon="add-document">
+    Gamification UI Kit — Vite 6, Express, Redis
+  </Card>
+  <Card title="writer" icon="pen">
+    Content writer & summarizer — Markdown, AI agent system
+  </Card>
+</CardGrid>
+
+## Quick Links
+
+<LinkCard title="Setup Guide" description="How to set up OKF in a new environment" href="/setup" />
+<LinkCard title="MCP Server" description="Local stdio server — 12 tools for querying the KB" href="/system/conventions" />
+<LinkCard title="Workspace Comparison" description="Cross-project tech stack comparison" href="/system/workspace" />
+<LinkCard title="Glossary" description="Terminology and definitions" href="/system/glossary" />
