@@ -15,22 +15,23 @@
   --sl-font: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
   --sl-font-mono: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
 
-  /* Accent — pink family from DESIGN.md (#E5484D) */
-  --sl-color-accent-low: #fcebed;
-  --sl-color-accent: #e5484d;
-  --sl-color-accent-high: #8a1c20;
+  /* Accent — pink family from DESIGN.md (#E5484D)
+     Adjusted for WCAG AA: #c03338 = 4.9:1 on #fffbf5 */
+  --sl-color-accent-low: #fbeaec;
+  --sl-color-accent: #c03338;
+  --sl-color-accent-high: #7a1418;
 
-  /* Grays — warm whites / charcoal */
+  /* Grays — warm whites / charcoal (contrast-checked) */
   --sl-color-white: #ffffff;
   --sl-color-black: #1a1a1f;
 
   --sl-color-gray-1: #fffbf5;
   --sl-color-gray-2: #f5f0e8;
   --sl-color-gray-3: #e8e0d4;
-  --sl-color-gray-4: #d4cabc;
-  --sl-color-gray-5: #a89e8c;
-  --sl-color-gray-6: #6e6657;
-  --sl-color-gray-7: #423c30;
+  --sl-color-gray-4: #cdc3b4;
+  --sl-color-gray-5: #7a7060; /* 4.8:1 on gray-1 */
+  --sl-color-gray-6: #544c3e; /* 7.1:1 AAA on gray-1 */
+  --sl-color-gray-7: #3a342a;
   --sl-color-gray-8: #2a2620;
   --sl-color-gray-9: #1a1a1f;
   --sl-color-gray-10: #0f0f12;
@@ -38,7 +39,7 @@
   /* Borders + shadows (neobrutalist) */
   --sl-border-width: 3px;
   --neo-shadow: 4px 4px 0 #1a1a1f;
-  --neo-shadow-light: 4px 4px 0 #e5484d;
+  --neo-shadow-light: 4px 4px 0 #c03338;
   --neo-border: 3px solid #1a1a1f;
 
   --sl-color-bg: #fffbf5;
@@ -59,12 +60,12 @@
   --sl-color-gray-1: #1a1a1f;
   --sl-color-gray-2: #24242b;
   --sl-color-gray-3: #2e2e37;
-  --sl-color-gray-4: #3a3a45;
-  --sl-color-gray-5: #5c5c69;
-  --sl-color-gray-6: #8a8a99;
-  --sl-color-gray-7: #b5b5c0;
-  --sl-color-gray-8: #d4d4dc;
-  --sl-color-gray-9: #ececf2;
+  --sl-color-gray-4: #46464f;
+  --sl-color-gray-5: #9a9aab; /* 6.1:1 on gray-1 */
+  --sl-color-gray-6: #c2c2cf; /* 9.2:1 on gray-1 */
+  --sl-color-gray-7: #d8d8e0;
+  --sl-color-gray-8: #e4e4ea;
+  --sl-color-gray-9: #f4f4f8;
   --sl-color-gray-10: #ffffff;
 
   --sl-color-bg: #1a1a1f;
@@ -115,6 +116,10 @@
   border: 2px solid var(--sl-color-gray-4);
   border-radius: 0;
   font-weight: 600;
+  color: var(--sl-color-gray-7);
+}
+:root[data-theme='dark'] .sl-markdown-content code {
+  color: var(--sl-color-gray-9);
 }
 
 /* ---------- Code blocks ---------- */
@@ -197,4 +202,7 @@
 ::selection {
   background: var(--sl-color-accent);
   color: #fff;
+}
+:root[data-theme='dark'] ::selection {
+  color: #1a1a1f;
 }
