@@ -120,7 +120,7 @@ function buildSidebar(projects, systemFiles) {
     sidebar.push({
       label: proj,
       collapsed: true,
-      items: [{ autogenerate: { directory: `projects/${proj}` } }],
+      items: [{ autogenerate: { directory: `projects/${proj}`, collapsed: true } }],
     });
   }
 

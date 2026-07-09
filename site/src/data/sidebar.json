@@ -19,7 +19,8 @@
     "items": [
       {
         "autogenerate": {
-          "directory": "projects/clientdata"
+          "directory": "projects/clientdata",
+          "collapsed": true
         }
       }
     ]
@@ -30,7 +31,8 @@
     "items": [
       {
         "autogenerate": {
-          "directory": "projects/habby"
+          "directory": "projects/habby",
+          "collapsed": true
         }
       }
     ]
@@ -41,7 +43,8 @@
     "items": [
       {
         "autogenerate": {
-          "directory": "projects/mcky.space"
+          "directory": "projects/mcky.space",
+          "collapsed": true
         }
       }
     ]
@@ -52,7 +55,8 @@
     "items": [
       {
         "autogenerate": {
-          "directory": "projects/truck"
+          "directory": "projects/truck",
+          "collapsed": true
         }
       }
     ]
@@ -63,7 +67,8 @@
     "items": [
       {
         "autogenerate": {
-          "directory": "projects/writer"
+          "directory": "projects/writer",
+          "collapsed": true
         }
       }
     ]
