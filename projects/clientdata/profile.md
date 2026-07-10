@@ -73,7 +73,7 @@ links:
 - **Linters:** ESLint
 
 ## Status
-- **State:** active
+- **State:** experimental
 - **Documentation Completeness:** High
 - **Confidence Level:** High
 

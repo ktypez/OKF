@@ -15,7 +15,8 @@ last_updated: 2026-07-05
 
 | Project | Profile | Agent | Status | Role | Tech Stack |
 |---------|---------|-------|--------|------|------------|
-| clientdata | [profile](./projects/clientdata/profile.md) | [agent](./projects/clientdata/agent.md) | [status](./projects/clientdata/status.md) | active | Next.js 16, React 19, Neon, Drizzle |
+| clientdata | [profile](./projects/clientdata/profile.md) | [agent](./projects/clientdata/agent.md) | [status](./projects/clientdata/status.md) | experimental | Next.js 16, React 19, Neon, Drizzle |
+| data | [profile](./projects/data/profile.md) | [agent](./projects/data/agent.md) | [status](./projects/data/status.md) | active | Next.js 16, React 19, Neon, Drizzle |
 | habby | [profile](./projects/habby/profile.md) | [agent](./projects/habby/agent.md) | [status](./projects/habby/status.md) | active | Vite 6, Express, Redis |
 | mcky.space | [profile](./projects/mcky.space/profile.md) | [agent](./projects/mcky.space/agent.md) | [status](./projects/mcky.space/status.md) | active | Astro 7, Alpine.js, Supabase |
 | truck | [profile](./projects/truck/profile.md) | [agent](./projects/truck/agent.md) | [status](./projects/truck/status.md) | active | React 19, Vite 8, Supabase, PWA |
@@ -30,7 +31,8 @@ last_updated: 2026-07-05
 
 | Project | Role | Personality |
 |---------|------|-------------|
-| clientdata | data goblin | — |
+| clientdata | data goblin (experimental) | — |
+| data | data goblin (stable) | — |
 | habby | trophy goblin | — |
 | mcky.space | terminal hipster | — |
 | truck | overtime enthusiast | — |

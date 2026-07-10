@@ -5,11 +5,11 @@ project: clientdata
 last_updated: '2026-07-09'
 version: 2
 status: active
-freshness: '2026-07-09'
-verified: 2026-07-07T00:00:00.000Z
+freshness: '2026-07-10'
+verified: 2026-07-10T00:00:00.000Z
 expires: null
 superseded_by: null
-state: active
+state: experimental
 documentation_completeness: High
 confidence_level: High
 anchors:
@@ -38,7 +38,10 @@ links:
 - **Maps**: MapLibre GL JS (lazy-loaded via `next/dynamic`)
 - **Auth**: Password-based (SHA-256), admin + viewer roles
 - **Storage**: Supabase Storage (client images)
-- **Deploy**: Vercel (serverless) — `master` → `data.mcky.space`
+- **Role**: Experimental / development branch
+- **Source**: `master` branch
+- **Deploy**: Vercel (serverless) — `master` → `astryx.mcky.space`
+- **Production**: `~/data` (stable branch) → `data.mcky.space`
 - **Font**: IBM Plex Sans Thai via `next/font/google`
 - **Testing**: Vitest 1.6 + @testing-library/react + jsdom 24
 - **Dark mode**: `next-themes` with `@custom-variant dark` in globals.css + Astryx theme
