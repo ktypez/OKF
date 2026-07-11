@@ -9,7 +9,8 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "generate": "node ../scripts/build-site.js"
+    "generate": "node ../scripts/build-site.js",
+    "prebuild": "node ../scripts/build-site.js"
   },
   "dependencies": {
     "@astrojs/starlight": "^0.41.3",

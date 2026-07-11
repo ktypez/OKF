@@ -58,10 +58,11 @@ See `~/.opencode/rules/okf-format.md` for full schema reference.
 For multi-step tasks:
 
 1. **Create** `~/OKF/plan/<todo-name>.md` — YAML frontmatter (id, version, status, created, updated) + goal, steps (checkboxes), files, verification
-2. **Execute** — use opencode's todowrite for in-session progress tracking
-3. **Update** plan.md at milestones — commit each update (git history = version log)
-4. **Persist** — plans stay in `plan/` directory after completion
-5. **Name** — one file per task, named after the todo (kebab-case)
+2. **Run** `node scripts/build-site.js` — copies plan files to Starlight content
+3. **Execute** — use opencode's todowrite for in-session progress tracking
+4. **Update** plan.md at milestones — commit each update (git history = version log)
+5. **Persist** — plans stay in `plan/` directory after completion
+6. **Name** — one file per task, named after the todo (kebab-case)
 
 ```markdown
 ---

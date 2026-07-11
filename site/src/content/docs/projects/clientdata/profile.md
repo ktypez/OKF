@@ -52,7 +52,7 @@ description: project-profile from clientdata
 - **Linters:** ESLint
 
 ## Status
-- **State:** active
+- **State:** experimental
 - **Documentation Completeness:** High
 - **Confidence Level:** High
 

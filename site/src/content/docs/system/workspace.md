@@ -7,9 +7,9 @@ description: OKF knowledge base
 
 ## Project Comparison
 
-| Aspect | truck | mcky.space | clientdata | habby |
-|--------|-------|------------|------------|-------|
-| Framework | React 19 + Vite 8 + TS 6 | Astro 7.0.2 + Alpine.js | Next.js 16 (webpack) | Vite 6 + Express 5 |
+| Aspect | truck | mcky.space | clientdata | data.mcky.space | habby |
+|--------|-------|------------|------------|------|-------|
+| Framework | React 19 + Vite 8 + TS 6 | Astro 7.0.2 + Alpine.js | Next.js 16 (webpack) | Next.js 16 (webpack) | Vite 6 + Express 5 |
 | Database | Supabase (Postgres) | Supabase + .md files | Neon Postgres (Drizzle) | Redis (Upstash) |
 | Storage | Supabase Storage | Supabase | Cloudflare R2 | None |
 | State | tanstack/react-query v5 | Alpine.js x-data | custom fetch + React state | None |
@@ -32,12 +32,19 @@ description: OKF knowledge base
 - `npm run build` — build (prebuild + astro build)
 
 ### clientdata
+- **Role:** Experimental / dev branch
 - `npx next dev -H localhost` — dev (port 3002)
 - `npm run build` — build
 - `npm run lint` — ESLint
 - `npm run db:push` — push Drizzle schema
 - `npm run db:migrate` — run migration
 - `pnpm test` — Vitest (16 tests)
+
+### data
+- **Role:** Production (stable branch)
+- **Source:** `~/data.mcky.space`, tracks `origin/stable` of `ktypez/clientdata`
+- `npx next dev -H localhost` — dev
+- `pnpm test` — run tests
 
 ### habby
 - `yarn dev` — dev (Express + Vite)

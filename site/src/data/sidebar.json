@@ -38,6 +38,30 @@
     ]
   },
   {
+    "label": "collage",
+    "collapsed": true,
+    "items": [
+      {
+        "autogenerate": {
+          "directory": "projects/collage",
+          "collapsed": true
+        }
+      }
+    ]
+  },
+  {
+    "label": "data.mcky.space",
+    "collapsed": true,
+    "items": [
+      {
+        "autogenerate": {
+          "directory": "projects/data.mcky.space",
+          "collapsed": true
+        }
+      }
+    ]
+  },
+  {
     "label": "habby",
     "collapsed": true,
     "items": [
@@ -56,6 +80,18 @@
       {
         "autogenerate": {
           "directory": "projects/mcky.space",
+          "collapsed": true
+        }
+      }
+    ]
+  },
+  {
+    "label": "receipts-dms",
+    "collapsed": true,
+    "items": [
+      {
+        "autogenerate": {
+          "directory": "projects/receipts-dms",
           "collapsed": true
         }
       }
