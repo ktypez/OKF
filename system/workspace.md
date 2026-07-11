@@ -1,7 +1,7 @@
 ---
 type: system-doc
 id: workspace
-last_updated: 2026-07-04
+last_updated: 2026-07-11
 ---
 
 # Workspace
@@ -15,8 +15,8 @@ last_updated: 2026-07-04
 | Storage | Supabase Storage | Supabase | Cloudflare R2 | None |
 | State | tanstack/react-query v5 | Alpine.js x-data | custom fetch + React state | None |
 | Auth | Supabase Auth | SHA-256 header-based | scrypt + HMAC tokens | SHA-256 |
-| PWA | ✅ (injectManifest) | ❌ | ✅ (cleanup-only sw) | ✅ (Service Worker) |
-| Testing | vitest (16 tests) | ❌ | Vitest (16 tests) | ❌ |
+| PWA | ❌ | ❌ | ✅ (cleanup-only sw) | ❌ |
+| Testing | vitest (90 tests) | ❌ | Vitest (16 tests) | ❌ |
 | Theme | 16 themes, CSS vars | Aura dark terminal | Tailwind + 14 presets | 2 themes |
 | CI/CD | GitHub Actions | Vercel | Vercel | Vercel |
 
@@ -25,7 +25,7 @@ last_updated: 2026-07-04
 ### truck
 - `node node_modules/.bin/vite` — dev
 - `node node_modules/vite/bin/vite.js build` — build
-- `node node_modules/.bin/vitest run` — test (16 tests)
+- `node node_modules/.bin/vitest run` — test (90 tests)
 - `node node_modules/.bin/eslint src/` — lint
 
 ### mcky.space

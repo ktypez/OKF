@@ -27,10 +27,9 @@ links:
 - **UI**: Custom themes.css (16 themes: 5 light, 5 dark, 6 shinchan)
 - **Auth**: Supabase Auth (email/password)
 - **Database**: Supabase Postgres (timestamptz, Asia/Bangkok TZ)
-- **PWA**: vite-plugin-pwa (injectManifest), Workbox
 - **Backend**: Supabase Edge Functions (Deno)
 - **Deploy**: Vercel (SPA rewrite) + Supabase
-- **Testing**: Vitest (16 tests), ESLint, Prettier
+- **Testing**: Vitest (90 tests), ESLint, Prettier
 - **CI**: GitHub Actions
 - **Integrations**: Telegram Bot API for account requests
 
@@ -54,10 +53,13 @@ links:
 - Admin user card: removed type badge, stacked type + reset
 - Fix: holiday pay counted as salary (incomeBase), week boundary Mon-Sun
 
+### 2026-07-11
+- Removed PWA entirely: deleted vite-plugin-pwa, sw.js, SwUpdateToast, public/icons/
+- Added SVG truck favicon (public/favicon.svg)
+- Replaced motorbike favicon with proper truck SVG (cab + cargo box + wheels)
+
 ### 2026-07-06
 - Auth modal overlay (ModalWrapper) — intercepts navigation when session expires
-- Fix: workbox dep resolution (missing v6 → use v7 from vite-plugin-pwa)
-- SW `FORCE_RELOAD` on activate — kills all old tabs to ensure fresh SW
 
 ## Design
 
@@ -69,9 +71,7 @@ links:
 
 ## PWA
 
-- Cache version: `ezzy-truck-v4`
-- Strategy: network-first for JS, cacheFirstWithFallback for non-JS, staleWhileRevalidate for icons/fonts
-- Offline queue: localStorage mutation queue with exponential backoff replay
+Removed in 2026-07-11. Offline queue (localStorage mutation queue) still works independently without a service worker.
 
 ## Known Issues
 

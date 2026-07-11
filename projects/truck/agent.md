@@ -2,7 +2,7 @@
 type: agent-profile
 id: truck-agent
 project: truck
-last_updated: 2026-07-06
+last_updated: 2026-07-11
 personality: overtime enthusiast
 status_ref: ./status.md
 status: active
@@ -28,7 +28,7 @@ links:
 
 ## Overview
 
-Shift logging & income PWA for truck drivers. React 19 + Supabase with 16 themes, PWA support, and Telegram bot integration.
+Shift logging & income app for truck drivers. React 19 + Supabase with 16 themes and Telegram bot integration.
 
 ## Stack
 
@@ -39,7 +39,6 @@ Shift logging & income PWA for truck drivers. React 19 + Supabase with 16 themes
 | Data Fetching | tanstack/react-query v5 |
 | Database | Supabase (Postgres) |
 | Auth | Supabase Auth |
-| PWA | injectManifest (Workbox) |
 | Styling | Custom themes.css (16 themes) |
 | Notifications | Telegram Bot API |
 | Deployment | Vercel (SPA rewrite) |
@@ -77,7 +76,7 @@ main.tsx → App.tsx (auth gate + session + theme)
 - **Toast**: `useToast()` from ToastContext — never `alert()` or `console.log()`
 - **Modal pattern**: `.modal-backdrop` (fadeIn) + `.modal-content` (scaleIn)
 - **Admin gate**: `user_profiles.is_admin` DB query (not hardcoded email)
-- **Offline queue**: saves mutations to localStorage, replays on reconnect with exponential backoff
+- **Offline queue**: saves mutations to localStorage, replays on reconnect with exponential backoff (no service worker — independent)
 - **Focus trap**: `useFocusTrap(active, ref, onClose?)` in modals
 - **Skeleton loaders**: Theme-aware CSS skeleton for 3 views
 - **Mutation invalidation contract**: saves mutating `logs` must invalidate ALL of: `['monthly-logs', userId, year, month]`, `['yearly-logs', userId, year]`, `['income', userId, year, month]`
@@ -89,7 +88,7 @@ main.tsx → App.tsx (auth gate + session + theme)
 |---------|-------------|
 | `node node_modules/.bin/vite` | Dev server |
 | `node node_modules/vite/bin/vite.js build` | Production build |
-| `node node_modules/.bin/vitest run` | Run tests (16 tests) |
+| `node node_modules/.bin/vitest run` | Run tests (90 tests) |
 | `node node_modules/.bin/eslint src/` | Lint |
 | `node node_modules/.bin/prettier --write src/` | Format |
 

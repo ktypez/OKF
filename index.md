@@ -8,7 +8,7 @@ last_updated: 2026-07-11
 
 ## Workspace Summary
 - **Root:** `/home`
-- **Last Sync:** 2026-07-04 00:00 UTC
+- **Last Sync:** 2026-07-11 00:00 UTC
 - **Scope:** `/home` (excluding node_modules, .git, etc.)
 
 ## Project Inventory
@@ -21,7 +21,7 @@ last_updated: 2026-07-11
 | mcky.space | [profile](./projects/mcky.space/profile.md) | [agent](./projects/mcky.space/agent.md) | [status](./projects/mcky.space/status.md) | active | Astro 7, Alpine.js, Supabase |
 | receipts-dms | [profile](./projects/receipts-dms/profile.md) | — | [status](./projects/receipts-dms/status.md) | active | Vite 6, React 19, Cloudflare D1/R2 |
 | collage | [profile](./projects/collage/profile.md) | [agent](./projects/collage/agent.md) | [status](./projects/collage/status.md) | active | Express 4, sharp, LINE LIFF |
-| truck | [profile](./projects/truck/profile.md) | [agent](./projects/truck/agent.md) | [status](./projects/truck/status.md) | active | React 19, Vite 8, Supabase, PWA |
+| truck | [profile](./projects/truck/profile.md) | [agent](./projects/truck/agent.md) | [status](./projects/truck/status.md) | active | React 19, Vite 8, Supabase |
 | writer | [profile](./projects/writer/profile.md) | [agent](./projects/writer/agent.md) | — | global | Markdown, AI agent system |
 
 ## Schema
