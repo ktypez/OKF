@@ -118,6 +118,10 @@ main.tsx → App.tsx (auth gate + session + theme)
 5. Update STATUS.md + project AGENTS.md
 6. Never cleanup `.env*`, `node_modules/`, `dist/`, `.git/`, or essential config
 
+## TODOs
+
+Query KB on startup: `okf_query_nodes project:truck type:document status:active` — any node with `- [ ]` checklist items is a pending TODO. Notify user, ask intent. See `system/TODOS.md`.
+
 ## Environment Variables
 
 - `VITE_SUPABASE_URL`

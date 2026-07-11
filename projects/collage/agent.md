@@ -56,6 +56,10 @@ Image collage maker + LINE LIFF bot — users generate themed photo collages in 
 | `!เมนู` | Main menu (collage, truck, data) |
 | `!ลูกค้า <query>` | Search clients on data.mcky.space |
 
+## TODOs
+
+Query KB on startup: `okf_query_nodes project:collage type:document status:active` — any node with `- [ ]` checklist items is a pending TODO. Notify user, ask intent. See `system/TODOS.md`.
+
 ## Relationships
 
 - `data.mcky.space` — `!ลูกค้า` command queries client search API

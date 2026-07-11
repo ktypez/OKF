@@ -71,6 +71,10 @@ notifications:enabled → boolean
 notifications:time → HH:MM string
 ```
 
+## TODOs
+
+Query KB on startup: `okf_query_nodes project:habby type:document status:active` — any node with `- [ ]` checklist items is a pending TODO. Notify user, ask intent. See `system/TODOS.md`.
+
 ## Commands
 
 | Command | What it does |

@@ -2,10 +2,10 @@
 type: agent-profile
 id: data-mcky-space-agent
 project: data.mcky.space
-last_updated: 2026-07-11
+last_updated: '2026-07-11'
 status: active
-freshness: 2026-07-11
-verified: 2026-07-11
+freshness: 2026-07-11T00:00:00.000Z
+verified: 2026-07-11T00:00:00.000Z
 expires: null
 superseded_by: null
 personality: data goblin
@@ -19,7 +19,10 @@ links:
     target: data-mcky-space-status
   - type: relates-to
     target: clientdata-agent
+  - type: documents
+    target: DOC-001
 ---
+
 
 # data.mcky.space Agent
 
@@ -50,8 +53,15 @@ Production deployment of clientdata — ported from Next.js to Vite 7 + Cloudfla
 | `npx vite` | Dev server |
 | `npx vite build` | Production build |
 
+## TODOs
+
+Query KB on startup: `okf_query_nodes project:data.mcky.space type:document status:active` — any node with `- [ ]` checklist items is a pending TODO. Notify user, ask intent. See `system/TODOS.md`.
+
+Current: `DOC-002` (trash card layout), `DOC-003` (filter button count).
+
 ## Git Workflow
 
 - `~/data.mcky.space` tracks `origin/stable`
 - Experimental changes go through `clientdata` (master) → tested → merged to `stable`
 - Ported framework changes happen directly on `stable` branch
+

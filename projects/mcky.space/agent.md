@@ -103,6 +103,10 @@ Terminal-style personal website. Neobrutalist design with responsive layout (320
 3. Update STATUS.md + KB agent file
 4. Never cleanup `.env*`, `node_modules/`, `dist/`, `.next/`, `.git/`, or essential config
 
+## TODOs
+
+Query KB on startup: `okf_query_nodes project:mcky.space type:document status:active` — any node with `- [ ]` checklist items is a pending TODO. Notify user, ask intent. See `system/TODOS.md`.
+
 ## Rules
 
 - Prioritize reference design when given

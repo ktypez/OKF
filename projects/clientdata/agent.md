@@ -126,6 +126,10 @@ Client management & CRM — Next.js 16 with Drizzle + Neon Postgres, Cloudflare 
 4. Read package.json → verify profile.md dependency accuracy
 5. Present findings for user approval before writing
 
+## TODOs
+
+Query KB on startup: `okf_query_nodes project:clientdata type:document status:active` — any node with `- [ ]` checklist items is a pending TODO. Notify user, ask intent. See `system/TODOS.md`.
+
 ## Environment Variables
 
 - `DATABASE_URL` (Neon Postgres)

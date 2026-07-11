@@ -67,6 +67,7 @@ last_updated: 2026-07-11
 | `wrap-day` | Read diff, update changelog + status, commit | truck only |
 | `doctor-kb` | Knowledge lifecycle audit — stale, expired | All |
 | `backfill` | Seed KB from git history + code structure | Per project |
+| `check todos` | Read ./TODOS.md in project root, notify user of open items | All |
 
 ## Scripts
 
@@ -105,3 +106,4 @@ Local MCP server at `~/OKF/mcp-server/`. Use these tools to query and manage the
 - [Inventory](./system/inventory.md) — project discovery, task triggers
 - [Glossary](./system/glossary.md) — terminology
 - [Sync Log](./system/sync-log.md) — change history
+- [TODOs Convention](./system/TODOS.md) — TODOs workflow + startup check (global)

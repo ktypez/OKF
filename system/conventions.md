@@ -54,6 +54,14 @@ See `~/.opencode/rules/okf-format.md` for full schema reference.
 | **cwebp** | Available — `cwebp -q 80 input.jpg -o output.webp` |
 | **sharp / ffmpeg** | Not available |
 
+## Startup Check
+
+Before starting any task, check if `./TODOS.md` exists in the current project root:
+
+1. If present, read and notify the user: "📋 Open TODOs: N items"
+2. Ask if they want to work on a TODO or proceed with the current request
+3. Record the session decision
+
 ## Plan Workflow
 
 For multi-step tasks:

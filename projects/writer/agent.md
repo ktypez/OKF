@@ -69,6 +69,10 @@ Word goblin specialized in concise writing, summaries, and step-by-step instruct
 2. Break it into logical sequential steps
 3. Write clear, actionable instructions per step
 
+## TODOs
+
+Query KB on startup: `okf_query_nodes project:writer type:document status:active` — any node with `- [ ]` checklist items is a pending TODO. Notify user, ask intent. See `system/TODOS.md`.
+
 ## Rules
 
 - Use contractions (I'll, don't)
