@@ -8,7 +8,7 @@ last_updated: 2026-07-04
 
 ## Project Comparison
 
-| Aspect | truck | mcky.space | clientdata | data | habby |
+| Aspect | truck | mcky.space | clientdata | data.mcky.space | habby |
 |--------|-------|------------|------------|------|-------|
 | Framework | React 19 + Vite 8 + TS 6 | Astro 7.0.2 + Alpine.js | Next.js 16 (webpack) | Next.js 16 (webpack) | Vite 6 + Express 5 |
 | Database | Supabase (Postgres) | Supabase + .md files | Neon Postgres (Drizzle) | Redis (Upstash) |
@@ -43,7 +43,7 @@ last_updated: 2026-07-04
 
 ### data
 - **Role:** Production (stable branch)
-- **Source:** `~/data`, tracks `origin/stable` of `ktypez/clientdata`
+- **Source:** `~/data.mcky.space`, tracks `origin/stable` of `ktypez/clientdata`
 - `npx next dev -H localhost` — dev
 - `pnpm test` — run tests
 

@@ -92,3 +92,43 @@
 
 - **Updated:** `clientdata/lib/clients.ts` — `searchClients()` now splits query into individual keywords (AND across keywords, OR across name/shopName). Enables multi-word search like `*ลูกค้า all the wall` matching clients containing all 3 words anywhere in name/shopName.
 - **Updated:** `clientdata/status.md` — added changelog entry for keyword search change
+
+## 2026-07-10
+
+- **Projects Added:**
+  - `receipts-dms` — receipt document management (Vite 6 + React 19 + Cloudflare D1/R2)
+- **Files Created:**
+  - `projects/receipts-dms/profile.md`
+  - `projects/receipts-dms/structure.md`
+  - `projects/receipts-dms/dependencies.md`
+  - `projects/receipts-dms/commands.md`
+  - `projects/receipts-dms/status.md`
+- **Files Updated:**
+  - `index.md` — added receipts-dms to project inventory, agent roles, technology summary
+
+## 2026-07-11
+
+- **Project Renamed:** `data` → `data.mcky.space` (matches actual directory at `/home/data.mcky.space/`)
+- **Project Added:** `collage` — image collage maker + LINE LIFF bot
+- **Path Fixed:** `receipts-dms` — source is `~/paper/receipts-dms` not `~/receipts-dms`
+- **Stack Updated:** `data.mcky.space` — corrected from Next.js 16 + Vercel to Vite 7 + Cloudflare Pages
+- **Files Created:**
+  - `projects/collage/profile.md`, `structure.md`, `commands.md`, `dependencies.md`, `status.md`, `agent.md`
+  - `projects/data.mcky.space/structure.md`, `commands.md`, `dependencies.md`
+  - `scripts/build-graph.js`, `scripts/dispatch.js`, `scripts/claim-task.js`, `scripts/complete-task.js`, `scripts/build-dashboard.js`
+  - `graph.json`
+- **Files Updated:**
+  - `index.md` — added collage, renamed data → data.mcky.space, updated scripts table
+  - `USAGE.md` — renamed data → data.mcky.space
+  - `workspace.md` — renamed data → data.mcky.space, fixed source path
+  - `projects/data.mcky.space/profile.md`, `status.md`, `agent.md` — stack/anchors/ids
+  - `projects/clientdata/status.md` — recent changelog (SW v2, webpack removal, keyword search)
+  - `projects/truck/status.md` — recent changelog (type safety, holiday pay)
+  - `projects/mcky.space/status.md` — recent changelog (API removal, blog layout)
+  - `projects/habby/status.md` — recent changelog (test suite, AGENTS.md)
+  - `projects/collage/agent.md` — cross-link fixed to data-mcky-space-agent
+  - `opencode.jsonc` — added `~/collage/**`, `~/paper/**`, `~/data.mcky.space/**` permissions
+  - `.gitignore` — added dashboard.html
+- **Removed:**
+  - `collage` from index.md agent roles (orphan ref)
+  - `~/cafe/`, `~/collage/` from cleanup.md source roots (directories don't exist)

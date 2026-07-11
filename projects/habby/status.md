@@ -2,95 +2,74 @@
 type: project-status
 id: habby-status
 project: habby
-last_updated: '2026-07-09'
-state: active
-documentation_completeness: Medium
-confidence_level: High
+last_updated: 2026-07-11
 status: active
-freshness: '2026-07-09'
-verified: 2026-07-04T00:00:00.000Z
+freshness: 2026-07-11
+verified: 2026-07-11
 expires: null
 superseded_by: null
-anchors: []
+anchors:
+  - /home/habby/
 links:
-  - type: relates-to
-    target: habby-agent
   - type: relates-to
     target: habby-profile
   - type: relates-to
-    target: habby-structure
+    target: habby-agent
 ---
-
-
 
 # Project Status — habby
 
 ## Stack
 
-| Layer | Tech |
-|-------|------|
-| Frontend | Vite 6 + vanilla HTML/CSS/JS |
-| Backend | Express 5 (serverless via Vercel) |
-| Database | Redis (ioredis → Upstash) |
-| Auth | SHA-256 header-based access password |
-| Deploy | Vercel (static + serverless function) |
-| PWA | Service Worker (push notifications, install prompt) |
+- **Frontend**: Vite 6 + vanilla HTML/CSS/JS
+- **Backend**: Express 5 (ESM) + ioredis (Upstash Redis)
+- **Auth**: SHA-256 header-based
+- **Deploy**: Vercel (static + serverless function)
+- **Package Manager**: yarn
+- **Testing**: Vitest + testing-library (21 tests)
+- **PWA**: Service worker with push notifications
+- **Font**: JetBrains Mono
 
 ## Routes
 
-| Path | Purpose |
-|------|---------|
-| `/` | Main dashboard — habit grid, daily check-in, this week overview |
-| `/stats` | Stats dashboard — 6 cards + bar chart (XP, streaks, completion %) |
-| `/settings` | Auth, notifications config, theme picker |
+| Path | Page | Description |
+|------|------|-------------|
+| `/` | Dashboard | Habit grid with streaks, XP, daily view |
+| `/stats` | Stats | Progress charts, streaks, level history |
+| `/settings` | Settings | Auth, notifications, theme toggle |
 
 ## Changelog
 
-### 2026-07-08
-- **AGENTS.md**: added project AGENTS.md; cleaned up .gitignore
+### 2026-07-11
+- chore: add AGENTS.md, gitignore cleanup
 
 ### 2026-07-04
-- **Test suite**: Added Vitest + testing-library — 21 tests covering streak/XP logic, habit check-in, level-up, XP rewards
+- feat: add test suite — Vitest + testing-library, 21 tests covering streak/XP/check-in logic
 
-### Week 2026-07-02
-- **Redesign**: adopted mcky.space design system (DESIGN.md)
-- Replaced Google Fonts with self-hosted JetBrains Mono
-- Replaced 5-theme system with 2-theme (light/dark)
-- Terminal-style login screen
-- Added accessibility features
+### 2026-06 (Week 2)
+- Adopted mcky.space design system: JetBrains Mono, 2-theme (light/dark), neobrutalist tokens
+- Migration script: clean up orphaned archived habits from Redis
+- Removed unused `$$` helper, fixed indent, dark theme digest badge compat, dead CSS rules
 
-### Week 2026-06-22
-- **Launch**: deployed to habby.mcky.space (Vercel)
-- Auth, theme picker, cleanup, all core features
+## Design
 
-### 2026-06-15
-- Initial rebuild as Vite + vanilla HTML/CSS/JS
-
-## Design System
-
-- **Theme**: 2 themes — light + dark via `data-theme` attribute
-- **Style**: Neobrutalist, mcky.space design system
-- **Tokens**: `--bg`, `--bg-raise`, `--border`, `--text`, `--muted`, 8 accent colors
-- **Components**: `.neo-card` pattern (3px border, 6px radius, 4px shadow), terminal-style login
-- **Typography**: JetBrains Mono (self-hosted WOFF2, `font-display: swap`)
-- **Accessibility**: `:focus-visible`, `prefers-reduced-motion`, ARIA roles, `viewport-fit=cover`
+- Neobrutalist, `.neo-card` pattern
+- 2 themes (light/dark)
+- JetBrains Mono
 
 ## Data Model
 
-```
-habit:{id} → hash { name, emoji, color, archived, created_at }
-habit:{id}:dates → set of ISO date strings
-habit:{id}:note:{date} → string
-habit:{id}:timer:running → timestamp
-habit:{id}:timer:total → seconds
-habits:all → sorted set
-user:xp → integer
-app:password → SHA-256 hash string
-notifications:enabled → boolean
-notifications:time → HH:MM string
-```
+- Redis hashes for: habits + dates + notes + timers
+- Sorted set for habit ordering
+- XP stored as integer (+10-40 per check-in, streak bonus)
+- Level up every 100 XP
 
-## Known Issues
+## Features
 
-None currently.
-
+- [x] Gamified habits with XP/leveling system
+- [x] Per-habit stopwatch timer
+- [x] Streak tracking with bonus XP
+- [x] Daily digest
+- [x] Browser push notifications
+- [x] PWA with offline support
+- [x] SHA-256 header-based auth

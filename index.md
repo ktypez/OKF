@@ -1,7 +1,7 @@
 ---
 type: workspace-index
 id: okf-index
-last_updated: 2026-07-05
+last_updated: 2026-07-11
 ---
 
 # Workspace Index
@@ -16,9 +16,11 @@ last_updated: 2026-07-05
 | Project | Profile | Agent | Status | Role | Tech Stack |
 |---------|---------|-------|--------|------|------------|
 | clientdata | [profile](./projects/clientdata/profile.md) | [agent](./projects/clientdata/agent.md) | [status](./projects/clientdata/status.md) | experimental | Next.js 16, React 19, Neon, Drizzle |
-| data | [profile](./projects/data/profile.md) | [agent](./projects/data/agent.md) | [status](./projects/data/status.md) | active | Next.js 16, React 19, Neon, Drizzle |
+| data.mcky.space | [profile](./projects/data.mcky.space/profile.md) | [agent](./projects/data.mcky.space/agent.md) | [status](./projects/data.mcky.space/status.md) | active | Vite 7, React 19, Neon, Drizzle |
 | habby | [profile](./projects/habby/profile.md) | [agent](./projects/habby/agent.md) | [status](./projects/habby/status.md) | active | Vite 6, Express, Redis |
 | mcky.space | [profile](./projects/mcky.space/profile.md) | [agent](./projects/mcky.space/agent.md) | [status](./projects/mcky.space/status.md) | active | Astro 7, Alpine.js, Supabase |
+| receipts-dms | [profile](./projects/receipts-dms/profile.md) | — | [status](./projects/receipts-dms/status.md) | active | Vite 6, React 19, Cloudflare D1/R2 |
+| collage | [profile](./projects/collage/profile.md) | [agent](./projects/collage/agent.md) | [status](./projects/collage/status.md) | active | Express 4, sharp, LINE LIFF |
 | truck | [profile](./projects/truck/profile.md) | [agent](./projects/truck/agent.md) | [status](./projects/truck/status.md) | active | React 19, Vite 8, Supabase, PWA |
 | writer | [profile](./projects/writer/profile.md) | [agent](./projects/writer/agent.md) | — | global | Markdown, AI agent system |
 
@@ -32,18 +34,19 @@ last_updated: 2026-07-05
 | Project | Role | Personality |
 |---------|------|-------------|
 | clientdata | data goblin (experimental) | — |
-| data | data goblin (stable) | — |
+| data.mcky.space | data goblin (stable) | — |
 | habby | trophy goblin | — |
 | mcky.space | terminal hipster | — |
 | truck | overtime enthusiast | — |
 | collage | barista engineer | — |
+| receipts-dms | — | — |
 | writer | word goblin | — |
 
 ## Technology Summary
 - **Frameworks:** Next.js, React, Astro, Express, Vite.
-- **Databases:** Supabase (PostgreSQL), Neon (PostgreSQL), Redis (Upstash).
-- **Integrations:** LINE Platform (LIFF), Telegram Bot API.
-- **Image Processing:** Sharp.
+- **Databases:** Supabase (PostgreSQL), Neon (PostgreSQL), Redis (Upstash), Cloudflare D1.
+- **Integrations:** LINE Platform (LIFF + Bot SDK), Telegram Bot API.
+- **Image Processing:** Sharp, WebP (Canvas API).
 - **Storage:** Cloudflare R2.
 
 ## Documentation Coverage
@@ -71,6 +74,11 @@ last_updated: 2026-07-05
 |--------|---------|
 | `scripts/doctor-kb.js` | Knowledge lifecycle audit |
 | `scripts/backfill.js` | Seed KB from git/code/docs |
+| `scripts/build-graph.js` | Build graph.json from KB files |
+| `scripts/dispatch.js` | List open tasks across projects |
+| `scripts/claim-task.js` | Claim a task atomically |
+| `scripts/complete-task.js` | Close a task + record lesson |
+| `scripts/build-dashboard.js` | Generate HTML dashboard |
 
 ## MCP Tools
 
