@@ -2,14 +2,14 @@
 type: project-commands
 id: writer-commands
 project: writer
-last_updated: 2026-07-05
+last_updated: 2026-07-12
 ---
 
-# Writer Commands
+# คำสั่ง Writer
 
-The writer project is documentation-only (no codebase). Use standard OKF scripts:
+โปรเจกต์ writer เป็นเอกสารล้วน (ไม่มี codebase) ให้ใช้สคริปต์มาตรฐานของ OKF:
 
-| Command | Purpose |
+| คำสั่ง (Command) | วัตถุประสงค์ (Purpose) |
 |---------|---------|
-| `node ~/OKF/scripts/doctor-kb.js` | Knowledge lifecycle audit |
-| `node ~/OKF/scripts/backfill.js` | Seed KB from git history + code structure |
+| `node ~/OKF/scripts/doctor-kb.js` | ตรวจสอบวงจรชีวิตของ knowledge |
+| `node ~/OKF/scripts/backfill.js` | ใส่ KB จากประวัติ git + โครงสร้างโค้ด |

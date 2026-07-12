@@ -2,7 +2,7 @@
 type: project-profile
 id: mcky-space-profile
 project: mcky.space
-last_updated: 2026-07-04
+last_updated: 2026-07-12
 status: active
 freshness: 2026-07-04
 verified: 2026-07-04
@@ -22,17 +22,17 @@ links:
     target: mcky-commands
 ---
 
-# Project Profile: mcky.space
+# โปรไฟล์โปรเจกต์: mcky.space
 
-## Identity
+## ข้อมูลตัวตน
 - **Name:** mcky.space
 - **Display Name:** mcky.space
-- **Description:** Terminal-style personal website.
-- **Purpose:** Personal portfolio and blog.
+- **Description:** เว็บไซต์ส่วนตัวสไตล์ terminal
+- **Purpose:** Portfolio และบล็อกส่วนตัว
 - **Repository:** mcky.space
 - **Owner:** ktypez (https://github.com/ktypez/mcky.space)
 
-## Technology
+## เทคโนโลยี
 - **Languages:** TypeScript, JavaScript
 - **Frameworks:** Astro 7, Alpine.js
 - **Runtime:** Node.js
@@ -40,40 +40,40 @@ links:
 - **Build System:** Astro build
 - **Deployment Targets:** Vercel
 
-## Dependencies
+## การพึ่งพา
 - **Major Libraries:** `@supabase/supabase-js`, `marked`
 - **External Services:** Supabase
 - **Databases:** Supabase (PostgreSQL)
 - **Cloud Providers:** Supabase, Vercel
 - **APIs:** Supabase API
 
-## Development
+## การพัฒนา
 - **Setup:** `npm install`
 - **Install:** `npm install`
 - **Build:** `npm run build`
-- **Test:** Not configured (skip tests)
-- **Lint:** Not configured (pure CSS)
+- **Test:** ไม่ได้ตั้งค่า (ข้ามการเทส)
+- **Lint:** ไม่ได้ตั้งค่า (pure CSS)
 - **Run:** `npm run dev`
 
-## Architecture
-- **Structure:** Astro SSR with Alpine.js client interactivity
+## สถาปัตยกรรม
+- **Structure:** Astro SSR พร้อม Alpine.js client interactivity
 - **Entry Points:** `src/pages/`
-- **Important Packages:** `marked` for markdown processing
+- **Important Packages:** `marked` สำหรับประมวลผล markdown
 
-## Documentation
+## เอกสาร
 - **Agent Context:** [agent.md](./agent.md)
 - **Status:** [status.md](./status.md)
 
-## Quality
-- **Tests:** N/A (skipped)
+## คุณภาพ
+- **Tests:** ไม่มี (ข้ามไป)
 - **CI:** Vercel CI
-- **Linters:** None (pure CSS)
+- **Linters:** ไม่มี (pure CSS)
 
-## Status
+## สถานะ
 - **State:** active
-- **Documentation Completeness:** High
-- **Confidence Level:** High
+- **Documentation Completeness:** สูง
+- **Confidence Level:** สูง
 
-**Source:**
+**แหล่งที่มา:**
 - `/home/mcky.space/package.json`
 - `/home/OKF/projects/mcky.space/agent.md`

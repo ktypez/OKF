@@ -2,7 +2,7 @@
 type: project-profile
 id: receipts-dms-profile
 project: receipts-dms
-last_updated: 2026-07-11
+last_updated: 2026-07-12
 status: active
 anchors:
   - /home/paper/receipts-dms/
@@ -16,58 +16,58 @@ anchors:
 **Deployment:** Cloudflare Pages (paper.mcky.space)
 **Stack:** shadcn/ui, Tailwind v3, lucide-react, react-router v7
 
-## Description
+## คำอธิบาย
 
-A receipt document management system for organizing and managing receipt images. Supports upload with image compression (WebP 2048px / 80%), category management, notes, full-text search, and single-password auth.
+ระบบจัดการเอกสารใบเสร็จ สำหรับจัดระเบียบและจัดการรูปภาพใบเสร็จ รองรับการอัปโหลดพร้อมบีบอัดรูปภาพ (WebP 2048px / 80%), จัดการหมวดหมู่, บันทึกโน้ต, ค้นหาแบบเต็มข้อความ, และ auth แบบรหัสผ่านเดียว
 
-## Technology
+## เทคโนโลยี
 
-| Layer | Technology |
+| เลเยอร์ | เทคโนโลยี |
 |-------|-----------|
 | Frontend | Vite 6, React 19, TypeScript 7, Tailwind 3 |
 | UI | shadcn/ui (Radix primitives), lucide-react |
 | Routing | react-router v7 |
-| Auth | Single password (env var) + HMAC-SHA256 cookie |
+| Auth | รหัสผ่านเดียว (env var) + HMAC-SHA256 cookie |
 | Backend | Cloudflare Pages Functions (Workers runtime) |
 | Database | Cloudflare D1 (receipts_db) |
 | Storage | Cloudflare R2 (BUCKET) |
 | Image Processing | Client-side WebP via Canvas API |
 
-## Architecture
+## สถาปัตยกรรม
 
-SPA with Cloudflare Pages Functions backend. All API routes under `/api/*` are protected by `_middleware.js` except `/api/auth/*`. Auth uses HMAC-signed HttpOnly cookies.
+SPA พร้อม Cloudflare Pages Functions เป็น backend เส้นทาง API ทั้งหมดใต้ `/api/*` ถูกป้องกันโดย `_middleware.js` ยกเว้น `/api/auth/*` Auth ใช้ HttpOnly cookie ที่เซ็นด้วย HMAC
 
-## Entry Points
+## จุดเริ่มต้น (Entry Points)
 
-| File | Purpose |
+| ไฟล์ | หน้าที่ |
 |------|---------|
 | `src/main.tsx` | App bootstrap |
 | `src/App.tsx` | Root component, routing, auth guard |
 | `src/lib/auth-context.tsx` | Auth state management |
 | `src/lib/api.ts` | API client (fetch helper) |
-| `functions/api/_middleware.js` | Auth middleware for all `/api/*` routes |
+| `functions/api/_middleware.js` | Auth middleware สำหรับเส้นทาง `/api/*` ทั้งหมด |
 
-## State Management
+## การจัดการสถานะ
 
-React state via hooks (`useReceipts`, `useCategories`). Theme via React context. Auth via `AuthProvider` context.
+React state ผ่าน hooks (`useReceipts`, `useCategories`) Theme ผ่าน React context Auth ผ่าน `AuthProvider` context
 
-## Key Decisions
+## การตัดสินใจหลัก
 
-- Single password auth (no user registration) for personal use
-- Client-side image compression to WebP before upload (reduces storage)
-- HMAC-signed HttpOnly cookie for session persistence
-- Bottom nav on mobile, sidebar on desktop
+- auth แบบรหัสผ่านเดียว (ไม่มีลงทะเบียนผู้ใช้) สำหรับใช้ส่วนตัว
+- บีบอัดรูปภาพฝั่ง client เป็น WebP ก่อนอัปโหลด (ลดการใช้พื้นที่)
+- HttpOnly cookie ที่เซ็นด้วย HMAC สำหรับรักษาสถานะ session
+- bottom nav บนมือถือ, sidebar บนเดสก์ท็อป
 
-## Related
+## ที่เกี่ยวข้อง
 
-| Type | Link |
+| ประเภท | ลิงก์ |
 |------|------|
 | Status | [status.md](./status.md) |
 | Structure | [structure.md](./structure.md) |
 | Dependencies | [dependencies.md](./dependencies.md) |
 | Commands | [commands.md](./commands.md) |
 
-## Evidence
+## หลักฐาน
 
 - `package.json`
 - `wrangler.toml`

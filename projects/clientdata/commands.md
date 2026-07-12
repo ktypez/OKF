@@ -2,7 +2,7 @@
 type: document
 id: clientdata-commands
 project: clientdata
-last_updated: 2026-07-04
+last_updated: 2026-07-12
 status: active
 freshness: 2026-07-04
 verified: 2026-07-04
@@ -18,15 +18,18 @@ links:
     target: clientdata-structure
 ---
 
-# Project Commands: clientdata
+# คำสั่งโปรเจกต์: clientdata
 
-## Development
-- `npm run dev`: Start development server
-- `npm run build`: Build for production
+## การพัฒนา (Development)
 
-## Database
-- `npm run db:push`: Push schema changes to Neon
-- `npm run db:migrate`: Run Redis to Neon migration script
+- `npm run dev`: เริ่ม development server
+- `npm run build`: Build สำหรับ production
 
-## Quality Assurance
-- `npm run lint`: Run ESLint
+## ฐานข้อมูล (Database)
+
+- `npm run db:push`: Push การเปลี่ยนแปลง schema ไปยัง Neon
+- `npm run db:migrate`: รันสคริปต์ migration จาก Redis ไป Neon
+
+## การตรวจสอบคุณภาพ (Quality Assurance)
+
+- `npm run lint`: รัน ESLint

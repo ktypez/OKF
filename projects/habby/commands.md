@@ -2,9 +2,9 @@
 type: document
 id: habby-commands
 project: habby
-last_updated: 2026-07-04
+last_updated: 2026-07-12
 status: active
-freshness: 2026-07-04
+freshness: 2026-07-12
 verified: 2026-07-04
 expires: null
 superseded_by: null
@@ -18,13 +18,15 @@ links:
     target: habby-structure
 ---
 
-# Project Commands: habby
+# คำสั่งโปรเจกต์: habby
 
-## Development
-- `npm run dev`: Start Vite dev server
-- `npm run dev:server`: Start Express backend
-- `npm run start`: Start production server
+## การพัฒนา (Development)
 
-## Build
-- `npm run build`: Build frontend with Vite
-- `npm run preview`: Preview production build
+- `npm run dev`: เริ่ม Vite dev server
+- `npm run dev:server`: เริ่ม Express backend
+- `npm run start`: เริ่ม production server
+
+## การ build
+
+- `npm run build`: build frontend ด้วย Vite
+- `npm run preview`: ดูตัว production build

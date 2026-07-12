@@ -2,7 +2,7 @@
 type: document
 id: mcky-commands
 project: mcky.space
-last_updated: 2026-07-04
+last_updated: 2026-07-12
 status: active
 freshness: 2026-07-04
 verified: 2026-07-04
@@ -18,15 +18,15 @@ links:
     target: mcky-structure
 ---
 
-# Project Commands: mcky.space
+# คำสั่งโปรเจกต์: mcky.space
 
-## Development
-- `npm run dev`: Start Astro dev server
+## การพัฒนา
+- `npm run dev`: เริ่ม Astro dev server
 
-## Build
-- `npm run build`: Build Astro site
-- `npm run build-blog`: Manually trigger blog post generation
+## การ build
+- `npm run build`: build เว็บไซต์ Astro
+- `npm run build-blog`: สร้างโพสต์บล็อกด้วยตนเอง
 
-## Execution
-- `npm run start`: Start Astro production server
-- `npm run preview`: Preview production build
+## การรัน
+- `npm run start`: เริ่ม Astro production server
+- `npm run preview`: ดูตัวอย่าง production build

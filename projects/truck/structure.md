@@ -2,7 +2,7 @@
 type: document
 id: truck-structure
 project: truck
-last_updated: 2026-07-04
+last_updated: 2026-07-12
 status: active
 freshness: 2026-07-04
 verified: 2026-07-04
@@ -16,22 +16,22 @@ links:
     target: truck-profile
 ---
 
-# Project Structure: truck
+# โครงสร้างโปรเจกต์ Truck
 
-## Directory Layout
-- `src/`: React source code
+## โครงสร้างโฟลเดอร์ (Directory Layout)
+- `src/`: โค้ด React source
   - `components/`: UI components
   - `hooks/`: Custom React hooks
-  - `lib/`: Utility and API logic
+  - `lib/`: Utility และ API logic
   - `utils/`: Helper functions
-  - `styles/`: CSS and theme files
+  - `styles/`: CSS และไฟล์ theme
   - `test/`: Vitest tests
 - `public/`: PWA assets (icons, splash, sw.js)
-- `supabase/`: Supabase functions and migrations
-- `api/`: External API integrations (e.g., `telegram.ts`)
+- `supabase/`: Supabase functions และ migrations
+- `api/`: External API integrations (เช่น `telegram.ts`)
 
-## Key Files
-- `src/main.tsx`: App entry point
+## ไฟล์สำคัญ (Key Files)
+- `src/main.tsx`: จุดเริ่มต้นแอป
 - `src/App.tsx`: Root component
-- `vite.config.ts`: Vite configuration
-- `vitest.config.ts`: Test configuration
+- `vite.config.ts`: การตั้งค่า Vite
+- `vitest.config.ts`: การตั้งค่า test

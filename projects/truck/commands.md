@@ -2,7 +2,7 @@
 type: document
 id: truck-commands
 project: truck
-last_updated: 2026-07-04
+last_updated: 2026-07-12
 status: active
 freshness: 2026-07-04
 verified: 2026-07-04
@@ -18,18 +18,18 @@ links:
     target: truck-structure
 ---
 
-# Project Commands: truck
+# คำสั่งของโปรเจกต์ Truck
 
-## Development
-- `npm run dev`: Start Vite dev server
+## การพัฒนา (Development)
+- `npm run dev`: เริ่ม Vite dev server
 
-## Build
-- `npm run build`: Build PWA for production
-- `npm run preview`: Preview production build
+## การ build (Build)
+- `npm run build`: Build PWA สำหรับ production
+- `npm run preview`: ดูตัวอย่าง production build
 
-## Quality Assurance
-- `npm run test`: Run Vitest tests
-- `npm run test:watch`: Run tests in watch mode
-- `npm run lint`: Run ESLint
-- `npm run typecheck`: Run TypeScript type check
-- `npm run format`: Format code with Prettier
+## ตรวจสอบคุณภาพ (Quality Assurance)
+- `npm run test`: รัน Vitest tests
+- `npm run test:watch`: รัน tests แบบ watch mode
+- `npm run lint`: รัน ESLint
+- `npm run typecheck`: ตรวจสอบ TypeScript type
+- `npm run format`: จัดรูปแบบโค้ดด้วย Prettier

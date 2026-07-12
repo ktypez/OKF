@@ -2,7 +2,7 @@
 type: document
 id: clientdata-dependencies
 project: clientdata
-last_updated: 2026-07-04
+last_updated: 2026-07-12
 status: active
 freshness: 2026-07-04
 verified: 2026-07-04
@@ -19,9 +19,10 @@ links:
     target: clientdata-commands
 ---
 
-# Project Dependencies: clientdata
+# Dependencies ของโปรเจกต์: clientdata
 
-## Core Dependencies
+## Core Dependencies (dependencies หลัก)
+
 - `next`: 16.2.9
 - `react`: 19.2.7
 - `drizzle-orm`: ^0.45.2
@@ -29,7 +30,8 @@ links:
 - `@aws-sdk/client-s3`: ^3.1075.0
 - `tailwindcss`: ^4.3.1
 
-## Dev Tools
+## Dev Tools (เครื่องมือ dev)
+
 - `drizzle-kit`: ^0.31.10
 - `tsx`: ^4.22.4
 - `typescript`: ^6.0.3

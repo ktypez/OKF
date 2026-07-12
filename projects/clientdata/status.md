@@ -2,7 +2,7 @@
 type: project-status
 id: clientdata-status
 project: clientdata
-last_updated: 2026-07-11
+last_updated: 2026-07-12
 status: active
 freshness: 2026-07-11
 verified: 2026-07-11
@@ -17,24 +17,24 @@ links:
     target: clientdata-agent
 ---
 
-# Project Status — clientdata
+# สถานะโปรเจกต์ — clientdata
 
-## Stack
+## Stack (สแต็ก)
 
-- **Framework**: Next.js 16.2.9 (App Router SPA with History API)
+- **Framework**: Next.js 16.2.9 (App Router SPA ใช้ History API)
 - **UI Library**: React 19.2.7, TypeScript 6
 - **UI System**: shadcn/ui + Base UI + Phosphor Icons
 - **Styling**: Tailwind CSS 4.3.1 + PostCSS, 14 theme presets
-- **Database**: Neon (Postgres) via Drizzle ORM (server actions + API routes)
-- **Maps**: MapLibre GL JS (lazy-loaded via `next/dynamic`)
-- **Auth**: Password-based (scrypt + HMAC tokens), admin + viewer roles
-- **Storage**: Cloudflare R2 via `@aws-sdk/client-s3`
+- **Database**: Neon (Postgres) ผ่าน Drizzle ORM (server actions + API routes)
+- **Maps**: MapLibre GL JS (lazy-loaded ผ่าน `next/dynamic`)
+- **Auth**: ฐานรหัสผ่าน (scrypt + HMAC tokens), บทบาท admin + viewer
+- **Storage**: Cloudflare R2 ผ่าน `@aws-sdk/client-s3`
 - **Deploy**: Vercel (serverless) — `master` → `astryx.mcky.space`
-- **Font**: IBM Plex Sans Thai via `next/font/google`
-- **Dark mode**: `next-themes` with Tailwind `@custom-variant dark`
+- **Font**: IBM Plex Sans Thai ผ่าน `next/font/google`
+- **Dark mode**: `next-themes` คู่กับ Tailwind `@custom-variant dark`
 - **Tests**: Vitest (16 tests)
 
-## Routes
+## Routes (เส้นทาง)
 
 | Path | Page |
 |------|------|
@@ -49,21 +49,24 @@ links:
 | `POST /api/auth/login` | Login |
 | `POST /api/auth/logout` | Logout |
 
-## Changelog
+## Changelog (บันทึกการเปลี่ยนแปลง)
 
 ### 2026-07-11
+
 - fix: bump SW cache version to v2 — clean install, clear stale api-v1 cache
 - fix: remove webpack config — Next.js 16 defaults to Turbopack
 - fix: reset search/filter on browser back (popstate handler)
 - searchClients: split query into keywords (AND across words, ILIKE per keyword)
 
 ### 2026-07-08
+
 - Remove back-navigation stack in favor of native History API
 - Combined 2 DB queries into a single join for client list performance
 - localStorage cache sync: cache only on create/update, clear on delete
 - Fix: seed.sql conflict — renamed `suggestions_userId` → `suggestions_user_id`
 
 ### Earlier
+
 - Phone number formatting + copy in client card
 - Full-text search across name + shopName (ILIKE, not trigram)
 - Suggestion approval with transaction protection
@@ -75,11 +78,11 @@ links:
 - Public client page at `/c/[id]` — no auth required
 - 16 Vitest tests (auth, suggestions, clients, upload)
 
-## Known Issues
+## Known Issues (ปัญหาที่ทราบ)
 
-- `useReducer` refactor deferred — 30+ `useState` hooks in one component
-- No undo on client delete (trash restore exists but no undo toast)
-- SW cache version must be bumped manually on breaking changes
+- `useReducer` refactor เลื่อนไว้ — มี `useState` hooks 30+ ตัวใน component เดียว
+- ไม่มี undo เมื่อลบ client (มี trash restore แต่ไม่มี undo toast)
+- SW cache version ต้อง bump เองมือเมื่อมี breaking changes
 
 ## Data Model
 

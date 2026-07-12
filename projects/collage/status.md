@@ -2,10 +2,10 @@
 type: project-status
 id: collage-status
 project: collage
-last_updated: 2026-07-11
+last_updated: '2026-07-12'
 status: active
-freshness: 2026-07-11
-verified: 2026-07-11
+freshness: '2026-07-12'
+verified: 2026-07-11T00:00:00.000Z
 expires: null
 superseded_by: null
 anchors:
@@ -17,7 +17,7 @@ links:
     target: collage-agent
 ---
 
-# Project Status — collage
+# สถานะโปรเจกต์ — collage
 
 ## Stack
 
@@ -32,45 +32,62 @@ links:
 ### Backend (Express, Render.com)
 | Path | Description |
 |------|-------------|
-| `POST /api/collage` | Generate collage from uploaded images |
-| `GET /api/image/:filename` | Serve collage from R2 |
-| `GET /health` | Health check |
-| `POST /api/cleanup` | Cleanup old collages (>90 days) |
+| `POST /api/collage` | สร้าง collage จากรูปที่อัปโหลด |
+| `GET /api/image/:filename` | ดึง collage จาก R2 |
+| `GET /health` | ตรวจสอบสถานะ |
+| `POST /api/cleanup` | ลบ collage เก่า (>30 วัน) |
 
 ### Frontend (Vercel)
 | Path | Description |
 |------|-------------|
-| `/liff` | LIFF collage maker UI |
+| `/liff` | UI ตัวทำ collage (LIFF) |
 | `/api/webhook` | LINE bot webhook |
 
-## Design System
+## ระบบดีไซน์ (Design System)
 
-- 7 Thai day-of-week color themes (sun=red, mon=beige, tue=pink, wed=green, thu=orange, fri=blue, sat=purple)
-- Collage: 1080px wide, 220px gradient header, white rounded cards, drop shadows
-- Output: JPEG quality 85
-- Thai calendar (Buddhist year +543), Thai month names
+- ธีมสี 7 วันในสัปดาห์ (อา=แดง, จ=เบจ, อ=ชมพู, พ=เขียว, พฤ=ส้ม, ศ=น้ำเงิน, ส=ม่วง)
+- Collage: กว้าง 1080px, หัวกระดาษ gradient สูง 220px, การ์ดขาวมุมมน, เงาตก
+- Layout: masonry, สูงสุด 3 คอลัมน์ (ไม่ยุบคอลัมน์)
+- Output: JPEG คุณภาพ 90 (mozjpeg)
+- ปฏิทินไทย (ปี พ.ศ. +543), ชื่อเดือนไทย
 
-## Features
-- [x] LIFF integration — open from LINE, select photos, generate collage
-- [x] 7 day-of-week color themes, auto-detects today
-- [x] Smart grid layout (adaptive columns based on image count)
-- [x] Thai font rendering via opentype.js
-- [x] LINE bot commands (!ส่งรูป, !เมนู, !ลูกค้า)
-- [x] Cloudflare R2 storage with 90-day auto-cleanup
+## ฟีเจอร์ (Features)
+- [x] LIFF integration — เปิดจาก LINE, เลือกรูป, สร้าง collage
+- [x] ธีมสี 7 วันในสัปดาห์, ตรวจจับวันนี้ให้อัตโนมัติ
+- [x] Masonry layout (สูงสุด 3 คอลัมน์, ไม่ยุบ) — รูปสั้นเติมช่องว่าง
+- [x] NaN-safe กับขนาดรูป
+- [x] เรนเดอร์ฟอนต์ไทยผ่าน opentype.js
+- [x] คำสั่งบอท LINE (!ส่งรูป, !เมนู, !ลูกค้า)
+- [x] Cloudflare R2 storage พร้อมลบอัตโนมัติทุก 30 วัน
 - [x] Dark mode (prefers-color-scheme)
-- [x] Persistent user name (localStorage)
+- [x] ชื่อผู้ใช้คงอยู่ (localStorage)
+- [x] รูปต้นทางคมขึ้น — ไม่ upscaling, ลดขนาด lanczos3, Q90 mozjpeg
 
-## Changelog
+## บันทึกการเปลี่ยนแปลง (Changelog)
+
+### 2026-07-12 (3)
+- กลับเป็น masonry (max 3 คอลัมน์) แทน row-wrapping grid — รูปสั้นเติมช่องว่าง ลดความยาว collage
+- ลบ isSmallLayout ห้ามยุบคอลัมน์ (ผู้ใช้: ไม่ควรยุบ มีแต่จะเพิ่ม)
+- คง guard NaN ตามไอเดีย "วัดความสูงจากรูปแรกของแถว"
+- อัปเดต LSN-001
+
+### 2026-07-12 (2)
+- Fix บั๊ก layout รูปกระจุกข้างบน (rowTops สะสม Y)
+- Auto-cleanup R2: 90 -> 30 วัน
+
+### 2026-07-12 (1)
+- Fix blur: withoutEnlargement + lanczos3 + Q90 mozjpeg
+- Layout: masonry -> row-wrapping grid 3 คอลัมน์ (ชั่วคราว)
+- Fix บั๊ก NaN
 
 ### 2026-07-11
 - Initial KB documentation
-- Theme system: 7 day-of-week colors instead of generic themes
-- Auto day detection, native date picker fallback
+- Theme system: 7 day-of-week colors
 - Smart grid layout, centered last row
 - Persistent name via localStorage
 - Canvas auto-fits content height
-- Main menu: added truck.mcky.space button, updated emojis
-- Webhook: URLSearchParams for + encoding in search queries
+- Main menu: added truck.mcky.space button
+- Webhook: URLSearchParams for + encoding
 - Shrink preset buttons to 34px
-- Sample mockup with header, divider, grid cards
+- Sample mockup
 - gitignore cleanup

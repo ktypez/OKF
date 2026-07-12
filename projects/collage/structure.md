@@ -2,13 +2,13 @@
 type: project-structure
 id: collage-structure
 project: collage
-last_updated: 2026-07-11
+last_updated: 2026-07-12
 status: active
 anchors:
   - /home/collage/
 ---
 
-# Directory Structure
+# โครงสร้างโฟลเดอร์ (Directory Structure)
 
 ```
 collage/

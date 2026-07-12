@@ -2,11 +2,11 @@
 type: project-structure
 id: data-mcky-space-structure
 project: data.mcky.space
-last_updated: 2026-07-11
+last_updated: 2026-07-12
 status: active
 ---
 
-# Directory Structure
+# โครงสร้างโฟลเดอร์ (Directory Structure)
 
 ```
 data.mcky.space/

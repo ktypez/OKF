@@ -2,7 +2,7 @@
 type: index
 id: mcky-decisions
 project: mcky.space
-last_updated: 2026-07-04
+last_updated: 2026-07-12
 status: active
 freshness: 2026-07-04
 verified: 2026-07-04
@@ -14,4 +14,4 @@ links:
     target: mcky-agent
 ---
 
-# Architecture Decisions: mcky.space
+# การตัดสินใจด้านสถาปัตยกรรม: mcky.space

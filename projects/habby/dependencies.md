@@ -2,9 +2,9 @@
 type: document
 id: habby-dependencies
 project: habby
-last_updated: 2026-07-04
+last_updated: 2026-07-12
 status: active
-freshness: 2026-07-04
+freshness: 2026-07-12
 verified: 2026-07-04
 expires: null
 superseded_by: null
@@ -18,12 +18,14 @@ links:
     target: habby-commands
 ---
 
-# Project Dependencies: habby
+# ความพึ่งพา (Dependencies): habby
 
 ## Core Dependencies
+
 - `express`: ^5.2.1
 - `ioredis`: ^5.11.1
 - `cors`: ^2.8.6
 
 ## Dev Tools
+
 - `vite`: ^6.0.0

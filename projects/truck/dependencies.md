@@ -2,7 +2,7 @@
 type: document
 id: truck-dependencies
 project: truck
-last_updated: 2026-07-04
+last_updated: 2026-07-12
 status: active
 freshness: 2026-07-04
 verified: 2026-07-04
@@ -18,9 +18,9 @@ links:
     target: truck-commands
 ---
 
-# Project Dependencies: truck
+# Dependencies ของโปรเจกต์ Truck
 
-## Core Dependencies
+## Core Dependencies หลัก
 - `react`: 19.2.7
 - `react-dom`: 19.2.7
 - `react-router-dom`: ^7.18.0

@@ -2,9 +2,9 @@
 type: project-profile
 id: writer-profile
 project: writer
-last_updated: 2026-07-04
+last_updated: 2026-07-12
 status: active
-freshness: 2026-07-04
+freshness: 2026-07-12
 verified: 2026-07-04
 expires: null
 superseded_by: null
@@ -14,24 +14,28 @@ links:
     target: writer-agent
 ---
 
-# Project Profile: writer
+# โปรไฟล์โปรเจกต์: writer
 
-## Identity
+## ข้อมูลตัวตน (Identity)
+
 - **Name:** writer
 - **Display Name:** Writer Agent
-- **Description:** Content writer & summarizer for all projects.
-- **Purpose:** Provide concise writing, summaries, changelogs, and documentation.
-- **Repository:** None
+- **Description:** ผู้เขียนคอนเทนต์และสรุปเนื้อหาให้โปรเจกต์ทั้งหมด
+- **Purpose:** จัดการการเขียนแบบกระชับ, สรุป, changelog และเอกสาร
+- **Repository:** ไม่มี
 
-## Technology
+## เทคโนโลยี (Technology)
+
 - **Languages:** Markdown, YAML
-- **Frameworks:** None
-- **Runtime:** None (AI tool)
+- **Frameworks:** ไม่มี
+- **Runtime:** ไม่มี (AI tool)
 
-## Documentation
+## เอกสาร (Documentation)
+
 - **Agent Context:** [agent.md](./agent.md)
 
-## Status
+## สถานะ (Status)
+
 - **State:** active
-- **Documentation Completeness:** High
-- **Confidence Level:** High
+- **Documentation Completeness:** สูง (High)
+- **Confidence Level:** สูง (High)

@@ -2,7 +2,7 @@
 type: document
 id: clientdata-assets
 project: clientdata
-last_updated: 2026-07-04
+last_updated: 2026-07-12
 status: active
 freshness: 2026-07-04
 verified: 2026-07-04
@@ -19,12 +19,12 @@ links:
 
 # Assets — clientdata
 
-Media and static assets for the clientdata project.
+Media และ static assets สำหรับโปรเจกต์ clientdata
 
-## Icons
+## Icons (ไอคอน)
 
-- PWA manifest icons
+- ไอคอน PWA manifest
 
-## Images
+## Images (รูปภาพ)
 
-- Map markers, client photos (Cloudflare R2)
+- หมุดแผนที่, รูปลูกค้า (Cloudflare R2)

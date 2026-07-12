@@ -1,32 +1,32 @@
 ---
 type: system-doc
 id: todos-convention
-last_updated: 2026-07-11
+last_updated: 2026-07-12
 ---
 
-# TODOs Convention
+# กระบวนการ TODOs (TODOs Convention)
 
-Project-level TODO items live in each project's KB (`projects/<project>/knowledge/`) as `document`-type nodes with checklist-style markdown bodies. These are discovered on every startup.
+TODO ระดับโปรเจกต์อยู่ใน KB ของแต่ละโปรเจกต์ (`projects/<project>/knowledge/`) เป็น node ประเภท `document` ที่มีเนื้อหาแบบ checklist ถูกค้นพบทุกครั้งที่เริ่ม session
 
-## How TODOs work
+## TODOs ทำงานยังไง
 
-- Each TODO is a KB node with `type: document`, `status: active`, and a body containing one or more `- [ ]` checklist items
-- Project agent profiles (`agent.md`) link to their TODO nodes in the KB
-- There is no single `TODOS.md` file in project roots — everything lives in the KB graph
+- แต่ละ TODO คือ KB node ที่มี `type: document`, `status: active` และ body ที่มี `- [ ]` อย่างน้อยหนึ่งรายการ
+- Agent profile ของโปรเจกต์ (`agent.md`) ลิงก์ไปยัง TODO node ใน KB
+- ไม่มีไฟล์ `TODOS.md` เดี่ยวในรากโปรเจกต์ — ทุกอย่างอยู่ใน KB graph
 
-## Startup Check (GLOBAL)
+## การตรวจสอบตอนเริ่ม (GLOBAL)
 
-Every agent **must** run this on every new session before starting any task:
+Agent **ต้อง** รันสิ่งนี้ในทุก session ใหม่ ก่อนเริ่มงานใดๆ:
 
-1. Check `./TODOS.md` at project root if it exists (legacy support)
+1. เช็ค `./TODOS.md` ที่รากโปรเจกต์ถ้ามี (รองรับแบบเก่า)
 2. Query KB: `okf_query_nodes project:<project> type:document status:active`
-3. Filter results: any node with `- [ ]` checklist items in its body is a TODO
-4. Present to user: "Open TODOs: N items — <titles>"
-5. Ask: work on a TODO or proceed with current request
+3. กรองผล: node ใดที่ body มี `- [ ]` คือ TODO
+4. แจ้งผู้ใช้: "Open TODOs: N items — <titles>"
+5. ถาม: ทำ TODO หรือดำเนินเรื่องที่ขอมาต่อ
 
-## Per-project agent.md
+## agent.md ระดับโปรเจกต์
 
-Each project's `agent.md` should have a `## TODOs` section:
-- List the project's TODO node IDs (e.g. DOC-002, DOC-003)
-- State the startup check procedure
-- Link to this system document (`todos-convention`)
+`agent.md` ของแต่ละโปรเจกต์ควรมีหมวด `## TODOs`:
+- ระบุ TODO node ID ของโปรเจกต์ (เช่น DOC-002, DOC-003)
+- อธิบายขั้นตอนการตรวจสอบตอนเริ่ม
+- ลิงก์ไปยังเอกสารระบบนี้ (`todos-convention`)

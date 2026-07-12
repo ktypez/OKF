@@ -1,16 +1,18 @@
 ---
 type: system-doc
 id: conventions
-last_updated: 2026-07-09
+last_updated: 2026-07-12
 ---
 
 # Conventions
 
 ## Communication Rules
 
-- Thai or English only — no Chinese characters anywhere
+- **Language: Thai first.** Write in Thai as the primary language across KB and chat.
+- **English only when it fits better** — use English for (a) loanwords/technical terms that read more naturally in English (e.g. *schema*, *streak*, *invalidation*, *cache*), or (b) words that are punchier / more fun in English (slang, goblin names, etc.). Mix freely: Thai sentence + English term where it lands harder.
+- No Chinese characters anywhere.
 - Concise, direct responses — under 4 lines when possible
-- Use contractions (I'll, don't)
+- Use contractions (I'll, don't — หรือ 'ฉันจะ', 'ไม่ต้อง' ในภาษาไทย)
 - No emojis unless explicitly asked
 - Answer first, then act
 - Skip intros ("I'll help you with...")

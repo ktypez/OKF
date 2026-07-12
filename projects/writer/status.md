@@ -2,35 +2,35 @@
 type: project-status
 id: writer-status
 project: writer
-last_updated: 2026-07-05
+last_updated: 2026-07-12
 state: active
 documentation_completeness: High
 ---
 
-# Writer Status
+# สถานะ Writer
 
-## Overview
+## ภาพรวม
 
-The writer project is a knowledge-only project within OKF. It tracks documentation, decisions, and tasks related to content writing across all projects.
+โปรเจกต์ writer เป็นโปรเจกต์ที่เก็บ knowledge ล้วนภายใน OKF ติดตามเอกสาร, การตัดสินใจ และงานที่เกี่ยวกับการเขียนคอนเทนต์ข้ามโปรเจกต์ทั้งหมด
 
-## Documentation
+## เอกสาร (Documentation)
 
-| File | Status |
+| ไฟล์ (File) | สถานะ (Status) |
 |------|--------|
-| agent.md | ✅ Complete |
-| profile.md | ✅ Complete |
-| structure.md | ✅ Complete |
-| commands.md | ✅ Complete |
-| status.md | ✅ Complete |
+| agent.md | ✅ ครบถ้วน |
+| profile.md | ✅ ครบถ้วน |
+| structure.md | ✅ ครบถ้วน |
+| commands.md | ✅ ครบถ้วน |
+| status.md | ✅ ครบถ้วน |
 
-## Knowledge
+## ความรู้ (Knowledge)
 
-| Node | Type | Status |
+| Node | ประเภท (Type) | สถานะ (Status) |
 |------|------|--------|
 | DEC-001 | decision | active |
 
-## Tasks
+## งาน (Tasks)
 
-| Task | Status | Priority |
+| งาน (Task) | สถานะ (Status) | ลำดับความสำคัญ (Priority) |
 |------|--------|----------|
 | TASK-001 | closed | medium |

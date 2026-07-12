@@ -2,9 +2,9 @@
 type: project-status
 id: data-mcky-space-status
 project: data.mcky.space
-last_updated: 2026-07-11
+last_updated: 2026-07-12
 status: active
-freshness: 2026-07-11
+freshness: 2026-07-12
 verified: 2026-07-11
 expires: null
 superseded_by: null
@@ -19,7 +19,7 @@ links:
     target: clientdata-status
 ---
 
-# Project Status — data.mcky.space
+# สถานะโปรเจกต์ — data.mcky.space
 
 ## Stack
 
@@ -28,17 +28,17 @@ links:
 - **Routing**: react-router-dom v7
 - **Styling**: Tailwind CSS 4 + PostCSS
 - **State**: Zustand
-- **Database**: Neon (Postgres) via Drizzle ORM
+- **Database**: Neon (Postgres) ผ่าน Drizzle ORM
 - **Maps**: MapLibre GL JS
-- **Auth**: Password-based, admin + viewer roles
-- **Storage**: Cloudflare R2 via @aws-sdk/client-s3
+- **Auth**: ใช้รหัสผ่าน, แบ่งบทบาท admin + viewer
+- **Storage**: Cloudflare R2 ผ่าน @aws-sdk/client-s3
 - **Deploy**: Cloudflare Pages (serverless) — `stable` → `data.mcky.space`
 
 ## Routes
 
-Same feature set as clientdata (master branch), ported to Vite SPA.
+มีชุดฟีเจอร์เหมือน clientdata (branch master), ย้ายมาเป็น Vite SPA
 
-## Deployment
+## การ deploy (Deployment)
 
 | Detail | Value |
 |--------|-------|
@@ -47,14 +47,14 @@ Same feature set as clientdata (master branch), ported to Vite SPA.
 | Platform | Cloudflare Pages |
 | Source repo | `ktypez/clientdata` |
 
-## Changelog
+## บันทึกการเปลี่ยนแปลง (Changelog)
 
 ### 2026-07-11
-- Ported from Next.js to Vite 7 + Cloudflare Pages
-- Added Zustand for state management (replaced React useState hooks)
-- Fix: kill stale service workers on first load
-- Fix: trash restore/delete called wrong endpoint
-- Fix: fallback for trash items without deletedAt
-- Show 20 clients per page (up from 10/20)
-- Show placeholder SVG when client has no photos
-- Remove stale PWA entry from status.md (no SW exists)
+- ย้ายจาก Next.js มา Vite 7 + Cloudflare Pages
+- เพิ่ม Zustand สำหรับจัดการ state (แทน React useState hooks)
+- Fix: ฆ่า service worker เก่าตอนโหลดครั้งแรก
+- Fix: trash restore/delete เรียก endpoint ผิด
+- Fix: fallback สำหรับ trash items ที่ไม่มี deletedAt
+- แสดงลูกค้า 20 รายต่อหน้า (จากเดิม 10/20)
+- แสดง placeholder SVG เมื่อลูกค้าไม่มีรูป
+- ลบ PWA entry เก่าจาก status.md (ไม่มี SW แล้ว)

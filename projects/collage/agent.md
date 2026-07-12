@@ -2,10 +2,10 @@
 type: agent-profile
 id: collage-agent
 project: collage
-last_updated: 2026-07-11
+last_updated: '2026-07-12'
 status: active
-freshness: 2026-07-11
-verified: 2026-07-11
+freshness: '2026-07-12'
+verified: 2026-07-11T00:00:00.000Z
 expires: null
 superseded_by: null
 personality: barista engineer
@@ -25,30 +25,33 @@ links:
 
 # collage Agent
 
-## Overview
+## ภาพรวม (Overview)
 
-Image collage maker + LINE LIFF bot — users generate themed photo collages in LINE and share them to chat.
+เครื่องมือทำ collage รูปภาพ + LINE LIFF bot — ผู้ใช้สร้าง collage ภาพแนวธีมใน LINE แล้วแชร์เข้าแชท
 
-## Stack
+## เทคโนโลยี (Stack)
 
-- **Backend**: Express 4 + sharp (image processing) + opentype.js (Thai font rendering)
+- **Backend**: Express 4 + sharp (ประมวลผลรูปภาพ) + opentype.js (เรนเดอร์ฟอนต์ไทย)
 - **Frontend**: Vanilla HTML/CSS/JS + LIFF SDK v2
 - **Webhook**: Vercel Serverless Function (@line/bot-sdk)
 - **Storage**: Cloudflare R2
 - **Deploy**: Render.com (backend) + Vercel (frontend/webhook)
 
-## Key Context
+## ข้อมูลสำคัญ (Key Context)
 
 - Path: `/home/collage`
-- Backend: `node backend/server.js` (port 3000)
-- Frontend: single `index.html` with LIFF SDK
-- 7 Thai day-of-week color themes, auto-detects current day
-- Canvas: 1080px wide, JPEG q85, smart grid layout
+- Backend: `node backend/server.js` (พอร์ต 3000)
+- Frontend: หน้าเดียว `index.html` กับ LIFF SDK
+- ธีมสี 7 วันในสัปดาห์ (ไทย), ตรวจจับวันปัจจุบันอัตโนมัติ
+- Canvas: กว้าง 1080px, JPEG q90 (mozjpeg), **masonry layout สูงสุด 3 คอลัมน์** (ไม่ยุบคอลัมน์)
+- Image sharpening: `roundImage` ใช้ `withoutEnlargement` + `lanczos3` (ไม่ upscale รูปเล็ก), รูปเล็กจัดกึ่งกลางการ์ด
+- NaN-safe: metadata รูปหายมี fallback (iw square) กัน layout พัง
+- R2 auto-cleanup: **30 วัน**
 - LINE LIFF ID: `2010606328-7UnH1Yre`
 - Backend API base: `https://collage-7cgv.onrender.com`
-- R2 bucket: `ezzyreport`, public at `pub-737d7924b2654190843ce35c45f973b6.r2.dev`
+- R2 bucket: `ezzyreport`, public ที่ `pub-737d7924b2654190843ce35c45f973b6.r2.dev`
 
-## LINE Bot Commands
+## คำสั่งบอท LINE (LINE Bot Commands)
 
 | Command | Action |
 |---------|--------|
@@ -56,11 +59,11 @@ Image collage maker + LINE LIFF bot — users generate themed photo collages in 
 | `!เมนู` | Main menu (collage, truck, data) |
 | `!ลูกค้า <query>` | Search clients on data.mcky.space |
 
-## TODOs
+## งานค้าง (TODOs)
 
 Query KB on startup: `okf_query_nodes project:collage type:document status:active` — any node with `- [ ]` checklist items is a pending TODO. Notify user, ask intent. See `system/TODOS.md`.
 
-## Relationships
+## ความสัมพันธ์ (Relationships)
 
-- `data.mcky.space` — `!ลูกค้า` command queries client search API
-- `truck.mcky.space` — main menu links to truck PWA
+- `data.mcky.space` — คำสั่ง `!ลูกค้า` เรียก client search API
+- `truck.mcky.space` — เมนูหลักลิงก์ไป PWA ของ truck

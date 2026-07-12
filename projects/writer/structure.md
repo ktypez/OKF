@@ -2,24 +2,24 @@
 type: project-structure
 id: writer-structure
 project: writer
-last_updated: 2026-07-05
+last_updated: 2026-07-12
 ---
 
-# Writer Structure
+# โครงสร้าง Writer
 
-## Directory Layout
+## โครงสร้างไดเรกทอรี (Directory Layout)
 
-The writer project has no codebase. It exists as an OKF knowledge project with markdown documentation.
+โปรเจกต์ writer ไม่มี codebase เป็นเพียงโปรเจกต์ knowledge ของ OKF ที่มีเอกสาร markdown
 
 ```
 ~/OKF/projects/writer/
-├── agent.md        ← Agent profile (personality, triggers, patterns)
-├── profile.md      ← Technical metadata
-├── status.md       ← Live project status
-├── structure.md    ← This file — directory layout
-├── commands.md     ← Usage instructions
-├── tasks/          ← Task definitions
+├── agent.md        ← โปรไฟล์ agent (บุคลิก, triggers, patterns)
+├── profile.md      ← ข้อมูลเชิงเทคนิค
+├── status.md       ← สถานะโปรเจกต์สด
+├── structure.md    ← ไฟล์นี้ — โครงสร้างไดเรกทอรี
+├── commands.md     ← คำแนะนำการใช้งาน
+├── tasks/          ← นิยามงาน
 │   └── TASK-001.md
-└── knowledge/      ← Decisions, lessons, risks, components
+└── knowledge/      ← การตัดสินใจ, บทเรียน, ความเสี่ยง, components
     └── DEC-001.md
 ```

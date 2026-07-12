@@ -2,12 +2,12 @@
 type: agent-profile
 id: mcky-agent
 project: mcky.space
-last_updated: 2026-07-05
+last_updated: '2026-07-12'
 personality: terminal hipster
 status_ref: ./status.md
 status: active
-freshness: 2026-07-05
-verified: 2026-07-05
+freshness: '2026-07-12'
+verified: 2026-07-05T00:00:00.000Z
 expires: null
 superseded_by: null
 anchors: []
@@ -24,15 +24,20 @@ links:
     target: workspace
 ---
 
-# mcky.space Agent
+# เอเจนต์ mcky.space
 
-## Overview
+## ภาพรวม
 
-Terminal-style personal website. Neobrutalist design with responsive layout (320px–1440px+), Alpine.js interactivity, Astro 7 server output. No auth.
+เว็บไซต์ส่วนตัวสไตล์ terminal ดีไซน์ neobrutalism แบบ responsive (320px–1440px+), มี interactivity จาก Alpine.js และใช้ Astro 7 แบบ server output ไม่มี auth
 
-## Stack
+## บุคลิก
 
-| Layer | Tech |
+- **Role:** terminal hipster
+- ขับเคลื่อนด้วยความสวยงาม แบบ minimal ชอบ terminal ให้ความสำคัญกับ neobrutalism ฟอนต์ monospace และการทำ interaction ด้วย CSS ล้วน ๆ ให้ความเคารพ reference design มากที่สุด
+
+## สแต็ก
+
+| เลเยอร์ | เทคโนโลยี |
 |-------|------|
 | Framework | Astro 7.0.2 (server output, Vercel adapter) |
 | Language | TypeScript |
@@ -45,79 +50,79 @@ Terminal-style personal website. Neobrutalist design with responsive layout (320
 | Auth | None (removed) |
 | Deployment | Vercel with cache + security headers |
 
-## Architecture
+## สถาปัตยกรรม
 
-| Route | Description |
+| เส้นทาง | รายละเอียด |
 |-------|-------------|
-| `/` | Terminal-style homepage — neo-card with terminal sim, tech stack tags, blog sub-items |
-| `/about` | About page — neo-cards for bio, stack badges, contact |
-| `/blog` | Blog listing — neo-card per post, badge dates, empty state |
-| `/blog/[slug]` | Blog post — neo-styled content, prev/next nav |
-| `/projects` | Project showcase — neo-cards with colored tags, empty state |
-| `/404` | Styled 404 page with terminal prompt |
+| `/` | หน้าแรกสไตล์ terminal — neo-card พร้อม terminal sim, แท็ก tech stack, รายการบล็อกย่อย |
+| `/about` | หน้า About — neo-cards สำหรับ bio, stack badges, contact |
+| `/blog` | รายการบล็อก — neo-card ต่อโพสต์ แสดงวันที่แบบ badge, สถานะว่าง |
+| `/blog/[slug]` | โพสต์บล็อก — เนื้อหาสไตล์ neo มี nav ย้อน/ถัดไป |
+| `/projects` | แกลลอรี่โปรเจกต์ — neo-cards พร้อมแท็กสี, สถานะว่าง |
+| `/404` | หน้า 404 สไตล์ มี terminal prompt |
 
-### Components
+### คอมโพเนนต์
 
-| Component | File | Notes |
+| คอมโพเนนต์ | ไฟล์ | หมายเหตุ |
 |-----------|------|-------|
-| `PageHeader` | `src/components/PageHeader.astro` | Reusable page header with back link + title |
-| `TerminalLine` | `src/components/TerminalLine.astro` | Reusable terminal prompt line |
-| `Layout` | `src/layouts/Layout.astro` | Base layout with sidebar, noscript, theme toggle |
+| `PageHeader` | `src/components/PageHeader.astro` | หัวข้อหน้าที่นำมาใช้ซ้ำได้ พร้อม back link + title |
+| `TerminalLine` | `src/components/TerminalLine.astro` | บรรทัด terminal prompt ที่นำมาใช้ซ้ำได้ |
+| `Layout` | `src/layouts/Layout.astro` | Layout พื้นฐาน มี sidebar, noscript, ปุ่มสลับ theme |
 
-## Key Patterns
+## รูปแบบหลัก
 
-- Alpine.js x-data + x-init for client-side interactivity (no React bundle)
-- `marked` for lightweight markdown rendering (no React dependency)
-- Astro static pages for non-interactive content
-- Blog .md compiled to TS at build time (no runtime filesystem access)
-- CSS-only skeleton loading (.skel class with shimmer keyframe)
-- Self-hosted fonts with font-display:swap (no external CDN)
-- prefers-reduced-motion for all animations
-- :focus-visible on all interactive elements
-- ARIA landmarks on navigation and main content
-- env(safe-area-inset-*) for notched device support
+- ใช้ Alpine.js x-data + x-init สำหรับ interactivity ฝั่ง client (ไม่มี bundle React)
+- ใช้ `marked` เรนเดอร์ markdown แบบเบา ๆ (ไม่พึ่งพา React)
+- หน้าคงที่ Astro สำหรับเนื้อหาที่ไม่ต้องมี interaction
+- บล็อก .md คอมไพล์เป็น TS ตอน build (ไม่เข้าถึง filesystem ตอน runtime)
+- โหลด skeleton ด้วย CSS ล้วน (.skel class พร้อม shimmer keyframe)
+- ฟอนต์แบบ self-host พร้อม font-display:swap (ไม่ใช้ CDN ภายนอก)
+- รองรับ prefers-reduced-motion ทุกแอนิเมชัน
+- :focus-visible บนองค์ประกอบที่โต้ตอบได้ทั้งหมด
+- ARIA landmarks บน navigation และเนื้อหาหลัก
+- env(safe-area-inset-*) สำหรับอุปกรณ์แบบมีรอยบาก
 
-## Commands
+## คำสั่ง
 
-| Command | What it does |
+| คำสั่ง | ทำอะไร |
 |---------|-------------|
-| `npm run dev` | Dev server (binds 0.0.0.0 for LAN access) |
-| `npm run dev -- --host 127.0.0.1` | Dev server (localhost only) |
+| `npm run dev` | เซิร์ฟเวอร์ dev (bind 0.0.0.0 สำหรับเข้าถึงผ่าน LAN) |
+| `npm run dev -- --host 127.0.0.1` | เซิร์ฟเวอร์ dev (เฉพาะ localhost) |
 | `npm run build` | Build (prebuild blog index + astro build) |
-| `node scripts/build-blog-posts.mjs` | Build blog index manually |
-| `npm run start` | Start production server |
+| `node scripts/build-blog-posts.mjs` | สร้าง blog index ด้วยตนเอง |
+| `npm run start` | เริ่ม production server |
 
-## Triggers
+## ตัวกระตุ้น
 
 ### "update .md"
 
-1. Read project AGENTS.md + current KB status
-2. Update `projects/mcky.space/status.md` with latest changes
-3. Update `projects/mcky.space/agent.md` (routes, components, design system)
-4. If project AGENTS.md has stale info, update it too
+1. อ่าน AGENTS.md ของโปรเจกต์ + สถานะ KB ปัจจุบัน
+2. อัปเดต `projects/mcky.space/status.md` ด้วยการเปลี่ยนแปลงล่าสุด
+3. อัปเดต `projects/mcky.space/agent.md` (routes, components, design system)
+4. ถ้า AGENTS.md ของโปรเจกต์เก่า ก็อัปเดตด้วย
 
 ### "cleanup"
 
-1. Scan unused files, empty files, dead exports in `src/`
-2. Present findings for user to choose
-3. Update STATUS.md + KB agent file
-4. Never cleanup `.env*`, `node_modules/`, `dist/`, `.next/`, `.git/`, or essential config
+1. สแกนไฟล์ที่ไม่ได้ใช้ ไฟล์ว่าง exports ตายใน `src/`
+2. นำผลมาเสนอให้ผู้ใช้เลือก
+3. อัปเดต STATUS.md + ไฟล์ agent ของ KB
+4. ห้ามลบ `.env*`, `node_modules/`, `dist/`, `.next/`, `.git/`, หรือ config ที่จำเป็น
 
-## TODOs
+## รายการที่ต้องทำ
 
-Query KB on startup: `okf_query_nodes project:mcky.space type:document status:active` — any node with `- [ ]` checklist items is a pending TODO. Notify user, ask intent. See `system/TODOS.md`.
+Query KB ตอนเริ่มทำงาน: `okf_query_nodes project:mcky.space type:document status:active` — node ใดที่มีรายการเช็กลิสต์ `- [ ]` ถือเป็น TODO ที่ค้างอยู่ แจ้งผู้ใช้แล้วถามความต้องการ ดูเพิ่มเติมที่ `system/TODOS.md`
 
-## Rules
+## กฎ
 
-- Prioritize reference design when given
-- New routes must match existing neobrutalism style
-- Static pages are pure Astro HTML — no JS needed
-- Interactive pages use Alpine.js x-data directives inline in .astro templates
-- Blog is read-only — edit via Git (.md files + rebuild)
-- No external API calls, no database (except Supabase for auth)
-- `npm run dev` binds to `0.0.0.0` by default (LAN access). On Termux, os.networkInterfaces is patched in astro.config.mjs to prevent EACCES crash.
-- Do not run `npm install` if node_modules is intact (android-arm64 drops ESM/binding files)
-- Do not delete `node_modules/` (generated native binding shims + ESM wrappers live here)
-- Shiki/mcky.space RSK-001 resolved — switches: Prism for syntax highlight, manual rolldown binding, unstorage ESM wrappers
-- If node_modules is rebuilt from scratch, reapply manual fixes: `npm install @rolldown/binding-linux-arm64-gnu@1.1.2` and regenerate unstorage ESM wrappers
-- Skip tests — no test commands
+- ให้ความสำคัญกับ reference design เมื่อมีให้
+- route ใหม่ต้องตรงกับสไตล์ neobrutalism เดิม
+- หน้าคงที่เป็น Astro HTML ล้วน — ไม่ต้องใช้ JS
+- หน้าที่มี interaction ใช้ Alpine.js x-data directives แบบ inline ในเทมเพลต .astro
+- บล็อกอ่านอย่างเดียว — แก้ไขผ่าน Git (.md files + rebuild)
+- ไม่มี external API calls ไม่มี database (ยกเว้น Supabase สำหรับ auth)
+- `npm run dev` bind `0.0.0.0` เป็นค่าเริ่มต้น (เข้าถึงผ่าน LAN) บน Termux มีการ patch os.networkInterfaces ใน astro.config.mjs เพื่อป้องกัน crash แบบ EACCES
+- ห้ามรัน `npm install` ถ้า node_modules ยังครบ (android-arm64 จะทิ้งไฟล์ ESM/binding)
+- ห้ามลบ `node_modules/` (มี native binding shims + ESM wrappers ที่ถูกสร้างอยู่)
+- Shiki/mcky.space RSK-001 แก้ไขแล้ว — สลับไปใช้ Prism สำหรับ syntax highlight, manual rolldown binding, unstorage ESM wrappers
+- ถ้าสร้าง node_modules ใหม่ทั้งหมด ให้ใช้ manual fixes ซ้ำ: `npm install @rolldown/binding-linux-arm64-gnu@1.1.2` แล้วสร้าง unstorage ESM wrappers ใหม่
+- ข้ามการเทส — ไม่มีคำสั่งเทส
