@@ -3,6 +3,10 @@ title: clientdata Agent
 description: agent-profile from clientdata
 ---
 
+:::caution[Archived Project]
+This project is no longer actively maintained. Content may be outdated.
+:::
+
 # clientdata Agent
 
 ## Overview

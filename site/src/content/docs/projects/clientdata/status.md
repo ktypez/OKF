@@ -3,6 +3,10 @@ title: Project Status — clientdata
 description: project-status from clientdata
 ---
 
+:::caution[Archived Project]
+This project is no longer actively maintained. Content may be outdated.
+:::
+
 # Project Status — clientdata
 
 ## Stack

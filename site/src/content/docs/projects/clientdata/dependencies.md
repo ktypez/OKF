@@ -1,7 +1,11 @@
 ---
-title: 'Project Dependencies: clientdata'
+title: Project Dependencies — clientdata
 description: document from clientdata
 ---
+
+:::caution[Archived Project]
+This project is no longer actively maintained. Content may be outdated.
+:::
 
 # Project Dependencies: clientdata
 

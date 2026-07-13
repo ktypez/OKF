@@ -26,18 +26,6 @@
     ]
   },
   {
-    "label": "clientdata",
-    "collapsed": true,
-    "items": [
-      {
-        "autogenerate": {
-          "directory": "projects/clientdata",
-          "collapsed": true
-        }
-      }
-    ]
-  },
-  {
     "label": "collage",
     "collapsed": true,
     "items": [
@@ -118,6 +106,28 @@
           "directory": "projects/writer",
           "collapsed": true
         }
+      }
+    ]
+  },
+  {
+    "label": "Archived",
+    "collapsed": true,
+    "badge": {
+      "text": "archived",
+      "variant": "caution"
+    },
+    "items": [
+      {
+        "label": "clientdata",
+        "collapsed": true,
+        "items": [
+          {
+            "autogenerate": {
+              "directory": "projects/clientdata",
+              "collapsed": true
+            }
+          }
+        ]
       }
     ]
   }

@@ -1,7 +1,11 @@
 ---
-title: 'Project Structure: clientdata'
+title: Project Structure — clientdata
 description: document from clientdata
 ---
+
+:::caution[Archived Project]
+This project is no longer actively maintained. Content may be outdated.
+:::
 
 # Project Structure: clientdata
 

@@ -1,7 +1,11 @@
 ---
-title: 'Project Commands: clientdata'
+title: Project Commands — clientdata
 description: document from clientdata
 ---
+
+:::caution[Archived Project]
+This project is no longer actively maintained. Content may be outdated.
+:::
 
 # Project Commands: clientdata
 
