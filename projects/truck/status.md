@@ -24,7 +24,7 @@ links:
 - **Framework**: React 19.2.7 + Vite 8 + TypeScript 6
 - **Routing**: react-router-dom v7
 - **Data**: TanStack React Query v5
-- **UI**: Custom themes.css (16 themes: 5 light, 5 dark, 6 shinchan)
+- **UI**: Custom themes — 16 themes (5 light, 5 dark, 6 shinchan) แยกไฟล์ต่อธีมใน src/themes/ โหลด dynamic ผ่าน themes/loader.ts
 - **Auth**: Supabase Auth (email/password)
 - **Database**: Supabase Postgres (timestamptz, Asia/Bangkok TZ)
 - **Backend**: Supabase Edge Functions (Deno)
@@ -46,7 +46,17 @@ links:
 
 ## Changelog
 
-### 2026-07-13
+### 2026-07-13 (perf + refactor)
+- **Loading/Perf**: แตก themes.css (16 ธีม ~36KB) → ไฟล์ต่อธีม โหลด dynamic เฉพาะธีมที่ใช้ (ลด dead CSS ~94%)
+- **Loading/Perf**: CalendarGrid ย้าย inline styles → CSS classes + memoize cells; DateSlider scrollIntoView behavior auto (เลิก smooth)
+- **Bandwidth**: ShiftCalendar ตัด query yearly-logs → yearly-leave-counts (เลือกเฉพาะ leave_type)
+- **Memory**: แก้ retryTimer leak ใน offlineQueue (module singleton → Map ราย user + clearRetryTimer ตอน logout)
+- **Refactor**: แตก calculateIncome (170+ บรรทัด) → aggregate/calcPartTime/calcFullTime/buildResult/finalize
+- **Bandwidth**: recompress background images ด้วย cwebp q82 ย่อเหลือ 1200×1400 — รวม 976KB → 412KB (~58%) ยังชัดเท่าเดิม
+- **Caching**: vercel.json ตั้ง Cache-Control max-age 7 วัน + must-revalidate สำหรับ /files/*.webp
+- Tests: calculator 23/23, offlineQueue 40/40, shift-helpers 20/20 ผ่าน; tsc clean
+
+### 2026-07-13 (KB)
 - **KB refresh**: อัปเดต dependencies (ลบ vite-plugin-pwa), อัปเดต test count (101 tests), แก้ไข frontmatter ซ้ำซ้อน
 - Sync OKF knowledge base across all 8 projects
 - Updated workspace index with current project inventory
