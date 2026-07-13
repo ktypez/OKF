@@ -17,7 +17,6 @@ links:
     target: clientdata-profile
 ---
 
-
 # ข้อมูลโปรเจกต์: data.mcky.space
 
 ## ข้อมูลจำเพาะ (Identity)
@@ -25,13 +24,13 @@ links:
 - **Display Name:** data.mcky.space (Production)
 - **Description:** ระบบจัดการลูกค้า & CRM — production deployment
 - **Purpose:** production deployment ของ clientdata, สร้างใหม่ด้วย Vite + Cloudflare Pages
-- **Repository:** `ktypez/clientdata` (branch stable)
+- **Repository:** `ktypez/data.mcky.space` (branch main)
 
 ## เทคโนโลยี (Technology)
 - **Languages:** TypeScript
 - **Frameworks:** Vite 7, React 19, Tailwind CSS 4
 - **Runtime:** Node.js
-- **Package Manager:** npm
+- **Package Manager:** pnpm (strict layout) + npm
 - **Build System:** Vite
 - **Deployment Targets:** Cloudflare Pages
 
@@ -42,22 +41,26 @@ links:
 - **Cloud Providers:** Cloudflare
 
 ## การพัฒนา (Development)
-- **Setup:** `git clone -b stable https://github.com/ktypez/clientdata ~/data.mcky.space`
+- **Setup:** `git clone https://github.com/ktypez/data.mcky.space ~/data.mcky.space`
 - **Run:** `npx vite`
+- **Build:** `npm run build`
+- **Health check:** `node scripts/health-check.mjs`
 
 ## สถาปัตยกรรม (Architecture)
 - **Structure:** Vite SPA กับ Cloudflare Pages Functions backend
 - **State:** Zustand
-- **Source:** branch stable ของ ktypez/clientdata, ย้ายจาก Next.js มา Vite
+- **Source:** `ktypez/data.mcky.space` (branch main), ย้ายจาก Next.js มา Vite
+- **Maps:** MapLibre GL JS — `InlineMap.tsx` lazy-loaded แยก chunk (`React.lazy` + `Suspense`) ถ้าพังจะไม่กระทบหน้าอื่น
+- **PWA/SW:** มี service worker (`public/sw.js` v2) ทำแค่ cache app shell อย่างปลอดภัย, network-first, **ไม่มี auto-reload**
 
 ## การ deploy (Deployment)
-- **Branch:** `stable`
+- **Branch:** `main`
 - **Domain:** `data.mcky.space`
-- **Platform:** Cloudflare Pages (serverless functions)
-- **Project:** data (Cloudflare Pages)
+- **Platform:** Cloudflare Pages (project: `data-mcky-space`)
+- **Auto-deploy (git):** ปิด (production_deployments_enabled:false)
+- **Deploy command:** `npx wrangler pages deploy ./dist --project-name=data-mcky-space` (ไม่ใช้ --branch)
 
 ## สถานะ (Status)
-- **State:** active
+- **State:** active (STABLE — 2026-07-13 แก้หน้าขาว + spam refresh + เขียนแผนที่ใหม่)
 - **Role:** Production deployment
 - **Source:** `clientdata` (branch master — ทดลอง), ย้ายมา Vite แล้ว
-
