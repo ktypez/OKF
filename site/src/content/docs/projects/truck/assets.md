@@ -1,6 +1,6 @@
 ---
-title: 'Assets: truck'
+title: Assets ของ Truck
 description: document from truck
 ---
 
-# Assets: truck
+# Assets ของ Truck

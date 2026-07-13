@@ -1,11 +1,11 @@
 ---
-title: 'Project Dependencies: truck'
+title: Dependencies ของโปรเจกต์ Truck
 description: document from truck
 ---
 
-# Project Dependencies: truck
+# Dependencies ของโปรเจกต์ Truck
 
-## Core Dependencies
+## Core Dependencies หลัก
 - `react`: 19.2.7
 - `react-dom`: 19.2.7
 - `react-router-dom`: ^7.18.0

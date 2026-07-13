@@ -1,6 +1,6 @@
 ---
-title: 'Architecture Decisions: truck'
+title: การตัดสินใจสถาปัตยกรรมของ Truck
 description: index from truck
 ---
 
-# Architecture Decisions: truck
+# การตัดสินใจสถาปัตยกรรมของ Truck

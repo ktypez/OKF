@@ -7,9 +7,11 @@ description: OKF knowledge base
 
 ## Communication Rules
 
-- Thai or English only — no Chinese characters anywhere
+- **Language: Thai first.** Write in Thai as the primary language across KB and chat.
+- **English only when it fits better** — use English for (a) loanwords/technical terms that read more naturally in English (e.g. *schema*, *streak*, *invalidation*, *cache*), or (b) words that are punchier / more fun in English (slang, goblin names, etc.). Mix freely: Thai sentence + English term where it lands harder.
+- No Chinese characters anywhere.
 - Concise, direct responses — under 4 lines when possible
-- Use contractions (I'll, don't)
+- Use contractions (I'll, don't — หรือ 'ฉันจะ', 'ไม่ต้อง' ในภาษาไทย)
 - No emojis unless explicitly asked
 - Answer first, then act
 - Skip intros ("I'll help you with...")
@@ -52,6 +54,14 @@ See `~/.opencode/rules/okf-format.md` for full schema reference.
 | **Supabase CLI** | Not available on Termux (CI only) |
 | **cwebp** | Available — `cwebp -q 80 input.jpg -o output.webp` |
 | **sharp / ffmpeg** | Not available |
+
+## Startup Check
+
+Before starting any task, check if `./TODOS.md` exists in the current project root:
+
+1. If present, read and notify the user: "📋 Open TODOs: N items"
+2. Ask if they want to work on a TODO or proceed with the current request
+3. Record the session decision
 
 ## Plan Workflow
 

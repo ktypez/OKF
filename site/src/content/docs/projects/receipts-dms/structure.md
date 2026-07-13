@@ -1,15 +1,15 @@
 ---
-title: Directory Structure
+title: โครงสร้างไดเรกทอรี
 description: project-structure from receipts-dms
 ---
 
-# Directory Structure
+# โครงสร้างไดเรกทอรี
 
 ```
 receipts-dms/
 ├── functions/                    # Cloudflare Pages Functions
 │   └── api/
-│       ├── _middleware.js        # Auth middleware (HMAC cookie check)
+│       ├── _middleware.js        # Auth middleware (เช็ค HMAC cookie)
 │       ├── auth/
 │       │   ├── check.js          # GET /api/auth/check
 │       │   ├── login.js          # POST /api/auth/login
@@ -18,47 +18,47 @@ receipts-dms/
 │       ├── categories/
 │       │   └── [id].js           # PUT/DELETE /api/categories/:id
 │       ├── file/
-│       │   └── [id].js           # GET /api/file/:id (serve from R2)
+│       │   └── [id].js           # GET /api/file/:id (เสิร์ฟจาก R2)
 │       ├── receipts.js           # GET /api/receipts
 │       ├── receipts/
 │       │   ├── [id].js           # GET/PUT/DELETE /api/receipts/:id
 │       │   └── [id]/
-│       │       └── tags/         # (legacy, empty)
-│       ├── tags/                 # (legacy, empty)
+│       │       └── tags/         # (legacy, ว่างเปล่า)
+│       ├── tags/                 # (legacy, ว่างเปล่า)
 │       └── upload.js             # POST /api/upload
 ├── src/
 │   ├── App.tsx                   # Root: BrowserRouter, AuthProvider, routes
-│   ├── main.tsx                  # Entry point
+│   ├── main.tsx                  # จุดเริ่มต้น
 │   ├── index.css                 # Tailwind + CSS variables theme
 │   ├── components/
-│   │   ├── bottom-nav.tsx        # Mobile bottom nav (Thai labels)
+│   │   ├── bottom-nav.tsx        # Mobile bottom nav (ป้ายภาษาไทย)
 │   │   ├── layout.tsx            # App shell (sidebar/bottom-nav + content)
 │   │   ├── sidebar.tsx           # Desktop sidebar nav
-│   │   ├── topbar.tsx            # Top bar (theme toggle)
-│   │   ├── theme-toggle.tsx      # Dark/light toggle
-│   │   └── ui/                   # shadcn/ui components
+│   │   ├── topbar.tsx            # Top bar (ปุ่มสลับ theme)
+│   │   ├── theme-toggle.tsx      # สลับ dark/light
+│   │   └── ui/                   # คอมโพเนนต์ shadcn/ui
 │   ├── hooks/
-│   │   ├── use-categories.ts     # Category data hook
-│   │   └── use-receipts.ts       # Receipt data hook
+│   │   ├── use-categories.ts     # hook ข้อมูลหมวดหมู่
+│   │   └── use-receipts.ts       # hook ข้อมูลใบเสร็จ
 │   ├── lib/
 │   │   ├── api.ts                # API client
 │   │   ├── auth-context.tsx      # Auth state provider
 │   │   ├── theme-provider.tsx    # Theme context
-│   │   ├── use-media-query.ts    # Media query hook
-│   │   └── utils.ts              # Helpers (stripExtension, cn)
+│   │   ├── use-media-query.ts    # hook media query
+│   │   └── utils.ts              # ฟังก์ชันช่วย (stripExtension, cn)
 │   ├── pages/
 │   │   ├── categories.tsx        # Category CRUD
-│   │   ├── dashboard.tsx         # Stats + recent receipts
-│   │   ├── login.tsx             # Password login
-│   │   ├── receipt-detail.tsx    # Receipt preview + edit
-│   │   ├── receipts.tsx          # Receipt list (table/card view)
-│   │   ├── settings.tsx          # Theme, storage stats, logout
-│   │   └── upload.tsx            # Upload with compression + progress
+│   │   ├── dashboard.tsx         # สถิติ + ใบเสร็จล่าสุด
+│   │   ├── login.tsx             # เข้าสู่ระบบด้วยรหัสผ่าน
+│   │   ├── receipt-detail.tsx    # preview + แก้ไขใบเสร็จ
+│   │   ├── receipts.tsx          # รายการใบเสร็จ (มุมมอง table/card)
+│   │   ├── settings.tsx          # Theme, สถิติการจัดเก็บ, logout
+│   │   └── upload.tsx            # อัปโหลดพร้อมบีบอัด + ความคืบหน้า
 │   └── types/
-│       └── index.ts              # TypeScript interfaces
-├── schema.sql                    # D1 table definitions
-├── wrangler.toml                 # Cloudflare Pages config
-├── vite.config.ts                # Vite config
-├── tailwind.config.js            # Tailwind config (CSS vars)
+│       └── index.ts              # interface ของ TypeScript
+├── schema.sql                    # นิยามตาราง D1
+├── wrangler.toml                 # config Cloudflare Pages
+├── vite.config.ts                # config Vite
+├── tailwind.config.js            # config Tailwind (CSS vars)
 └── package.json
 ```

@@ -1,6 +1,6 @@
 ---
-title: 'Assets: mcky.space'
+title: 'สินทรัพย์: mcky.space'
 description: document from mcky.space
 ---
 
-# Assets: mcky.space
+# สินทรัพย์: mcky.space

@@ -1,6 +1,6 @@
 ---
-title: 'Architecture Decisions: mcky.space'
+title: 'การตัดสินใจด้านสถาปัตยกรรม: mcky.space'
 description: index from mcky.space
 ---
 
-# Architecture Decisions: mcky.space
+# การตัดสินใจด้านสถาปัตยกรรม: mcky.space

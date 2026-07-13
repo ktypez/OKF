@@ -1,47 +1,47 @@
 ---
-title: 'Project Profile: data.mcky.space'
+title: 'ข้อมูลโปรเจกต์: data.mcky.space'
 description: project-profile from data.mcky.space
 ---
 
-# Project Profile: data.mcky.space
+# ข้อมูลโปรเจกต์: data.mcky.space
 
-## Identity
+## ข้อมูลจำเพาะ (Identity)
 - **Name:** data.mcky.space
 - **Display Name:** data.mcky.space (Production)
-- **Description:** Client management & CRM — production deployment.
-- **Purpose:** Production deployment of clientdata, rebuilt with Vite + Cloudflare Pages.
-- **Repository:** `ktypez/clientdata` (stable branch)
+- **Description:** ระบบจัดการลูกค้า & CRM — production deployment
+- **Purpose:** production deployment ของ clientdata, สร้างใหม่ด้วย Vite + Cloudflare Pages
+- **Repository:** `ktypez/clientdata` (branch stable)
 
-## Technology
+## เทคโนโลยี (Technology)
 - **Languages:** TypeScript
-- **Frameworks:** Vite 7, React 19
+- **Frameworks:** Vite 7, React 19, Tailwind CSS 4
 - **Runtime:** Node.js
 - **Package Manager:** npm
 - **Build System:** Vite
 - **Deployment Targets:** Cloudflare Pages
 
 ## Dependencies
-- **Major Libraries:** `drizzle-orm`, `zustand`, `maplibre-gl`, `@aws-sdk/client-s3`
-- **External Services:** Neon Database, Cloudflare R2
-- **Databases:** Neon (PostgreSQL)
-- **Cloud Providers:** Neon, Cloudflare
+- **Major Libraries:** `drizzle-orm`, `zustand`, `maplibre-gl`, `react-router-dom`
+- **External Services:** Cloudflare D1, Cloudflare R2
+- **Databases:** Cloudflare D1 (SQLite)
+- **Cloud Providers:** Cloudflare
 
-## Development
+## การพัฒนา (Development)
 - **Setup:** `git clone -b stable https://github.com/ktypez/clientdata ~/data.mcky.space`
 - **Run:** `npx vite`
 
-## Architecture
-- **Structure:** Vite SPA with Cloudflare Pages Functions backend
+## สถาปัตยกรรม (Architecture)
+- **Structure:** Vite SPA กับ Cloudflare Pages Functions backend
 - **State:** Zustand
-- **Source:** Stable branch of ktypez/clientdata, ported from Next.js to Vite
+- **Source:** branch stable ของ ktypez/clientdata, ย้ายจาก Next.js มา Vite
 
-## Deployment
+## การ deploy (Deployment)
 - **Branch:** `stable`
 - **Domain:** `data.mcky.space`
 - **Platform:** Cloudflare Pages (serverless functions)
 - **Project:** data (Cloudflare Pages)
 
-## Status
+## สถานะ (Status)
 - **State:** active
 - **Role:** Production deployment
-- **Source:** `clientdata` (master branch — experimental), ported to Vite
+- **Source:** `clientdata` (branch master — ทดลอง), ย้ายมา Vite แล้ว

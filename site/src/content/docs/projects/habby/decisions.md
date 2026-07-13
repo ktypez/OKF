@@ -1,6 +1,6 @@
 ---
-title: 'Architecture Decisions: habby'
+title: 'การตัดสินใจด้านสถาปัตยกรรม: habby'
 description: index from habby
 ---
 
-# Architecture Decisions: habby
+# การตัดสินใจด้านสถาปัตยกรรม: habby

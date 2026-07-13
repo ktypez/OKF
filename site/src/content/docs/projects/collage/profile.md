@@ -1,16 +1,16 @@
 ---
-title: 'Project Profile: collage'
+title: 'ข้อมูลโปรเจกต์: collage'
 description: project-profile from collage
 ---
 
-# Project Profile: collage
+# ข้อมูลโปรเจกต์: collage
 
-## Identity
+## ข้อมูลจำเพาะ (Identity)
 - **Name:** collage
-- **Description:** Image collage maker with LINE LIFF bot integration.
-- **Purpose:** Generate themed photo collages shared via LINE chat.
+- **Description:** เครื่องมือทำ collage รูปภาพ พร้อม LINE LIFF bot
+- **Purpose:** สร้าง collage ภาพแนวธีมแล้วแชร์ผ่าน LINE chat
 
-## Technology
+## เทคโนโลยี (Technology)
 - **Languages:** JavaScript (Node.js), HTML/CSS
 - **Frameworks:** Express 4 (backend), vanilla HTML/CSS/JS (frontend)
 - **Runtime:** Node.js (ESM)
@@ -20,17 +20,17 @@ description: project-profile from collage
 
 ## Dependencies
 - **Backend:** `sharp`, `express`, `multer`, `@aws-sdk/client-s3`, `fontkit`, `opentype.js`
-- **Frontend:** `@line/bot-sdk` (for webhook serverless function)
-- **External Services:** Cloudflare R2 (image storage), LINE Messaging API
+- **Frontend:** `@line/bot-sdk` (สำหรับ webhook serverless function)
+- **External Services:** Cloudflare R2 (เก็บรูป), LINE Messaging API
 - **Font:** NotoSansThai (bundled .ttf)
 
-## Architecture
-- **Backend:** Express server on Render.com — collage generation API
-- **Frontend:** Single HTML page with LIFF SDK v2 — collage maker UI
-- **Webhook:** Vercel Serverless Function — LINE bot command handler
-- **Storage:** Cloudflare R2 for generated collage images
+## สถาปัตยกรรม (Architecture)
+- **Backend:** Express server บน Render.com — collage generation API
+- **Frontend:** หน้า HTML เดียวกับ LIFF SDK v2 — UI ตัวทำ collage
+- **Webhook:** Vercel Serverless Function — ตัวจัดการคำสั่งบอท LINE
+- **Storage:** Cloudflare R2 สำหรับรูป collage ที่สร้าง
 
-## Deployment
+## การ deploy (Deployment)
 | Component | Platform | URL |
 |-----------|----------|-----|
 | Backend API | Render.com | `collage-7cgv.onrender.com` |
@@ -38,7 +38,7 @@ description: project-profile from collage
 | Image storage | Cloudflare R2 | pub-737d7924b2654190843ce35c45f973b6.r2.dev |
 | Source | GitHub | `github.com/ktypez/collage` |
 
-## Status
+## สถานะ (Status)
 - **State:** active
-- **Role:** Active development
+- **Role:** พัฒนาอยู่
 - **LINE LIFF ID:** `2010606328-7UnH1Yre`

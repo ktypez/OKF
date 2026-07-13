@@ -1,15 +1,20 @@
 ---
-title: Truck Agent
+title: Agent ของ Truck
 description: agent-profile from truck
 ---
 
-# Truck Agent
+# Agent ของ Truck
 
-## Overview
+## ภาพรวม (Overview)
 
-Shift logging & income PWA for truck drivers. React 19 + Supabase with 16 themes, PWA support, and Telegram bot integration.
+แอปสำหรับบันทึกกะการทำงานและรายได้สำหรับคนขับรถบรรทุก ใช้ React 19 + Supabase มี 16 themes และรองรับ Telegram bot integration
 
-## Stack
+## บุคลิก (Personality)
+
+- **Role:** overtime enthusiast
+- ขยันขันแข็งกับ shift logs, รายละเอียดรายได้ และ edge cases ยอมทุ่มเวลา extra hours เพื่อให้ data model และ offline queue ถูกต้อง เคร่งครัดเรื่อง mutation-invalidation contracts
+
+## สแต็กเทคโนโลยี (Stack)
 
 | Layer | Tech |
 |-------|------|
@@ -18,12 +23,11 @@ Shift logging & income PWA for truck drivers. React 19 + Supabase with 16 themes
 | Data Fetching | tanstack/react-query v5 |
 | Database | Supabase (Postgres) |
 | Auth | Supabase Auth |
-| PWA | injectManifest (Workbox) |
 | Styling | Custom themes.css (16 themes) |
 | Notifications | Telegram Bot API |
 | Deployment | Vercel (SPA rewrite) |
 
-## Architecture
+## สถาปัตยกรรม (Architecture)
 
 ```
 main.tsx → App.tsx (auth gate + session + theme)
@@ -34,7 +38,7 @@ main.tsx → App.tsx (auth gate + session + theme)
          → AuthScreen (sign-in / request account via Telegram)
 ```
 
-### Directory Map
+### แผนที่โครงสร้างโฟลเดอร์ (Directory Map)
 
 | Directory | Responsibility |
 |-----------|---------------|
@@ -50,53 +54,57 @@ main.tsx → App.tsx (auth gate + session + theme)
 | `src/components/skeletons/` | Loading skeletons (DailyView, ShiftCalendar, IncomeView) |
 | `supabase/functions/` | Edge functions (approve-user, get-all-users, notify-telegram) |
 
-## Key Patterns
+## รูปแบบหลัก (Key Patterns)
 
-- **Auth gate**: checks Supabase session → shows ModalWrapper with AuthScreen overlay on main app (z-index 9999, non-dismissible)
-- **Toast**: `useToast()` from ToastContext — never `alert()` or `console.log()`
+- **Auth gate**: ตรวจสอบ Supabase session → แสดง ModalWrapper กับ AuthScreen overlay บนแอปหลัก (z-index 9999, ปิดไม่ได้)
+- **Toast**: `useToast()` จาก ToastContext — ห้ามใช้ `alert()` หรือ `console.log()`
 - **Modal pattern**: `.modal-backdrop` (fadeIn) + `.modal-content` (scaleIn)
-- **Admin gate**: `user_profiles.is_admin` DB query (not hardcoded email)
-- **Offline queue**: saves mutations to localStorage, replays on reconnect with exponential backoff
-- **Focus trap**: `useFocusTrap(active, ref, onClose?)` in modals
-- **Skeleton loaders**: Theme-aware CSS skeleton for 3 views
-- **Mutation invalidation contract**: saves mutating `logs` must invalidate ALL of: `['monthly-logs', userId, year, month]`, `['yearly-logs', userId, year]`, `['income', userId, year, month]`
-- **Performance ref pattern**: `formRef` object + `useCallback` with minimal deps to prevent memo'd children from re-rendering
+- **Admin gate**: query DB `user_profiles.is_admin` (ไม่ hardcode email)
+- **Offline queue**: เก็บ mutations ลง localStorage, replay เมื่อ reconnect ด้วย exponential backoff (ไม่มี service worker — ทำงานอิสระ)
+- **Focus trap**: `useFocusTrap(active, ref, onClose?)` ใน modals
+- **Skeleton loaders**: CSS skeleton ที่รองรับ theme สำหรับ 3 views
+- **Mutation invalidation contract**: การ save ที่ mutates `logs` ต้อง invalidate ทั้งหมดของ: `['monthly-logs', userId, year, month]`, `['yearly-logs', userId, year]`, `['income', userId, year, month]`
+- **Performance ref pattern**: `formRef` object + `useCallback` ด้วย deps น้อยที่สุด เพื่อไม่ให้ memo'd children re-render
 
-## Commands
+## คำสั่ง (Commands)
 
 | Command | What it does |
 |---------|-------------|
 | `node node_modules/.bin/vite` | Dev server |
 | `node node_modules/vite/bin/vite.js build` | Production build |
-| `node node_modules/.bin/vitest run` | Run tests (16 tests) |
+| `node node_modules/.bin/vitest run` | Run tests (90 tests) |
 | `node node_modules/.bin/eslint src/` | Lint |
 | `node node_modules/.bin/prettier --write src/` | Format |
 
-## Triggers
+## ทริกเกอร์ (Triggers)
 
 ### "update .md"
 
-1. Read project AGENTS.md + current KB status
-2. Update `projects/truck/status.md` with latest changes
-3. Update `projects/truck/agent.md` (architecture, patterns)
-4. If project AGENTS.md has stale info, update it too
+1. อ่าน project AGENTS.md + สถานะ KB ปัจจุบัน
+2. อัปเดต `projects/truck/status.md` ด้วยการเปลี่ยนแปลงล่าสุด
+3. อัปเดต `projects/truck/agent.md` (architecture, patterns)
+4. ถ้า project AGENTS.md มีข้อมูลเก่า ให้อัปเดตด้วย
 
 ### "wrap-day"
 
-1. Read diff, Changelog, STATUS.md
-2. Add Thai summary to `src/components/Changelog.tsx` as new `v{YYYY.MM.DD}` entry
-3. Update STATUS.md — Components / Data Flow / Constraints
+1. อ่าน diff, Changelog, STATUS.md
+2. เพิ่มสรุปภาษาไทยใน `src/components/Changelog.tsx` เป็นรายการ `v{YYYY.MM.DD}` ใหม่
+3. อัปเดต STATUS.md — Components / Data Flow / Constraints
 4. `git add` + commit `"docs: wrap-day {YYYY-MM-DD}"`
-5. Only touch Changelog.tsx and STATUS.md
+5. แตะเฉพาะ Changelog.tsx และ STATUS.md เท่านั้น
 
 ### "cleanup"
 
-1. Scan unused imports, empty files, dead exports
-2. Health check: `tsc --noEmit` + build
-3. Deep scan: leftover dirs, `vite.log`, `console.log`, TODO/FIXME
-4. Present findings for user to choose
-5. Update STATUS.md + project AGENTS.md
-6. Never cleanup `.env*`, `node_modules/`, `dist/`, `.git/`, or essential config
+1. สแกน unused imports, ไฟล์ว่าง, dead exports
+2. ตรวจสอบสุขภาพ: `tsc --noEmit` + build
+3. สแกนลึก: โฟลเดอร์ที่เหลือ, `vite.log`, `console.log`, TODO/FIXME
+4. นำผลมาเสนอให้ user เลือก
+5. อัปเดต STATUS.md + project AGENTS.md
+6. ห้าม cleanup `.env*`, `node_modules/`, `dist/`, `.git/`, หรือ config จำเป็น
+
+## งานที่ต้องทำ (TODOs)
+
+Query KB เมื่อเริ่ม: `okf_query_nodes project:truck type:document status:active` — node ใดที่มี `- [ ]` checklist คือ TODO ที่ค้างอยู่ แจ้ง user และถามความต้องการ ดูเพิ่มที่ `system/TODOS.md`
 
 ## Environment Variables
 
@@ -105,16 +113,16 @@ main.tsx → App.tsx (auth gate + session + theme)
 - `VITE_TELEGRAM_BOT_TOKEN`
 - `VITE_TELEGRAM_CHAT_ID`
 
-## Rules
+## กฎ (Rules)
 
-- `oldString` must be short & precise — avoid long code blocks in edits
-- Always read the latest file version before editing
+- `oldString` ต้องสั้นและแม่นยำ — หลีกเลี่ยง code blocks ยาวใน edit
+- อ่านไฟล์เวอร์ชันล่าสุดเสมอก่อนแก้ไข
 
-### Termux Environment
+### สภาพแวดล้อม Termux (Termux Environment)
 
 | Tool | Notes |
 |------|-------|
-| Node.js | v22.14.0 (ARM64) — use `node` directly. `.bin/` files are shell scripts. |
-| Supabase CLI | CI only: `supabase/setup-cli@v1` in GitHub Actions |
-| cwebp | Available — `cwebp -q 80 input.jpg -o output.webp` |
-| sharp / ffmpeg | Not available |
+| Node.js | v22.14.0 (ARM64) — ใช้ `node` ตรง ๆ ไฟล์ `.bin/` เป็น shell scripts |
+| Supabase CLI | CI เท่านั้น: `supabase/setup-cli@v1` ใน GitHub Actions |
+| cwebp | มีให้ใช้ — `cwebp -q 80 input.jpg -o output.webp` |
+| sharp / ffmpeg | ไม่มีให้ใช้ |

@@ -1,19 +1,21 @@
 ---
-title: 'Project Profile: habby'
+title: 'โปรไฟล์โปรเจกต์: habby'
 description: project-profile from habby
 ---
 
-# Project Profile: habby
+# โปรไฟล์โปรเจกต์: habby
 
-## Identity
+## ข้อมูลตัวตน (Identity)
+
 - **Name:** habby
 - **Display Name:** Habby
-- **Description:** Gamified habit tracker.
-- **Purpose:** Track habits with XP/leveling gamification.
-- **Repository:** Unknown
-- **Owner:** Unknown
+- **Description:** แอปติดตาม habit แบบ gamified
+- **Purpose:** ติดตาม habit พร้อมระบบ gamification แบบ XP/leveling
+- **Repository:** ไม่ทราบ
+- **Owner:** ไม่ทราบ
 
-## Technology
+## เทคโนโลยี (Technology)
+
 - **Languages:** JavaScript
 - **Frameworks:** Vite 6, Express 5
 - **Runtime:** Node.js
@@ -21,40 +23,47 @@ description: project-profile from habby
 - **Build System:** Vite build
 - **Deployment Targets:** Vercel (static + serverless)
 
-## Dependencies
+## ความพึ่งพา (Dependencies)
+
 - **Major Libraries:** `express`, `ioredis`, `cors`
-- **External Services:** Redis (Upstash)
+- **External Services:** Redis (ioredis)
 - **Databases:** Redis
-- **Cloud Providers:** Upstash, Vercel
+- **Cloud Providers:** Vercel
 - **APIs:** Redis API
 
-## Development
+## การพัฒนา (Development)
+
 - **Setup:** `yarn install`
 - **Install:** `yarn install`
 - **Build:** `yarn build`
-- **Test:** Not configured
-- **Lint:** Not configured
+- **Test:** ยังไม่ได้ตั้งค่า
+- **Lint:** ยังไม่ได้ตั้งค่า
 - **Run:** `yarn dev`
 
-## Architecture
+## สถาปัตยกรรม (Architecture)
+
 - **Structure:** Vite frontend + Express backend
 - **Entry Points:** `index.html` (Vite), `server.js` (Express)
-- **Important Packages:** `ioredis` for Redis connection
+- **Important Packages:** `ioredis` สำหรับเชื่อมต่อ Redis
 
-## Documentation
+## เอกสาร (Documentation)
+
 - **Agent Context:** [agent.md](./agent.md)
 - **Status:** [status.md](./status.md)
 
-## Quality
-- **Tests:** Not configured
-- **CI:** Vercel CI
-- **Linters:** Not configured
+## คุณภาพ (Quality)
 
-## Status
+- **Tests:** ยังไม่ได้ตั้งค่า
+- **CI:** Vercel CI
+- **Linters:** ยังไม่ได้ตั้งค่า
+
+## สถานะ (Status)
+
 - **State:** active
-- **Documentation Completeness:** Medium
-- **Confidence Level:** High
+- **Documentation Completeness:** ปานกลาง (Medium)
+- **Confidence Level:** สูง (High)
 
 **Source:**
+
 - `/home/habby/package.json`
 - `/home/OKF/projects/habby/agent.md`

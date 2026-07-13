@@ -1,5 +1,5 @@
 ---
-title: Project Commands — clientdata
+title: 'คำสั่งโปรเจกต์: clientdata'
 description: document from clientdata
 ---
 
@@ -7,15 +7,18 @@ description: document from clientdata
 This project is no longer actively maintained. Content may be outdated.
 :::
 
-# Project Commands: clientdata
+# คำสั่งโปรเจกต์: clientdata
 
-## Development
-- `npm run dev`: Start development server
-- `npm run build`: Build for production
+## การพัฒนา (Development)
 
-## Database
-- `npm run db:push`: Push schema changes to Neon
-- `npm run db:migrate`: Run Redis to Neon migration script
+- `npm run dev`: เริ่ม development server
+- `npm run build`: Build สำหรับ production
 
-## Quality Assurance
-- `npm run lint`: Run ESLint
+## ฐานข้อมูล (Database)
+
+- `npm run db:push`: Push การเปลี่ยนแปลง schema ไปยัง Neon
+- `npm run db:migrate`: รันสคริปต์ migration จาก Redis ไป Neon
+
+## การตรวจสอบคุณภาพ (Quality Assurance)
+
+- `npm run lint`: รัน ESLint

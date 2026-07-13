@@ -1,5 +1,5 @@
 ---
-title: Project Dependencies — clientdata
+title: 'Dependencies ของโปรเจกต์: clientdata'
 description: document from clientdata
 ---
 
@@ -7,9 +7,10 @@ description: document from clientdata
 This project is no longer actively maintained. Content may be outdated.
 :::
 
-# Project Dependencies: clientdata
+# Dependencies ของโปรเจกต์: clientdata
 
-## Core Dependencies
+## Core Dependencies (dependencies หลัก)
+
 - `next`: 16.2.9
 - `react`: 19.2.7
 - `drizzle-orm`: ^0.45.2
@@ -17,7 +18,8 @@ This project is no longer actively maintained. Content may be outdated.
 - `@aws-sdk/client-s3`: ^3.1075.0
 - `tailwindcss`: ^4.3.1
 
-## Dev Tools
+## Dev Tools (เครื่องมือ dev)
+
 - `drizzle-kit`: ^0.31.10
 - `tsx`: ^4.22.4
 - `typescript`: ^6.0.3

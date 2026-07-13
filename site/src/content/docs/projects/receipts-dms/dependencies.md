@@ -1,13 +1,13 @@
 ---
-title: Dependencies
+title: การพึ่งพา
 description: project-dependencies from receipts-dms
 ---
 
-# Dependencies
+# การพึ่งพา
 
 ## Runtime
 
-| Package | Version | Purpose |
+| แพ็กเกจ | เวอร์ชัน | หน้าที่ |
 |---------|---------|---------|
 | react | ^19.2.7 | UI framework |
 | react-dom | ^19.2.7 | DOM renderer |
@@ -29,7 +29,7 @@ description: project-dependencies from receipts-dms
 
 ## Dev
 
-| Package | Version | Purpose |
+| แพ็กเกจ | เวอร์ชัน | หน้าที่ |
 |---------|---------|---------|
 | vite | ^6.4.3 | Build tool |
 | @vitejs/plugin-react | ^5.2.0 | React plugin for Vite |
@@ -42,14 +42,14 @@ description: project-dependencies from receipts-dms
 
 ## Cloudflare
 
-| Service | Binding | Purpose |
+| บริการ | Binding | หน้าที่ |
 |---------|---------|---------|
-| D1 | `receipts_db` | SQL database (receipts, categories) |
-| R2 | `BUCKET` | File storage (receipt images) |
+| D1 | `receipts_db` | ฐานข้อมูล SQL (receipts, categories) |
+| R2 | `BUCKET` | การเก็บไฟล์ (รูปภาพใบเสร็จ) |
 
-## External
+## ภายนอก
 
-| Service | Purpose |
+| บริการ | หน้าที่ |
 |---------|---------|
 | Cloudflare Pages | Hosting + Functions runtime |
 | paper.mcky.space | Custom domain |

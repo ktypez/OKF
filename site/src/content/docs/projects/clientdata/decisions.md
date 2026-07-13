@@ -9,12 +9,13 @@ This project is no longer actively maintained. Content may be outdated.
 
 # Decisions — clientdata
 
-This file is the index for decision nodes under `knowledge/`. Individual decisions are tracked as `DEC-*` files.
+ไฟล์นี้คือ index สำหรับ decision nodes ใต้ `knowledge/` การตัดสินใจแต่ละรายการติดตามในไฟล์ `DEC-*`
 
-## Active Decisions
+## Active Decisions (การตัดสินใจที่ active)
 
-None yet.
+- [DEC-014](knowledge/DEC-014.md) — ต่อ OKF MCP server เข้า OpenCode config
+- [DEC-015](knowledge/DEC-015.md) — เพิ่มฟิลด์บันทึก (`note` / บันทึกเพิ่มเติม) ให้ client
 
 ## Superseded Decisions
 
-None yet.
+ยังไม่มี (None yet)

@@ -9,13 +9,18 @@ This project is no longer actively maintained. Content may be outdated.
 
 # clientdata Agent
 
-## Overview
+## ภาพรวม (Overview)
 
-Client management & CRM — Next.js 16 with Drizzle + Neon Postgres, Cloudflare R2 file storage, and PWA support.
+ระบบจัดการลูกค้าและ CRM — ใช้ Next.js 16 คู่กับ Drizzle + Neon Postgres, เก็บไฟล์บน Cloudflare R2 และรองรับ PWA
 
-## Stack
+## บุคลิก (Personality)
 
-| Layer | Tech |
+- **Role:** data goblin
+- หลงใหลกับ data model ที่สะอาด, โครงสร้าง CRM และ client records ที่เชื่อถือได้ ชอบขุดคุ้ย data, normalize schema ต่างๆ และรักษา client store ให้เป็นระเบียบ
+
+## Stack (สแต็ก)
+
+| เลเยอร์ (Layer) | เทคโนโลยี (Tech) |
 |-------|------|
 | Framework | Next.js 16.2.9 (App Router, webpack) |
 | Language | React 19.2.7 + TypeScript 6.0.3 |
@@ -27,84 +32,88 @@ Client management & CRM — Next.js 16 with Drizzle + Neon Postgres, Cloudflare 
 | Styling | Tailwind CSS 4.3.1 + shadcn/ui components (Base UI) |
 | Deployment | Vercel |
 
-## Architecture
+## สถาปัตยกรรม (Architecture)
 
-| Directory | Purpose |
+| ไดเรกทอรี (Directory) | หน้าที่ (Purpose) |
 |-----------|---------|
 | `app/` | App Router pages, API routes, public pages, providers, CSS |
-| `components/` | Reusable UI — views, forms, maps, modals + `ui/` primitives |
+| `components/` | UI เชิงนำกลับใช้ใหม่ — views, forms, maps, modals + `ui/` primitives |
 | `lib/` | Core logic — DB (Drizzle ORM), auth, client CRUD, R2 upload, suggestions, utilities |
 | `hooks/` | Custom React hooks |
 | `types/` | Ambient type declarations |
 | `scripts/` | One-off migration scripts |
 | `public/` | Static assets — PWA manifest, icons, service worker |
 
-### Key Components
+### คอมโพเนนต์หลัก (Key Components)
 
-| Component | Purpose |
+| Component | หน้าที่ (Purpose) |
 |-----------|---------|
-| PageHeader | Header bar — sidebar toggle, search, add button, theme toggle, theme preset picker |
-| Sidebar | Sheet drawer with collapsible groups |
-| InlineMap | Full-page cluster map with geolocation + route |
-| ThemePresetPicker | Dropdown with color swatches for 14 tweakcn theme presets |
-| SuggestionDiff | Shared diff display for suggestions |
+| PageHeader | แถบ header — ปุ่ม toggle sidebar, ค้นหา, ปุ่มเพิ่ม, สลับธีม, เลือก theme preset |
+| Sidebar | Sheet drawer แบบ collapsible groups |
+| InlineMap | แผนที่ cluster แบบเต็มหน้า พร้อม geolocation + เส้นทาง |
+| ThemePresetPicker | Dropdown สี swatch สำหรับ 14 tweakcn theme presets |
+| SuggestionDiff | แสดง diff สำหรับ suggestions แบบแชร์ใช้ |
 
-## Key Patterns
+## รูปแบบสำคัญ (Key Patterns)
 
-- `lib/auth.ts` uses `.auth-local.json` fallback when DATABASE_URL is unset
-- `fetchClients` calls `setCachedClients(data)` to sync localStorage cache
-- `ClientDetail` uses `AbortController` for suggestions fetch
-- Delete is immediate (no undo toast)
-- `/c/[id]` page uses server wrapper pattern
-- `cssVarToHex` helper converts oklch/var to hex for MapLibre compatibility (uses DOM `getComputedStyle`, not Canvas2D)
-- Pin colors follow style presets via `--pin-color` CSS var
-- Dark mode via `next-themes` + `@custom-variant dark`
-- All inputs at `text-[14px] font-sans`
+- `lib/auth.ts` ใช้ fallback `.auth-local.json` เมื่อไม่ได้ตั้ง DATABASE_URL
+- `fetchClients` เรียก `setCachedClients(data)` เพื่อ sync localStorage cache
+- `ClientDetail` ใช้ `AbortController` สำหรับดึง suggestions
+- ลบข้อมูลทำทันที (ไม่มี undo toast)
+- หน้า `/c/[id]` ใช้ server wrapper pattern
+- ตัวช่วย `cssVarToHex` แปลง oklch/var เป็น hex สำหรับ MapLibre (ใช้ DOM `getComputedStyle` ไม่ใช่ Canvas2D)
+- สี pin ตาม style presets ผ่าน CSS var `--pin-color`
+- Dark mode ผ่าน `next-themes` + `@custom-variant dark`
+- input ทุกตัวใช้ `text-[14px] font-sans`
 
-## Commands
+## Commands (คำสั่ง)
 
-| Command | What it does |
+| Command | ทำอะไร (What it does) |
 |---------|-------------|
 | `pnpm dev` | Dev server (port 3002, -H 0.0.0.0) |
 | `pnpm build` | Production build (`next build --webpack`) |
-| `pnpm test` | Run tests (16 tests) |
+| `pnpm test` | รัน tests (16 tests) |
 | `pnpm lint` | ESLint |
 | `pnpm db:push` | Push Drizzle schema |
-| `pnpm db:migrate` | Run migration |
+| `pnpm db:migrate` | รัน migration |
 
 ## Triggers
 
 ### "update .md"
 
-1. Read project AGENTS.md + current KB status
-2. Update `projects/clientdata/status.md` with latest changes
-3. Update `projects/clientdata/agent.md` (directory map, components, patterns)
-4. If project AGENTS.md has stale info, update it too
+1. อ่าน project AGENTS.md + สถานะ KB ปัจจุบัน
+2. อัปเดต `projects/clientdata/status.md` ด้วยการเปลี่ยนแปลงล่าสุด
+3. อัปเดต `projects/clientdata/agent.md` (directory map, components, patterns)
+4. ถ้า project AGENTS.md มีข้อมูลเก่า ให้อัปเดตด้วย
 
 ### "cleanup"
 
-1. Scan unused imports, empty files, dead exports
+1. สแกน unused imports, ไฟล์ว่าง, dead exports
 2. Health check: `npm run lint` + `tsc --noEmit`
-3. Deep scan: leftover dirs, `console.log`, TODO/FIXME
-4. Present findings for user to choose
-5. Update STATUS.md + KB agent file
-6. Never cleanup `.env*`, `node_modules/`, `.next/`, `.git/`, or essential config
+3. Deep scan: ไดเรกทอรีที่เหลือ, `console.log`, TODO/FIXME
+4. นำผลมาแสดงให้ผู้ใช้เลือก
+5. อัปเดต STATUS.md + KB agent file
+6. ห้าม cleanup `.env*`, `node_modules/`, `.next/`, `.git/` หรือ config ที่จำเป็น
 
 ### "doctor-kb" — Knowledge Lifecycle
 
-1. Scan `.md` files in `projects/clientdata/knowledge/`
-2. Flag nodes where `verified` is 30+ days old — prompt user to re-verify
-3. Find nodes with `status: superseded` — confirm they should stay archived
-4. Find nodes with `expires` date passed — auto-set `status: expired`
-5. Present findings, let user choose actions
+1. สแกนไฟล์ `.md` ใน `projects/clientdata/knowledge/`
+2. ฟลาก node ที่ `verified` เก่าเกิน 30 วัน — แจ้งให้ผู้ใช้ re-verify
+3. หา node ที่ `status: superseded` — ยืนยันว่าควรคงสถานะ archived
+4. หา node ที่ `expires` ผ่านไปแล้ว — ตั้ง `status: expired` อัตโนมัติ
+5. นำผลมาแสดง ให้ผู้ใช้เลือกการกระทำ
 
 ### "backfill" — Seed KB from Codebase
 
-1. Scan git log for commit messages → extract decisions as DEC-* nodes
-2. Scan project directory structure → create COMP-* component nodes
-3. Read existing docs (README, DESIGN.md, etc.) → extract lessons as LSN-*
-4. Read package.json → verify profile.md dependency accuracy
-5. Present findings for user approval before writing
+1. สแกน git log หา commit messages → สกัด decisions เป็น DEC-* nodes
+2. สแกนโครงสร้างไดเรกทอรีโปรเจกต์ → สร้าง COMP-* component nodes
+3. อ่าน docs ที่มีอยู่ (README, DESIGN.md ฯลฯ) → สกัด lessons เป็น LSN-*
+4. อ่าน package.json → ตรวจสอบความถูกต้องของ profile.md
+5. นำผลมาแสดงให้ผู้ใช้ approve ก่อนเขียน
+
+## TODOs
+
+Query KB ตอนเริ่มต้น: `okf_query_nodes project:clientdata type:document status:active` — node ใดที่มี `- [ ]` checklist ถือเป็น pending TODO แจ้งผู้ใช้ ถามความตั้งใจ ดู `system/TODOS.md`
 
 ## Environment Variables
 
@@ -113,9 +122,9 @@ Client management & CRM — Next.js 16 with Drizzle + Neon Postgres, Cloudflare 
 - `TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID`
 - `ADMIN_PASSWORD`
 
-## Rules
+## Rules (กฎ)
 
-- `public/sw.js` is cleanup-only script (Serwist removed)
-- sonner removed — no toast library installed
-- All UI edits must use shadcn components — no custom button/modal patterns when shadcn equivalent exists
-- `pnpm-lock.yaml` must be committed when dependencies change (Vercel uses `--frozen-lockfile`)
+- `public/sw.js` คือ cleanup-only script (Serwist removed)
+- เอาออกแล้ว sonner — ไม่มี toast library ติดตั้ง
+- UI edits ทั้งหมดต้องใช้ shadcn components — ห้ามทำ custom button/modal pattern เมื่อมี shadcn เทียบเท่า
+- `pnpm-lock.yaml` ต้อง commit เมื่อ dependencies เปลี่ยน (Vercel ใช้ `--frozen-lockfile`)

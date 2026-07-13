@@ -1,21 +1,21 @@
 ---
-title: Glossary
+title: ศัพท์เทคนิค (Glossary)
 description: OKF knowledge base
 ---
 
-# Glossary
+# ศัพท์เทคนิค (Glossary)
 
-| Term | Definition |
-|------|------------|
-| **OKF** | Open Knowledge Framework — YAML frontmatter + Markdown body format |
-| **Agent** | AI coding agent with defined personality, triggers, and rules |
-| **Project** | A codebase managed in this workspace |
-| **KB** | Knowledge Base — the centralized documentation system |
-| **LIFF** | LINE Frontend Framework — LINE's web app platform |
-| **PWA** | Progressive Web App |
-| **SPA** | Single Page Application |
-| **SSR** | Server-Side Rendering |
-| **RLS** | Row-Level Security (Supabase) |
-| **Drizzle** | TypeScript ORM for SQL databases |
-| **JWT** | JSON Web Token |
-| **cva** | Class Variance Authority — for component variants |
+| คำศัพท์ | ความหมาย |
+|--------|----------|
+| **OKF** | Open Knowledge Framework — รูปแบบเอกสารที่ผสม YAML frontmatter + Markdown body |
+| **Agent** | AI coding agent ที่มีบุคลิกภาพ (personality), triggers และกฎกำหนดไว้ชัดเจน |
+| **Project** | โค้ดเบสที่ถูกจัดการใน workspace นี้ |
+| **KB** | Knowledge Base — ระบบเอกสารรวมศูนย์ของทั้ง workspace |
+| **LIFF** | LINE Frontend Framework — แพลตฟอร์มเว็บแอปของ LINE |
+| **PWA** | Progressive Web App — เว็บแอปที่ติดตั้งได้ |
+| **SPA** | Single Page Application — แอปที่โหลดหน้าเดียว |
+| **SSR** | Server-Side Rendering — การเรนเดอร์ฝั่งเซิร์ฟเวอร์ |
+| **RLS** | Row-Level Security (Supabase) — ความปลอดภัยระดับแถว |
+| **Drizzle** | TypeScript ORM สำหรับฐานข้อมูล SQL |
+| **JWT** | JSON Web Token — โทเคนยืนยันตัวตน |
+| **cva** | Class Variance Authority — สำหรับจัด variant ของ component |

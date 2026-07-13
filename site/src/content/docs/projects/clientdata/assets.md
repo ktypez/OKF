@@ -9,12 +9,12 @@ This project is no longer actively maintained. Content may be outdated.
 
 # Assets — clientdata
 
-Media and static assets for the clientdata project.
+Media และ static assets สำหรับโปรเจกต์ clientdata
 
-## Icons
+## Icons (ไอคอน)
 
-- PWA manifest icons
+- ไอคอน PWA manifest
 
-## Images
+## Images (รูปภาพ)
 
-- Map markers, client photos (Cloudflare R2)
+- หมุดแผนที่, รูปลูกค้า (Cloudflare R2)

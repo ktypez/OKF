@@ -1,53 +1,78 @@
 ---
-title: Status
+title: สถานะ
 description: project-status from receipts-dms
 ---
 
-# Status
+---
+type: project-status
+id: receipts-dms-status
+project: receipts-dms
+last_updated: 2026-07-13
+status: active
+freshness: 2026-07-13
+verified: 2026-07-13
+expires: null
+superseded_by: null
+anchors:
+  - /home/paper/receipts-dms/
+---
+
+# สถานะ
 
 **Role:** production
 **Deployment:** Cloudflare Pages (paper.mcky.space)
 **Last deploy:** 2026-07-10
 
-## Features
+## ฟีเจอร์
 
-- [x] Upload with image compression (WebP 2048px / 80%)
-- [x] XHR upload progress bar
-- [x] Receipt list (table + card view toggle)
-- [x] Receipt detail (preview, lightbox, edit filename/category/notes)
-- [x] Category CRUD (card-based, collapsible edit)
-- [x] Full-text search (filename + notes)
-- [x] Category filter
-- [x] Pagination (20 per page)
-- [x] Notes (upload textarea, display, edit)
-- [x] Single-password auth (HMAC cookie)
-- [x] Dark/light theme toggle
-- [x] Storage stats (receipt count + total size)
-- [x] Bottom nav (mobile) + sidebar (desktop)
-- [x] Thai language UI labels
-- [x] Responsive design
+- [x] อัปโหลดพร้อมบีบอัดรูปภาพ (WebP 2048px / 80%)
+- [x] แถบความคืบหน้า XHR upload
+- [x] รายการใบเสร็จ (สลับมุมมอง table + card)
+- [x] รายละเอียดใบเสร็จ (preview, lightbox, แก้ไข filename/category/notes)
+- [x] Category CRUD (แบบ card, แก้ไขแบบยุบได้)
+- [x] ค้นหาแบบเต็มข้อความ (filename + notes)
+- [x] กรองตามหมวดหมู่
+- [x] การแบ่งหน้า (20 ต่อหน้า)
+- [x] บันทึกโน้ต (upload textarea, แสดงผล, แก้ไข)
+- [x] auth แบบรหัสผ่านเดียว (HMAC cookie)
+- [x] สลับธีม dark/light
+- [x] สถิติการจัดเก็บ (จำนวนใบเสร็จ + ขนาดรวม)
+- [x] bottom nav (มือถือ) + sidebar (เดสก์ท็อป)
+- [x] ป้าย UI ภาษาไทย
+- [x] การออกแบบ responsive
 
-## Removed
+## ที่นำออก
 
-- Tags system (was added and fully removed)
-- File extension display (hidden via `stripExtension`)
-- Action column in table view
+- ระบบ tags (เคยเพิ่มแล้วลบออกทั้งหมด)
+- การแสดงนามสกุลไฟล์ (ซ่อนผ่าน `stripExtension`)
+- คอลัมน์ action ในมุมมอง table
 
-## Database
+## ฐานข้อมูล
 
 ```sql
 receipts: id, filename, category, content_type, size, uploaded_at, notes
 categories: id, name, created_at
 ```
 
-## Routes
+## เส้นทาง
 
 | Path | Page |
 |------|------|
 | `/` | Dashboard |
-| `/receipts` | Receipt list |
-| `/receipts/:id` | Receipt detail |
-| `/upload` | Upload |
-| `/categories` | Category management |
-| `/settings` | Settings |
-| `/login` | Login (no auth required) |
+| `/receipts` | รายการใบเสร็จ |
+| `/receipts/:id` | รายละเอียดใบเสร็จ |
+| `/upload` | อัปโหลด |
+| `/categories` | จัดการหมวดหมู่ |
+| `/settings` | ตั้งค่า |
+| `/login` | เข้าสู่ระบบ (ไม่ต้อง auth) |
+
+## บันทึกการเปลี่ยนแปลง
+
+### 2026-07-13
+- Sync OKF knowledge base across all 8 projects
+- Updated workspace index with current project inventory
+- Refreshed documentation timestamps and freshness
+
+### 2026-07-10
+- Last production deploy to paper.mcky.space
+- Full feature set implemented

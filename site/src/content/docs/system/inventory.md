@@ -1,62 +1,62 @@
 ---
-title: Inventory
+title: รายการโปรเจกต์ (Inventory)
 description: OKF knowledge base
 ---
 
-# Inventory
+# รายการโปรเจกต์ (Inventory)
 
-## Task Triggers
+## ตัวกระตุ้นงาน (Task Triggers)
 
-| Trigger | Description | Projects |
+| Trigger | คำอธิบาย | โปรเจกต์ |
 |---------|-------------|----------|
-| `update .md` | Read KB status + agent files, update with latest project state | All |
-| `cleanup` | Scan unused deps/files, health check, present findings, update KB | All |
-| `wrap-day` | Review today's diff, write changelog entry, update truck status, commit | truck |
-| `blog-post` | Write a blog post — censor internal project names, publish at mcky.space (`src/data/blog/`) | mcky.space |
-| `write-readme` | Write a README.md for any repo — censor internal project names | All |
+| `update .md` | อ่านสถานะ KB + ไฟล์ agent แล้วอัปเดตด้วยสถานะโปรเจกต์ล่าสุด | ทั้งหมด |
+| `cleanup` | สแกน dependency/ไฟล์ที่ไม่ใช้, ตรวจสุขภาพ, นำเสนอผล, อัปเดต KB | ทั้งหมด |
+| `wrap-day` | ทบทวน diff วันนี้, เขียน changelog, อัปเดตสถานะ truck, commit | truck |
+| `blog-post` | เขียน blog post — ฟิลเตอร์ชื่อโปรเจกต์ภายใน, เผยแพร่ที่ mcky.space (`src/data/blog/`) | mcky.space |
+| `write-readme` | เขียน README.md ให้ repo ใดก็ได้ — ฟิลเตอร์ชื่อโปรเจกต์ภายใน | ทั้งหมด |
 
 ### update .md
 
-1. Read project's KB files in `~/OKF/projects/<project>/`
-2. Read source files to discover changes (components, routes, data flow)
-3. Update `status.md` with latest state
-4. Update `agent.md` if patterns changed
-5. If project AGENTS.md has stale info, update it too
+1. อ่านไฟล์ KB ของโปรเจกต์ใน `~/OKF/projects/<project>/`
+2. อ่านไฟล์ source เพื่อหาการเปลี่ยนแปลง (components, routes, data flow)
+3. อัปเดต `status.md` ด้วยสถานะล่าสุด
+4. อัปเดต `agent.md` ถ้าเกิด pattern ใหม่
+5. ถ้า `AGENTS.md` ของโปรเจกต์เก่าไป ก็อัปเดตตามด้วย
 
 ### cleanup
 
-1. Scan unused imports, empty files, dead exports
-2. If available: run lint + typecheck
-3. Present findings for user to choose
-4. Update KB files
-5. Never touch `.env*`, `node_modules/`, `dist/`, `.next/`, `.git/`, or essential config
+1. สแกน import ที่ไม่ใช้, ไฟล์ว่าง, export ตาย
+2. ถ้ามี: รัน lint + typecheck
+3. นำเสนอผลให้ผู้ใช้เลือก
+4. อัปเดตไฟล์ KB
+5. ห้ามแตะ `.env*`, `node_modules/`, `dist/`, `.next/`, `.git/`, หรือ config หลัก
 
 ### write-readme
 
-1. Same censor rule as `blog-post` — replace internal project names (clientdata, habby, truck) with generic descriptors
-2. Keep it concise — overview, stack, setup, links
-3. No frontmatter needed (plain markdown)
+1. ใช้กฎฟิลเตอร์เหมือน `blog-post` — แทนชื่อโปรเจกต์ภายใน (clientdata, habby, truck) ด้วยคำอธิบายทั่วไป
+2. กระชับ — overview, stack, setup, links
+3. ไม่ต้องมี frontmatter (plain markdown)
 
 ### blog-post
 
-1. Write the post content
-2. **Censor internal project names** — replace clientdata, habby, truck, and project-specific identifiers with generic descriptors ("a project", "another project", etc.)
-3. Save to `mcky.space/src/data/blog/<slug>.md` with frontmatter (title, date, slug)
-4. Regenerate blog index: `node scripts/build-blog-posts.mjs`
-5. Verify build passes
+1. เขียนเนื้อหา post
+2. **ฟิลเตอร์ชื่อโปรเจกต์ภายใน** — แทน clientdata, habby, truck และตัวระบุเฉพาะโปรเจกต์ด้วยคำอธิบายทั่วไป ("a project", "another project" ฯลฯ)
+3. บันทึกลง `mcky.space/src/data/blog/<slug>.md` พร้อม frontmatter (title, date, slug)
+4. สร้าง blog index ใหม่: `node scripts/build-blog-posts.mjs`
+5. ตรวจสอบ build ผ่าน
 
-### wrap-day (truck only)
+### wrap-day (เฉพาะ truck)
 
-1. Read `git diff` + `Changelog.tsx`
-2. Add `vYYYY.MM.DD` entry with Thai summary
-3. Update `status.md`
+1. อ่าน `git diff` + `Changelog.tsx`
+2. เพิ่ม entry `vYYYY.MM.DD` พร้อมสรุปภาษาไทย
+3. อัปเดต `status.md`
 4. `git add` + commit `"docs: wrap-day YYYY-MM-DD"`
 
-## AGENTS.md Reference
+## อ้างอิง AGENTS.md
 
-Each project root has an ultra-thin `AGENTS.md` with 2 sections:
+แต่ละโปรเจกต์รากมี `AGENTS.md` บางคราวกับ 2 หมวด:
 
-- `## KB` — links to the project's KB files in `~/OKF/projects/<project>/`
-- `## Local` — project-specific notes (env files, status tips)
+- `## KB` — ลิงก์ไปไฟล์ KB ของโปรเจกต์ใน `~/OKF/projects/<project>/`
+- `## Local` — บันทึกเฉพาะโปรเจกต์ (env files, ทริคสถานะ)
 
-All context lives in this OKF. No duplication.
+บริบททั้งหมดอยู่ใน OKF นี้ ไม่ซ้ำซ้อน

@@ -1,9 +1,9 @@
 ---
-title: Directory Structure
+title: โครงสร้างโฟลเดอร์ (Directory Structure)
 description: project-structure from collage
 ---
 
-# Directory Structure
+# โครงสร้างโฟลเดอร์ (Directory Structure)
 
 ```
 collage/

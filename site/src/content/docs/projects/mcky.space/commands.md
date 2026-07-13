@@ -1,17 +1,17 @@
 ---
-title: 'Project Commands: mcky.space'
+title: 'คำสั่งโปรเจกต์: mcky.space'
 description: document from mcky.space
 ---
 
-# Project Commands: mcky.space
+# คำสั่งโปรเจกต์: mcky.space
 
-## Development
-- `npm run dev`: Start Astro dev server
+## การพัฒนา
+- `npm run dev`: เริ่ม Astro dev server
 
-## Build
-- `npm run build`: Build Astro site
-- `npm run build-blog`: Manually trigger blog post generation
+## การ build
+- `npm run build`: build เว็บไซต์ Astro
+- `npm run build-blog`: สร้างโพสต์บล็อกด้วยตนเอง
 
-## Execution
-- `npm run start`: Start Astro production server
-- `npm run preview`: Preview production build
+## การรัน
+- `npm run start`: เริ่ม Astro production server
+- `npm run preview`: ดูตัวอย่าง production build

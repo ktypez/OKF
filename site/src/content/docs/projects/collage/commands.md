@@ -1,29 +1,29 @@
 ---
-title: Commands
+title: ระบบคำสั่ง (Commands)
 description: project-commands from collage
 ---
 
-# Commands
+# ระบบคำสั่ง (Commands)
 
 | Command | Action |
 |---------|--------|
-| `node backend/server.js` | Start backend API server (port 3000) |
-| `npm run deploy:webhook` | Deploy webhook to Vercel |
-| `npm run deploy:backend` | Deploy backend to Render.com |
+| `node backend/server.js` | เริ่ม backend API server (พอร์ต 3000) |
+| `npm run deploy:webhook` | Deploy webhook ไป Vercel |
+| `npm run deploy:backend` | Deploy backend ไป Render.com |
 
 ## Backend API
 
 | Method | Path | Description |
 |--------|------|-------------|
-| POST | `/api/collage` | Upload images + generate collage |
-| GET | `/api/image/:filename` | Serve collage image from R2 |
-| GET | `/health` | Health check |
-| POST | `/api/cleanup` | Delete collages older than 90 days |
+| POST | `/api/collage` | อัปโหลดรูป + สร้าง collage |
+| GET | `/api/image/:filename` | ดึงรูป collage จาก R2 |
+| GET | `/health` | ตรวจสอบสถานะ |
+| POST | `/api/cleanup` | ลบ collage ที่เก่ากว่า 90 วัน |
 
-## LINE Bot Commands
+## คำสั่งบอท LINE (LINE Bot Commands)
 
 | Command | Response |
 |---------|----------|
-| `!ส่งรูป` / `!รูป` | Open LIFF collage maker |
-| `!เมนู` | Main menu with links to collage, truck, data |
-| `!ลูกค้า <query>` | Search clients on data.mcky.space |
+| `!ส่งรูป` / `!รูป` | เปิด LIFF collage maker |
+| `!เมนู` | เมนูหลัก ลิงก์ไป collage, truck, data |
+| `!ลูกค้า <query>` | ค้นหาลูกค้าใน data.mcky.space |

@@ -60,7 +60,7 @@ function extractTitle(fm, body, filename) {
   return filename.replace(/\.md$/, '');
 }
 
-function serializeStarlightFm(title, fm, body) {
+function serializeStarlightFm(title, fm, body, archived = false) {
   const yaml = require('js-yaml');
 
   // Starlight frontmatter — only standard fields
@@ -70,7 +70,18 @@ function serializeStarlightFm(title, fm, body) {
   };
 
   const fmStr = yaml.dump(starlightFm, { lineWidth: 120, quotingType: "'", forceQuotes: false });
-  return '---\n' + fmStr + '---\n\n' + body + '\n';
+  const banner = archived
+    ? ':::caution[Archived Project]\nThis project is no longer actively maintained. Content may be outdated.\n:::\n\n'
+    : '';
+  return '---\n' + fmStr + '---\n\n' + banner + body + '\n';
+}
+
+function isProjectArchived(project) {
+  const profilePath = path.join(OKF_ROOT, 'projects', project, 'profile.md');
+  if (!fs.existsSync(profilePath)) return false;
+  const content = fs.readFileSync(profilePath, 'utf-8');
+  const { fm } = parseFrontmatter(content);
+  return fm?.status === 'archived';
 }
 
 function getProjectFiles(project) {
@@ -119,15 +130,34 @@ function buildSidebar(projects, systemFiles) {
     items: [{ autogenerate: { directory: 'plans', collapsed: true } }],
   });
 
-  // Project sections
+  // Project sections — active first, archived last
+  const activeProjects = [];
+  const archivedProjects = [];
   for (const proj of projects) {
     const projFiles = getProjectFiles(proj);
     if (projFiles.length === 0) continue;
+    if (isProjectArchived(proj)) archivedProjects.push(proj);
+    else activeProjects.push(proj);
+  }
 
+  for (const proj of activeProjects) {
     sidebar.push({
       label: proj,
       collapsed: true,
       items: [{ autogenerate: { directory: `projects/${proj}`, collapsed: true } }],
+    });
+  }
+
+  if (archivedProjects.length > 0) {
+    sidebar.push({
+      label: 'Archived',
+      collapsed: true,
+      badge: { text: 'archived', variant: 'caution' },
+      items: archivedProjects.map((proj) => ({
+        label: proj,
+        collapsed: true,
+        items: [{ autogenerate: { directory: `projects/${proj}`, collapsed: true } }],
+      })),
     });
   }
 
@@ -174,6 +204,7 @@ function main() {
   for (const proj of projects) {
     const projFiles = getProjectFiles(proj);
     if (projFiles.length === 0) continue;
+    const archived = isProjectArchived(proj);
 
     const projDocsDir = path.join(DOCS_DIR, 'projects', proj);
     const knowledgeDocsDir = path.join(projDocsDir, 'knowledge');
@@ -194,12 +225,12 @@ function main() {
       const content = fs.readFileSync(fp, 'utf-8');
       const { fm, body } = parseFrontmatter(content);
       const title = extractTitle(fm, body, name);
-      const out = serializeStarlightFm(title, fm, body);
+      const out = serializeStarlightFm(title, fm, body, archived);
       fs.writeFileSync(path.join(outDir, name + '.md'), out);
       totalFiles++;
     }
 
-    console.log(`    ${proj}/ (${projFiles.length} files)`);
+    console.log(`    ${proj}/ (${projFiles.length} files)${archived ? ' [archived]' : ''}`);
   }
 
   // 3. Copy SETUP.md

@@ -1,19 +1,19 @@
 ---
-title: 'Project Profile: truck'
+title: 'โปรไฟล์โปรเจกต์: Truck'
 description: project-profile from truck
 ---
 
-# Project Profile: truck
+# โปรไฟล์โปรเจกต์: Truck
 
-## Identity
+## ข้อมูลตัวตน (Identity)
 - **Name:** ezzy-truck
 - **Display Name:** EzzyTruck
-- **Description:** Shift logging & income PWA for truck drivers.
-- **Purpose:** Help truck drivers log shifts and track income.
+- **Description:** Shift logging & income PWA สำหรับคนขับรถบรรทุก
+- **Purpose:** ช่วยคนขับรถบรรทุกบันทึกกะการทำงานและติดตามรายได้
 - **Repository:** Unknown
 - **Owner:** Unknown
 
-## Technology
+## เทคโนโลยี (Technology)
 - **Languages:** TypeScript
 - **Frameworks:** React 19, Vite 8
 - **Runtime:** Node.js
@@ -28,7 +28,7 @@ description: project-profile from truck
 - **Cloud Providers:** Supabase
 - **APIs:** Supabase API, Telegram Bot API
 
-## Development
+## การพัฒนา (Development)
 - **Setup:** `npm install`
 - **Install:** `npm install`
 - **Build:** `node node_modules/vite/bin/vite.js build`
@@ -37,21 +37,21 @@ description: project-profile from truck
 - **Typecheck:** `node node_modules/.bin/tsc --noEmit`
 - **Run:** `node node_modules/.bin/vite`
 
-## Architecture
-- **Structure:** React SPA / PWA with lazy-loaded routes
+## สถาปัตยกรรม (Architecture)
+- **Structure:** React SPA / PWA ที่ใช้ lazy-loaded routes
 - **Entry Points:** `src/main.tsx`
-- **Important Packages:** `vite-plugin-pwa` for PWA, `@tanstack/react-query` for data fetching
+- **Important Packages:** `vite-plugin-pwa` สำหรับ PWA, `@tanstack/react-query` สำหรับ data fetching
 
-## Documentation
+## เอกสาร (Documentation)
 - **Agent Context:** [agent.md](./agent.md)
 - **Status:** [status.md](./status.md)
 
-## Quality
+## คุณภาพ (Quality)
 - **Tests:** Vitest, Testing Library
 - **CI:** GitHub Actions (deploy edge functions)
 - **Linters:** ESLint, Prettier
 
-## Status
+## สถานะ (Status)
 - **State:** active
 - **Documentation Completeness:** High
 - **Confidence Level:** High
