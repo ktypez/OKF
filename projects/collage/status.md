@@ -2,10 +2,10 @@
 type: project-status
 id: collage-status
 project: collage
-last_updated: '2026-07-13'
+last_updated: 2026-07-13
 status: active
-freshness: '2026-07-13'
-verified: 2026-07-11T00:00:00.000Z
+freshness: 2026-07-13
+verified: 2026-07-13
 expires: null
 superseded_by: null
 anchors:
@@ -16,18 +16,6 @@ links:
   - type: relates-to
     target: collage-agent
 ---
-
----
-type: project-status
-id: collage-status
-project: collage
-last_updated: 2026-07-13
-status: active
-freshness: 2026-07-13
-verified: 2026-07-13
-expires: null
-superseded_by: null
-anchors:
   - /home/collage/
 links:
   - type: relates-to

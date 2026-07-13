@@ -22,11 +22,11 @@ links:
 
 ## การพัฒนา (Development)
 
-- `npm run dev`: เริ่ม Vite dev server
-- `npm run dev:server`: เริ่ม Express backend
-- `npm run start`: เริ่ม production server
+- `yarn dev`: เริ่ม Vite dev server
+- `yarn dev:server`: เริ่ม Express backend
+- `yarn start`: เริ่ม production server
 
 ## การ build
 
-- `npm run build`: build frontend ด้วย Vite
-- `npm run preview`: ดูตัว production build
+- `yarn build`: build frontend ด้วย Vite
+- `yarn preview`: ดูตัว production build

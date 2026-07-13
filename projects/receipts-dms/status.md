@@ -2,17 +2,6 @@
 type: project-status
 id: receipts-dms-status
 project: receipts-dms
-last_updated: '2026-07-13'
-status: active
-anchors:
-  - /home/paper/receipts-dms/
-freshness: '2026-07-13'
----
-
----
-type: project-status
-id: receipts-dms-status
-project: receipts-dms
 last_updated: 2026-07-13
 status: active
 freshness: 2026-07-13
@@ -21,6 +10,9 @@ expires: null
 superseded_by: null
 anchors:
   - /home/paper/receipts-dms/
+links:
+  - type: relates-to
+    target: receipts-dms-profile
 ---
 
 # สถานะ

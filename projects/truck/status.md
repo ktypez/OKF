@@ -2,25 +2,6 @@
 type: project-status
 id: truck-status
 project: truck
-last_updated: '2026-07-13'
-status: active
-freshness: '2026-07-13'
-verified: 2026-07-11T00:00:00.000Z
-expires: null
-superseded_by: null
-anchors:
-  - /home/truck/
-links:
-  - type: relates-to
-    target: truck-profile
-  - type: relates-to
-    target: truck-agent
----
-
----
-type: project-status
-id: truck-status
-project: truck
 last_updated: 2026-07-13
 status: active
 freshness: 2026-07-13
@@ -48,7 +29,7 @@ links:
 - **Database**: Supabase Postgres (timestamptz, Asia/Bangkok TZ)
 - **Backend**: Supabase Edge Functions (Deno)
 - **Deploy**: Vercel (SPA rewrite) + Supabase
-- **Testing**: Vitest (90 tests), ESLint, Prettier
+- **Testing**: Vitest (101 tests), ESLint, Prettier
 - **CI**: GitHub Actions
 - **Integrations**: Telegram Bot API สำหรับคำขอสมัครบัญชี
 
@@ -66,6 +47,7 @@ links:
 ## Changelog
 
 ### 2026-07-13
+- **KB refresh**: อัปเดต dependencies (ลบ vite-plugin-pwa), อัปเดต test count (101 tests), แก้ไข frontmatter ซ้ำซ้อน
 - Sync OKF knowledge base across all 8 projects
 - Updated workspace index with current project inventory
 - Refreshed documentation timestamps and freshness
@@ -95,7 +77,8 @@ links:
 
 ## PWA
 
-ถูกลบใน 2026-07-11 Offline queue (localStorage mutation queue) ยังทำงานอิสระได้โดยไม่ต้องใช้ service worker
+ถูกลบใน 2026-07-11 — เอา `vite-plugin-pwa`, `sw.js`, `SwUpdateToast`, `public/icons/` ออกทั้งหมด
+Offline queue (localStorage mutation queue) ยังทำงานอิสระโดยไม่ต้องใช้ service worker
 
 ## ปัญหาที่ทราบ (Known Issues)
 

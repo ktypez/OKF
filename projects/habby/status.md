@@ -2,25 +2,6 @@
 type: project-status
 id: habby-status
 project: habby
-last_updated: '2026-07-13'
-status: active
-freshness: '2026-07-13'
-verified: 2026-07-11T00:00:00.000Z
-expires: null
-superseded_by: null
-anchors:
-  - /home/habby/
-links:
-  - type: relates-to
-    target: habby-profile
-  - type: relates-to
-    target: habby-agent
----
-
----
-type: project-status
-id: habby-status
-project: habby
 last_updated: 2026-07-13
 status: active
 freshness: 2026-07-13
@@ -60,6 +41,7 @@ links:
 ## บันทึกการเปลี่ยนแปลง (Changelog)
 
 ### 2026-07-13
+- **KB refresh**: แก้ไข frontmatter ซ้ำซ้อน, แก้คำสั่งเป็น `yarn` (commands.md), อัปเดต timestamps
 - Sync OKF knowledge base across all 8 projects
 - Updated workspace index with current project inventory
 - Refreshed documentation timestamps and freshness

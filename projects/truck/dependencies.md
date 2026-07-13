@@ -26,7 +26,6 @@ links:
 - `react-router-dom`: ^7.18.0
 - `@supabase/supabase-js`: ^2.108.2
 - `@tanstack/react-query`: ^5.101.1
-- `vite-plugin-pwa`: ^1.3.0
 
 ## Dev Tools
 - `vite`: ^8.0.16

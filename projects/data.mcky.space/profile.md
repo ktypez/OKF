@@ -30,12 +30,12 @@ links:
 - **Languages:** TypeScript
 - **Frameworks:** Vite 7, React 19, Tailwind CSS 4
 - **Runtime:** Node.js
-- **Package Manager:** pnpm (strict layout) + npm
+- **Package Manager:** npm
 - **Build System:** Vite
 - **Deployment Targets:** Cloudflare Pages
 
 ## Dependencies
-- **Major Libraries:** `drizzle-orm`, `zustand`, `maplibre-gl`, `react-router-dom`
+- **Major Libraries:** `drizzle-orm`, `zustand`, `maplibre-gl`, `react-router-dom`, `@phosphor-icons/react`
 - **External Services:** Cloudflare D1, Cloudflare R2
 - **Databases:** Cloudflare D1 (SQLite)
 - **Cloud Providers:** Cloudflare

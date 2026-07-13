@@ -15,8 +15,8 @@ last_updated: '2026-07-13'
 | Storage | Supabase Storage | Supabase | **Cloudflare R2** | ไม่มี | **Cloudflare R2** | **Cloudflare R2** |
 | State | tanstack/react-query v5 | Alpine.js x-data | Zustand | ไม่มี | ไม่มี | React hooks |
 | Auth | Supabase Auth | SHA-256 header-based | รหัสผ่าน (admin/viewer) | SHA-256 | LINE Messaging API | รหัสผ่าน + HMAC-SHA256 |
-| PWA | ✅ (vite-plugin-pwa) | ❌ | ✅ (SW v2, network-first) | ❌ | ❌ | ❌ |
-| Testing | vitest (~104 tests) | ❌ | ❌ (health-check script) | ❌ | ❌ | ❌ |
+| PWA | ❌ (ถูกลบ 2026-07-11) | ❌ | ✅ (SW v2, network-first) | ❌ | ❌ | ❌ |
+| Testing | vitest (~101 tests) | ❌ | ❌ (health-check script) | ❌ | ❌ | ❌ |
 | Theme | 16 themes, CSS vars | Aura dark terminal | Tailwind 4 + dark mode | 2 themes | ไม่มีธีม | shadcn/ui + Tailwind 3 |
 | CI/CD | GitHub Actions | Vercel | **Cloudflare Pages** | Vercel | Render.com + Vercel | **Cloudflare Pages** |
 
@@ -27,7 +27,7 @@ last_updated: '2026-07-13'
 ### truck
 - `node node_modules/.bin/vite` — dev
 - `node node_modules/vite/bin/vite.js build` — build
-- `node node_modules/.bin/vitest run` — test (~104 tests)
+- `node node_modules/.bin/vitest run` — test (~101 tests)
 - `node node_modules/.bin/eslint src/` — lint
 
 ### mcky.space

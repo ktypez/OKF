@@ -10,20 +10,26 @@ status: active
 
 ## Runtime
 
-| Package | Purpose |
-|---------|---------|
-| react / react-dom | UI framework |
-| react-router-dom | เราติ้งฝั่ง client |
-| drizzle-orm | Database ORM |
-| zustand | จัดการ state |
-| maplibre-gl | เรนเดอร์แผนที่ |
-| @aws-sdk/client-s3 | เก็บไฟล์บน R2 |
+| Package | Version | Purpose |
+|---------|---------|---------|
+| react / react-dom | 19.2.7 | UI framework |
+| react-router-dom | ^7.6.0 | เราติ้งฝั่ง client |
+| drizzle-orm | ^0.45.2 | Database ORM |
+| zustand | ^5.0.14 | จัดการ state |
+| maplibre-gl | ^5.24.0 | เรนเดอร์แผนที่ |
+| @phosphor-icons/react | ^2.1.10 | Icons |
+| class-variance-authority | ^0.7.1 | สร้าง CSS variants |
+| tailwind-merge | ^3.6.0 | Merge Tailwind classes |
+| open-location-code | ^1.0.3 | Plus Codes (Open Location Code) |
+| cookie | ^2.0.1 | จัดการ cookies |
 
 ## Dev
 
-| Package | Purpose |
-|---------|---------|
-| vite | Build tool |
-| typescript | ตรวจสอบ type |
-| tailwindcss | CSS framework |
-| wrangler | Deploy Cloudflare Pages |
+| Package | Version | Purpose |
+|---------|---------|---------|
+| vite | ^7.3.0 | Build tool |
+| @vitejs/plugin-react | ^4.4.0 | Vite React plugin |
+| typescript | ^6.0.3 | ตรวจสอบ type |
+| tailwindcss | ^4.3.1 | CSS framework |
+| @tailwindcss/vite | ^4.3.1 | Tailwind Vite plugin |
+| wrangler | ^4.0.0 | Deploy Cloudflare Pages |
