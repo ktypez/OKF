@@ -1,9 +1,10 @@
 ---
 id: plan-rose-pine-theme-switch
-version: 3
-status: completed
+version: 4
+status: superseded
 created: 2026-07-09
-updated: 2026-07-09
+updated: 2026-07-13
+superseded-by: expo-theme
 ---
 
 # Plan: Rose Pine Theme Switch

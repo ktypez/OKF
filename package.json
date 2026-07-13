@@ -4,8 +4,7 @@
   "description": "Open Knowledge Framework — workspace knowledge base tools",
   "scripts": {
     "doctor": "node scripts/doctor-kb.js",
-    "backfill": "node scripts/backfill.js",
-    "build-site": "node scripts/build-site.js"
+    "backfill": "node scripts/backfill.js"
   },
   "dependencies": {
     "js-yaml": "^4.1.0"
