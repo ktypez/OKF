@@ -2,8 +2,23 @@
 type: project-status
 id: receipts-dms-status
 project: receipts-dms
-last_updated: 2026-07-12
+last_updated: '2026-07-13'
 status: active
+anchors:
+  - /home/paper/receipts-dms/
+freshness: '2026-07-13'
+---
+
+---
+type: project-status
+id: receipts-dms-status
+project: receipts-dms
+last_updated: 2026-07-13
+status: active
+freshness: 2026-07-13
+verified: 2026-07-13
+expires: null
+superseded_by: null
 anchors:
   - /home/paper/receipts-dms/
 ---
@@ -56,3 +71,15 @@ categories: id, name, created_at
 | `/categories` | จัดการหมวดหมู่ |
 | `/settings` | ตั้งค่า |
 | `/login` | เข้าสู่ระบบ (ไม่ต้อง auth) |
+
+## บันทึกการเปลี่ยนแปลง
+
+### 2026-07-13
+- Sync OKF knowledge base across all 8 projects
+- Updated workspace index with current project inventory
+- Refreshed documentation timestamps and freshness
+
+### 2026-07-10
+- Last production deploy to paper.mcky.space
+- Full feature set implemented
+

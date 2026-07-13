@@ -2,10 +2,10 @@
 type: project-profile
 id: collage-profile
 project: collage
-last_updated: '2026-07-12'
+last_updated: '2026-07-13'
 status: active
-freshness: '2026-07-12'
-verified: 2026-07-11T00:00:00.000Z
+freshness: '2026-07-13'
+verified: '2026-07-13'
 expires: null
 superseded_by: null
 anchors:
@@ -14,6 +14,7 @@ links:
   - type: relates-to
     target: collage-status
 ---
+
 
 
 # ข้อมูลโปรเจกต์: collage
@@ -55,3 +56,4 @@ links:
 - **State:** active
 - **Role:** พัฒนาอยู่
 - **LINE LIFF ID:** `2010606328-7UnH1Yre`
+

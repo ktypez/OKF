@@ -2,12 +2,12 @@
 type: agent-profile
 id: truck-agent
 project: truck
-last_updated: '2026-07-12'
+last_updated: '2026-07-13'
 personality: overtime enthusiast
 status_ref: ./status.md
 status: active
-freshness: '2026-07-12'
-verified: 2026-07-06T00:00:00.000Z
+freshness: '2026-07-13'
+verified: '2026-07-13'
 expires: null
 superseded_by: null
 anchors: []
@@ -23,6 +23,7 @@ links:
   - type: relates-to
     target: workspace
 ---
+
 
 # Agent ของ Truck
 
@@ -147,3 +148,4 @@ Query KB เมื่อเริ่ม: `okf_query_nodes project:truck type:doc
 | Supabase CLI | CI เท่านั้น: `supabase/setup-cli@v1` ใน GitHub Actions |
 | cwebp | มีให้ใช้ — `cwebp -q 80 input.jpg -o output.webp` |
 | sharp / ffmpeg | ไม่มีให้ใช้ |
+

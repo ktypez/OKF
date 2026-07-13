@@ -2,10 +2,10 @@
 type: project-profile
 id: mcky-space-profile
 project: mcky.space
-last_updated: 2026-07-12
+last_updated: '2026-07-13'
 status: active
-freshness: 2026-07-04
-verified: 2026-07-04
+freshness: '2026-07-13'
+verified: '2026-07-13'
 expires: null
 superseded_by: null
 anchors: []
@@ -21,6 +21,7 @@ links:
   - type: relates-to
     target: mcky-commands
 ---
+
 
 # โปรไฟล์โปรเจกต์: mcky.space
 
@@ -77,3 +78,4 @@ links:
 **แหล่งที่มา:**
 - `/home/mcky.space/package.json`
 - `/home/OKF/projects/mcky.space/agent.md`
+

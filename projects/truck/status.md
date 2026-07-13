@@ -2,10 +2,29 @@
 type: project-status
 id: truck-status
 project: truck
-last_updated: 2026-07-12
+last_updated: '2026-07-13'
 status: active
-freshness: 2026-07-11
-verified: 2026-07-11
+freshness: '2026-07-13'
+verified: 2026-07-11T00:00:00.000Z
+expires: null
+superseded_by: null
+anchors:
+  - /home/truck/
+links:
+  - type: relates-to
+    target: truck-profile
+  - type: relates-to
+    target: truck-agent
+---
+
+---
+type: project-status
+id: truck-status
+project: truck
+last_updated: 2026-07-13
+status: active
+freshness: 2026-07-13
+verified: 2026-07-13
 expires: null
 superseded_by: null
 anchors:
@@ -46,17 +65,22 @@ links:
 
 ## Changelog
 
+### 2026-07-13
+- Sync OKF knowledge base across all 8 projects
+- Updated workspace index with current project inventory
+- Refreshed documentation timestamps and freshness
+
+### 2026-07-11
+- ลบ PWA ทั้งหมด: ลบ vite-plugin-pwa, sw.js, SwUpdateToast, public/icons/
+- เพิ่ม SVG truck favicon (public/favicon.svg)
+- แทนที่ motorbike favicon ด้วย truck SVG (หัวรถ + หลังคาโหลด + ล้อ)
+
 ### 2026-07-08
 - wrap-day: changelog + อัปเดตสถานะสำหรับ 8 กรกฎาคม
 - คุณภาพโค้ด: typed interfaces, ลบ eslint-disable blocks, ตรวจสอบ env var, async cancellation flags
 - ทำความสะอาด gitignore
 - Admin user card: ลบ type badge, เรียง type + reset ซ้อนกัน
 - แก้ไข: เงินวันหยุดถูกนับเป็นเงินเดือน (incomeBase), ช่วงสัปดาห์ จ.-อา.
-
-### 2026-07-11
-- ลบ PWA ทั้งหมด: ลบ vite-plugin-pwa, sw.js, SwUpdateToast, public/icons/
-- เพิ่ม SVG truck favicon (public/favicon.svg)
-- แทนที่ motorbike favicon ด้วย truck SVG (หัวรถ + หลังคาโหลด + ล้อ)
 
 ### 2026-07-06
 - Auth modal overlay (ModalWrapper) — สกัดการนำทางเมื่อ session หมดอายุ
@@ -79,3 +103,4 @@ links:
 - Mutation invalidation: การ save ที่ mutates `logs` ต้อง invalidate ทั้งหมดของ: `monthly-logs`, `yearly-logs`, `income`
 - Avatar upload: Supabase Storage `avatars/{userId}/avatar.{ext}`, ≤2MB
 - ห้ามใช้ `@ts-ignore` หรือ `@ts-expect-error` (ใช้ `as Record<string, any>` แทน)
+

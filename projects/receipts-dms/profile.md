@@ -2,11 +2,14 @@
 type: project-profile
 id: receipts-dms-profile
 project: receipts-dms
-last_updated: 2026-07-12
+last_updated: '2026-07-13'
 status: active
 anchors:
   - /home/paper/receipts-dms/
+freshness: '2026-07-13'
+verified: '2026-07-13'
 ---
+
 
 # receipts-dms
 
@@ -74,3 +77,4 @@ React state ผ่าน hooks (`useReceipts`, `useCategories`) Theme ผ่า�
 - `vite.config.ts`
 - `schema.sql`
 - `src/lib/auth-context.tsx`
+

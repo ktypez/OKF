@@ -2,10 +2,10 @@
 type: project-profile
 id: data-mcky-space-profile
 project: data.mcky.space
-last_updated: 2026-07-12
+last_updated: '2026-07-13'
 status: active
-freshness: 2026-07-12
-verified: 2026-07-11
+freshness: '2026-07-13'
+verified: '2026-07-13'
 expires: null
 superseded_by: null
 anchors:
@@ -16,6 +16,7 @@ links:
   - type: relates-to
     target: clientdata-profile
 ---
+
 
 # ข้อมูลโปรเจกต์: data.mcky.space
 
@@ -28,17 +29,17 @@ links:
 
 ## เทคโนโลยี (Technology)
 - **Languages:** TypeScript
-- **Frameworks:** Vite 7, React 19
+- **Frameworks:** Vite 7, React 19, Tailwind CSS 4
 - **Runtime:** Node.js
 - **Package Manager:** npm
 - **Build System:** Vite
 - **Deployment Targets:** Cloudflare Pages
 
 ## Dependencies
-- **Major Libraries:** `drizzle-orm`, `zustand`, `maplibre-gl`, `@aws-sdk/client-s3`
-- **External Services:** Neon Database, Cloudflare R2
-- **Databases:** Neon (PostgreSQL)
-- **Cloud Providers:** Neon, Cloudflare
+- **Major Libraries:** `drizzle-orm`, `zustand`, `maplibre-gl`, `react-router-dom`
+- **External Services:** Cloudflare D1, Cloudflare R2
+- **Databases:** Cloudflare D1 (SQLite)
+- **Cloud Providers:** Cloudflare
 
 ## การพัฒนา (Development)
 - **Setup:** `git clone -b stable https://github.com/ktypez/clientdata ~/data.mcky.space`
@@ -59,3 +60,4 @@ links:
 - **State:** active
 - **Role:** Production deployment
 - **Source:** `clientdata` (branch master — ทดลอง), ย้ายมา Vite แล้ว
+

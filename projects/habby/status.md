@@ -2,10 +2,29 @@
 type: project-status
 id: habby-status
 project: habby
-last_updated: 2026-07-12
+last_updated: '2026-07-13'
 status: active
-freshness: 2026-07-12
-verified: 2026-07-11
+freshness: '2026-07-13'
+verified: 2026-07-11T00:00:00.000Z
+expires: null
+superseded_by: null
+anchors:
+  - /home/habby/
+links:
+  - type: relates-to
+    target: habby-profile
+  - type: relates-to
+    target: habby-agent
+---
+
+---
+type: project-status
+id: habby-status
+project: habby
+last_updated: 2026-07-13
+status: active
+freshness: 2026-07-13
+verified: 2026-07-13
 expires: null
 superseded_by: null
 anchors:
@@ -40,16 +59,18 @@ links:
 
 ## บันทึกการเปลี่ยนแปลง (Changelog)
 
-### 2026-07-11
+### 2026-07-13
+- Sync OKF knowledge base across all 8 projects
+- Updated workspace index with current project inventory
+- Refreshed documentation timestamps and freshness
 
+### 2026-07-11
 - chore: เพิ่ม AGENTS.md, ทำความสะอาด gitignore
 
 ### 2026-07-04
-
 - feat: เพิ่มชุดทดสอบ — Vitest + testing-library, 21 tests ครอบคลุมตรรกะ streak/XP/check-in
 
 ### 2026-06 (สัปดาห์ที่ 2)
-
 - ยึดระบบดีไซน์ mcky.space: JetBrains Mono, 2-theme (light/dark), token แนว neobrutalist
 - สคริปต์ migration: เคลียร์ archived habit ที่เป็น orphan ออกจาก Redis
 - ลบ helper `$$` ที่ไม่ได้ใช้, แก้ indent, ความเข้ากันได้ของ digest badge ใน dark theme, กฎ CSS ที่ตาย
@@ -76,3 +97,4 @@ links:
 - [x] Browser push notifications
 - [x] PWA พร้อม offline support
 - [x] SHA-256 header-based auth
+

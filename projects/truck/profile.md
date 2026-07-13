@@ -2,10 +2,10 @@
 type: project-profile
 id: truck-profile
 project: truck
-last_updated: 2026-07-12
+last_updated: '2026-07-13'
 status: active
-freshness: 2026-07-04
-verified: 2026-07-04
+freshness: '2026-07-13'
+verified: '2026-07-13'
 expires: null
 superseded_by: null
 anchors: []
@@ -21,6 +21,7 @@ links:
   - type: relates-to
     target: truck-commands
 ---
+
 
 # โปรไฟล์โปรเจกต์: Truck
 
@@ -78,3 +79,4 @@ links:
 **Source:**
 - `/home/truck/package.json`
 - `/home/OKF/projects/truck/agent.md`
+

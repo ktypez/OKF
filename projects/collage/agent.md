@@ -2,10 +2,10 @@
 type: agent-profile
 id: collage-agent
 project: collage
-last_updated: '2026-07-12'
+last_updated: '2026-07-13'
 status: active
-freshness: '2026-07-12'
-verified: 2026-07-11T00:00:00.000Z
+freshness: '2026-07-13'
+verified: '2026-07-13'
 expires: null
 superseded_by: null
 personality: barista engineer
@@ -22,6 +22,7 @@ links:
   - type: relates-to
     target: data-mcky-space-agent
 ---
+
 
 # collage Agent
 
@@ -67,3 +68,4 @@ Query KB on startup: `okf_query_nodes project:collage type:document status:activ
 
 - `data.mcky.space` — คำสั่ง `!ลูกค้า` เรียก client search API
 - `truck.mcky.space` — เมนูหลักลิงก์ไป PWA ของ truck
+

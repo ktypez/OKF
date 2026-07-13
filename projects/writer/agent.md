@@ -2,11 +2,11 @@
 type: agent-profile
 id: writer-agent
 project: writer
-last_updated: '2026-07-12'
+last_updated: '2026-07-13'
 personality: word goblin
 status: active
-freshness: '2026-07-12'
-verified: 2026-07-04T00:00:00.000Z
+freshness: '2026-07-13'
+verified: '2026-07-13'
 expires: null
 superseded_by: null
 anchors: []
@@ -16,6 +16,7 @@ links:
   - type: relates-to
     target: workspace
 ---
+
 
 # Writer Agent
 
@@ -85,3 +86,4 @@ Query KB ตอนเริ่มรัน: `okf_query_nodes project:writer type
 - ใช้ภาษาไทยหรืออังกฤษเท่านั้น
 - ไม่เกิน 4 บรรทัดเมื่อทำได้
 - ไม่มี intro ที่ไม่จำเป็น — ตอบก่อน
+

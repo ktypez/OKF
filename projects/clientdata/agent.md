@@ -2,10 +2,10 @@
 type: agent-profile
 id: clientdata-agent
 project: clientdata
-last_updated: '2026-07-12'
-status: active
-freshness: '2026-07-12'
-verified: 2026-07-04T00:00:00.000Z
+last_updated: '2026-07-13'
+status: archived
+freshness: '2026-07-13'
+verified: '2026-07-13'
 expires: null
 superseded_by: null
 personality: data goblin
@@ -26,6 +26,8 @@ links:
   - type: relates-to
     target: workspace
 ---
+
+
 
 # clientdata Agent
 
@@ -148,3 +150,5 @@ Query KB ตอนเริ่มต้น: `okf_query_nodes project:clientdata 
 - เอาออกแล้ว sonner — ไม่มี toast library ติดตั้ง
 - UI edits ทั้งหมดต้องใช้ shadcn components — ห้ามทำ custom button/modal pattern เมื่อมี shadcn เทียบเท่า
 - `pnpm-lock.yaml` ต้อง commit เมื่อ dependencies เปลี่ยน (Vercel ใช้ `--frozen-lockfile`)
+
+

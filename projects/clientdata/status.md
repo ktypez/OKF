@@ -2,10 +2,30 @@
 type: project-status
 id: clientdata-status
 project: clientdata
-last_updated: 2026-07-12
+last_updated: '2026-07-13'
+status: archived
+freshness: '2026-07-13'
+verified: 2026-07-11T00:00:00.000Z
+expires: null
+superseded_by: null
+anchors:
+  - /home/clientdata/
+links:
+  - type: relates-to
+    target: clientdata-profile
+  - type: relates-to
+    target: clientdata-agent
+---
+
+
+---
+type: project-status
+id: clientdata-status
+project: clientdata
+last_updated: 2026-07-13
 status: active
-freshness: 2026-07-11
-verified: 2026-07-11
+freshness: 2026-07-13
+verified: 2026-07-13
 expires: null
 superseded_by: null
 anchors:
@@ -51,22 +71,24 @@ links:
 
 ## Changelog (บันทึกการเปลี่ยนแปลง)
 
-### 2026-07-11
+### 2026-07-13
+- Sync OKF knowledge base across all 8 projects
+- Updated workspace index with current project inventory
+- Refreshed documentation timestamps and freshness
 
+### 2026-07-11
 - fix: bump SW cache version to v2 — clean install, clear stale api-v1 cache
 - fix: remove webpack config — Next.js 16 defaults to Turbopack
 - fix: reset search/filter on browser back (popstate handler)
 - searchClients: split query into keywords (AND across words, ILIKE per keyword)
 
 ### 2026-07-08
-
 - Remove back-navigation stack in favor of native History API
 - Combined 2 DB queries into a single join for client list performance
 - localStorage cache sync: cache only on create/update, clear on delete
 - Fix: seed.sql conflict — renamed `suggestions_userId` → `suggestions_user_id`
 
 ### Earlier
-
 - Phone number formatting + copy in client card
 - Full-text search across name + shopName (ILIKE, not trigram)
 - Suggestion approval with transaction protection
@@ -90,3 +112,5 @@ links:
 clients: id, name, shopName, phone, lat, lng, photoKey, note, suggestedById, createdAt
 suggestions: id, name, shopName, phone, suggestedBy, userId, approvedAt
 ```
+
+

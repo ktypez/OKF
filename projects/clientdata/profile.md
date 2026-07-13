@@ -2,10 +2,10 @@
 type: project-profile
 id: clientdata-profile
 project: clientdata
-last_updated: 2026-07-12
-status: active
-freshness: 2026-07-04
-verified: 2026-07-04
+last_updated: '2026-07-13'
+status: archived
+freshness: '2026-07-13'
+verified: '2026-07-13'
 expires: null
 superseded_by: null
 anchors:
@@ -23,6 +23,8 @@ links:
   - type: relates-to
     target: clientdata-commands
 ---
+
+
 
 # Profile ของโปรเจกต์: clientdata
 
@@ -89,3 +91,5 @@ links:
 
 - `/home/clientdata/package.json`
 - `/home/OKF/projects/clientdata/agent.md`
+
+

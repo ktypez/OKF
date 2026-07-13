@@ -2,10 +2,10 @@
 type: project-profile
 id: habby-profile
 project: habby
-last_updated: 2026-07-12
+last_updated: '2026-07-13'
 status: active
-freshness: 2026-07-12
-verified: 2026-07-04
+freshness: '2026-07-13'
+verified: '2026-07-13'
 expires: null
 superseded_by: null
 anchors: []
@@ -21,6 +21,7 @@ links:
   - type: relates-to
     target: habby-commands
 ---
+
 
 # โปรไฟล์โปรเจกต์: habby
 
@@ -45,9 +46,9 @@ links:
 ## ความพึ่งพา (Dependencies)
 
 - **Major Libraries:** `express`, `ioredis`, `cors`
-- **External Services:** Redis (Upstash)
+- **External Services:** Redis (ioredis)
 - **Databases:** Redis
-- **Cloud Providers:** Upstash, Vercel
+- **Cloud Providers:** Vercel
 - **APIs:** Redis API
 
 ## การพัฒนา (Development)
@@ -86,3 +87,4 @@ links:
 
 - `/home/habby/package.json`
 - `/home/OKF/projects/habby/agent.md`
+

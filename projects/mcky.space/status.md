@@ -2,10 +2,29 @@
 type: project-status
 id: mcky-space-status
 project: mcky.space
-last_updated: 2026-07-12
+last_updated: '2026-07-13'
 status: active
-freshness: 2026-07-11
-verified: 2026-07-11
+freshness: '2026-07-13'
+verified: 2026-07-11T00:00:00.000Z
+expires: null
+superseded_by: null
+anchors:
+  - /home/mcky.space/
+links:
+  - type: relates-to
+    target: mcky-space-agent
+  - type: relates-to
+    target: mcky-space-profile
+---
+
+---
+type: project-status
+id: mcky-space-status
+project: mcky.space
+last_updated: 2026-07-13
+status: active
+freshness: 2026-07-13
+verified: 2026-07-13
 expires: null
 superseded_by: null
 anchors:
@@ -42,6 +61,11 @@ links:
 
 ## บันทึกการเปลี่ยนแปลง
 
+### 2026-07-13
+- Sync OKF knowledge base across all 8 projects
+- Updated workspace index with current project inventory
+- Refreshed documentation timestamps and freshness
+
 ### 2026-07-11
 - refactor: นำ API routes ออก, อัปเดตบล็อก, ทำความสะอาด gitignore
 - fix: สภาพแวดล้อม dev ท้องถิ่น — prism syntax highlighting, patch os.networkInterfaces, LAN access (host 0.0.0.0)
@@ -64,3 +88,4 @@ links:
 - shimmer skeletons ด้วย CSS ล้วนสำหรับสถานะโหลด
 - JetBrains Mono ตลอดทั้งเว็บ
 - ARIA landmarks, safe-area-insets, `prefers-reduced-motion`
+

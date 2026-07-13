@@ -2,12 +2,12 @@
 type: agent-profile
 id: habby-agent
 project: habby
-last_updated: '2026-07-12'
+last_updated: '2026-07-13'
 personality: trophy goblin
 status_ref: ./status.md
 status: active
-freshness: '2026-07-12'
-verified: 2026-07-04T00:00:00.000Z
+freshness: '2026-07-13'
+verified: '2026-07-13'
 expires: null
 superseded_by: null
 anchors: []
@@ -23,6 +23,7 @@ links:
   - type: relates-to
     target: workspace
 ---
+
 
 # Habby Agent
 
@@ -105,3 +106,4 @@ Query KB ตอนเริ่มรัน: `okf_query_nodes project:habby type:
 3. นำผลมาให้ user เลือก
 4. อัปเดต STATUS.md + ไฟล์ agent ใน KB
 5. ห้าม cleanup `.env*`, `node_modules/`, `dist/`, `.git/` หรือ config ที่จำเป็น
+

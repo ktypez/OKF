@@ -2,10 +2,29 @@
 type: project-status
 id: collage-status
 project: collage
-last_updated: '2026-07-12'
+last_updated: '2026-07-13'
 status: active
-freshness: '2026-07-12'
+freshness: '2026-07-13'
 verified: 2026-07-11T00:00:00.000Z
+expires: null
+superseded_by: null
+anchors:
+  - /home/collage/
+links:
+  - type: relates-to
+    target: collage-profile
+  - type: relates-to
+    target: collage-agent
+---
+
+---
+type: project-status
+id: collage-status
+project: collage
+last_updated: 2026-07-13
+status: active
+freshness: 2026-07-13
+verified: 2026-07-13
 expires: null
 superseded_by: null
 anchors:
@@ -52,6 +71,7 @@ links:
 - ปฏิทินไทย (ปี พ.ศ. +543), ชื่อเดือนไทย
 
 ## ฟีเจอร์ (Features)
+
 - [x] LIFF integration — เปิดจาก LINE, เลือกรูป, สร้าง collage
 - [x] ธีมสี 7 วันในสัปดาห์, ตรวจจับวันนี้ให้อัตโนมัติ
 - [x] Masonry layout (สูงสุด 3 คอลัมน์, ไม่ยุบ) — รูปสั้นเติมช่องว่าง
@@ -65,11 +85,15 @@ links:
 
 ## บันทึกการเปลี่ยนแปลง (Changelog)
 
+### 2026-07-13
+- Sync OKF knowledge base across all 8 projects
+- Updated workspace index with current project inventory
+- Refreshed documentation timestamps and freshness
+
 ### 2026-07-12 (3)
 - กลับเป็น masonry (max 3 คอลัมน์) แทน row-wrapping grid — รูปสั้นเติมช่องว่าง ลดความยาว collage
 - ลบ isSmallLayout ห้ามยุบคอลัมน์ (ผู้ใช้: ไม่ควรยุบ มีแต่จะเพิ่ม)
 - คง guard NaN ตามไอเดีย "วัดความสูงจากรูปแรกของแถว"
-- อัปเดต LSN-001
 
 ### 2026-07-12 (2)
 - Fix บั๊ก layout รูปกระจุกข้างบน (rowTops สะสม Y)
@@ -91,3 +115,4 @@ links:
 - Shrink preset buttons to 34px
 - Sample mockup
 - gitignore cleanup
+

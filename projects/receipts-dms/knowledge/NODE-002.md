@@ -2,10 +2,10 @@
 type: agent-profile
 id: NODE-002
 project: receipts-dms
-last_updated: '2026-07-12'
+last_updated: '2026-07-13'
 status: active
-freshness: '2026-07-12'
-verified: '2026-07-12'
+freshness: '2026-07-13'
+verified: '2026-07-13'
 expires: null
 superseded_by: null
 anchors: []
@@ -15,6 +15,7 @@ links:
   - type: relates-to
     target: receipts-dms-status
 ---
+
 
 # NODE-002: receipts-dms Agent
 
@@ -59,3 +60,4 @@ Query KB on startup: `okf_query_nodes project:receipts-dms type:document status:
 ## Relationships
 
 - `mcky.space` — sibling project under the `paper` / mcky.space ecosystem
+

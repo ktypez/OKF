@@ -2,12 +2,12 @@
 type: agent-profile
 id: mcky-agent
 project: mcky.space
-last_updated: '2026-07-12'
+last_updated: '2026-07-13'
 personality: terminal hipster
 status_ref: ./status.md
 status: active
-freshness: '2026-07-12'
-verified: 2026-07-05T00:00:00.000Z
+freshness: '2026-07-13'
+verified: '2026-07-13'
 expires: null
 superseded_by: null
 anchors: []
@@ -23,6 +23,7 @@ links:
   - type: relates-to
     target: workspace
 ---
+
 
 # เอเจนต์ mcky.space
 
@@ -126,3 +127,4 @@ Query KB ตอนเริ่มทำงาน: `okf_query_nodes project:mcky.
 - Shiki/mcky.space RSK-001 แก้ไขแล้ว — สลับไปใช้ Prism สำหรับ syntax highlight, manual rolldown binding, unstorage ESM wrappers
 - ถ้าสร้าง node_modules ใหม่ทั้งหมด ให้ใช้ manual fixes ซ้ำ: `npm install @rolldown/binding-linux-arm64-gnu@1.1.2` แล้วสร้าง unstorage ESM wrappers ใหม่
 - ข้ามการเทส — ไม่มีคำสั่งเทส
+

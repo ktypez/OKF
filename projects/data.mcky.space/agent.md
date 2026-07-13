@@ -2,10 +2,10 @@
 type: agent-profile
 id: data-mcky-space-agent
 project: data.mcky.space
-last_updated: '2026-07-12'
+last_updated: '2026-07-13'
 status: active
-freshness: '2026-07-12'
-verified: 2026-07-11T00:00:00.000Z
+freshness: '2026-07-13'
+verified: '2026-07-13'
 expires: null
 superseded_by: null
 personality: data goblin
@@ -22,6 +22,7 @@ links:
   - type: documents
     target: DOC-001
 ---
+
 
 
 # data.mcky.space Agent
@@ -69,3 +70,4 @@ Current: `DOC-002` (trash card layout), `DOC-003` (filter button count).
 - `~/data.mcky.space` ติดตาม `origin/stable`
 - การเปลี่ยนแปลงทดลองผ่าน `clientdata` (master) → ทดสอบ → merge เข้า `stable`
 - การย้าย framework ทำบน branch `stable` โดยตรง
+
