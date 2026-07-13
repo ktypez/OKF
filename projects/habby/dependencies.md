@@ -2,7 +2,7 @@
 type: document
 id: habby-dependencies
 project: habby
-last_updated: 2026-07-12
+last_updated: 2026-07-13
 status: active
 freshness: 2026-07-12
 verified: 2026-07-04
@@ -28,4 +28,4 @@ links:
 
 ## Dev Tools
 
-- `vite`: ^6.0.0
+- `vite`: ^8.1.4

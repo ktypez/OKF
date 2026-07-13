@@ -14,10 +14,10 @@ verified: '2026-07-13'
 # receipts-dms
 
 **Role:** production
-**Framework:** Vite 6 + React 19 + TypeScript
+**Framework:** Vite 8 + React 19 + TypeScript
 **Backend:** Cloudflare Pages Functions (D1 + R2)
 **Deployment:** Cloudflare Pages (paper.mcky.space)
-**Stack:** shadcn/ui, Tailwind v3, lucide-react, react-router v7
+**Stack:** shadcn/ui, Tailwind v4, lucide-react, react-router v7
 
 ## คำอธิบาย
 
@@ -27,7 +27,7 @@ verified: '2026-07-13'
 
 | เลเยอร์ | เทคโนโลยี |
 |-------|-----------|
-| Frontend | Vite 6, React 19, TypeScript 7, Tailwind 3 |
+| Frontend | Vite 8, React 19, TypeScript 7, Tailwind 4 |
 | UI | shadcn/ui (Radix primitives), lucide-react |
 | Routing | react-router v7 |
 | Auth | รหัสผ่านเดียว (env var) + HMAC-SHA256 cookie |

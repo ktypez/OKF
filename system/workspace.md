@@ -10,14 +10,14 @@ last_updated: '2026-07-13'
 
 | ด้าน | truck | mcky.space | data.mcky.space | habby | collage | receipts-dms |
 |--------|-------|------------|------|-------|---------|-------------|
-| Framework | React 19 + Vite 8 + TS 6 | Astro 7 + Alpine.js | Vite 7 + React 19 | Vite 6 + Express 5 | Express 4 + vanilla HTML/CSS/JS | Vite 6 + React 19 + TS 7 |
+| Framework | React 19 + Vite 8 + TS 6 | Astro 7 + Alpine.js | Vite 8 + React 19 | Vite 8 + Express 5 | Express 4 + vanilla HTML/CSS/JS | Vite 8 + React 19 + TS 7 |
 | ฐานข้อมูล | Supabase (Postgres) | Supabase + ไฟล์ .md | **Cloudflare D1 (SQLite)** | Redis (Upstash) | ❌ | **Cloudflare D1 (SQLite)** |
 | Storage | Supabase Storage | Supabase | **Cloudflare R2** | ไม่มี | **Cloudflare R2** | **Cloudflare R2** |
 | State | tanstack/react-query v5 | Alpine.js x-data | Zustand | ไม่มี | ไม่มี | React hooks |
 | Auth | Supabase Auth | SHA-256 header-based | รหัสผ่าน (admin/viewer) | SHA-256 | LINE Messaging API | รหัสผ่าน + HMAC-SHA256 |
 | PWA | ❌ (ถูกลบ 2026-07-11) | ❌ | ✅ (SW v2, network-first) | ❌ | ❌ | ❌ |
 | Testing | vitest (~101 tests) | ❌ | ❌ (health-check script) | ❌ | ❌ | ❌ |
-| Theme | 16 themes, CSS vars | Aura dark terminal | Tailwind 4 + dark mode | 2 themes | ไม่มีธีม | shadcn/ui + Tailwind 3 |
+| Theme | 16 themes, CSS vars | Aura dark terminal | Tailwind 4 + dark mode | 2 themes | ไม่มีธีม | shadcn/ui + Tailwind 4 |
 | CI/CD | GitHub Actions | Vercel | **Cloudflare Pages** | Vercel | Render.com + Vercel | **Cloudflare Pages** |
 
 > **Archived:** ~~clientdata~~ (Next.js 16, Neon Postgres, Vercel) — ย้ายไป data.mcky.space แล้ว
@@ -36,12 +36,12 @@ last_updated: '2026-07-13'
 
 ### data.mcky.space
 - **Role:** Production deployment (ของ clientdata)
-- **Framework:** Vite 7 + React 19 (ย้ายจาก Next.js)
+- **Framework:** Vite 8 + React 19 (ย้ายจาก Next.js)
 - **Source:** `~/data.mcky.space`, ติดตาม `origin/main` ของ `ktypez/data.mcky.space`
 - **DB:** Cloudflare D1 (SQLite) ผ่าน Drizzle ORM
-- **Deploy:** Cloudflare Pages (project `data-mcky-space`), git auto-deploy **ปิด** → `npx wrangler pages deploy ./dist --project-name=data-mcky-space`
-- `npx vite` — dev
-- `npm run build` — build
+- **Deploy:** Cloudflare Pages (project `data-mcky-space`), git auto-deploy **ปิด** → `pnpm exec wrangler pages deploy ./dist --project-name=data-mcky-space`
+- `pnpm dev` — dev
+- `pnpm run build` — build
 - `node scripts/health-check.mjs` — ตรวจสภาพ production (หน้าขาว/refresh loop/SW v2/bare spec)
 
 ### habby
@@ -60,7 +60,7 @@ last_updated: '2026-07-13'
 
 ### receipts-dms
 - **Source:** `~/paper/receipts-dms` (GitHub: `ktypez/receipts-dms`)
-- **Stack:** Vite 6 + React 19 + Cloudflare Pages Functions
+- **Stack:** Vite 8 + React 19 + Cloudflare Pages Functions
 - **Domain:** paper.mcky.space
 - `npm run dev` — dev (Vite + Wrangler)
 - `npm run build` — build

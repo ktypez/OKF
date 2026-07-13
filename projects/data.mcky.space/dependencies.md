@@ -2,7 +2,7 @@
 type: project-dependencies
 id: data-mcky-space-deps
 project: data.mcky.space
-last_updated: 2026-07-12
+last_updated: 2026-07-13
 status: active
 ---
 
@@ -27,8 +27,8 @@ status: active
 
 | Package | Version | Purpose |
 |---------|---------|---------|
-| vite | ^7.3.0 | Build tool |
-| @vitejs/plugin-react | ^4.4.0 | Vite React plugin |
+| vite | ^8.1.4 | Build tool |
+| @vitejs/plugin-react | ^5.2.0 | Vite React plugin |
 | typescript | ^6.0.3 | ตรวจสอบ type |
 | tailwindcss | ^4.3.1 | CSS framework |
 | @tailwindcss/vite | ^4.3.1 | Tailwind Vite plugin |

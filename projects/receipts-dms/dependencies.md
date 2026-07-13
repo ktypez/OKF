@@ -2,7 +2,7 @@
 type: project-dependencies
 id: receipts-dms-deps
 project: receipts-dms
-last_updated: 2026-07-12
+last_updated: 2026-07-13
 status: active
 anchors:
   - /home/paper/receipts-dms/
@@ -36,12 +36,11 @@ anchors:
 
 | แพ็กเกจ | เวอร์ชัน | หน้าที่ |
 |---------|---------|---------|
-| vite | ^6.4.3 | Build tool |
+| vite | ^8.1.4 | Build tool |
 | @vitejs/plugin-react | ^5.2.0 | React plugin for Vite |
 | typescript | ^7.0.2 | Type checking |
-| tailwindcss | ^3.4.19 | CSS framework |
-| postcss | ^8.5.16 | CSS processing |
-| autoprefixer | ^10.5.2 | CSS vendor prefixes |
+| tailwindcss | ^4.3.2 | CSS framework |
+| @tailwindcss/vite | ^4.3.2 | Tailwind Vite plugin |
 | @types/react | ^19.2.17 | React types |
 | @types/react-dom | ^19.2.3 | React DOM types |
 

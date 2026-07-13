@@ -28,9 +28,9 @@ links:
 
 ## เทคโนโลยี (Technology)
 - **Languages:** TypeScript
-- **Frameworks:** Vite 7, React 19, Tailwind CSS 4
+- **Frameworks:** Vite 8, React 19, Tailwind CSS 4
 - **Runtime:** Node.js
-- **Package Manager:** npm
+- **Package Manager:** pnpm
 - **Build System:** Vite
 - **Deployment Targets:** Cloudflare Pages
 
@@ -42,8 +42,8 @@ links:
 
 ## การพัฒนา (Development)
 - **Setup:** `git clone https://github.com/ktypez/data.mcky.space ~/data.mcky.space`
-- **Run:** `npx vite`
-- **Build:** `npm run build`
+- **Run:** `pnpm dev`
+- **Build:** `pnpm run build`
 - **Health check:** `node scripts/health-check.mjs`
 
 ## สถาปัตยกรรม (Architecture)
@@ -58,7 +58,7 @@ links:
 - **Domain:** `data.mcky.space`
 - **Platform:** Cloudflare Pages (project: `data-mcky-space`)
 - **Auto-deploy (git):** ปิด (production_deployments_enabled:false)
-- **Deploy command:** `npx wrangler pages deploy ./dist --project-name=data-mcky-space` (ไม่ใช้ --branch)
+- **Deploy command:** `pnpm exec wrangler pages deploy ./dist --project-name=data-mcky-space` (ไม่ใช้ --branch)
 
 ## สถานะ (Status)
 - **State:** active (STABLE — 2026-07-13 แก้หน้าขาว + spam refresh + เขียนแผนที่ใหม่)
