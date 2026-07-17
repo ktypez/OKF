@@ -2,11 +2,11 @@
 type: agent-profile
 id: truck-agent
 project: truck
-last_updated: '2026-07-13'
+last_updated: '2026-07-17'
 personality: overtime enthusiast
 status_ref: ./status.md
 status: active
-freshness: '2026-07-13'
+freshness: '2026-07-17'
 verified: '2026-07-13'
 expires: null
 superseded_by: null
@@ -24,6 +24,7 @@ links:
     target: workspace
 ---
 
+---
 
 # Agent ของ Truck
 
@@ -46,14 +47,16 @@ links:
 | Database | Supabase (Postgres) |
 | Auth | Supabase Auth |
 | Styling | Custom themes.css (16 themes) |
+| Animations | motion (Framer Motion) — route transitions, modal exits, toast exits |
 | Notifications | Telegram Bot API |
-| Deployment | Vercel (SPA rewrite) |
+| Deployment | Vercel (SPA rewrite via git push) |
 
 ## สถาปัตยกรรม (Architecture)
 
 ```
 main.tsx → App.tsx (auth gate + session + theme)
-         → AppRoutes.tsx (lazy-loaded: DailyView, ShiftCalendar, History, IncomeView, ProfilePage, Changelog, AdminPanel, UserManagement, IncomeSettings)
+         → AppRoutes.tsx (AnimatePresence + motion.div route transitions)
+         → lazy-loaded: DailyView, ShiftCalendar, History, IncomeView, ProfilePage, Changelog, AdminPanel, UserManagement, IncomeSettings
          → ErrorBoundary wrapper per route
          → Supabase (sb) + ReactQuery (monthly-logs, day-log, income, yearly-logs)
           → offlineQueue (localStorage mutation queue, auto-replay on reconnect)
@@ -78,9 +81,13 @@ main.tsx → App.tsx (auth gate + session + theme)
 
 ## รูปแบบหลัก (Key Patterns)
 
+- **Route transitions**: `<AnimatePresence mode="wait">` + `<motion.div>` — fade+slide (0.2s, custom easing `[0.16, 1, 0.3, 1]`), key=`location.pathname`
+- **Modal exit animations**: `<AnimatePresence>` wrapping modals — backdrop fades out, content scales down (0.18s). CSS `fadeIn`/`scaleIn` removed from globals.css, motion handles enter+exit
+- **Toast exit animation**: `<AnimatePresence>` in ToastContext — slide right + fade out (0.25s). CSS `slideIn`/`slideOut` removed
+- **Nav tab micro-interaction**: `whileTap={{ scale: 0.9 }}` on motion.div tab buttons
 - **Auth gate**: ตรวจสอบ Supabase session → แสดง ModalWrapper กับ AuthScreen overlay บนแอปหลัก (z-index 9999, ปิดไม่ได้)
 - **Toast**: `useToast()` จาก ToastContext — ห้ามใช้ `alert()` หรือ `console.log()`
-- **Modal pattern**: `.modal-backdrop` (fadeIn) + `.modal-content` (scaleIn)
+- **Modal pattern**: motion handles enter+exit — no more CSS animation classes on `.modal-backdrop`/`.modal-content`
 - **Admin gate**: query DB `user_profiles.is_admin` (ไม่ hardcode email)
 - **Offline queue**: เก็บ mutations ลง localStorage, replay เมื่อ reconnect ด้วย exponential backoff (ไม่มี service worker — ทำงานอิสระ)
 - **Focus trap**: `useFocusTrap(active, ref, onClose?)` ใน modals
@@ -94,11 +101,15 @@ main.tsx → App.tsx (auth gate + session + theme)
 |---------|-------------|
 | `node node_modules/.bin/vite` | Dev server |
 | `node node_modules/vite/bin/vite.js build` | Production build |
-| `node node_modules/.bin/vitest run` | Run tests (90 tests) |
+| `node node_modules/.bin/vitest run` | Run tests (101 tests) |
 | `node node_modules/.bin/eslint src/` | Lint |
 | `node node_modules/.bin/prettier --write src/` | Format |
 
 ## ทริกเกอร์ (Triggers)
+
+### "deploy"
+
+`git push` — Vercel auto-deploys from git. ไม่ต้อง run vercel deploy ตรง ๆ.
 
 ### "update .md"
 
@@ -139,6 +150,7 @@ Query KB เมื่อเริ่ม: `okf_query_nodes project:truck type:doc
 
 - `oldString` ต้องสั้นและแม่นยำ — หลีกเลี่ยง code blocks ยาวใน edit
 - อ่านไฟล์เวอร์ชันล่าสุดเสมอก่อนแก้ไข
+- **Deploy = `git push`** — ไม่ต้อง run vercel deploy ตรง ๆ. Vercel auto-deploy จาก git.
 
 ### สภาพแวดล้อม Termux (Termux Environment)
 
@@ -148,4 +160,3 @@ Query KB เมื่อเริ่ม: `okf_query_nodes project:truck type:doc
 | Supabase CLI | CI เท่านั้น: `supabase/setup-cli@v1` ใน GitHub Actions |
 | cwebp | มีให้ใช้ — `cwebp -q 80 input.jpg -o output.webp` |
 | sharp / ffmpeg | ไม่มีให้ใช้ |
-

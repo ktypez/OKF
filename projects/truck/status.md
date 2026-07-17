@@ -2,10 +2,10 @@
 type: project-status
 id: truck-status
 project: truck
-last_updated: 2026-07-13
+last_updated: '2026-07-17'
 status: active
-freshness: 2026-07-13
-verified: 2026-07-13
+freshness: '2026-07-17'
+verified: 2026-07-13T00:00:00.000Z
 expires: null
 superseded_by: null
 anchors:
@@ -15,6 +15,8 @@ links:
     target: truck-profile
   - type: relates-to
     target: truck-agent
+---
+
 ---
 
 # สถานะโปรเจกต์ — Truck
@@ -28,7 +30,8 @@ links:
 - **Auth**: Supabase Auth (email/password)
 - **Database**: Supabase Postgres (timestamptz, Asia/Bangkok TZ)
 - **Backend**: Supabase Edge Functions (Deno)
-- **Deploy**: Vercel (SPA rewrite) + Supabase
+- **Animations**: motion (Framer Motion) — route transitions, modal exits, toast exits, micro-interactions
+- **Deploy**: Vercel (SPA rewrite via git push) + Supabase
 - **Testing**: Vitest (101 tests), ESLint, Prettier
 - **CI**: GitHub Actions
 - **Integrations**: Telegram Bot API สำหรับคำขอสมัครบัญชี
@@ -45,6 +48,15 @@ links:
 | `/changelog` | Changelog | บันทึกการเปลี่ยนแปลง |
 
 ## Changelog
+
+### 2026-07-17 (animations)
+- **Animation**: เพิ่ม motion (Framer Motion) สำหรับ route transitions — `<AnimatePresence mode="wait">` + `<motion.div>` fade+slide (0.2s, custom easing)
+- **Animation**: เพิ่ม exit animations สำหรับ modals ทั้งหมด — backdrop fade out + content scale down (0.18s) ใน ModalWrapper, ConfirmModal, Modals (theme picker), ShiftModal, MonthYearPopup
+- **Animation**: เพิ่ม toast exit animation — slide right + fade out (0.25s) ผ่าน `<AnimatePresence>` ใน ToastContext
+- **Animation**: เพิ่ม `whileTap={{ scale: 0.9 }}` บน NavTabs ปุ่ม
+- **Cleanup**: เอา CSS animations (fadeIn, scaleIn, slideIn, slideOut) ออกจาก globals.css สำหรับ modals/toasts ที่ motion จัดการแล้ว
+- **Fix**: เอา pnpm-lock.yaml ออกจาก git (Vercel detect แล้วใช้ pnpm แทน npm)
+- **Fix**: ย้าย `@rolldown/binding-linux-arm64-gnu` ไป optionalDependencies (ARM64-only dep ไม่ fail บน x64)
 
 ### 2026-07-13 (perf + refactor)
 - **Loading/Perf**: แตก themes.css (16 ธีม ~36KB) → ไฟล์ต่อธีม โหลด dynamic เฉพาะธีมที่ใช้ (ลด dead CSS ~94%)
@@ -84,6 +96,7 @@ links:
 - เอฟเฟกต์แก้วสำหรับธีม shinchan
 - CSS custom properties ด้วยสเกล `--space-*` (2px ถึง 30px)
 - `toBuddhistYear()` สำหรับแสดงปฏิทินไทย
+- Motion animations — fade/slide/scale ด้วย custom easing `[0.16, 1, 0.3, 1]`
 
 ## PWA
 
@@ -96,4 +109,3 @@ Offline queue (localStorage mutation queue) ยังทำงานอิสร
 - Mutation invalidation: การ save ที่ mutates `logs` ต้อง invalidate ทั้งหมดของ: `monthly-logs`, `yearly-logs`, `income`
 - Avatar upload: Supabase Storage `avatars/{userId}/avatar.{ext}`, ≤2MB
 - ห้ามใช้ `@ts-ignore` หรือ `@ts-expect-error` (ใช้ `as Record<string, any>` แทน)
-
