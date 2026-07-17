@@ -1,7 +1,7 @@
 ---
 type: index
 id: skills-index
-last_updated: 2026-07-04
+last_updated: 2026-07-17
 skills:
   - id: code-audit
     path: skills/code-audit.md
@@ -31,15 +31,15 @@ Centralized index of all specialized skills available for AI agents.
 
 | Skill | Category | Description |
 |-------|----------|-------------|
-| code-audit | Engineering | Project health scans + code quality reviews — unused deps, bugs, security, performance, best practices |
-| kb-sync | KB Maintenance | Sync OKF with project state — update status, validate frontmatter, maintain indexes |
-| frontend-dev | Engineering | Expert frontend — React 19, Next.js 16, Vue, Angular, Svelte, TypeScript |
-| design-skill-os | Design | Elite design reasoning — gestalt, 60-30-10, modular scale, Nielsen heuristics |
-| supabase-postgres-best-practices | Database | Postgres performance optimization from Supabase |
-| web-dev | Engineering | Modern web apps — semantic HTML5, CSS Grid/Flexbox, vanilla JS |
-| writer-work | Content | Concise summaries, changelogs, step-by-step instructions, documentation |
-| manage-okf | KB Maintenance | Discover projects, extract metadata, normalize into OKF schema, sync |
-| kb-ops | KB Maintenance | Manage tasks, risks, and knowledge health — list, create, claim, close, audit |
+| code-audit | Engineering | Use for project health scans + code quality reviews — unused deps, bugs, security, performance, best practices |
+| kb-sync | KB Maintenance | Use to sync KB with project state — update status files, validate frontmatter, maintain indexes |
+| frontend-dev | Engineering | Use for frontend engineering tasks — React 19, Next.js 16, Vue, Svelte, TypeScript, state management, responsive design, performance, testing, a11y |
+| design-skill-os | Design | Use for UI/UX design reasoning — gestalt principles, 60-30-10 color, typographic scale, Nielsen heuristics, accessibility audits |
+| supabase-postgres-best-practices | Database | Use for Postgres/Supabase performance optimization — query performance, RLS, schema design, indexing, connection management |
+| web-dev | Engineering | Use for building modern web apps with semantic HTML5, CSS Grid/Flexbox, and vanilla JS |
+| writer-work | Content | Use for content writing — summaries, changelogs, step-by-step instructions, and documentation. Also triggered by "summarize" or "wrap-day" |
+| manage-okf | KB Maintenance | Maintain an OKF workspace by discovering projects, extracting verified metadata and documentation, normalizing project knowledge into a consistent schema, and synchronizing a central workspace knowledge base that serves as the authoritative source of truth |
+| kb-ops | KB Maintenance | Manage tasks, risks, and knowledge health across the OKF workspace — list, create, claim, close tasks; track and resolve risks; audit freshness and drift |
 
 ## Directory Layout
 

@@ -1,7 +1,7 @@
 ---
 type: skill
 id: supabase-postgres-best-practices
-last_updated: 2026-06-25
+last_updated: 2026-07-17
 source: ~/.config/opencode/skills/supabase-postgres-best-practices/SKILL.md
 category: database
 projects: [global]
@@ -9,7 +9,7 @@ projects: [global]
 
 # supabase-postgres-best-practices Skill
 
-**Purpose:** Postgres performance optimization and best practices from Supabase. Use when writing, reviewing, or optimizing Postgres queries, schema designs, or database configurations.
+**Purpose:** Use for Postgres/Supabase performance optimization — query performance, RLS, schema design, indexing, connection management.
 
 ## When to Apply
 - Writing SQL queries or designing schemas

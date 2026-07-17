@@ -1,7 +1,7 @@
 ---
 type: skill
 id: writer-work
-last_updated: 2026-07-04
+last_updated: 2026-07-17
 source: ~/.config/opencode/skills/writer-work/SKILL.md
 category: content
 projects: [global]
@@ -9,7 +9,7 @@ projects: [global]
 
 # writer-work Skill
 
-**Purpose:** Create concise summaries, changelogs, step-by-step instructions, and documentation using KB context.
+**Purpose:** Use for content writing — summaries, changelogs, step-by-step instructions, and documentation. Also triggered by "summarize" or "wrap-day".
 
 ## References
 - `~/OKF/projects/writer/agent.md` for capabilities

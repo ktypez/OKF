@@ -1,8 +1,8 @@
 ---
 type: skill
 id: kb-ops
-last_updated: 2026-07-05
-description: Manage tasks, risks, and knowledge health across the OKF workspace.
+last_updated: 2026-07-17
+description: Manage tasks, risks, and knowledge health across the OKF workspace — list, create, claim, close tasks; track and resolve risks; audit freshness and drift.
 ---
 
 # kb-ops

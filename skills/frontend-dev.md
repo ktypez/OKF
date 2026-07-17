@@ -1,7 +1,7 @@
 ---
 type: skill
 id: frontend-dev
-last_updated: 2026-06-26
+last_updated: 2026-07-17
 source: ~/.config/opencode/skills/frontend-dev/SKILL.md
 category: engineering
 projects: [global]
@@ -9,7 +9,7 @@ projects: [global]
 
 # frontend-dev Skill
 
-**Purpose:** Expert frontend engineering — React 19, Next.js 16, Vue, Angular, Svelte, TypeScript, component architecture, state management, responsive design, performance optimization, testing, accessible UI/UX.
+**Purpose:** Use for frontend engineering tasks — React 19, Next.js 16, Vue, Svelte, TypeScript, state management, responsive design, performance, testing, a11y.
 
 ## Capabilities
 

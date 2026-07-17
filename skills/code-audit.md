@@ -1,7 +1,7 @@
 ---
 type: skill
 id: code-audit
-last_updated: 2026-07-04
+last_updated: 2026-07-17
 source: ~/.config/opencode/skills/code-audit/SKILL.md
 category: engineering
 projects: [truck, mcky.space, clientdata, habby]
@@ -9,7 +9,7 @@ projects: [truck, mcky.space, clientdata, habby]
 
 # code-audit Skill
 
-**Purpose:** Project health scans + code quality reviews — unused deps, bugs, security, performance, best practices.
+**Purpose:** Use for project health scans + code quality reviews — unused deps, bugs, security, performance, best practices.
 
 **Merged from:** cleanup-project + code-review
 

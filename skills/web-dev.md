@@ -1,7 +1,7 @@
 ---
 type: skill
 id: web-dev
-last_updated: 2026-06-25
+last_updated: 2026-07-17
 source: ~/.config/opencode/skills/web-dev/SKILL.md
 category: engineering
 projects: [global]
@@ -9,7 +9,7 @@ projects: [global]
 
 # web-dev Skill
 
-**Purpose:** Build modern, responsive, accessible web apps with semantic HTML5, CSS Grid/Flexbox, and vanilla JS. Covers UI/UX design, cross-browser compat, performance, maintainable code.
+**Purpose:** Use for building modern web apps with semantic HTML5, CSS Grid/Flexbox, and vanilla JS.
 
 ## Workflow
 1. Determine project scope and requirements

@@ -2,9 +2,9 @@
 type: agent-profile
 id: data-mcky-space-agent
 project: data.mcky.space
-last_updated: '2026-07-13'
+last_updated: '2026-07-17'
 status: active
-freshness: '2026-07-13'
+freshness: '2026-07-17'
 verified: '2026-07-13'
 expires: null
 superseded_by: null
@@ -35,6 +35,7 @@ production deployment ของ clientdata — ย้ายจาก Next.js ม
 ## Stack
 
 - **Framework**: Vite 7 + React 19 + TypeScript
+- **Animation**: Motion (Framer Motion) v12 — AnimatePresence, spring transitions, stagger
 - **State**: Zustand
 - **Database**: **Cloudflare D1 (SQLite)** ผ่าน Drizzle ORM (migrated from Neon — ไม่ใช่ Neon แล้ว)
 - **Storage**: Cloudflare R2
@@ -44,6 +45,7 @@ production deployment ของ clientdata — ย้ายจาก Next.js ม
 ## ความต่างจาก clientdata (Key Differences from clientdata)
 
 - **Framework**: Vite 7 แทน Next.js 16 (App Router → react-router-dom)
+- **Animation**: Motion (Framer Motion) — ไม่มีใน clientdata
 - **State**: Zustand แทน React useState (30+ hooks → centralized stores)
 - **Deploy**: Cloudflare Pages แทน Vercel
 - **PWA**: มี service worker (`v2` ปลอดภัย, network-first, ไม่ auto-reload)
@@ -53,9 +55,9 @@ production deployment ของ clientdata — ย้ายจาก Next.js ม
 
 | Command | What it does |
 |---------|-------------|
-| `npx vite` | Dev server |
-| `npm run build` | Production build |
-| `npx wrangler pages deploy ./dist --project-name=data-mcky-space` | Deploy (git auto-deploy ปิด) |
+| `pnpm dev` | Dev server |
+| `pnpm run build` | Production build |
+| `pnpm exec wrangler pages deploy ./dist --project-name=data-mcky-space` | Deploy (git auto-deploy ปิด) |
 | `node scripts/health-check.mjs` | ตรวจสภาพ production |
 
 ## งานค้าง (TODOs)

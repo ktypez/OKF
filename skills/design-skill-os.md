@@ -1,7 +1,7 @@
 ---
 type: skill
 id: design-skill-os
-last_updated: 2026-06-25
+last_updated: 2026-07-17
 source: ~/.config/opencode/skills/design-skill-os/SKILL.md
 category: design
 projects: [global]
@@ -9,7 +9,7 @@ projects: [global]
 
 # design-skill-os Skill
 
-**Purpose:** Elite design reasoning layer — gestalt principles, chromatic mastery (60-30-10), typographic modular scale (Golden Ratio), digital heuristics (Nielsen/Norman), Red Team audits, narrative synthesis for high-fidelity UI/UX.
+**Purpose:** Use for UI/UX design reasoning — gestalt principles, 60-30-10 color, typographic scale, Nielsen heuristics, accessibility audits.
 
 ## Core Principles
 

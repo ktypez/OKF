@@ -32,6 +32,7 @@ data.mcky.space/
 │   ├── components/
 │   │   ├── layout/
 │   │   ├── ui/
+│   │   ├── LoginModal.tsx        # Admin login modal (password field, see DOC-004)
 │   │   └── ...
 │   ├── lib/
 │   │   ├── db.ts                 # Drizzle ORM client
