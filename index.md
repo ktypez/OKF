@@ -18,7 +18,7 @@ last_updated: 2026-07-13
 | clientdata | [profile](./projects/clientdata/profile.md) | [agent](./projects/clientdata/agent.md) | [status](./projects/clientdata/status.md) | ~~archived~~ | ❌ directory หายไป |
 | data.mcky.space | [profile](./projects/data.mcky.space/profile.md) | [agent](./projects/data.mcky.space/agent.md) | [status](./projects/data.mcky.space/status.md) | active | Vite 7, React 19, Tailwind 4, Cloudflare D1/R2, Zustand, MapLibre |
 | habby | [profile](./projects/habby/profile.md) | [agent](./projects/habby/agent.md) | [status](./projects/habby/status.md) | active | Vite 6, Express 5, ioredis, Vitest |
-| mcky.space | [profile](./projects/mcky.space/profile.md) | [agent](./projects/mcky.space/agent.md) | [status](./projects/mcky.space/status.md) | active | Astro 7, Alpine.js 3 (CDN), Supabase, Vercel |
+| mcky.space | [profile](./projects/mcky.space/profile.md) | [agent](./projects/mcky.space/agent.md) | [status](./projects/mcky.space/status.md) | active | Astro 7, Vanilla JS, Supabase, Vercel |
 | receipts-dms | [profile](./projects/receipts-dms/profile.md) | [agent](./projects/receipts-dms/knowledge/NODE-002.md) | [status](./projects/receipts-dms/status.md) | active | Vite 6, React 19, Radix UI, Tailwind 3, Cloudflare D1/R2 |
 | collage | [profile](./projects/collage/profile.md) | [agent](./projects/collage/agent.md) | [status](./projects/collage/status.md) | active | Express 4, sharp, AWS S3, LINE Bot SDK |
 | truck | [profile](./projects/truck/profile.md) | [agent](./projects/truck/agent.md) | [status](./projects/truck/status.md) | active | React 19, Vite 8, Supabase, TanStack Query |
@@ -44,7 +44,7 @@ last_updated: 2026-07-13
 
 ## สรุปเทคโนโลยี (Technology Summary)
 - **Frameworks:** React 19, Vite 8, Vite 7, Vite 6, Astro 7, Express 5, Express 4, Next.js 16
-- **UI:** Tailwind 4, Tailwind 3, Radix UI, Alpine.js 3, Zustand, TanStack Query, MapLibre GL
+- **UI:** Tailwind 4, Tailwind 3, Radix UI, Zustand, TanStack Query, MapLibre GL
 - **ฐานข้อมูล:** Supabase (PostgreSQL), Cloudflare D1, ioredis
 - **Storage:** Cloudflare R2, AWS S3
 - **การเชื่อมต่อ:** LINE Platform (LIFF + Bot SDK), Vercel

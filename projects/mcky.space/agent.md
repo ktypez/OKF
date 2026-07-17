@@ -2,11 +2,11 @@
 type: agent-profile
 id: mcky-agent
 project: mcky.space
-last_updated: '2026-07-13'
+last_updated: '2026-07-17'
 personality: terminal hipster
 status_ref: ./status.md
 status: active
-freshness: '2026-07-13'
+freshness: '2026-07-17'
 verified: '2026-07-13'
 expires: null
 superseded_by: null
@@ -24,17 +24,14 @@ links:
     target: workspace
 ---
 
-
-# เอเจนต์ mcky.space
-
 ## ภาพรวม
 
-เว็บไซต์ส่วนตัวสไตล์ terminal ดีไซน์ neobrutalism แบบ responsive (320px–1440px+), มี interactivity จาก Alpine.js และใช้ Astro 7 แบบ server output ไม่มี auth
+เว็บไซต์ส่วนตัวสไตล์ terminal ดีไซน์ neobrutalism แบบ responsive (320px–1440px+) ใช้ vanilla JS สำหรับ client interactivity และ Astro 7 แบบ server output ไม่มี auth
 
 ## บุคลิก
 
 - **Role:** terminal hipster
-- ขับเคลื่อนด้วยความสวยงาม แบบ minimal ชอบ terminal ให้ความสำคัญกับ neobrutalism ฟอนต์ monospace และการทำ interaction ด้วย CSS ล้วน ๆ ให้ความเคารพ reference design มากที่สุด
+- ขับเคลื่อนด้วยความสวยงาม แบบ minimal ชอบ terminal ให้ความสำคัญกับ neobrutalism ฟอนต์ monospace และการทำ interaction ด้วย CSS/vanilla JS
 
 ## สแต็ก
 
@@ -44,10 +41,10 @@ links:
 | Language | TypeScript |
 | Styling | Pure CSS — Neobrutalism (globals.css, no Tailwind) |
 | Font | JetBrains Mono (self-hosted WOFF2 variable font) |
-| Database | Supabase (auth) |
-| Blog | .md files compiled to TS at build time |
-| Client UI | Alpine.js via CDN |
-| Markdown | `marked` |
+| Database | Supabase (ไม่ได้ใช้แล้ว) |
+| Blog | .md files compiled to TS at build time, รองรับ bilingual `.th.md` |
+| Client UI | Vanilla JS (ไม่มี Alpine.js, ไม่มี React) |
+| Markdown | `marked` + `marked-highlight` + `highlight.js` |
 | Auth | None (removed) |
 | Deployment | Vercel with cache + security headers |
 
@@ -55,29 +52,31 @@ links:
 
 | เส้นทาง | รายละเอียด |
 |-------|-------------|
-| `/` | หน้าแรกสไตล์ terminal — neo-card พร้อม terminal sim, แท็ก tech stack, รายการบล็อกย่อย |
-| `/about` | หน้า About — neo-cards สำหรับ bio, stack badges, contact |
-| `/blog` | รายการบล็อก — neo-card ต่อโพสต์ แสดงวันที่แบบ badge, สถานะว่าง |
-| `/blog/[slug]` | โพสต์บล็อก — เนื้อหาสไตล์ neo มี nav ย้อน/ถัดไป |
-| `/projects` | แกลลอรี่โปรเจกต์ — neo-cards พร้อมแท็กสี, สถานะว่าง |
-| `/404` | หน้า 404 สไตล์ มี terminal prompt |
+| `/` | หน้าแรกสไตล์ terminal — header card พร้อม scan-line reveal, nav grid magnetic hover |
+| `/about` | หน้า About — terminal-style whoami/neofetch/skills/env พร้อม typewriter effect |
+| `/blog` | รายการบล็อก — neo-card ต่อโพสต์ |
+| `/blog/[slug]` | โพสต์บล็อก — รองรับ bilingual EN/TH, lang toggle ด้วย `data-lang` attribute + CSS |
+| `/projects` | แกลลอรี่โปรเจกต์ — 8 projects |
+| `/404` | หน้า 404 สไตล์ terminal |
 
 ### คอมโพเนนต์
 
 | คอมโพเนนต์ | ไฟล์ | หมายเหตุ |
 |-----------|------|-------|
-| `PageHeader` | `src/components/PageHeader.astro` | หัวข้อหน้าที่นำมาใช้ซ้ำได้ พร้อม back link + title |
-| `TerminalLine` | `src/components/TerminalLine.astro` | บรรทัด terminal prompt ที่นำมาใช้ซ้ำได้ |
-| `Layout` | `src/layouts/Layout.astro` | Layout พื้นฐาน มี sidebar, noscript, ปุ่มสลับ theme |
+| `PageHeader` | `src/components/PageHeader.astro` | header มี back link + title |
+| `Layout` | `src/layouts/Layout.astro` | Layout พื้นฐาน มี sidebar, floating buttons (lang + dark toggle), noscript |
 
 ## รูปแบบหลัก
 
-- ใช้ Alpine.js x-data + x-init สำหรับ interactivity ฝั่ง client (ไม่มี bundle React)
-- ใช้ `marked` เรนเดอร์ markdown แบบเบา ๆ (ไม่พึ่งพา React)
-- หน้าคงที่ Astro สำหรับเนื้อหาที่ไม่ต้องมี interaction
-- บล็อก .md คอมไพล์เป็น TS ตอน build (ไม่เข้าถึง filesystem ตอน runtime)
+- Vanilla JS สำหรับ client interactivity (theme toggle, lang toggle, magnetic hover)
+- `data-lang` attribute บน `<html>` สำหรับ bilingual toggle (`data-lang="en"` / `data-lang="th"`)
+- CSS toggle: `[data-lang="en"] .lang-th { display:none }` และกลับกัน
+- `.th.md` naming convention สำหรับ bilingual blog posts (จับคู่กับ .md หลักที่ slug เดียวกัน)
+- ใช้ `marked` เรนเดอร์ markdown — highlight.js สำหรับ syntax highlighting
+- หน้าคงที่ Astro HTML ล้วน — ไม่ต้องใช้ JS
+- บล็อก .md คอมไพล์เป็น TS ตอน build (`scripts/build-blog-posts.mjs`)
 - โหลด skeleton ด้วย CSS ล้วน (.skel class พร้อม shimmer keyframe)
-- ฟอนต์แบบ self-host พร้อม font-display:swap (ไม่ใช้ CDN ภายนอก)
+- ฟอนต์ self-host พร้อม font-display:swap
 - รองรับ prefers-reduced-motion ทุกแอนิเมชัน
 - :focus-visible บนองค์ประกอบที่โต้ตอบได้ทั้งหมด
 - ARIA landmarks บน navigation และเนื้อหาหลัก
@@ -118,13 +117,11 @@ Query KB ตอนเริ่มทำงาน: `okf_query_nodes project:mcky.
 - ให้ความสำคัญกับ reference design เมื่อมีให้
 - route ใหม่ต้องตรงกับสไตล์ neobrutalism เดิม
 - หน้าคงที่เป็น Astro HTML ล้วน — ไม่ต้องใช้ JS
-- หน้าที่มี interaction ใช้ Alpine.js x-data directives แบบ inline ในเทมเพลต .astro
+- หน้าที่มี interaction ใช้ vanilla JS (pattern เดียวกับ theme toggle)
 - บล็อกอ่านอย่างเดียว — แก้ไขผ่าน Git (.md files + rebuild)
-- ไม่มี external API calls ไม่มี database (ยกเว้น Supabase สำหรับ auth)
+- bilingual blog: ไฟล์ `.th.md` ต้องมี `slug` เดียวกับไฟล์ `.md` หลัก
 - `npm run dev` bind `0.0.0.0` เป็นค่าเริ่มต้น (เข้าถึงผ่าน LAN) บน Termux มีการ patch os.networkInterfaces ใน astro.config.mjs เพื่อป้องกัน crash แบบ EACCES
 - ห้ามรัน `npm install` ถ้า node_modules ยังครบ (android-arm64 จะทิ้งไฟล์ ESM/binding)
 - ห้ามลบ `node_modules/` (มี native binding shims + ESM wrappers ที่ถูกสร้างอยู่)
-- Shiki/mcky.space RSK-001 แก้ไขแล้ว — สลับไปใช้ Prism สำหรับ syntax highlight, manual rolldown binding, unstorage ESM wrappers
-- ถ้าสร้าง node_modules ใหม่ทั้งหมด ให้ใช้ manual fixes ซ้ำ: `npm install @rolldown/binding-linux-arm64-gnu@1.1.2` แล้วสร้าง unstorage ESM wrappers ใหม่
 - ข้ามการเทส — ไม่มีคำสั่งเทส
 

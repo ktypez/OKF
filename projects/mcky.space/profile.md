@@ -2,9 +2,9 @@
 type: project-profile
 id: mcky-space-profile
 project: mcky.space
-last_updated: '2026-07-13'
+last_updated: '2026-07-17'
 status: active
-freshness: '2026-07-13'
+freshness: '2026-07-17'
 verified: '2026-07-13'
 expires: null
 superseded_by: null
@@ -22,9 +22,6 @@ links:
     target: mcky-commands
 ---
 
-
-# โปรไฟล์โปรเจกต์: mcky.space
-
 ## ข้อมูลตัวตน
 - **Name:** mcky.space
 - **Display Name:** mcky.space
@@ -35,18 +32,16 @@ links:
 
 ## เทคโนโลยี
 - **Languages:** TypeScript, JavaScript
-- **Frameworks:** Astro 7, Alpine.js
+- **Frameworks:** Astro 7
 - **Runtime:** Node.js
 - **Package Manager:** npm
 - **Build System:** Astro build
 - **Deployment Targets:** Vercel
 
 ## การพึ่งพา
-- **Major Libraries:** `@supabase/supabase-js`, `marked`
-- **External Services:** Supabase
-- **Databases:** Supabase (PostgreSQL)
-- **Cloud Providers:** Supabase, Vercel
-- **APIs:** Supabase API
+- **Major Libraries:** `marked`, `marked-highlight`, `highlight.js`
+- **Databases:** Supabase (PostgreSQL, ไม่ได้ใช้แล้ว)
+- **Cloud Providers:** Vercel
 
 ## การพัฒนา
 - **Setup:** `npm install`
@@ -57,7 +52,7 @@ links:
 - **Run:** `npm run dev`
 
 ## สถาปัตยกรรม
-- **Structure:** Astro SSR พร้อม Alpine.js client interactivity
+- **Structure:** Astro SSR + vanilla JS สำหรับ client interactivity
 - **Entry Points:** `src/pages/`
 - **Important Packages:** `marked` สำหรับประมวลผล markdown
 

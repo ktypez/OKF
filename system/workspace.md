@@ -10,10 +10,10 @@ last_updated: '2026-07-13'
 
 | ด้าน | truck | mcky.space | data.mcky.space | habby | collage | receipts-dms |
 |--------|-------|------------|------|-------|---------|-------------|
-| Framework | React 19 + Vite 8 + TS 6 | Astro 7 + Alpine.js | Vite 8 + React 19 | Vite 8 + Express 5 | Express 4 + vanilla HTML/CSS/JS | Vite 8 + React 19 + TS 7 |
+| Framework | React 19 + Vite 8 + TS 6 | Astro 7 + vanilla JS | Vite 8 + React 19 | Vite 8 + Express 5 | Express 4 + vanilla HTML/CSS/JS | Vite 8 + React 19 + TS 7 |
 | ฐานข้อมูล | Supabase (Postgres) | Supabase + ไฟล์ .md | **Cloudflare D1 (SQLite)** | Redis (Upstash) | ❌ | **Cloudflare D1 (SQLite)** |
 | Storage | Supabase Storage | Supabase | **Cloudflare R2** | ไม่มี | **Cloudflare R2** | **Cloudflare R2** |
-| State | tanstack/react-query v5 | Alpine.js x-data | Zustand | ไม่มี | ไม่มี | React hooks |
+| State | tanstack/react-query v5 | Vanilla JS | Zustand | ไม่มี | ไม่มี | React hooks |
 | Auth | Supabase Auth | SHA-256 header-based | รหัสผ่าน (admin/viewer) | SHA-256 | LINE Messaging API | รหัสผ่าน + HMAC-SHA256 |
 | PWA | ❌ (ถูกลบ 2026-07-11) | ❌ | ✅ (SW v2, network-first) | ❌ | ❌ | ❌ |
 | Testing | vitest (~101 tests) | ❌ | ❌ (health-check script) | ❌ | ❌ | ❌ |
