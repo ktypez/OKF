@@ -77,9 +77,6 @@ last_updated: 2026-07-18
 |--------|---------|
 | `scripts/doctor-kb.js` | ตรวจวงจรชีวิตความรู้ |
 | `scripts/backfill.js` | หว่าน KB จาก git/code/docs |
-| `scripts/dispatch.js` | แสดงงานค้างข้ามโปรเจกต์ |
-| `scripts/claim-task.js` | Claim งานแบบ atomically |
-| `scripts/complete-task.js` | ปิดงาน + บันทึกบทเรียน |
 
 ## เครื่องมือ MCP (MCP Tools)
 
