@@ -2,19 +2,18 @@
 type: project-status
 id: writer-status
 project: writer
-last_updated: '2026-07-13'
-state: active
-documentation_completeness: High
-freshness: '2026-07-13'
----
-
----
-type: project-status
-id: writer-status
-project: writer
-last_updated: 2026-07-13
-state: active
-documentation_completeness: High
+last_updated: '2026-07-18'
+status: active
+freshness: '2026-07-18'
+verified: '2026-07-18'
+expires: null
+superseded_by: null
+anchors: []
+links:
+  - type: relates-to
+    target: writer-profile
+  - type: relates-to
+    target: writer-agent
 ---
 
 # สถานะ Writer

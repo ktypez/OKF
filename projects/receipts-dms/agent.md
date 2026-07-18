@@ -1,13 +1,13 @@
 ---
 type: agent-profile
-id: NODE-002
+id: receipts-dms-agent
 project: receipts-dms
 last_updated: '2026-07-18'
-status: archived
+status: active
 freshness: '2026-07-18'
 verified: '2026-07-18'
 expires: null
-superseded_by: receipts-dms-agent
+superseded_by: null
 anchors: []
 links:
   - type: relates-to
@@ -16,15 +16,11 @@ links:
     target: receipts-dms-status
 ---
 
-
-
-# NODE-002: receipts-dms Agent
-
 # receipts-dms Agent
 
 ## Overview
 
-Receipt document management system — Vite 6 + React 19 SPA with Cloudflare Pages Functions (D1 + R2). Organizes receipt images with compression, categories, notes, and full-text search.
+Receipt document management system — Vite 8 + React 19 SPA with Cloudflare Pages Functions (D1 + R2). Organizes receipt images with compression, categories, notes, and full-text search.
 
 ## Personality
 
@@ -35,8 +31,8 @@ Receipt document management system — Vite 6 + React 19 SPA with Cloudflare Pag
 
 | Layer | Tech |
 |-------|------|
-| Frontend | Vite 6 + React 19 + TypeScript |
-| UI | shadcn/ui (Radix), lucide-react, Tailwind v3 |
+| Frontend | Vite 8 + React 19 + TypeScript 7 |
+| UI | shadcn/ui (Radix), lucide-react, Tailwind 4 |
 | Routing | react-router v7 |
 | Auth | Single password + HMAC-SHA256 HttpOnly cookie |
 | Backend | Cloudflare Pages Functions |
@@ -60,6 +56,4 @@ Query KB on startup: `okf_query_nodes project:receipts-dms type:document status:
 
 ## Relationships
 
-- `mcky.space` — sibling project under the `paper` / mcky.space ecosystem
-
-
+- `mcky.space` — sibling project under the paper ecosystem

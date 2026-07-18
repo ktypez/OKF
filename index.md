@@ -1,7 +1,7 @@
 ---
 type: workspace-index
 id: okf-index
-last_updated: 2026-07-13
+last_updated: 2026-07-18
 ---
 
 # ดัชนี Workspace (Workspace Index)
@@ -19,11 +19,10 @@ last_updated: 2026-07-13
 | data.mcky.space | [profile](./projects/data.mcky.space/profile.md) | [agent](./projects/data.mcky.space/agent.md) | [status](./projects/data.mcky.space/status.md) | active | Vite 7, React 19, Tailwind 4, Cloudflare D1/R2, Zustand, MapLibre |
 | habby | [profile](./projects/habby/profile.md) | [agent](./projects/habby/agent.md) | [status](./projects/habby/status.md) | active | Vite 6, Express 5, ioredis, Vitest |
 | mcky.space | [profile](./projects/mcky.space/profile.md) | [agent](./projects/mcky.space/agent.md) | [status](./projects/mcky.space/status.md) | active | Astro 7, Vanilla JS, Supabase, Vercel |
-| receipts-dms | [profile](./projects/receipts-dms/profile.md) | [agent](./projects/receipts-dms/knowledge/NODE-002.md) | [status](./projects/receipts-dms/status.md) | active | Vite 6, React 19, Radix UI, Tailwind 3, Cloudflare D1/R2 |
+| receipts-dms | [profile](./projects/receipts-dms/profile.md) | [agent](./projects/receipts-dms/agent.md) | [status](./projects/receipts-dms/status.md) | active | Vite 8, React 19, Radix UI, Tailwind 4, Cloudflare D1/R2 |
 | collage | [profile](./projects/collage/profile.md) | [agent](./projects/collage/agent.md) | [status](./projects/collage/status.md) | active | Express 4, sharp, AWS S3, LINE Bot SDK |
 | truck | [profile](./projects/truck/profile.md) | [agent](./projects/truck/agent.md) | [status](./projects/truck/status.md) | active | React 19, Vite 8, Supabase, TanStack Query |
 | writer | [profile](./projects/writer/profile.md) | [agent](./projects/writer/agent.md) | — | global | Markdown, AI agent system |
-
 ## รูปแบบ (Schema)
 
 - **Format:** [`.opencode/rules/okf-format.md`](./.opencode/rules/okf-format.md)
@@ -59,7 +58,7 @@ last_updated: 2026-07-13
 - **Dependencies:** 100%
 - **Commands:** 100%
 - **Status:** 100%
-- **Knowledge Nodes:** 122
+- **Knowledge Nodes:** 140
 
 ## ตัวกระตุ้น (Triggers)
 

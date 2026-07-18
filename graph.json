@@ -1,0 +1,3066 @@
+{
+  "meta": {
+    "built": "2026-07-18T01:37:43.656Z",
+    "nodeCount": 141,
+    "edgeCount": 202,
+    "projects": [
+      "clientdata",
+      "collage",
+      "data.mcky.space",
+      "habby",
+      "mcky.space",
+      "receipts-dms",
+      "truck",
+      "writer"
+    ]
+  },
+  "nodes": [
+    {
+      "id": "clientdata-agent",
+      "project": "clientdata",
+      "type": "agent-profile",
+      "status": "archived",
+      "file": "projects/clientdata/agent.md",
+      "last_updated": "2026-07-13",
+      "freshness": "2026-07-13",
+      "verified": "2026-07-13",
+      "expires": null,
+      "superseded_by": null,
+      "title": "clientdata-agent"
+    },
+    {
+      "id": "clientdata-assets",
+      "project": "clientdata",
+      "type": "document",
+      "status": "active",
+      "file": "projects/clientdata/assets.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "clientdata-assets"
+    },
+    {
+      "id": "clientdata-commands",
+      "project": "clientdata",
+      "type": "document",
+      "status": "active",
+      "file": "projects/clientdata/commands.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "clientdata-commands"
+    },
+    {
+      "id": "clientdata-decisions",
+      "project": "clientdata",
+      "type": "index",
+      "status": "active",
+      "file": "projects/clientdata/decisions.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "clientdata-decisions"
+    },
+    {
+      "id": "clientdata-dependencies",
+      "project": "clientdata",
+      "type": "document",
+      "status": "active",
+      "file": "projects/clientdata/dependencies.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "clientdata-dependencies"
+    },
+    {
+      "id": "COMP-001",
+      "project": "clientdata",
+      "type": "component",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/COMP-001.md",
+      "last_updated": "2026-07-04T00:00:00.000Z",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "COMP-001"
+    },
+    {
+      "id": "COMP-002",
+      "project": "clientdata",
+      "type": "component",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/COMP-002.md",
+      "last_updated": "2026-07-04",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "title": "COMP-002"
+    },
+    {
+      "id": "COMP-003",
+      "project": "clientdata",
+      "type": "component",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/COMP-003.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "COMP-003"
+    },
+    {
+      "id": "DEC-001",
+      "project": "clientdata",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/DEC-001.md",
+      "last_updated": "2026-07-04T00:00:00.000Z",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-001"
+    },
+    {
+      "id": "DEC-002",
+      "project": "clientdata",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/DEC-002.md",
+      "last_updated": "2026-07-04",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-002"
+    },
+    {
+      "id": "DEC-003",
+      "project": "clientdata",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/DEC-003.md",
+      "last_updated": "2026-07-04",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-003"
+    },
+    {
+      "id": "DEC-004",
+      "project": "clientdata",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/DEC-004.md",
+      "last_updated": "2026-07-04",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-004"
+    },
+    {
+      "id": "DEC-005",
+      "project": "clientdata",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/DEC-005.md",
+      "last_updated": "2026-07-04",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-005"
+    },
+    {
+      "id": "DEC-006",
+      "project": "clientdata",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/DEC-006.md",
+      "last_updated": "2026-07-04",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-006"
+    },
+    {
+      "id": "DEC-007",
+      "project": "clientdata",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/DEC-007.md",
+      "last_updated": "2026-07-07T00:00:00.000Z",
+      "freshness": "2026-07-07T00:00:00.000Z",
+      "verified": "2026-07-07T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-007"
+    },
+    {
+      "id": "DEC-008",
+      "project": "clientdata",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/DEC-008.md",
+      "last_updated": "2026-07-07T00:00:00.000Z",
+      "freshness": "2026-07-07T00:00:00.000Z",
+      "verified": "2026-07-07T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-008"
+    },
+    {
+      "id": "DEC-009",
+      "project": "clientdata",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/DEC-009.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-009"
+    },
+    {
+      "id": "DEC-010",
+      "project": "clientdata",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/DEC-010.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-010"
+    },
+    {
+      "id": "DEC-011",
+      "project": "clientdata",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/DEC-011.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-011"
+    },
+    {
+      "id": "DEC-012",
+      "project": "clientdata",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/DEC-012.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-012"
+    },
+    {
+      "id": "DEC-013",
+      "project": "clientdata",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/DEC-013.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-013"
+    },
+    {
+      "id": "DEC-014",
+      "project": "clientdata",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/DEC-014.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": "2026-07-12T00:00:00.000Z",
+      "verified": "2026-07-12T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-014"
+    },
+    {
+      "id": "DEC-015",
+      "project": "clientdata",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/DEC-015.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": "2026-07-12T00:00:00.000Z",
+      "verified": "2026-07-12T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-015"
+    },
+    {
+      "id": "LSN-001",
+      "project": "clientdata",
+      "type": "lesson",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/LSN-001.md",
+      "last_updated": "2026-07-04T00:00:00.000Z",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "LSN-001"
+    },
+    {
+      "id": "LSN-002",
+      "project": "clientdata",
+      "type": "lesson",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/LSN-002.md",
+      "last_updated": "2026-07-07T00:00:00.000Z",
+      "freshness": "2026-07-07T00:00:00.000Z",
+      "verified": "2026-07-07T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "LSN-002"
+    },
+    {
+      "id": "LSN-003",
+      "project": "clientdata",
+      "type": "lesson",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/LSN-003.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "LSN-003"
+    },
+    {
+      "id": "LSN-004",
+      "project": "clientdata",
+      "type": "lesson",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/LSN-004.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "LSN-004"
+    },
+    {
+      "id": "LSN-005",
+      "project": "clientdata",
+      "type": "lesson",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/LSN-005.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "LSN-005"
+    },
+    {
+      "id": "LSN-006",
+      "project": "clientdata",
+      "type": "lesson",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/LSN-006.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "LSN-006"
+    },
+    {
+      "id": "LSN-007",
+      "project": "clientdata",
+      "type": "lesson",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/LSN-007.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "LSN-007"
+    },
+    {
+      "id": "LSN-008",
+      "project": "clientdata",
+      "type": "lesson",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/LSN-008.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "LSN-008"
+    },
+    {
+      "id": "LSN-009",
+      "project": "clientdata",
+      "type": "lesson",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/LSN-009.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "LSN-009"
+    },
+    {
+      "id": "LSN-010",
+      "project": "clientdata",
+      "type": "lesson",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/LSN-010.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "LSN-010"
+    },
+    {
+      "id": "LSN-011",
+      "project": "clientdata",
+      "type": "lesson",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/LSN-011.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "LSN-011"
+    },
+    {
+      "id": "LSN-012",
+      "project": "clientdata",
+      "type": "lesson",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/LSN-012.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "LSN-012"
+    },
+    {
+      "id": "LSN-013",
+      "project": "clientdata",
+      "type": "lesson",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/LSN-013.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "LSN-013"
+    },
+    {
+      "id": "LSN-014",
+      "project": "clientdata",
+      "type": "lesson",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/LSN-014.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "LSN-014"
+    },
+    {
+      "id": "LSN-015",
+      "project": "clientdata",
+      "type": "lesson",
+      "status": "active",
+      "file": "projects/clientdata/knowledge/LSN-015.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "LSN-015"
+    },
+    {
+      "id": "clientdata-profile",
+      "project": "clientdata",
+      "type": "project-profile",
+      "status": "archived",
+      "file": "projects/clientdata/profile.md",
+      "last_updated": "2026-07-13",
+      "freshness": "2026-07-13",
+      "verified": "2026-07-13",
+      "expires": null,
+      "superseded_by": null,
+      "title": "clientdata-profile"
+    },
+    {
+      "id": "clientdata-status",
+      "project": "clientdata",
+      "type": "project-status",
+      "status": "archived",
+      "file": "projects/clientdata/status.md",
+      "last_updated": "2026-07-18",
+      "freshness": "2026-07-18",
+      "verified": "2026-07-18",
+      "expires": null,
+      "superseded_by": "data-mcky-space-status",
+      "title": "clientdata-status"
+    },
+    {
+      "id": "clientdata-structure",
+      "project": "clientdata",
+      "type": "document",
+      "status": "active",
+      "file": "projects/clientdata/structure.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "clientdata-structure"
+    },
+    {
+      "id": "collage-agent",
+      "project": "collage",
+      "type": "agent-profile",
+      "status": "active",
+      "file": "projects/collage/agent.md",
+      "last_updated": "2026-07-13",
+      "freshness": "2026-07-13",
+      "verified": "2026-07-13",
+      "expires": null,
+      "superseded_by": null,
+      "title": "collage-agent"
+    },
+    {
+      "id": "collage-cmds",
+      "project": "collage",
+      "type": "project-commands",
+      "status": "active",
+      "file": "projects/collage/commands.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": null,
+      "verified": null,
+      "expires": null,
+      "superseded_by": null,
+      "title": "collage-cmds"
+    },
+    {
+      "id": "collage-deps",
+      "project": "collage",
+      "type": "project-dependencies",
+      "status": "active",
+      "file": "projects/collage/dependencies.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": null,
+      "verified": null,
+      "expires": null,
+      "superseded_by": null,
+      "title": "collage-deps"
+    },
+    {
+      "id": "LSN-001",
+      "project": "collage",
+      "type": "lesson",
+      "status": "active",
+      "file": "projects/collage/knowledge/LSN-001.md",
+      "last_updated": "2026-07-12",
+      "freshness": "2026-07-12",
+      "verified": "2026-07-12",
+      "expires": null,
+      "superseded_by": null,
+      "title": "LSN-001"
+    },
+    {
+      "id": "collage-profile",
+      "project": "collage",
+      "type": "project-profile",
+      "status": "active",
+      "file": "projects/collage/profile.md",
+      "last_updated": "2026-07-13",
+      "freshness": "2026-07-13",
+      "verified": "2026-07-13",
+      "expires": null,
+      "superseded_by": null,
+      "title": "collage-profile"
+    },
+    {
+      "id": "collage-status",
+      "project": "collage",
+      "type": "project-status",
+      "status": "active",
+      "file": "projects/collage/status.md",
+      "last_updated": "2026-07-18",
+      "freshness": "2026-07-18",
+      "verified": "2026-07-18",
+      "expires": null,
+      "superseded_by": null,
+      "title": "collage-status"
+    },
+    {
+      "id": "collage-structure",
+      "project": "collage",
+      "type": "project-structure",
+      "status": "active",
+      "file": "projects/collage/structure.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": null,
+      "verified": null,
+      "expires": null,
+      "superseded_by": null,
+      "title": "collage-structure"
+    },
+    {
+      "id": "data-mcky-space-agent",
+      "project": "data.mcky.space",
+      "type": "agent-profile",
+      "status": "active",
+      "file": "projects/data.mcky.space/agent.md",
+      "last_updated": "2026-07-17",
+      "freshness": "2026-07-17",
+      "verified": "2026-07-13",
+      "expires": null,
+      "superseded_by": null,
+      "title": "data-mcky-space-agent"
+    },
+    {
+      "id": "data-mcky-space-cmds",
+      "project": "data.mcky.space",
+      "type": "project-commands",
+      "status": "active",
+      "file": "projects/data.mcky.space/commands.md",
+      "last_updated": "2026-07-13",
+      "freshness": "2026-07-13",
+      "verified": null,
+      "expires": null,
+      "superseded_by": null,
+      "title": "data-mcky-space-cmds"
+    },
+    {
+      "id": "data-mcky-space-deps",
+      "project": "data.mcky.space",
+      "type": "project-dependencies",
+      "status": "active",
+      "file": "projects/data.mcky.space/dependencies.md",
+      "last_updated": "2026-07-13T00:00:00.000Z",
+      "freshness": null,
+      "verified": null,
+      "expires": null,
+      "superseded_by": null,
+      "title": "data-mcky-space-deps"
+    },
+    {
+      "id": "DOC-001",
+      "project": "data.mcky.space",
+      "type": "document",
+      "status": "archived",
+      "file": "projects/data.mcky.space/knowledge/DOC-001.md",
+      "last_updated": "2026-07-11",
+      "freshness": "2026-07-11",
+      "verified": "2026-07-11",
+      "expires": null,
+      "superseded_by": "todos-convention",
+      "title": "DOC-001"
+    },
+    {
+      "id": "DOC-002",
+      "project": "data.mcky.space",
+      "type": "document",
+      "status": "archived",
+      "file": "projects/data.mcky.space/knowledge/DOC-002.md",
+      "last_updated": "2026-07-13",
+      "freshness": "2026-07-13",
+      "verified": "2026-07-13",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DOC-002"
+    },
+    {
+      "id": "DOC-003",
+      "project": "data.mcky.space",
+      "type": "document",
+      "status": "archived",
+      "file": "projects/data.mcky.space/knowledge/DOC-003.md",
+      "last_updated": "2026-07-13",
+      "freshness": "2026-07-13",
+      "verified": "2026-07-13",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DOC-003"
+    },
+    {
+      "id": "DOC-004",
+      "project": "data.mcky.space",
+      "type": "document",
+      "status": "active",
+      "file": "projects/data.mcky.space/knowledge/DOC-004.md",
+      "last_updated": "2026-07-14",
+      "freshness": "2026-07-14",
+      "verified": "2026-07-14",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DOC-004"
+    },
+    {
+      "id": "LSN-001",
+      "project": "data.mcky.space",
+      "type": "lesson",
+      "status": "active",
+      "file": "projects/data.mcky.space/knowledge/LSN-001.md",
+      "last_updated": "2026-07-13",
+      "freshness": "2026-07-13",
+      "verified": "2026-07-13",
+      "expires": null,
+      "superseded_by": null,
+      "title": "LSN-001"
+    },
+    {
+      "id": "LSN-002",
+      "project": "data.mcky.space",
+      "type": "lesson",
+      "status": "active",
+      "file": "projects/data.mcky.space/knowledge/LSN-002.md",
+      "last_updated": "2026-07-13",
+      "freshness": "2026-07-13",
+      "verified": "2026-07-13",
+      "expires": null,
+      "superseded_by": null,
+      "title": "LSN-002"
+    },
+    {
+      "id": "data-mcky-space-profile",
+      "project": "data.mcky.space",
+      "type": "project-profile",
+      "status": "active",
+      "file": "projects/data.mcky.space/profile.md",
+      "last_updated": "2026-07-17",
+      "freshness": "2026-07-17",
+      "verified": "2026-07-14",
+      "expires": null,
+      "superseded_by": null,
+      "title": "data-mcky-space-profile"
+    },
+    {
+      "id": "data-mcky-space-status",
+      "project": "data.mcky.space",
+      "type": "project-status",
+      "status": "active",
+      "file": "projects/data.mcky.space/status.md",
+      "last_updated": "2026-07-17",
+      "freshness": "2026-07-17",
+      "verified": "2026-07-13",
+      "expires": null,
+      "superseded_by": null,
+      "title": "data-mcky-space-status"
+    },
+    {
+      "id": "data-mcky-space-structure",
+      "project": "data.mcky.space",
+      "type": "project-structure",
+      "status": "active",
+      "file": "projects/data.mcky.space/structure.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": null,
+      "verified": null,
+      "expires": null,
+      "superseded_by": null,
+      "title": "data-mcky-space-structure"
+    },
+    {
+      "id": "habby-agent",
+      "project": "habby",
+      "type": "agent-profile",
+      "status": "active",
+      "file": "projects/habby/agent.md",
+      "last_updated": "2026-07-17",
+      "freshness": "2026-07-17",
+      "verified": "2026-07-13",
+      "expires": null,
+      "superseded_by": null,
+      "title": "habby-agent"
+    },
+    {
+      "id": "habby-assets",
+      "project": "habby",
+      "type": "document",
+      "status": "active",
+      "file": "projects/habby/assets.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": "2026-07-12T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "habby-assets"
+    },
+    {
+      "id": "habby-commands",
+      "project": "habby",
+      "type": "document",
+      "status": "active",
+      "file": "projects/habby/commands.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": "2026-07-12T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "habby-commands"
+    },
+    {
+      "id": "habby-decisions",
+      "project": "habby",
+      "type": "index",
+      "status": "active",
+      "file": "projects/habby/decisions.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": "2026-07-12T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "habby-decisions"
+    },
+    {
+      "id": "habby-dependencies",
+      "project": "habby",
+      "type": "document",
+      "status": "active",
+      "file": "projects/habby/dependencies.md",
+      "last_updated": "2026-07-13T00:00:00.000Z",
+      "freshness": "2026-07-12T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "habby-dependencies"
+    },
+    {
+      "id": "DEC-001",
+      "project": "habby",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/habby/knowledge/DEC-001.md",
+      "last_updated": "2026-07-04T00:00:00.000Z",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-001"
+    },
+    {
+      "id": "DEC-002",
+      "project": "habby",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/habby/knowledge/DEC-002.md",
+      "last_updated": "2026-07-04",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-002"
+    },
+    {
+      "id": "DEC-003",
+      "project": "habby",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/habby/knowledge/DEC-003.md",
+      "last_updated": "2026-07-04",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-003"
+    },
+    {
+      "id": "DEC-004",
+      "project": "habby",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/habby/knowledge/DEC-004.md",
+      "last_updated": "2026-07-04",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-004"
+    },
+    {
+      "id": "DEC-005",
+      "project": "habby",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/habby/knowledge/DEC-005.md",
+      "last_updated": "2026-07-04",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-005"
+    },
+    {
+      "id": "DEC-006",
+      "project": "habby",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/habby/knowledge/DEC-006.md",
+      "last_updated": "2026-07-04",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-006"
+    },
+    {
+      "id": "DEC-007",
+      "project": "habby",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/habby/knowledge/DEC-007.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-007"
+    },
+    {
+      "id": "DEC-008",
+      "project": "habby",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/habby/knowledge/DEC-008.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-008"
+    },
+    {
+      "id": "DEC-009",
+      "project": "habby",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/habby/knowledge/DEC-009.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-009"
+    },
+    {
+      "id": "DEC-010",
+      "project": "habby",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/habby/knowledge/DEC-010.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-010"
+    },
+    {
+      "id": "DEC-011",
+      "project": "habby",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/habby/knowledge/DEC-011.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-011"
+    },
+    {
+      "id": "habby-profile",
+      "project": "habby",
+      "type": "project-profile",
+      "status": "active",
+      "file": "projects/habby/profile.md",
+      "last_updated": "2026-07-17",
+      "freshness": "2026-07-17",
+      "verified": "2026-07-13",
+      "expires": null,
+      "superseded_by": null,
+      "title": "habby-profile"
+    },
+    {
+      "id": "habby-status",
+      "project": "habby",
+      "type": "project-status",
+      "status": "active",
+      "file": "projects/habby/status.md",
+      "last_updated": "2026-07-17",
+      "freshness": "2026-07-17",
+      "verified": "2026-07-13T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "habby-status"
+    },
+    {
+      "id": "habby-structure",
+      "project": "habby",
+      "type": "document",
+      "status": "active",
+      "file": "projects/habby/structure.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": "2026-07-12T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "habby-structure"
+    },
+    {
+      "id": "mcky-agent",
+      "project": "mcky.space",
+      "type": "agent-profile",
+      "status": "active",
+      "file": "projects/mcky.space/agent.md",
+      "last_updated": "2026-07-17",
+      "freshness": "2026-07-17",
+      "verified": "2026-07-13",
+      "expires": null,
+      "superseded_by": null,
+      "title": "mcky-agent"
+    },
+    {
+      "id": "mcky-assets",
+      "project": "mcky.space",
+      "type": "document",
+      "status": "active",
+      "file": "projects/mcky.space/assets.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "mcky-assets"
+    },
+    {
+      "id": "mcky-commands",
+      "project": "mcky.space",
+      "type": "document",
+      "status": "active",
+      "file": "projects/mcky.space/commands.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "mcky-commands"
+    },
+    {
+      "id": "mcky-decisions",
+      "project": "mcky.space",
+      "type": "index",
+      "status": "active",
+      "file": "projects/mcky.space/decisions.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "mcky-decisions"
+    },
+    {
+      "id": "mcky-dependencies",
+      "project": "mcky.space",
+      "type": "document",
+      "status": "active",
+      "file": "projects/mcky.space/dependencies.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "mcky-dependencies"
+    },
+    {
+      "id": "COMP-003",
+      "project": "mcky.space",
+      "type": "component",
+      "status": "active",
+      "file": "projects/mcky.space/knowledge/COMP-003.md",
+      "last_updated": "2026-07-04",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "title": "COMP-003"
+    },
+    {
+      "id": "COMP-004",
+      "project": "mcky.space",
+      "type": "component",
+      "status": "active",
+      "file": "projects/mcky.space/knowledge/COMP-004.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "COMP-004"
+    },
+    {
+      "id": "DEC-001",
+      "project": "mcky.space",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/mcky.space/knowledge/DEC-001.md",
+      "last_updated": "2026-07-04T00:00:00.000Z",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-001"
+    },
+    {
+      "id": "DEC-012",
+      "project": "mcky.space",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/mcky.space/knowledge/DEC-012.md",
+      "last_updated": "2026-07-04",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-012"
+    },
+    {
+      "id": "DEC-013",
+      "project": "mcky.space",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/mcky.space/knowledge/DEC-013.md",
+      "last_updated": "2026-07-04",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-013"
+    },
+    {
+      "id": "DEC-014",
+      "project": "mcky.space",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/mcky.space/knowledge/DEC-014.md",
+      "last_updated": "2026-07-04",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-014"
+    },
+    {
+      "id": "DEC-015",
+      "project": "mcky.space",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/mcky.space/knowledge/DEC-015.md",
+      "last_updated": "2026-07-04",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-015"
+    },
+    {
+      "id": "DEC-016",
+      "project": "mcky.space",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/mcky.space/knowledge/DEC-016.md",
+      "last_updated": "2026-07-04",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-016"
+    },
+    {
+      "id": "DEC-017",
+      "project": "mcky.space",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/mcky.space/knowledge/DEC-017.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-017"
+    },
+    {
+      "id": "DEC-018",
+      "project": "mcky.space",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/mcky.space/knowledge/DEC-018.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-018"
+    },
+    {
+      "id": "DEC-019",
+      "project": "mcky.space",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/mcky.space/knowledge/DEC-019.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-019"
+    },
+    {
+      "id": "DEC-020",
+      "project": "mcky.space",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/mcky.space/knowledge/DEC-020.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-020"
+    },
+    {
+      "id": "DEC-021",
+      "project": "mcky.space",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/mcky.space/knowledge/DEC-021.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-021"
+    },
+    {
+      "id": "DOC-001",
+      "project": "mcky.space",
+      "type": "document",
+      "status": "archived",
+      "file": "projects/mcky.space/knowledge/DOC-001.md",
+      "last_updated": "2026-07-13",
+      "freshness": "2026-07-13",
+      "verified": "2026-07-13",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DOC-001"
+    },
+    {
+      "id": "DOC-002",
+      "project": "mcky.space",
+      "type": "document",
+      "status": "archived",
+      "file": "projects/mcky.space/knowledge/DOC-002.md",
+      "last_updated": "2026-07-13",
+      "freshness": "2026-07-13",
+      "verified": "2026-07-13",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DOC-002"
+    },
+    {
+      "id": "DOC-003",
+      "project": "mcky.space",
+      "type": "document",
+      "status": "active",
+      "file": "projects/mcky.space/knowledge/DOC-003.md",
+      "last_updated": "2026-07-17",
+      "freshness": "2026-07-17",
+      "verified": "2026-07-17",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DOC-003"
+    },
+    {
+      "id": "LSN-001",
+      "project": "mcky.space",
+      "type": "lesson",
+      "status": "active",
+      "file": "projects/mcky.space/knowledge/LSN-001.md",
+      "last_updated": "2026-07-05T00:00:00.000Z",
+      "freshness": "2026-07-05T00:00:00.000Z",
+      "verified": "2026-07-05T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "LSN-001"
+    },
+    {
+      "id": "mcky-space-profile",
+      "project": "mcky.space",
+      "type": "project-profile",
+      "status": "active",
+      "file": "projects/mcky.space/profile.md",
+      "last_updated": "2026-07-17",
+      "freshness": "2026-07-17",
+      "verified": "2026-07-13",
+      "expires": null,
+      "superseded_by": null,
+      "title": "mcky-space-profile"
+    },
+    {
+      "id": "mcky-space-status",
+      "project": "mcky.space",
+      "type": "project-status",
+      "status": "active",
+      "file": "projects/mcky.space/status.md",
+      "last_updated": "2026-07-17",
+      "freshness": "2026-07-17",
+      "verified": "2026-07-13T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "mcky-space-status"
+    },
+    {
+      "id": "mcky-structure",
+      "project": "mcky.space",
+      "type": "document",
+      "status": "active",
+      "file": "projects/mcky.space/structure.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "mcky-structure"
+    },
+    {
+      "id": "receipts-dms-agent",
+      "project": "receipts-dms",
+      "type": "agent-profile",
+      "status": "active",
+      "file": "projects/receipts-dms/agent.md",
+      "last_updated": "2026-07-18",
+      "freshness": "2026-07-18",
+      "verified": "2026-07-18",
+      "expires": null,
+      "superseded_by": null,
+      "title": "receipts-dms-agent"
+    },
+    {
+      "id": "receipts-dms-cmds",
+      "project": "receipts-dms",
+      "type": "project-commands",
+      "status": "active",
+      "file": "projects/receipts-dms/commands.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": null,
+      "verified": null,
+      "expires": null,
+      "superseded_by": null,
+      "title": "receipts-dms-cmds"
+    },
+    {
+      "id": "receipts-dms-deps",
+      "project": "receipts-dms",
+      "type": "project-dependencies",
+      "status": "active",
+      "file": "projects/receipts-dms/dependencies.md",
+      "last_updated": "2026-07-13T00:00:00.000Z",
+      "freshness": null,
+      "verified": null,
+      "expires": null,
+      "superseded_by": null,
+      "title": "receipts-dms-deps"
+    },
+    {
+      "id": "NODE-001",
+      "project": "receipts-dms",
+      "type": "agent-profile",
+      "status": "archived",
+      "file": "projects/receipts-dms/knowledge/NODE-001.md",
+      "last_updated": "2026-07-18",
+      "freshness": "2026-07-18",
+      "verified": "2026-07-18",
+      "expires": null,
+      "superseded_by": "receipts-dms-agent",
+      "title": "NODE-001"
+    },
+    {
+      "id": "NODE-002",
+      "project": "receipts-dms",
+      "type": "agent-profile",
+      "status": "archived",
+      "file": "projects/receipts-dms/knowledge/NODE-002.md",
+      "last_updated": "2026-07-18",
+      "freshness": "2026-07-18",
+      "verified": "2026-07-18",
+      "expires": null,
+      "superseded_by": "receipts-dms-agent",
+      "title": "NODE-002"
+    },
+    {
+      "id": "receipts-dms-profile",
+      "project": "receipts-dms",
+      "type": "project-profile",
+      "status": "active",
+      "file": "projects/receipts-dms/profile.md",
+      "last_updated": "2026-07-13",
+      "freshness": "2026-07-13",
+      "verified": "2026-07-13",
+      "expires": null,
+      "superseded_by": null,
+      "title": "receipts-dms-profile"
+    },
+    {
+      "id": "receipts-dms-status",
+      "project": "receipts-dms",
+      "type": "project-status",
+      "status": "active",
+      "file": "projects/receipts-dms/status.md",
+      "last_updated": "2026-07-13T00:00:00.000Z",
+      "freshness": "2026-07-13T00:00:00.000Z",
+      "verified": "2026-07-13T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "receipts-dms-status"
+    },
+    {
+      "id": "receipts-dms-structure",
+      "project": "receipts-dms",
+      "type": "project-structure",
+      "status": "active",
+      "file": "projects/receipts-dms/structure.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": null,
+      "verified": null,
+      "expires": null,
+      "superseded_by": null,
+      "title": "receipts-dms-structure"
+    },
+    {
+      "id": "truck-agent",
+      "project": "truck",
+      "type": "agent-profile",
+      "status": "active",
+      "file": "projects/truck/agent.md",
+      "last_updated": "2026-07-17",
+      "freshness": "2026-07-17",
+      "verified": "2026-07-13",
+      "expires": null,
+      "superseded_by": null,
+      "title": "truck-agent"
+    },
+    {
+      "id": "truck-assets",
+      "project": "truck",
+      "type": "document",
+      "status": "active",
+      "file": "projects/truck/assets.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "truck-assets"
+    },
+    {
+      "id": "truck-commands",
+      "project": "truck",
+      "type": "document",
+      "status": "active",
+      "file": "projects/truck/commands.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "truck-commands"
+    },
+    {
+      "id": "truck-decisions",
+      "project": "truck",
+      "type": "index",
+      "status": "active",
+      "file": "projects/truck/decisions.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "truck-decisions"
+    },
+    {
+      "id": "truck-dependencies",
+      "project": "truck",
+      "type": "document",
+      "status": "active",
+      "file": "projects/truck/dependencies.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "truck-dependencies"
+    },
+    {
+      "id": "COMP-002",
+      "project": "truck",
+      "type": "component",
+      "status": "active",
+      "file": "projects/truck/knowledge/COMP-002.md",
+      "last_updated": "2026-07-04",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "title": "COMP-002"
+    },
+    {
+      "id": "COMP-003",
+      "project": "truck",
+      "type": "component",
+      "status": "active",
+      "file": "projects/truck/knowledge/COMP-003.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "COMP-003"
+    },
+    {
+      "id": "DEC-001",
+      "project": "truck",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/truck/knowledge/DEC-001.md",
+      "last_updated": "2026-07-04T00:00:00.000Z",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-001"
+    },
+    {
+      "id": "DEC-003",
+      "project": "truck",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/truck/knowledge/DEC-003.md",
+      "last_updated": "2026-07-04",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-003"
+    },
+    {
+      "id": "DEC-004",
+      "project": "truck",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/truck/knowledge/DEC-004.md",
+      "last_updated": "2026-07-04",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-004"
+    },
+    {
+      "id": "DEC-005",
+      "project": "truck",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/truck/knowledge/DEC-005.md",
+      "last_updated": "2026-07-04",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-005"
+    },
+    {
+      "id": "DEC-006",
+      "project": "truck",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/truck/knowledge/DEC-006.md",
+      "last_updated": "2026-07-04",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-006"
+    },
+    {
+      "id": "DEC-007",
+      "project": "truck",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/truck/knowledge/DEC-007.md",
+      "last_updated": "2026-07-04",
+      "freshness": "2026-07-04",
+      "verified": "2026-07-04",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-007"
+    },
+    {
+      "id": "DEC-008",
+      "project": "truck",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/truck/knowledge/DEC-008.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-008"
+    },
+    {
+      "id": "DEC-009",
+      "project": "truck",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/truck/knowledge/DEC-009.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-009"
+    },
+    {
+      "id": "DEC-010",
+      "project": "truck",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/truck/knowledge/DEC-010.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-010"
+    },
+    {
+      "id": "DEC-011",
+      "project": "truck",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/truck/knowledge/DEC-011.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-011"
+    },
+    {
+      "id": "DEC-012",
+      "project": "truck",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/truck/knowledge/DEC-012.md",
+      "last_updated": "2026-07-08",
+      "freshness": "2026-07-08",
+      "verified": "2026-07-08",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-012"
+    },
+    {
+      "id": "LSN-001",
+      "project": "truck",
+      "type": "lesson",
+      "status": "active",
+      "file": "projects/truck/knowledge/LSN-001.md",
+      "last_updated": "2026-07-04T00:00:00.000Z",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "LSN-001"
+    },
+    {
+      "id": "truck-profile",
+      "project": "truck",
+      "type": "project-profile",
+      "status": "active",
+      "file": "projects/truck/profile.md",
+      "last_updated": "2026-07-13",
+      "freshness": "2026-07-13",
+      "verified": "2026-07-13",
+      "expires": null,
+      "superseded_by": null,
+      "title": "truck-profile"
+    },
+    {
+      "id": "truck-status",
+      "project": "truck",
+      "type": "project-status",
+      "status": "active",
+      "file": "projects/truck/status.md",
+      "last_updated": "2026-07-17",
+      "freshness": "2026-07-17",
+      "verified": "2026-07-13T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "truck-status"
+    },
+    {
+      "id": "truck-structure",
+      "project": "truck",
+      "type": "document",
+      "status": "active",
+      "file": "projects/truck/structure.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "truck-structure"
+    },
+    {
+      "id": "writer-agent",
+      "project": "writer",
+      "type": "agent-profile",
+      "status": "active",
+      "file": "projects/writer/agent.md",
+      "last_updated": "2026-07-13",
+      "freshness": "2026-07-13",
+      "verified": "2026-07-13",
+      "expires": null,
+      "superseded_by": null,
+      "title": "writer-agent"
+    },
+    {
+      "id": "writer-commands",
+      "project": "writer",
+      "type": "project-commands",
+      "status": "active",
+      "file": "projects/writer/commands.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": null,
+      "verified": null,
+      "expires": null,
+      "superseded_by": null,
+      "title": "writer-commands"
+    },
+    {
+      "id": "DEC-001",
+      "project": "writer",
+      "type": "decision",
+      "status": "active",
+      "file": "projects/writer/knowledge/DEC-001.md",
+      "last_updated": "2026-07-04T00:00:00.000Z",
+      "freshness": "2026-07-04T00:00:00.000Z",
+      "verified": "2026-07-04T00:00:00.000Z",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DEC-001"
+    },
+    {
+      "id": "DOC-001",
+      "project": "writer",
+      "type": "document",
+      "status": "active",
+      "file": "projects/writer/knowledge/DOC-001.md",
+      "last_updated": "2026-07-17",
+      "freshness": "2026-07-17",
+      "verified": "2026-07-17",
+      "expires": null,
+      "superseded_by": null,
+      "title": "DOC-001"
+    },
+    {
+      "id": "writer-profile",
+      "project": "writer",
+      "type": "project-profile",
+      "status": "active",
+      "file": "projects/writer/profile.md",
+      "last_updated": "2026-07-13",
+      "freshness": "2026-07-13",
+      "verified": "2026-07-13",
+      "expires": null,
+      "superseded_by": null,
+      "title": "writer-profile"
+    },
+    {
+      "id": "writer-status",
+      "project": "writer",
+      "type": "project-status",
+      "status": "active",
+      "file": "projects/writer/status.md",
+      "last_updated": "2026-07-18",
+      "freshness": "2026-07-18",
+      "verified": "2026-07-18",
+      "expires": null,
+      "superseded_by": null,
+      "title": "writer-status"
+    },
+    {
+      "id": "writer-structure",
+      "project": "writer",
+      "type": "project-structure",
+      "status": "active",
+      "file": "projects/writer/structure.md",
+      "last_updated": "2026-07-12T00:00:00.000Z",
+      "freshness": null,
+      "verified": null,
+      "expires": null,
+      "superseded_by": null,
+      "title": "writer-structure"
+    }
+  ],
+  "edges": [
+    {
+      "source": "clientdata-agent",
+      "target": "clientdata-profile",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-agent",
+      "target": "clientdata-status",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-agent",
+      "target": "clientdata-structure",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-agent",
+      "target": "clientdata-commands",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-agent",
+      "target": "workspace",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-assets",
+      "target": "clientdata-structure",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-assets",
+      "target": "clientdata-profile",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-commands",
+      "target": "clientdata-agent",
+      "type": "documents",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-commands",
+      "target": "clientdata-dependencies",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-commands",
+      "target": "clientdata-structure",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-decisions",
+      "target": "clientdata-agent",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-decisions",
+      "target": "clientdata-status",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-dependencies",
+      "target": "clientdata-profile",
+      "type": "documents",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-dependencies",
+      "target": "clientdata-structure",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-dependencies",
+      "target": "clientdata-commands",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "COMP-001",
+      "target": "DEC-001",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "COMP-001",
+      "target": "TASK-001",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "COMP-001",
+      "target": "LSN-001",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "COMP-001",
+      "target": "RSK-001",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "COMP-002",
+      "target": "clientdata-profile",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "DEC-001",
+      "target": "TASK-001",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "DEC-001",
+      "target": "COMP-001",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "DEC-002",
+      "target": "clientdata-agent",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "DEC-003",
+      "target": "clientdata-agent",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "DEC-004",
+      "target": "clientdata-agent",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "DEC-005",
+      "target": "clientdata-agent",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "DEC-006",
+      "target": "clientdata-agent",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "DEC-008",
+      "target": "TASK-003",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "DEC-008",
+      "target": "LSN-002",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "DEC-014",
+      "target": "clientdata-agent",
+      "type": "documents",
+      "project": "clientdata"
+    },
+    {
+      "source": "DEC-014",
+      "target": "clientdata-dependencies",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "DEC-015",
+      "target": "clientdata-status",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "DEC-015",
+      "target": "clientdata-agent",
+      "type": "documents",
+      "project": "clientdata"
+    },
+    {
+      "source": "LSN-001",
+      "target": "TASK-001",
+      "type": "caused-by",
+      "project": "clientdata"
+    },
+    {
+      "source": "LSN-001",
+      "target": "DEC-001",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "LSN-002",
+      "target": "TASK-003",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "LSN-002",
+      "target": "DEC-008",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "LSN-003",
+      "target": "TASK-004",
+      "type": "caused-by",
+      "project": "clientdata"
+    },
+    {
+      "source": "LSN-004",
+      "target": "TASK-005",
+      "type": "caused-by",
+      "project": "clientdata"
+    },
+    {
+      "source": "LSN-005",
+      "target": "TASK-006",
+      "type": "caused-by",
+      "project": "clientdata"
+    },
+    {
+      "source": "LSN-006",
+      "target": "TASK-011",
+      "type": "caused-by",
+      "project": "clientdata"
+    },
+    {
+      "source": "LSN-007",
+      "target": "TASK-012",
+      "type": "caused-by",
+      "project": "clientdata"
+    },
+    {
+      "source": "LSN-008",
+      "target": "TASK-014",
+      "type": "caused-by",
+      "project": "clientdata"
+    },
+    {
+      "source": "LSN-009",
+      "target": "TASK-015",
+      "type": "caused-by",
+      "project": "clientdata"
+    },
+    {
+      "source": "LSN-010",
+      "target": "TASK-016",
+      "type": "caused-by",
+      "project": "clientdata"
+    },
+    {
+      "source": "LSN-011",
+      "target": "TASK-013",
+      "type": "caused-by",
+      "project": "clientdata"
+    },
+    {
+      "source": "LSN-012",
+      "target": "TASK-010",
+      "type": "caused-by",
+      "project": "clientdata"
+    },
+    {
+      "source": "LSN-013",
+      "target": "TASK-017",
+      "type": "caused-by",
+      "project": "clientdata"
+    },
+    {
+      "source": "LSN-014",
+      "target": "TASK-008",
+      "type": "caused-by",
+      "project": "clientdata"
+    },
+    {
+      "source": "LSN-015",
+      "target": "TASK-009",
+      "type": "caused-by",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-profile",
+      "target": "clientdata-agent",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-profile",
+      "target": "clientdata-status",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-profile",
+      "target": "clientdata-structure",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-profile",
+      "target": "clientdata-dependencies",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-profile",
+      "target": "clientdata-commands",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-status",
+      "target": "clientdata-profile",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-status",
+      "target": "clientdata-agent",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-status",
+      "target": "data-mcky-space-status",
+      "type": "superseded-by",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-status",
+      "target": "data-mcky-space-status",
+      "type": "supersedes",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-status",
+      "target": "data-mcky-space-status",
+      "type": "superseded-by",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-structure",
+      "target": "clientdata-agent",
+      "type": "documents",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-structure",
+      "target": "clientdata-profile",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-structure",
+      "target": "clientdata-dependencies",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "clientdata-structure",
+      "target": "clientdata-commands",
+      "type": "relates-to",
+      "project": "clientdata"
+    },
+    {
+      "source": "collage-agent",
+      "target": "collage-profile",
+      "type": "relates-to",
+      "project": "collage"
+    },
+    {
+      "source": "collage-agent",
+      "target": "collage-status",
+      "type": "relates-to",
+      "project": "collage"
+    },
+    {
+      "source": "collage-agent",
+      "target": "truck-agent",
+      "type": "relates-to",
+      "project": "collage"
+    },
+    {
+      "source": "collage-agent",
+      "target": "data-mcky-space-agent",
+      "type": "relates-to",
+      "project": "collage"
+    },
+    {
+      "source": "LSN-001",
+      "target": "collage-profile",
+      "type": "relates-to",
+      "project": "collage"
+    },
+    {
+      "source": "collage-profile",
+      "target": "collage-status",
+      "type": "relates-to",
+      "project": "collage"
+    },
+    {
+      "source": "collage-status",
+      "target": "collage-profile",
+      "type": "relates-to",
+      "project": "collage"
+    },
+    {
+      "source": "collage-status",
+      "target": "collage-agent",
+      "type": "relates-to",
+      "project": "collage"
+    },
+    {
+      "source": "data-mcky-space-agent",
+      "target": "data-mcky-space-profile",
+      "type": "relates-to",
+      "project": "data.mcky.space"
+    },
+    {
+      "source": "data-mcky-space-agent",
+      "target": "data-mcky-space-status",
+      "type": "relates-to",
+      "project": "data.mcky.space"
+    },
+    {
+      "source": "data-mcky-space-agent",
+      "target": "clientdata-agent",
+      "type": "relates-to",
+      "project": "data.mcky.space"
+    },
+    {
+      "source": "DOC-001",
+      "target": "conventions",
+      "type": "relates-to",
+      "project": "data.mcky.space"
+    },
+    {
+      "source": "DOC-001",
+      "target": "todos-convention",
+      "type": "superseded-by",
+      "project": "data.mcky.space"
+    },
+    {
+      "source": "DOC-002",
+      "target": "todos-convention",
+      "type": "relates-to",
+      "project": "data.mcky.space"
+    },
+    {
+      "source": "DOC-003",
+      "target": "todos-convention",
+      "type": "relates-to",
+      "project": "data.mcky.space"
+    },
+    {
+      "source": "DOC-004",
+      "target": "data-mcky-space-profile",
+      "type": "relates-to",
+      "project": "data.mcky.space"
+    },
+    {
+      "source": "LSN-001",
+      "target": "data-mcky-space-status",
+      "type": "relates-to",
+      "project": "data.mcky.space"
+    },
+    {
+      "source": "LSN-001",
+      "target": "data-mcky-space-profile",
+      "type": "documents",
+      "project": "data.mcky.space"
+    },
+    {
+      "source": "LSN-002",
+      "target": "data-mcky-space-status",
+      "type": "relates-to",
+      "project": "data.mcky.space"
+    },
+    {
+      "source": "LSN-002",
+      "target": "data-mcky-space-profile",
+      "type": "documents",
+      "project": "data.mcky.space"
+    },
+    {
+      "source": "data-mcky-space-profile",
+      "target": "data-mcky-space-status",
+      "type": "relates-to",
+      "project": "data.mcky.space"
+    },
+    {
+      "source": "data-mcky-space-profile",
+      "target": "clientdata-profile",
+      "type": "relates-to",
+      "project": "data.mcky.space"
+    },
+    {
+      "source": "data-mcky-space-status",
+      "target": "data-mcky-space-profile",
+      "type": "relates-to",
+      "project": "data.mcky.space"
+    },
+    {
+      "source": "data-mcky-space-status",
+      "target": "data-mcky-space-agent",
+      "type": "relates-to",
+      "project": "data.mcky.space"
+    },
+    {
+      "source": "data-mcky-space-status",
+      "target": "clientdata-status",
+      "type": "relates-to",
+      "project": "data.mcky.space"
+    },
+    {
+      "source": "habby-agent",
+      "target": "habby-profile",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "habby-agent",
+      "target": "habby-status",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "habby-agent",
+      "target": "habby-structure",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "habby-agent",
+      "target": "habby-commands",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "habby-agent",
+      "target": "workspace",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "habby-assets",
+      "target": "habby-structure",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "habby-commands",
+      "target": "habby-agent",
+      "type": "documents",
+      "project": "habby"
+    },
+    {
+      "source": "habby-commands",
+      "target": "habby-dependencies",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "habby-commands",
+      "target": "habby-structure",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "habby-decisions",
+      "target": "habby-agent",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "habby-dependencies",
+      "target": "habby-profile",
+      "type": "documents",
+      "project": "habby"
+    },
+    {
+      "source": "habby-dependencies",
+      "target": "habby-structure",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "habby-dependencies",
+      "target": "habby-commands",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "DEC-001",
+      "target": "habby-agent",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "DEC-001",
+      "target": "habby-status",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "DEC-002",
+      "target": "habby-agent",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "DEC-003",
+      "target": "habby-agent",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "DEC-004",
+      "target": "habby-agent",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "DEC-005",
+      "target": "habby-agent",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "DEC-006",
+      "target": "habby-agent",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "habby-profile",
+      "target": "habby-agent",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "habby-profile",
+      "target": "habby-status",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "habby-profile",
+      "target": "habby-structure",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "habby-profile",
+      "target": "habby-dependencies",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "habby-profile",
+      "target": "habby-commands",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "habby-status",
+      "target": "habby-profile",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "habby-status",
+      "target": "habby-agent",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "habby-structure",
+      "target": "habby-agent",
+      "type": "documents",
+      "project": "habby"
+    },
+    {
+      "source": "habby-structure",
+      "target": "habby-profile",
+      "type": "relates-to",
+      "project": "habby"
+    },
+    {
+      "source": "mcky-agent",
+      "target": "mcky-space-profile",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "mcky-agent",
+      "target": "mcky-status",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "mcky-agent",
+      "target": "mcky-structure",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "mcky-agent",
+      "target": "mcky-commands",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "mcky-agent",
+      "target": "workspace",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "mcky-assets",
+      "target": "mcky-structure",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "mcky-commands",
+      "target": "mcky-agent",
+      "type": "documents",
+      "project": "mcky.space"
+    },
+    {
+      "source": "mcky-commands",
+      "target": "mcky-dependencies",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "mcky-commands",
+      "target": "mcky-structure",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "mcky-decisions",
+      "target": "mcky-agent",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "mcky-dependencies",
+      "target": "mcky-space-profile",
+      "type": "documents",
+      "project": "mcky.space"
+    },
+    {
+      "source": "mcky-dependencies",
+      "target": "mcky-structure",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "mcky-dependencies",
+      "target": "mcky-commands",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "COMP-003",
+      "target": "mcky-space-profile",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "DEC-001",
+      "target": "mcky-agent",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "DEC-001",
+      "target": "mcky-status",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "DEC-012",
+      "target": "mcky-agent",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "DEC-013",
+      "target": "mcky-agent",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "DEC-014",
+      "target": "mcky-agent",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "DEC-015",
+      "target": "mcky-agent",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "DEC-016",
+      "target": "mcky-agent",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "DOC-003",
+      "target": "mcky-status",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "DOC-003",
+      "target": "mcky-agent",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "DOC-003",
+      "target": "mcky-structure",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "LSN-001",
+      "target": "TASK-001",
+      "type": "caused-by",
+      "project": "mcky.space"
+    },
+    {
+      "source": "mcky-space-profile",
+      "target": "mcky-agent",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "mcky-space-profile",
+      "target": "mcky-status",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "mcky-space-profile",
+      "target": "mcky-structure",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "mcky-space-profile",
+      "target": "mcky-dependencies",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "mcky-space-profile",
+      "target": "mcky-commands",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "mcky-space-status",
+      "target": "mcky-space-agent",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "mcky-space-status",
+      "target": "mcky-space-profile",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "mcky-structure",
+      "target": "mcky-agent",
+      "type": "documents",
+      "project": "mcky.space"
+    },
+    {
+      "source": "mcky-structure",
+      "target": "mcky-space-profile",
+      "type": "relates-to",
+      "project": "mcky.space"
+    },
+    {
+      "source": "receipts-dms-agent",
+      "target": "receipts-dms-profile",
+      "type": "relates-to",
+      "project": "receipts-dms"
+    },
+    {
+      "source": "receipts-dms-agent",
+      "target": "receipts-dms-status",
+      "type": "relates-to",
+      "project": "receipts-dms"
+    },
+    {
+      "source": "NODE-001",
+      "target": "receipts-dms-profile",
+      "type": "relates-to",
+      "project": "receipts-dms"
+    },
+    {
+      "source": "NODE-001",
+      "target": "receipts-dms-status",
+      "type": "relates-to",
+      "project": "receipts-dms"
+    },
+    {
+      "source": "NODE-001",
+      "target": "receipts-dms-agent",
+      "type": "superseded-by",
+      "project": "receipts-dms"
+    },
+    {
+      "source": "NODE-002",
+      "target": "receipts-dms-profile",
+      "type": "relates-to",
+      "project": "receipts-dms"
+    },
+    {
+      "source": "NODE-002",
+      "target": "receipts-dms-status",
+      "type": "relates-to",
+      "project": "receipts-dms"
+    },
+    {
+      "source": "NODE-002",
+      "target": "receipts-dms-agent",
+      "type": "superseded-by",
+      "project": "receipts-dms"
+    },
+    {
+      "source": "receipts-dms-status",
+      "target": "receipts-dms-profile",
+      "type": "relates-to",
+      "project": "receipts-dms"
+    },
+    {
+      "source": "truck-agent",
+      "target": "truck-profile",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "truck-agent",
+      "target": "truck-status",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "truck-agent",
+      "target": "truck-structure",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "truck-agent",
+      "target": "truck-commands",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "truck-agent",
+      "target": "workspace",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "truck-assets",
+      "target": "truck-structure",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "truck-commands",
+      "target": "truck-agent",
+      "type": "documents",
+      "project": "truck"
+    },
+    {
+      "source": "truck-commands",
+      "target": "truck-dependencies",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "truck-commands",
+      "target": "truck-structure",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "truck-decisions",
+      "target": "truck-agent",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "truck-dependencies",
+      "target": "truck-profile",
+      "type": "documents",
+      "project": "truck"
+    },
+    {
+      "source": "truck-dependencies",
+      "target": "truck-structure",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "truck-dependencies",
+      "target": "truck-commands",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "COMP-002",
+      "target": "truck-profile",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "DEC-001",
+      "target": "truck-agent",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "DEC-001",
+      "target": "truck-status",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "DEC-003",
+      "target": "truck-agent",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "DEC-004",
+      "target": "truck-agent",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "DEC-005",
+      "target": "truck-agent",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "DEC-006",
+      "target": "truck-agent",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "DEC-007",
+      "target": "truck-agent",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "LSN-001",
+      "target": "truck-agent",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "LSN-001",
+      "target": "truck-status",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "LSN-001",
+      "target": "DEC-001",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "truck-profile",
+      "target": "truck-agent",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "truck-profile",
+      "target": "truck-status",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "truck-profile",
+      "target": "truck-structure",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "truck-profile",
+      "target": "truck-dependencies",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "truck-profile",
+      "target": "truck-commands",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "truck-status",
+      "target": "truck-profile",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "truck-status",
+      "target": "truck-agent",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "truck-structure",
+      "target": "truck-agent",
+      "type": "documents",
+      "project": "truck"
+    },
+    {
+      "source": "truck-structure",
+      "target": "truck-profile",
+      "type": "relates-to",
+      "project": "truck"
+    },
+    {
+      "source": "writer-agent",
+      "target": "writer-profile",
+      "type": "relates-to",
+      "project": "writer"
+    },
+    {
+      "source": "writer-agent",
+      "target": "workspace",
+      "type": "relates-to",
+      "project": "writer"
+    },
+    {
+      "source": "DEC-001",
+      "target": "writer-agent",
+      "type": "relates-to",
+      "project": "writer"
+    },
+    {
+      "source": "DEC-001",
+      "target": "writer-profile",
+      "type": "relates-to",
+      "project": "writer"
+    },
+    {
+      "source": "DOC-001",
+      "target": "writer-agent",
+      "type": "documents",
+      "project": "writer"
+    },
+    {
+      "source": "writer-profile",
+      "target": "writer-agent",
+      "type": "relates-to",
+      "project": "writer"
+    },
+    {
+      "source": "writer-status",
+      "target": "writer-profile",
+      "type": "relates-to",
+      "project": "writer"
+    },
+    {
+      "source": "writer-status",
+      "target": "writer-agent",
+      "type": "relates-to",
+      "project": "writer"
+    }
+  ]
+}

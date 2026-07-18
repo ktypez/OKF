@@ -2,12 +2,12 @@
 type: project-status
 id: clientdata-status
 project: clientdata
-last_updated: '2026-07-13'
+last_updated: '2026-07-18'
 status: archived
-freshness: '2026-07-13'
-verified: 2026-07-11T00:00:00.000Z
+freshness: '2026-07-18'
+verified: '2026-07-18'
 expires: null
-superseded_by: null
+superseded_by: data-mcky-space-status
 anchors:
   - /home/clientdata/
 links:
@@ -15,27 +15,12 @@ links:
     target: clientdata-profile
   - type: relates-to
     target: clientdata-agent
+  - type: superseded-by
+    target: data-mcky-space-status
+  - type: supersedes
+    target: data-mcky-space-status
 ---
 
-
----
-type: project-status
-id: clientdata-status
-project: clientdata
-last_updated: 2026-07-13
-status: active
-freshness: 2026-07-13
-verified: 2026-07-13
-expires: null
-superseded_by: null
-anchors:
-  - /home/clientdata/
-links:
-  - type: relates-to
-    target: clientdata-profile
-  - type: relates-to
-    target: clientdata-agent
----
 
 # สถานะโปรเจกต์ — clientdata
 
@@ -112,5 +97,6 @@ links:
 clients: id, name, shopName, phone, lat, lng, photoKey, note, suggestedById, createdAt
 suggestions: id, name, shopName, phone, suggestedBy, userId, approvedAt
 ```
+
 
 
