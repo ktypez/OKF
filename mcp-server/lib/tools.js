@@ -74,7 +74,7 @@ export function registerTools(server) {
   // ── 3. search ────────────────────────────────────────────
   server.tool(
     "search",
-    "Full-text search across all OKF content (name, description, body) using FTS5",
+    "Full-text search across all OKF content (name, description, body)",
     {
       query: z.string().describe("Search query (keywords)"),
       project: z.string().optional().describe("Limit to specific project"),

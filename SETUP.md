@@ -1,7 +1,7 @@
 ---
 type: instruction
 id: okf-setup
-last_updated: 2026-07-21
+last_updated: 2026-07-22
 ---
 
 # OKF Setup Guide
@@ -64,12 +64,11 @@ echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":
 ├── mcp-server/                       ← Local MCP server
 │   ├── index.js
 │   ├── lib/
-│   │   ├── okf.js                    ← Core OKF functions
+│   │   ├── okf.js                    ← Core OKF functions (read, write, parse)
 │   │   ├── db.js                     ← SQLite connection (node:sqlite)
 │   │   ├── compiler.js               ← Markdown → SQLite compiler
 │   │   ├── tools.js                  ← MCP tools (×10)
-│   │   ├── watcher.js                ← File change watcher (chokidar)
-│   │   └── okf.js                    ← Core OKF functions (read, write, parse)
+│   │   └── watcher.js                ← File change watcher (chokidar)
 │   └── okf.db                        ← Compiled SQLite database (.gitignore)
 └── skills/                           ← Specialized skills
 ```
@@ -117,8 +116,7 @@ rebuild                                   → force recompile from .md files
 
 ## Rules
 
-- Use MCP tools to read/write KB — don't manually edit .md files
+- Use MCP tools to read/query KB — the compiler syncs .md → SQLite automatically
 - Dates are always YYYY-MM-DD
 - No Chinese characters — Thai or English only
-- Don't push KB changes without explicit instruction
-- Don't commit unless asked
+- `.md` files are the source of truth (edit them directly); `okf.db` is derived

@@ -203,7 +203,7 @@ External directories allowed:
 
 ## Build Site
 
-1. `cd ~/kb.mcky.space && npm run generate` — pull latest content from `~/OKF/`
+1. `cd ~/kb.mcky.space && npm run sync` — pull latest content from `~/OKF/`
 2. `git add -A && git commit -m "docs: update KB" && git push`
 3. Vercel auto-deploys from GitHub (`ktypez/kb.mcky.space`)
 
