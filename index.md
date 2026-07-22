@@ -1,7 +1,7 @@
 ---
 type: workspace-index
 id: okf-index
-last_updated: 2026-07-21
+last_updated: 2026-07-22
 ---
 
 # ดัชนี Workspace (Workspace Index)
@@ -73,14 +73,16 @@ Local MCP server ที่ `~/OKF/mcp-server/` ใช้เครื่องม
 
 | เครื่องมือ | คำอธิบาย |
 |------|-------------|
-| `okf_list_projects` | แสดงโปรเจกต์ทั้งหมดพร้อมจำนวนไฟล์ |
-| `okf_get_project` | ดึง profile + agent + status ของโปรเจกต์ |
-| `okf_search` | ค้นหาเต็มข้อความข้ามไฟล์ .md ทั้งหมด |
-| `okf_get_file` | เนื้อหาดิบของไฟล์ OKF ใดก็ได้ |
-| `okf_list_dir` | แสดงโครงสร้างไดเรกทอรี OKF |
-| `okf_query_projects` | Query projects by technology, status, deployment |
-| `okf_dashboard` | Summary ของทุกโปรเจกต์ |
-| `okf_project_stats` | Statistics ข้ามโปรเจกต์ |
+| `projects` | แสดงโปรเจกต์ทั้งหมดพร้อม metadata |
+| `project` | ดึง profile + agent + status raw markdown ของโปรเจกต์ |
+| `search` | ค้นหน้าข้าม project (title, description, body) |
+| `read` | อ่านเนื้อหาดิบของไฟล์ OKF ใดก็ได้ |
+| `tree` | แสดงโครงสร้างไดเรกทอรี OKF |
+| `filter` | Query projects by technology, status, deployment, language |
+| `dashboard` | Summary table ของทุกโปรเจกต์ |
+| `stats` | Statistics ข้ามโปรเจกต์ (framework, DB, deploy) |
+| `graph` | Mermaid knowledge graph — project → technology relationships |
+| `rebuild` | บังคับ recompile KB จาก .md ไฟล์ |
 
 ## ไฟล์ระบบ (System Files)
 - [Setup](./SETUP.md) — เริ่มต้นไวสำหรับสภาพแวดล้อมใหม่

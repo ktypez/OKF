@@ -1,7 +1,7 @@
 ---
 type: skill
 id: kb-sync
-last_updated: 2026-07-21
+last_updated: 2026-07-22
 source: ~/.config/opencode/skills/kb-sync/SKILL.md
 category: kb-maintenance
 projects: [global]
@@ -24,6 +24,6 @@ projects: [global]
 7. Clean stale entries
 
 ## MCP Tools
-- `okf_get_project` — read project docs
-- `okf_search` — find content across KB
-- `okf_list_dir` — verify directory structure
+- `project <name>` — read project docs
+- `search <query>` — find content across KB
+- `tree` — verify directory structure

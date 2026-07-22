@@ -1,7 +1,7 @@
 ---
 type: system-doc
 id: conventions
-last_updated: 2026-07-21
+last_updated: 2026-07-22
 ---
 
 # Conventions
@@ -174,18 +174,20 @@ Local MCP server at `~/OKF/mcp-server/`. Use these tools to read and query the K
 
 | Tool | Description |
 |------|-------------|
-| `okf_list_projects` | List all projects with file counts |
-| `okf_get_project` | Get profile + agent + status for a project |
-| `okf_search` | Full-text search across all .md files |
-| `okf_get_file` | Raw content of any OKF file |
-| `okf_list_dir` | List OKF directory structure |
-| `okf_query_projects` | Query projects by technology, status, deployment |
-| `okf_dashboard` | Summary of all projects |
-| `okf_project_stats` | Statistics across projects |
+| `projects` | List all projects with metadata |
+| `project` | Get profile + agent + status for a project |
+| `search` | Full-text search across title, description, body |
+| `read` | Raw content of any OKF file |
+| `tree` | List OKF directory structure |
+| `filter` | Query projects by technology, status, deployment, language |
+| `dashboard` | Summary of all projects |
+| `stats` | Statistics across projects |
+| `graph` | Mermaid knowledge graph — project → technology relationships |
+| `rebuild` | Force recompile KB from .md files |
 
 **Rules:**
 - Dates are always YYYY-MM-DD format
-- Prefer `okf_get_project` over `okf_search` for project-specific queries
+- Prefer `project` over `search` for project-specific queries
 
 ## OpenCode Permissions
 
