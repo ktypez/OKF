@@ -14,7 +14,8 @@ projects: [global]
 ## References
 - `~/OKF/projects/writer/agent.md` for capabilities
 - `~/OKF/system/conventions.md` for communication preferences
-- `~/OKF/system/workspace.md` for project context
+- `~/OKF/index.md` for project roster
+- `~/OKF/system/conventions.md` for project context
 
 ## Style Rules
 - Concise, direct — skip introductions ("I'll help you with...")

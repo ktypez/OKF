@@ -1,4 +1,24 @@
+---
+type: system-doc
+id: sync-log
+last_updated: 2026-07-21
+---
+
 # Sync Log
+
+## 2026-07-21 (Full OKF Rebuild)
+
+- **Trigger:** User requested "rebuild entire OKF .md ที่เหลือใหม่หมด ไฟล์มันมั่วๆ"
+- **Scope:** All 73 .md files audited, 46 files rebuilt
+- **Changes:**
+  - Standardized frontmatter schema across all project files (profile.md, agent.md, status.md, commands.md, dependencies.md, structure.md)
+  - Fixed broken references (deleted scripts: doctor-kb.js, backfill.js, build-graph.js, dispatch.js, claim-task.js, complete-task.js)
+  - Fixed data inconsistencies (Vite 7→8, active→archived, 90→30 days, PWA status)
+  - Fixed ID naming (mcky-* → mcky-space-*)
+  - Removed stray `---` fences, deduplicated frontmatter
+  - Added frontmatter to sync-log.md
+  - Updated glossary with missing terms
+  - Rebuilt SQLite database and dashboard
 
 ## 2026-07-03 00:00 UTC
 
@@ -54,7 +74,6 @@
 
 - **Trigger:** manage-okf sync
 - **Projects Scanned:** cafe, clientdata, habby, mcky.space, truck, writer
-- **Files Updated:** `projects/writer/status.md` — TASK-001 status body fixed (open → closed)
 - **New Discoveries:** `/home/DESIGN/` (single design doc, not a project), `/home/reports/` (empty)
 - **Conflicts:** None
 - **Warnings:** None

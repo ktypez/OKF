@@ -2,31 +2,12 @@
 type: project-status
 id: mcky-space-status
 project: mcky.space
-last_updated: '2026-07-17'
+last_updated: 2026-07-22
 status: active
-freshness: '2026-07-17'
-verified: 2026-07-13T00:00:00.000Z
-expires: null
-superseded_by: null
-anchors:
-  - /home/mcky.space/
 links:
-  - type: relates-to
-    target: mcky-space-agent
-  - type: relates-to
-    target: mcky-space-profile
+  profile: mcky-space-profile
+  agent: mcky-space-agent
 ---
-
-## สแต็ก
-
-- **Framework**: Astro 7 (SSR, Vercel adapter)
-- **UI**: Vanilla JS + pure CSS neobrutalism (no Alpine.js, no React, no Tailwind)
-- **Blog**: Markdown (`.md` files), compiled at build time via `scripts/build-blog-posts.mjs`
-- **Bilingual**: `.th.md` pairing + `data-lang` attribute + CSS toggle
-- **Syntax Highlighting**: highlight.js via `marked-highlight`
-- **Database**: Supabase (read-only queries?)
-- **Font**: JetBrains Mono (self-hosted WOFF2)
-- **Deploy**: Vercel
 
 ## เส้นทาง
 
@@ -79,4 +60,3 @@ links:
 - JetBrains Mono ตลอดทั้งเว็บ
 - ARIA landmarks, safe-area-insets, `prefers-reduced-motion`
 - Bilingual toggle: `[data-lang="en"] .lang-th { display:none }` และกลับกัน
-

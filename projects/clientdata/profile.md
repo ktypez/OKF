@@ -2,29 +2,24 @@
 type: project-profile
 id: clientdata-profile
 project: clientdata
-last_updated: '2026-07-13'
+last_updated: 2026-07-21
 status: archived
-freshness: '2026-07-13'
-verified: '2026-07-13'
-expires: null
-superseded_by: null
-anchors:
-  - /home/clientdata/package.json
-  - /home/clientdata/next.config.ts
+stack:
+  language: TypeScript
+  framework: Next.js 16 + React 19
+  ui: Tailwind CSS
+  database: Neon (PostgreSQL)
+  storage: Supabase Storage
+  state: React hooks
+  auth: Supabase Auth
+  testing: none
+  deployment: Vercel
+  ci: none
+agent_personality: data goblin (archived)
 links:
-  - type: relates-to
-    target: clientdata-agent
-  - type: relates-to
-    target: clientdata-status
-  - type: relates-to
-    target: clientdata-structure
-  - type: relates-to
-    target: clientdata-dependencies
-  - type: relates-to
-    target: clientdata-commands
+  agent: clientdata-agent
+  status: clientdata-status
 ---
-
-
 
 # Profile ของโปรเจกต์: clientdata
 
@@ -48,27 +43,36 @@ links:
 
 ## Dependencies (การพึ่งพา)
 
-- **Major Libraries:** `drizzle-orm`, `next-themes`, `tailwind-merge`, `@base-ui/react`, `maplibre-gl`
+- **Major Libraries:** `drizzle-orm` (^0.45.2), `next-themes`, `tailwind-merge`, `@base-ui/react`, `maplibre-gl`
 - **External Services:** Neon Database, Cloudflare R2
 - **Databases:** Neon (PostgreSQL)
 - **Cloud Providers:** Neon, Cloudflare
 - **APIs:** Neon API, Cloudflare R2 API
+- **Core:** next 16.2.9, react 19.2.7, drizzle-orm ^0.45.2, @neondatabase/serverless ^1.1.0, @aws-sdk/client-s3 ^3.1075.0, tailwindcss ^4.3.1
+- **Dev Tools:** drizzle-kit ^0.31.10, tsx ^4.22.4, typescript ^6.0.3, eslint ^9
 
 ## Development (การพัฒนา)
 
 - **Setup:** `npm install`
-- **Install:** `npm install`
+- **Dev:** `npm run dev`
 - **Build:** `npm run build`
+- **Database:** `npm run db:push` (push schema to Neon), `npm run db:migrate` (run Redis-to-Neon migration)
 - **Test:** `pnpm test`
 - **Lint:** `npm run lint`
 - **Typecheck:** `npx tsc --noEmit`
-- **Run:** `npx next dev -H localhost`
 
 ## Architecture (สถาปัตยกรรม)
 
 - **Structure:** Next.js App Router SPA ใช้ History API routing
-- **Entry Points:** `app/page.tsx`, `app/c/[id]/page.tsx`
-- **Important Packages:** `drizzle-orm` สำหรับ database, `maplibre-gl` สำหรับ maps
+- **Directory:**
+  - `app/`: Next.js App Router (`api/` สำหรับ API routes)
+  - `components/`: React components (`ui/` สำหรับ Base UI)
+  - `hooks/`: Custom hooks (`useClients`, `useGeolocation`)
+  - `lib/`: Core logic (`db/`, `auth.ts`, `storage.ts`)
+  - `scripts/`: Maintenance scripts (`migrate-redis-to-neon.ts`)
+  - `types/`: TypeScript type definitions
+  - `public/`: PWA manifest และ icons
+- **Key Files:** `app/page.tsx` (entry), `app/c/[id]/page.tsx` (public client page), `drizzle.config.ts`, `next.config.ts
 
 ## Documentation (เอกสาร)
 
@@ -83,7 +87,7 @@ links:
 
 ## Status (สถานะ)
 
-- **State:** experimental
+- **State:** archived
 - **Documentation Completeness:** สูง (High)
 - **Confidence Level:** สูง (High)
 
@@ -91,5 +95,3 @@ links:
 
 - `/home/clientdata/package.json`
 - `/home/OKF/projects/clientdata/agent.md`
-
-

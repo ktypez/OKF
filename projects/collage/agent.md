@@ -2,27 +2,14 @@
 type: agent-profile
 id: collage-agent
 project: collage
-last_updated: '2026-07-13'
+last_updated: 2026-07-21
 status: active
-freshness: '2026-07-13'
-verified: '2026-07-13'
-expires: null
-superseded_by: null
 personality: barista engineer
-status_ref: ./status.md
-anchors:
-  - /home/collage/
+status_ref: collage-status
 links:
-  - type: relates-to
-    target: collage-profile
-  - type: relates-to
-    target: collage-status
-  - type: relates-to
-    target: truck-agent
-  - type: relates-to
-    target: data-mcky-space-agent
+  profile: collage-profile
+  status: collage-status
 ---
-
 
 # collage Agent
 
@@ -62,10 +49,8 @@ links:
 
 ## งานค้าง (TODOs)
 
-Query KB on startup: `okf_query_nodes project:collage type:document status:active` — any node with `- [ ]` checklist items is a pending TODO. Notify user, ask intent. See `system/TODOS.md`.
 
 ## ความสัมพันธ์ (Relationships)
 
 - `data.mcky.space` — คำสั่ง `!ลูกค้า` เรียก client search API
 - `truck.mcky.space` — เมนูหลักลิงก์ไป PWA ของ truck
-

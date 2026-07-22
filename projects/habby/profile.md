@@ -2,24 +2,23 @@
 type: project-profile
 id: habby-profile
 project: habby
-last_updated: '2026-07-17'
+last_updated: 2026-07-21
 status: active
-freshness: '2026-07-17'
-verified: '2026-07-13'
-expires: null
-superseded_by: null
-anchors: []
+stack:
+  language: JavaScript
+  framework: Vite 8 + Express 5
+  ui: vanilla CSS (neobrutalist)
+  database: Redis (owner mode)
+  storage: localStorage (guest mode)
+  state: none
+  auth: SHA-256
+  testing: Vitest (18 tests)
+  deployment: Vercel (static + serverless)
+  ci: none
+agent_personality: trophy goblin
 links:
-  - type: relates-to
-    target: habby-agent
-  - type: relates-to
-    target: habby-status
-  - type: relates-to
-    target: habby-structure
-  - type: relates-to
-    target: habby-dependencies
-  - type: relates-to
-    target: habby-commands
+  agent: habby-agent
+  status: habby-status
 ---
 
 # โปรไฟล์โปรเจกต์: habby
@@ -29,9 +28,7 @@ links:
 - **Name:** habby
 - **Display Name:** Habby
 - **Description:** แอปติดตาม habit แบบ gamified — public mode พร้อม localStorage + owner mode พร้อม Redis
-- **Purpose:** ติดตาม habit พร้อมระบบ gamification แบบ XP/leveling
 - **Repository:** https://github.com/ktypez/habby
-- **Owner:** ktypez
 
 ## เทคโนโลยี (Technology)
 
@@ -41,49 +38,96 @@ links:
 - **Package Manager:** yarn
 - **Build System:** Vite build
 - **Deployment Targets:** Vercel (static + serverless)
+- **Font:** JetBrains Mono (self-hosted)
 
-## ความพึ่งพา (Dependencies)
+## Dependencies
 
-- **Major Libraries:** `express`, `ioredis`, `cors`
-- **External Services:** Redis (ioredis → Upstash)
-- **Databases:** Redis (owner mode), localStorage (guest mode)
-- **Cloud Providers:** Vercel
-- **APIs:** Redis API
+### Core Dependencies
 
-## การพัฒนา (Development)
+| Package | Version | หน้าที่ |
+|---------|---------|--------|
+| `express` | ^5.2.1 | HTTP server + API routes |
+| `ioredis` | ^5.11.1 | Redis client (Upstash) |
+| `cors` | ^2.8.6 | CORS middleware |
 
-- **Setup:** `yarn install`
-- **Install:** `yarn install`
-- **Build:** `yarn build`
-- **Test:** Vitest (21 tests)
-- **Lint:** ยังไม่ได้ตั้งค่า
-- **Run:** `yarn dev`
+### Dev Dependencies
 
-## สถาปัตยกรรม (Architecture)
+| Package | Version | หน้าที่ |
+|---------|---------|--------|
+| `vite` | ^8.0.0 | Build tool + dev server |
+| `vitest` | ^4.1.9 | Testing framework |
 
-- **Structure:** Vite frontend + Express backend
-- **Entry Points:** `index.html` (Vite), `server.js` (Express)
-- **Storage:** Dual-mode — localStorage (public guests) + Redis API (owner)
-- **Important Packages:** `ioredis` สำหรับเชื่อมต่อ Redis
+### External Services
 
-## เอกสาร (Documentation)
+- **Redis** (Upstash) — สำหรับ owner mode data storage
+- **Vercel** — static hosting + serverless functions
 
-- **Agent Context:** [agent.md](./agent.md)
-- **Status:** [status.md](./status.md)
+### หมายเหตุ
 
-## คุณภาพ (Quality)
+- ไม่มี frontend framework (vanilla JS)
+- ไม่มี UI library
+- ไม่มี linting tools
+- ไม่มี TypeScript
 
-- **Tests:** Vitest + testing-library (21 tests)
-- **CI:** Vercel CI
-- **Linters:** ยังไม่ได้ตั้งค่า
+## Development
 
-## สถานะ (Status)
+| คำสั่ง | ทำอะไร |
+|--------|--------|
+| `yarn install` | ติดตั้ง dependencies |
+| `yarn dev` | Vite dev server (proxy /api → localhost:3001) |
+| `yarn dev:server` | Express backend (port 3001) |
+| `yarn build` | build frontend ด้วย Vite → `dist/` |
+| `yarn preview` | preview production build |
+| `yarn start` | เริ่ม production server |
+| `node node_modules/.bin/vitest run` | รันชุดทดสอบ (18 tests — streak + XP logic) |
 
-- **State:** active
-- **Documentation Completeness:** สูง (High)
-- **Confidence Level:** สูง (High)
+### Deployment
 
-**Source:**
+push to GitHub → Vercel auto-deploys
 
-- `/home/habby/package.json`
-- `/home/OKF/projects/habby/agent.md`
+## Architecture
+
+```
+habby/
+├── api/              # Backend API routes (serverless)
+├── css/              # Global styles (neobrutalist theme)
+├── js/               # Frontend logic (main.js)
+├── lib/              # Shared utilities (logic.js — streak/XP calculations)
+├── public/           # Static assets + service worker
+│   ├── sw.js         # Service Worker (caching + notification clicks)
+│   └── fonts/        # JetBrains Mono (self-hosted woff2)
+├── scripts/          # Tool scripts (cleanup-archived.mjs)
+├── tests/            # Vitest tests (streak + XP logic)
+├── dist/             # Build output
+├── index.html        # SPA entry point
+├── server.js         # Express server (API + static hosting)
+├── vite.config.js    # Vite configuration
+├── vitest.config.js  # Vitest configuration
+├── vercel.json       # Vercel deployment config
+└── package.json
+```
+
+### Key Files
+
+| ไฟล์ | หน้าที่ |
+|------|--------|
+| `index.html` | SPA entry point |
+| `js/main.js` | Frontend logic ทั้งหมด (SPA routing, UI, Storage adapter) |
+| `lib/logic.js` | Pure functions — calculateStreak, calcXpForCheckin, calcLevel |
+| `server.js` | Express server + API routes |
+| `api/` | Serverless API handlers สำหรับ Vercel |
+| `public/sw.js` | Service Worker — cache-first strategy + notification click handler |
+| `css/style.css` | Global styles — neobrutalist theme |
+| `vite.config.js` | Vite build + dev server proxy config |
+
+### Storage
+
+Dual-mode — localStorage (guest) + Redis API (owner)
+
+### PWA
+
+Service worker สำหรับ caching + notification clicks (ไม่มี manifest — ไม่รองรับ install prompt)
+
+### Entry Points
+
+`index.html` (Vite), `server.js` (Express)

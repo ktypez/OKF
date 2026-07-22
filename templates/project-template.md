@@ -1,21 +1,107 @@
+---
+type: template
+id: project-template
+last_updated: 2026-07-21
+---
+
 # Project Profile Template
 
-## Identity
-- Name: 
-- Description: 
-- Purpose: 
-- Repository: 
+Copy this when creating a new project in OKF.
 
-## Technology
-- Languages: 
-- Frameworks: 
-- Runtime: 
+## profile.md
 
-## Development
-- Setup: 
-- Build: 
-- Test: 
+```yaml
+---
+type: project-profile
+id: <project>-profile
+project: <project-name>
+last_updated: YYYY-MM-DD
+status: active
+stack:
+  language: <language>
+  framework: <framework>
+  ui: <ui-library>
+  database: <database>
+  storage: <storage>
+  state: <state-management>
+  auth: <auth-method>
+  testing: <testing-framework>
+  deployment: <deploy-target>
+  ci: <ci-system>
+agent_personality: <personality>
+links:
+  agent: <project>-agent
+  status: <project>-status
+---
+```
 
-## Status
-- State: 
-- Documentation Completeness: 
+## agent.md
+
+```yaml
+---
+type: agent-profile
+id: <project>-agent
+project: <project-name>
+last_updated: YYYY-MM-DD
+status: active
+personality: <personality-name>
+status_ref: <project>-status
+links:
+  profile: <project>-profile
+  status: <project>-status
+---
+```
+
+## status.md
+
+```yaml
+---
+type: project-status
+id: <project>-status
+project: <project-name>
+last_updated: YYYY-MM-DD
+status: active
+links:
+  profile: <project>-profile
+  agent: <project>-agent
+---
+```
+
+## commands.md
+
+```yaml
+---
+type: project-commands
+id: <project>-commands
+project: <project-name>
+last_updated: YYYY-MM-DD
+links:
+  profile: <project>-profile
+---
+```
+
+## dependencies.md
+
+```yaml
+---
+type: project-dependencies
+id: <project>-dependencies
+project: <project-name>
+last_updated: YYYY-MM-DD
+links:
+  profile: <project>-profile
+---
+```
+
+## structure.md
+
+```yaml
+---
+type: project-structure
+id: <project>-structure
+project: <project-name>
+last_updated: YYYY-MM-DD
+links:
+  profile: <project>-profile
+---
+```

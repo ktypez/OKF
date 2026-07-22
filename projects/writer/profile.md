@@ -2,18 +2,23 @@
 type: project-profile
 id: writer-profile
 project: writer
-last_updated: '2026-07-13'
+last_updated: 2026-07-21
 status: active
-freshness: '2026-07-13'
-verified: '2026-07-13'
-expires: null
-superseded_by: null
-anchors: []
+stack:
+  language: Markdown
+  framework: AI agent system
+  ui: none
+  database: none
+  storage: file-based
+  state: none
+  auth: none
+  testing: none
+  deployment: none
+  ci: none
+agent_personality: word goblin
 links:
-  - type: relates-to
-    target: writer-agent
+  agent: writer-agent
 ---
-
 
 # โปรไฟล์โปรเจกต์: writer
 
@@ -40,4 +45,3 @@ links:
 - **State:** active
 - **Documentation Completeness:** สูง (High)
 - **Confidence Level:** สูง (High)
-

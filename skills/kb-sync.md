@@ -1,7 +1,7 @@
 ---
 type: skill
 id: kb-sync
-last_updated: 2026-07-17
+last_updated: 2026-07-21
 source: ~/.config/opencode/skills/kb-sync/SKILL.md
 category: kb-maintenance
 projects: [global]
@@ -10,8 +10,6 @@ projects: [global]
 # kb-sync Skill
 
 **Purpose:** Use to sync KB with project state — update status files, validate frontmatter, maintain indexes.
-
-**Merged from:** kb-manage + update-md
 
 ## Trigger
 `update .md`, `update kb`, `sync kb`
@@ -24,3 +22,8 @@ projects: [global]
 5. Validate all KB `.md` frontmatter
 6. Verify index.md matches projects/ directories
 7. Clean stale entries
+
+## MCP Tools
+- `okf_get_project` — read project docs
+- `okf_search` — find content across KB
+- `okf_list_dir` — verify directory structure

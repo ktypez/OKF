@@ -38,19 +38,15 @@ OKF/
 ├── projects/
 │   ├── <project-name>/
 │   │   ├── profile.md
-│   │   ├── structure.md
-│   │   ├── dependencies.md
-│   │   ├── commands.md
-│   │   ├── decisions.md
-│   │   ├── status.md
-│   │   └── assets.md
+│   │   ├── agent.md
+│   │   └── status.md
 │
 ├── system/
-│   ├── glossary.md
 │   ├── conventions.md
-│   ├── workspace.md
+│   ├── glossary.md
+│   ├── personalities.md
 │   ├── sync-log.md
-│   └── inventory.md
+│   └── TODOS.md
 │
 └── templates/
     └── project-template.md

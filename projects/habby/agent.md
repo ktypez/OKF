@@ -2,33 +2,20 @@
 type: agent-profile
 id: habby-agent
 project: habby
-last_updated: '2026-07-17'
-personality: trophy goblin
-status_ref: ./status.md
+last_updated: 2026-07-21
 status: active
-freshness: '2026-07-17'
-verified: '2026-07-13'
-expires: null
-superseded_by: null
-anchors: []
+personality: trophy goblin
+status_ref: habby-status
 links:
-  - type: relates-to
-    target: habby-profile
-  - type: relates-to
-    target: habby-status
-  - type: relates-to
-    target: habby-structure
-  - type: relates-to
-    target: habby-commands
-  - type: relates-to
-    target: workspace
+  profile: habby-profile
+  status: habby-status
 ---
 
 # Habby Agent
 
 ## ภาพรวม
 
-แอปติดตาม habit แบบ gamified — ฝั่ง frontend ใช้ Vite 8 + vanilla HTML/CSS/JS, backend ใช้ Express 5 + Redis (Upstash) มีดีไซน์แนว neobrutalist รองรับ 2 themes (light/dark) ใช้ฟอนต์ JetBrains Mono แบบ self-hosted เปิดให้ใช้งานได้เลยแบบ public (localStorage) โดยไม่ต้อง login
+แอปติดตาม habit แบบ gamified — frontend ใช้ Vite 8 + vanilla HTML/CSS/JS, backend ใช้ Express 5 + Redis (Upstash) มีดีไซน์แนว neobrutalist รองรับ 2 themes (light/dark) ใช้ฟอนต์ JetBrains Mono แบบ self-hosted เปิดให้ใช้งานได้เลยแบบ public (localStorage) โดยไม่ต้อง login
 
 ## บุคลิก
 
@@ -45,7 +32,7 @@ links:
 | Storage | localStorage (guest mode) + Redis API (owner mode) |
 | Auth | SHA-256 header-based access password (owner mode) |
 | Deploy | Vercel (static + serverless function) |
-| PWA | Service Worker (push notifications, install prompt) |
+| PWA | Service Worker (caching + notification clicks, ไม่มี manifest) |
 
 ## สถาปัตยกรรม
 
@@ -109,15 +96,11 @@ habby:notif:enabled → boolean
 habby:notif:time → HH:MM string
 ```
 
-## งานที่ต้องทำ (TODOs)
-
-Query KB ตอนเริ่มรัน: `okf_query_nodes project:habby type:document status:active` — node ใดที่มี checklist `- [ ]` ถือเป็น TODO ที่ค้างอยู่ แจ้ง user แล้วถามความตั้งใจ ดูเพิ่มที่ `system/TODOS.md`
-
 ## คำสั่ง (Commands)
 
 | คำสั่ง (Command) | ทำอะไร |
 |---------|-------------|
-| `yarn dev` | Dev server (Express + Vite) |
+| `yarn dev` | Dev server (Vite + Express proxy) |
 | `yarn build` | Production build (Vite) |
 | `node server.js` | Local full-stack (port 3001) |
 | push to GitHub | Vercel auto-deploys |
@@ -129,7 +112,6 @@ Query KB ตอนเริ่มรัน: `okf_query_nodes project:habby type:
 1. อ่าน project AGENTS.md + สถานะ KB ปัจจุบัน
 2. อัปเดต `projects/habby/status.md` ด้วยการเปลี่ยนแปลงล่าสุด
 3. อัปเดต `projects/habby/agent.md` (ฟีเจอร์, โมเดลข้อมูล)
-4. ถ้า project AGENTS.md มีข้อมูลเก่า ให้อัปเดตตามด้วย
 
 ### "cleanup"
 

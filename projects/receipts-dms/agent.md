@@ -2,18 +2,13 @@
 type: agent-profile
 id: receipts-dms-agent
 project: receipts-dms
-last_updated: '2026-07-18'
+last_updated: 2026-07-21
 status: active
-freshness: '2026-07-18'
-verified: '2026-07-18'
-expires: null
-superseded_by: null
-anchors: []
+personality: paper goblin
+status_ref: receipts-dms-status
 links:
-  - type: relates-to
-    target: receipts-dms-profile
-  - type: relates-to
-    target: receipts-dms-status
+  profile: receipts-dms-profile
+  status: receipts-dms-status
 ---
 
 # receipts-dms Agent
@@ -32,7 +27,7 @@ Receipt document management system — Vite 8 + React 19 SPA with Cloudflare Pag
 | Layer | Tech |
 |-------|------|
 | Frontend | Vite 8 + React 19 + TypeScript 7 |
-| UI | shadcn/ui (Radix), lucide-react, Tailwind 4 |
+| UI | shadcn/ui (Radix), lucide-react, framer-motion, Tailwind 4 |
 | Routing | react-router v7 |
 | Auth | Single password + HMAC-SHA256 HttpOnly cookie |
 | Backend | Cloudflare Pages Functions |
@@ -49,10 +44,6 @@ SPA with Cloudflare Pages Functions backend. All `/api/*` routes protected by `_
 - Path: `/home/paper/receipts-dms/`
 - Deploy: Cloudflare Pages (paper.mcky.space)
 - Thai-language UI labels, responsive, dark/light theme
-
-## TODOs
-
-Query KB on startup: `okf_query_nodes project:receipts-dms type:document status:active` — any node with `- [ ]` checklist items is a pending TODO. Notify user, ask intent. See `system/TODOS.md`.
 
 ## Relationships
 

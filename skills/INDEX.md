@@ -1,7 +1,7 @@
 ---
 type: index
 id: skills-index
-last_updated: 2026-07-17
+last_updated: 2026-07-21
 skills:
   - id: code-audit
     path: skills/code-audit.md
@@ -49,13 +49,13 @@ Centralized index of all specialized skills available for AI agents.
 │   ├── INDEX.md                    ← THIS FILE
 │   ├── code-audit.md
 │   ├── kb-sync.md
+│   ├── kb-ops.md
 │   ├── frontend-dev.md
 │   ├── design-skill-os.md
 │   ├── supabase-postgres-best-practices.md
 │   ├── web-dev.md
 │   ├── writer-work.md
 │   └── manage-okf.md
-│   └── kb-ops.md
 ```
 
 ## Usage

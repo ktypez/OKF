@@ -2,38 +2,15 @@
 type: project-status
 id: data-mcky-space-status
 project: data.mcky.space
-last_updated: '2026-07-17'
+last_updated: 2026-07-22
 status: active
-freshness: '2026-07-17'
-verified: '2026-07-13'
-expires: null
-superseded_by: null
-anchors:
-  - /home/data.mcky.space/
 links:
-  - type: relates-to
-    target: data-mcky-space-profile
-  - type: relates-to
-    target: data-mcky-space-agent
-  - type: relates-to
-    target: clientdata-status
+  profile: data-mcky-space-profile
+  agent: data-mcky-space-agent
 ---
 
+
 # สถานะโปรเจกต์ — data.mcky.space
-
-## Stack
-
-- **Framework**: Vite 7
-- **UI Library**: React 19.2.7, TypeScript
-- **Routing**: react-router-dom v7
-- **Styling**: Tailwind CSS 4 + PostCSS
-- **Animation**: Motion (Framer Motion) v12 — AnimatePresence, springs, stagger
-- **State**: Zustand
-- **Database**: **Cloudflare D1 (SQLite)** ผ่าน Drizzle ORM (migrated from Neon)
-- **Maps**: MapLibre GL JS (lazy-loaded chunk, เขียนใหม่ด้วยวิธี B)
-- **Auth**: ใช้รหัสผ่าน, แบ่งบทบาท admin + viewer
-- **Storage**: Cloudflare R2 ผ่าน @aws-sdk/client-s3
-- **Deploy**: Cloudflare Pages (serverless) — `~/data.mcky.space` (branch `main`) → `data.mcky.space`
 
 ## Routes
 
@@ -47,7 +24,7 @@ links:
 | Domain | `data.mcky.space` |
 | Platform | Cloudflare Pages (project: `data-mcky-space`) |
 | Source repo | `ktypez/data.mcky.space` |
-| Auto-deploy (git) | **ปิด** (production_deployments_enabled:false) — deploy ด้วย `npx wrangler pages deploy ./dist --project-name=data-mcky-space` |
+| Auto-deploy (git) | **ปิด** (production_deployments_enabled:false) — deploy ด้วย `pnpm exec wrangler pages deploy ./dist --project-name=data-mcky-space` |
 
 ## การตรวจสภาพ (Health Check)
 
@@ -60,6 +37,29 @@ links:
 หมายเหตุ: WebGL error ใน headless เกิดจากเครื่องไม่มี GPU ไม่ใช่ bug
 
 ## บันทึกการเปลี่ยนแปลง (Changelog)
+
+### 2026-07-22
+- ✅ **Motion: แก้ route exit animation + wire useReducedMotion()**
+  - `PageTransition` ใน `App.tsx` — เพิ่ม `exit="hidden"` ที่หายไป ทำให้ route exit animation ทำงาน (ก่อนหน้าหมดวูบ)
+  - เพิ่ม `useMotion()` hook ใน `motion.ts` — ส่ง variants + transitions กลับมาโดยนับ reduced motion อัตโนมัติ
+  - ถ้า user เปิด reduced motion: transitions กลายเป็น `instant` (duration 0), variants เป็น `{hidden: {}, visible: {}}` (ไม่ขยับ)
+  - อัปเดต `App.tsx`, `Dialog`, `Sheet` ให้ใช้ `useMotion()` แทน constant imports
+  - 4 ไฟล์ modified
+- ✅ **Location search: รองรับหลายรูปแบบ + feedback ชัดเจน**
+  - แยก `parseCoords()` helper — รองรับ DMS (`13°45'23"N 100°29'31"E`), hemisphere suffix (`13.7563 N, 100.5018 E`), และ decimal degrees
+  - เพิ่ม `locFeedback` state — success message 🟢 (clear input + `📍 lat, lng`) หรือ error 🔴 เมื่อไม่รู้จักพิกัด
+  - อัปเดต placeholder เป็น "ละติจูด, ลองจิจูด หรือ Plus Code"
+  - feedback หายอัตโนมัติเมื่อ user พิมพ์ใหม่
+  - 1 ไฟล์ modified
+
+### 2026-07-19
+- ❌ **ลบ Void theme ออกทั้งหมด** — หลังจากสร้างและปรับแต่ง frosted glass + atmosphere layers (orbs, grid, noise texture)
+  - ลบ liquid-glass dependency, CSS atmosphere layers, theme definition, theme-provider references
+  - กลับไป 11 themes (obsidian, ivory, meridian, synthwave, frost, ember, moss, neo-brutalism, slate, coral, bubblegum)
+
+### 2026-07-18
+- ✅ **Void theme: frosted glass + atmosphere layers** (ถูกลบ 2026-07-19)
+- ✅ **เพิ่ม Void theme preset** (ถูกลบ 2026-07-19)
 
 ### 2026-07-17
 - ✅ **เพิ่ม Motion animations** — dialog/sheet exit, dropdowns, card stagger, route transitions, view transitions, micro-interactions

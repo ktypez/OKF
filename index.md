@@ -1,28 +1,29 @@
 ---
 type: workspace-index
 id: okf-index
-last_updated: 2026-07-18
+last_updated: 2026-07-21
 ---
 
 # ดัชนี Workspace (Workspace Index)
 
 ## สรุป Workspace
 - **Root:** `/home`
-- **Sync ล่าสุด:** 2026-07-13 00:00 UTC
+- **Sync ล่าสุด:** 2026-07-21
 - **ขอบเขต:** `/home` (ตัด node_modules, .git ออก)
 
 ## รายการโปรเจกต์
 
 | โปรเจกต์ | Profile | Agent | Status | Role | Tech Stack |
 |---------|---------|-------|--------|------|------------|
-| clientdata | [profile](./projects/clientdata/profile.md) | [agent](./projects/clientdata/agent.md) | [status](./projects/clientdata/status.md) | ~~archived~~ | ❌ directory หายไป |
-| data.mcky.space | [profile](./projects/data.mcky.space/profile.md) | [agent](./projects/data.mcky.space/agent.md) | [status](./projects/data.mcky.space/status.md) | active | Vite 7, React 19, Tailwind 4, Cloudflare D1/R2, Zustand, MapLibre |
-| habby | [profile](./projects/habby/profile.md) | [agent](./projects/habby/agent.md) | [status](./projects/habby/status.md) | active | Vite 6, Express 5, ioredis, Vitest |
+| clientdata | [profile](./projects/clientdata/profile.md) | [agent](./projects/clientdata/agent.md) | [status](./projects/clientdata/status.md) | ~~archived~~ | Next.js 16, React 19, Neon PostgreSQL |
+| data.mcky.space | [profile](./projects/data.mcky.space/profile.md) | [agent](./projects/data.mcky.space/agent.md) | [status](./projects/data.mcky.space/status.md) | active | Vite 8, React 19, Tailwind 4, Cloudflare D1/R2, Zustand |
+| habby | [profile](./projects/habby/profile.md) | [agent](./projects/habby/agent.md) | [status](./projects/habby/status.md) | active | Vite 8, Express 5, Redis, Vitest |
 | mcky.space | [profile](./projects/mcky.space/profile.md) | [agent](./projects/mcky.space/agent.md) | [status](./projects/mcky.space/status.md) | active | Astro 7, Vanilla JS, Supabase, Vercel |
 | receipts-dms | [profile](./projects/receipts-dms/profile.md) | [agent](./projects/receipts-dms/agent.md) | [status](./projects/receipts-dms/status.md) | active | Vite 8, React 19, Radix UI, Tailwind 4, Cloudflare D1/R2 |
-| collage | [profile](./projects/collage/profile.md) | [agent](./projects/collage/agent.md) | [status](./projects/collage/status.md) | active | Express 4, sharp, AWS S3, LINE Bot SDK |
+| collage | [profile](./projects/collage/profile.md) | [agent](./projects/collage/agent.md) | [status](./projects/collage/status.md) | active | Express 4, sharp, Cloudflare R2, LINE Bot SDK |
 | truck | [profile](./projects/truck/profile.md) | [agent](./projects/truck/agent.md) | [status](./projects/truck/status.md) | active | React 19, Vite 8, Supabase, TanStack Query |
-| writer | [profile](./projects/writer/profile.md) | [agent](./projects/writer/agent.md) | — | global | Markdown, AI agent system |
+| writer | [profile](./projects/writer/profile.md) | [agent](./projects/writer/agent.md) | — | active | Markdown, AI agent system |
+
 ## รูปแบบ (Schema)
 
 - **Format:** [`.opencode/rules/okf-format.md`](./.opencode/rules/okf-format.md)
@@ -32,7 +33,7 @@ last_updated: 2026-07-18
 
 | โปรเจกต์ | Role | Personality |
 |---------|------|-------------|
-| clientdata | ~~data goblin (experimental)~~ | ❌ archived — directory หายไป |
+| clientdata | ~~data goblin~~ | archived |
 | data.mcky.space | data goblin (stable) | — |
 | habby | trophy goblin | — |
 | mcky.space | terminal hipster | — |
@@ -42,23 +43,19 @@ last_updated: 2026-07-18
 | writer | word goblin | — |
 
 ## สรุปเทคโนโลยี (Technology Summary)
-- **Frameworks:** React 19, Vite 8, Vite 7, Vite 6, Astro 7, Express 5, Express 4, Next.js 16
-- **UI:** Tailwind 4, Tailwind 3, Radix UI, Zustand, TanStack Query, MapLibre GL
-- **ฐานข้อมูล:** Supabase (PostgreSQL), Cloudflare D1, ioredis
-- **Storage:** Cloudflare R2, AWS S3
-- **การเชื่อมต่อ:** LINE Platform (LIFF + Bot SDK), Vercel
-- **ประมวลผลรูป:** Sharp, WebP
-- **Testing:** Vitest, Testing Library
+- **Frameworks:** React 19, Vite 8, Astro 7, Express 5, Express 4, Next.js 16
+- **UI:** Tailwind 4, Radix UI, Zustand, TanStack Query
+- **ฐานข้อมูล:** Supabase (PostgreSQL), Cloudflare D1, Redis
+- **Storage:** Cloudflare R2, Supabase Storage
+- **การเชื่อมต่อ:** LINE Platform (LIFF + Bot SDK), Vercel, Cloudflare Pages
+- **ประมวลผลรูป:** Sharp
+- **Testing:** Vitest
 - **Tooling:** TypeScript, ESLint, Prettier, Wrangler
 
 ## ความครอบคลุมเอกสาร (Documentation Coverage)
 - **Profiles:** 100%
 - **Agent Context:** 100%
-- **Structure:** 100%
-- **Dependencies:** 100%
-- **Commands:** 100%
 - **Status:** 100%
-- **Knowledge Nodes:** 140
 
 ## ตัวกระตุ้น (Triggers)
 
@@ -67,16 +64,8 @@ last_updated: 2026-07-18
 | `update .md` | อ่านไฟล์ KB โปรเจกต์, อัปเดต status + agent context | ทั้งหมด |
 | `cleanup` | สแกน dependency/ไฟล์ที่ไม่ใช้, ตรวจสุขภาพ, อัปเดต KB | ทั้งหมด |
 | `wrap-day` | อ่าน diff, อัปเดต changelog + status, commit | เฉพาะ truck |
-| `doctor-kb` | ตรวจวงจรชีวิตความรู้ — stale, expired | ทั้งหมด |
-| `backfill` | หว่าน KB จากประวัติ git + โครงสร้างโค้ด | ตามโปรเจกต์ |
 | `check todos` | อ่าน ./TODOS.md ที่รากโปรเจกต์, แจ้งผู้ใช้เรื่องที่ค้าง | ทั้งหมด |
-
-## สคริปต์ (Scripts)
-
-| สคริปต์ | ใช้งาน |
-|--------|---------|
-| `scripts/doctor-kb.js` | ตรวจวงจรชีวิตความรู้ |
-| `scripts/backfill.js` | หว่าน KB จาก git/code/docs |
+| `check scope` | ตรวจสอบไฟล์ OKF ทั้งหมดว่าเกิน scope budget หรือไม่, แจ้งเตือนถ้าเกิน | ทั้งหมด |
 
 ## เครื่องมือ MCP (MCP Tools)
 
@@ -86,21 +75,16 @@ Local MCP server ที่ `~/OKF/mcp-server/` ใช้เครื่องม
 |------|-------------|
 | `okf_list_projects` | แสดงโปรเจกต์ทั้งหมดพร้อมจำนวนไฟล์ |
 | `okf_get_project` | ดึง profile + agent + status ของโปรเจกต์ |
-| `okf_query_nodes` | กรอง node ตาม type/status/project |
-| `okf_get_node` | อ่าน node เดียวตาม ID (frontmatter + body) |
 | `okf_search` | ค้นหาเต็มข้อความข้ามไฟล์ .md ทั้งหมด |
 | `okf_get_file` | เนื้อหาดิบของไฟล์ OKF ใดก็ได้ |
-| `okf_create_node` | สร้าง node พร้อม ID อัตโนมัติ |
-| `okf_update_node` | อัปเดตฟิลด์ frontmatter และ/หรือ body |
-| `okf_update_status` | ตั้งสถานะวงจรชีวิตให้ node |
-| `okf_add_edge` | เพิ่มลิงก์แบบมีประเภทระหว่าง 2 node |
-| `okf_doctor` | รันการตรวจวงจรชีวิต (stale, expired, superseded) |
 | `okf_list_dir` | แสดงโครงสร้างไดเรกทอรี OKF |
+| `okf_query_projects` | Query projects by technology, status, deployment |
+| `okf_dashboard` | Summary ของทุกโปรเจกต์ |
+| `okf_project_stats` | Statistics ข้ามโปรเจกต์ |
 
 ## ไฟล์ระบบ (System Files)
-- [Conventions](./system/conventions.md) — โปรไฟล์ผู้ใช้, ตั้งค่า Termux, กฎการสื่อสาร
-- [Workspace](./system/workspace.md) — เปรียบเทียบข้ามโปรเจกต์, คำสั่ง dev
-- [Inventory](./system/inventory.md) — ค้นพบโปรเจกต์, ตัวกระตุ้นงาน
+- [Setup](./SETUP.md) — เริ่มต้นไวสำหรับสภาพแวดล้อมใหม่
+- [Conventions](./system/conventions.md) — โปรไฟล์ผู้ใช้, ตั้งค่า Termux, กฎการสื่อสาร, Universal Prompt
 - [Glossary](./system/glossary.md) — ศัพท์เทคนิค
 - [Personalities](./system/personalities.md) — บุคลิกภาพ agent / คราวก๊อบลิน
 - [Sync Log](./system/sync-log.md) — ประวัติการเปลี่ยนแปลง

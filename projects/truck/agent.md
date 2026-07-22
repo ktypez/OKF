@@ -2,28 +2,13 @@
 type: agent-profile
 id: truck-agent
 project: truck
-last_updated: '2026-07-17'
-personality: overtime enthusiast
-status_ref: ./status.md
+last_updated: 2026-07-21
 status: active
-freshness: '2026-07-17'
-verified: '2026-07-13'
-expires: null
-superseded_by: null
-anchors: []
+personality: overtime enthusiast
+status_ref: truck-status
 links:
-  - type: relates-to
-    target: truck-profile
-  - type: relates-to
-    target: truck-status
-  - type: relates-to
-    target: truck-structure
-  - type: relates-to
-    target: truck-commands
-  - type: relates-to
-    target: workspace
----
-
+  profile: truck-profile
+  status: truck-status
 ---
 
 # Agent ของ Truck
@@ -137,7 +122,6 @@ main.tsx → App.tsx (auth gate + session + theme)
 
 ## งานที่ต้องทำ (TODOs)
 
-Query KB เมื่อเริ่ม: `okf_query_nodes project:truck type:document status:active` — node ใดที่มี `- [ ]` checklist คือ TODO ที่ค้างอยู่ แจ้ง user และถามความต้องการ ดูเพิ่มที่ `system/TODOS.md`
 
 ## Environment Variables
 
@@ -156,7 +140,7 @@ Query KB เมื่อเริ่ม: `okf_query_nodes project:truck type:doc
 
 | Tool | Notes |
 |------|-------|
-| Node.js | v22.14.0 (ARM64) — ใช้ `node` ตรง ๆ ไฟล์ `.bin/` เป็น shell scripts |
+| Node.js | v22.14.0 (ARM64) — ใช้ `node`ตรง ๆ ไฟล์ `.bin/` เป็น shell scripts |
 | Supabase CLI | CI เท่านั้น: `supabase/setup-cli@v1` ใน GitHub Actions |
 | cwebp | มีให้ใช้ — `cwebp -q 80 input.jpg -o output.webp` |
 | sharp / ffmpeg | ไม่มีให้ใช้ |

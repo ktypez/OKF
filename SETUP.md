@@ -1,7 +1,7 @@
 ---
 type: instruction
 id: okf-setup
-last_updated: 2026-07-05
+last_updated: 2026-07-21
 ---
 
 # OKF Setup Guide
@@ -10,7 +10,7 @@ Quick start for agents and humans cloning this repo.
 
 ## What Is This
 
-OKF (Open Knowledge Framework) is a portable knowledge base at `~/OKF/`. It stores project context as markdown files with YAML frontmatter — decisions, lessons, components, and more.
+OKF (Open Knowledge Framework) is a portable knowledge base at `~/OKF/`. It stores project context as markdown files with YAML frontmatter — profiles, agents, status, and more.
 
 ## Quick Setup
 
@@ -44,9 +44,6 @@ Restart opencode after adding.
 ```bash
 # Test MCP server
 echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":"2024-11-05","capabilities":{},"clientInfo":{"name":"test","version":"1.0.0"}}}' | node ~/OKF/mcp-server/index.js
-
-# Run health audit
-node ~/OKF/scripts/doctor-kb.js
 ```
 
 ## Directory Layout
@@ -55,108 +52,68 @@ node ~/OKF/scripts/doctor-kb.js
 ~/OKF/
 ├── index.md                          ← Start here — project roster
 ├── projects/<project>/
-│   ├── profile.md                    ← Tech stack, architecture
-│   ├── agent.md                      ← Agent personality, triggers
-│   ├── status.md                     ← Live status, changelog
-│   ├── knowledge/                    ← Numbered nodes (DEC, LSN, COMP)
-│   │   ├── DEC-001.md
-│   │   ├── LSN-001.md
-│   │   └── COMP-001.md
-│   └── tasks/                        ← Task nodes
+│   ├── profile.md                    ← Tech stack, architecture, deps, commands, structure
+│   ├── agent.md                      ← Agent personality, triggers, changelog
+│   └── status.md                     ← Live status, changelog, known issues
 ├── system/
-│   ├── conventions.md                ← Communication rules
-│   ├── workspace.md                  ← Cross-project comparison
-│   └── inventory.md                  ← Task triggers
+│   ├── conventions.md                ← Communication rules, Universal Prompt
+│   ├── glossary.md                   ← Terminology
+│   ├── personalities.md              ← Agent personalities
+│   ├── sync-log.md                   ← Change history
+│   └── TODOS.md                      ← TODOs convention
 ├── mcp-server/                       ← Local MCP server
 │   ├── index.js
-│   └── lib/
-├── scripts/
-│   ├── doctor-kb.js                  ← Health audit
-│   └── backfill.js                   ← Seed from git/code
+│   ├── lib/
+│   │   ├── okf.js                    ← Core OKF functions
+│   │   ├── db.js                     ← SQLite connection
+│   │   ├── sync.js                   ← Markdown → SQLite sync
+│   │   └── tools.js                  ← MCP tools
+│   └── okf.db                        ← SQLite database
 └── skills/                           ← Specialized skills
 ```
 
 ## How the KB Works
 
-Every `.md` file is a **node** with YAML frontmatter:
+Every `.md` file uses YAML frontmatter + Markdown body:
 
 ```yaml
 ---
-type: decision          # node type
-id: DEC-001             # unique ID (per project)
-project: truck          # which project
-status: active          # active | expired | superseded | archived
-freshness: 2026-07-05   # last content change
-verified: 2026-07-05    # last confirmed accurate
-links:                  # connections to other nodes
-  - type: relates-to
-    target: DEC-003
+type: project-profile
+id: truck-profile
+project: truck
+last_updated: 2026-07-21
+status: active
 ---
 ```
 
-### Node Types
+### File Types
 
-| Type | Prefix | Where | Purpose |
-|------|--------|-------|---------|
-| decision | DEC- | knowledge/ | Architecture/design choices |
-| lesson | LSN- | knowledge/ | Things learned the hard way |
-| component | COMP- | knowledge/ | System structure |
-| document | — | project root | Specs, audits, references |
-| risk | RSK- | knowledge/ | Known risks |
-| project-profile | — | project root | Tech stack |
-| agent-profile | — | project root | Agent context |
-| project-status | — | project root | Live status |
-
-### Link Types
-
-`relates-to`, `supersedes`, `caused-by`, `blocks`, `fulfills`, `documents`, `depends-on`, `part-of`
+| Type | File | Purpose |
+|------|------|---------|
+| `project-profile` | profile.md | Tech stack, architecture, dependencies, commands, structure |
+| `agent-profile` | agent.md | Agent personality, triggers, changelog |
+| `project-status` | status.md | Live status, changelog, known issues |
 
 ## Using MCP Tools
 
-The MCP server exposes 12 tools for reading and writing the KB. Use these instead of manually editing .md files.
+The MCP server exposes 8 tools for reading and querying the KB.
 
 ### Query
 
 ```
-okf_list_projects          → see all projects
-okf_get_project truck      → read truck's profile + agent + status
-okf_query_nodes            → filter by type/status/project
-okf_get_node truck DEC-001 → read specific node
-okf_search "Supabase"      → full-text search
-okf_list_dir               → browse structure
-```
-
-### Write
-
-```
-okf_create_node            → create node with auto-generated ID
-okf_update_node            → update frontmatter/body
-okf_update_status          → change lifecycle status
-okf_add_edge               → link two nodes
-```
-
-### Maintenance
-
-```
-okf_doctor                 → health audit (stale, expired, superseded)
-```
-
-## Using Scripts
-
-For offline/CLI use without MCP:
-
-```bash
-# Health audit
-node ~/OKF/scripts/doctor-kb.js [project]
-
-# Seed from codebase
-node ~/OKF/scripts/backfill.js <project> [--dry-run]
+okf_list_projects                    → see all projects
+okf_get_project truck                → read truck's profile + agent + status
+okf_search "Supabase"                → full-text search
+okf_query_projects framework=React   → query by technology
+okf_dashboard                        → summary of all projects
+okf_project_stats                    → statistics across projects
+okf_list_dir                         → browse structure
+okf_get_file projects/truck/profile.md → raw file content
 ```
 
 ## Rules
 
-- Use MCP tools to read/write nodes — don't manually edit knowledge/ files
-- Node IDs are per-project (DEC-001 in truck != DEC-001 in clientdata)
+- Use MCP tools to read/write KB — don't manually edit .md files
 - Dates are always YYYY-MM-DD
 - No Chinese characters — Thai or English only
 - Don't push KB changes without explicit instruction

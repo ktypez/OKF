@@ -2,32 +2,14 @@
 type: agent-profile
 id: clientdata-agent
 project: clientdata
-last_updated: '2026-07-13'
+last_updated: 2026-07-21
 status: archived
-freshness: '2026-07-13'
-verified: '2026-07-13'
-expires: null
-superseded_by: null
 personality: data goblin
-status_ref: ./status.md
-anchors:
-  - /home/clientdata/app/
-  - /home/clientdata/lib/
-  - /home/clientdata/components/
+status_ref: clientdata-status
 links:
-  - type: relates-to
-    target: clientdata-profile
-  - type: relates-to
-    target: clientdata-status
-  - type: relates-to
-    target: clientdata-structure
-  - type: relates-to
-    target: clientdata-commands
-  - type: relates-to
-    target: workspace
+  profile: clientdata-profile
+  status: clientdata-status
 ---
-
-
 
 # clientdata Agent
 
@@ -127,15 +109,11 @@ links:
 
 ### "backfill" — Seed KB from Codebase
 
-1. สแกน git log หา commit messages → สกัด decisions เป็น DEC-* nodes
-2. สแกนโครงสร้างไดเรกทอรีโปรเจกต์ → สร้าง COMP-* component nodes
-3. อ่าน docs ที่มีอยู่ (README, DESIGN.md ฯลฯ) → สกัด lessons เป็น LSN-*
 4. อ่าน package.json → ตรวจสอบความถูกต้องของ profile.md
 5. นำผลมาแสดงให้ผู้ใช้ approve ก่อนเขียน
 
 ## TODOs
 
-Query KB ตอนเริ่มต้น: `okf_query_nodes project:clientdata type:document status:active` — node ใดที่มี `- [ ]` checklist ถือเป็น pending TODO แจ้งผู้ใช้ ถามความตั้งใจ ดู `system/TODOS.md`
 
 ## Environment Variables
 
@@ -150,5 +128,3 @@ Query KB ตอนเริ่มต้น: `okf_query_nodes project:clientdata 
 - เอาออกแล้ว sonner — ไม่มี toast library ติดตั้ง
 - UI edits ทั้งหมดต้องใช้ shadcn components — ห้ามทำ custom button/modal pattern เมื่อมี shadcn เทียบเท่า
 - `pnpm-lock.yaml` ต้อง commit เมื่อ dependencies เปลี่ยน (Vercel ใช้ `--frozen-lockfile`)
-
-

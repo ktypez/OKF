@@ -1,27 +1,14 @@
 ---
 type: agent-profile
-id: mcky-agent
+id: mcky-space-agent
 project: mcky.space
-last_updated: '2026-07-17'
-personality: terminal hipster
-status_ref: ./status.md
+last_updated: 2026-07-21
 status: active
-freshness: '2026-07-17'
-verified: '2026-07-13'
-expires: null
-superseded_by: null
-anchors: []
+personality: terminal hipster
+status_ref: mcky-space-status
 links:
-  - type: relates-to
-    target: mcky-space-profile
-  - type: relates-to
-    target: mcky-status
-  - type: relates-to
-    target: mcky-structure
-  - type: relates-to
-    target: mcky-commands
-  - type: relates-to
-    target: workspace
+  profile: mcky-space-profile
+  status: mcky-space-status
 ---
 
 ## ภาพรวม
@@ -110,7 +97,6 @@ links:
 
 ## รายการที่ต้องทำ
 
-Query KB ตอนเริ่มทำงาน: `okf_query_nodes project:mcky.space type:document status:active` — node ใดที่มีรายการเช็กลิสต์ `- [ ]` ถือเป็น TODO ที่ค้างอยู่ แจ้งผู้ใช้แล้วถามความต้องการ ดูเพิ่มเติมที่ `system/TODOS.md`
 
 ## กฎ
 
@@ -124,4 +110,3 @@ Query KB ตอนเริ่มทำงาน: `okf_query_nodes project:mcky.
 - ห้ามรัน `npm install` ถ้า node_modules ยังครบ (android-arm64 จะทิ้งไฟล์ ESM/binding)
 - ห้ามลบ `node_modules/` (มี native binding shims + ESM wrappers ที่ถูกสร้างอยู่)
 - ข้ามการเทส — ไม่มีคำสั่งเทส
-

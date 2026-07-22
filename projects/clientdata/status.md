@@ -2,42 +2,15 @@
 type: project-status
 id: clientdata-status
 project: clientdata
-last_updated: '2026-07-18'
+last_updated: 2026-07-21
 status: archived
-freshness: '2026-07-18'
-verified: '2026-07-18'
-expires: null
 superseded_by: data-mcky-space-status
-anchors:
-  - /home/clientdata/
 links:
-  - type: relates-to
-    target: clientdata-profile
-  - type: relates-to
-    target: clientdata-agent
-  - type: superseded-by
-    target: data-mcky-space-status
-  - type: supersedes
-    target: data-mcky-space-status
+  profile: clientdata-profile
+  agent: clientdata-agent
 ---
 
-
 # สถานะโปรเจกต์ — clientdata
-
-## Stack (สแต็ก)
-
-- **Framework**: Next.js 16.2.9 (App Router SPA ใช้ History API)
-- **UI Library**: React 19.2.7, TypeScript 6
-- **UI System**: shadcn/ui + Base UI + Phosphor Icons
-- **Styling**: Tailwind CSS 4.3.1 + PostCSS, 14 theme presets
-- **Database**: Neon (Postgres) ผ่าน Drizzle ORM (server actions + API routes)
-- **Maps**: MapLibre GL JS (lazy-loaded ผ่าน `next/dynamic`)
-- **Auth**: ฐานรหัสผ่าน (scrypt + HMAC tokens), บทบาท admin + viewer
-- **Storage**: Cloudflare R2 ผ่าน `@aws-sdk/client-s3`
-- **Deploy**: Vercel (serverless) — `master` → `astryx.mcky.space`
-- **Font**: IBM Plex Sans Thai ผ่าน `next/font/google`
-- **Dark mode**: `next-themes` คู่กับ Tailwind `@custom-variant dark`
-- **Tests**: Vitest (16 tests)
 
 ## Routes (เส้นทาง)
 
@@ -97,6 +70,3 @@ links:
 clients: id, name, shopName, phone, lat, lng, photoKey, note, suggestedById, createdAt
 suggestions: id, name, shopName, phone, suggestedBy, userId, approvedAt
 ```
-
-
-
