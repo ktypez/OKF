@@ -30,10 +30,24 @@ export function readFrontmatter(filePath) {
   if (!match) return null;
   try {
     const fm = yaml.load(match[1]);
-    return fm || {};
+    return convertFmDates(fm) || {};
   } catch {
     return null;
   }
+}
+
+// js-yaml parses "2026-07-21" as Date — convert to ISO string
+function convertFmDates(obj) {
+  if (obj instanceof Date) return obj.toISOString().split("T")[0]; // "2026-07-21"
+  if (Array.isArray(obj)) return obj.map(convertFmDates);
+  if (obj && typeof obj === "object") {
+    const result = {};
+    for (const [k, v] of Object.entries(obj)) {
+      result[k] = convertFmDates(v);
+    }
+    return result;
+  }
+  return obj;
 }
 
 export function readBody(filePath) {
