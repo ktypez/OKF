@@ -1,7 +1,5 @@
 ---
-type: workspace-index
-id: okf-index
-last_updated: 2026-07-22
+okf_version: 0.1
 ---
 
 # ดัชนี Workspace (Workspace Index)
@@ -83,7 +81,6 @@ Local MCP server ที่ `~/OKF/mcp-server/` ใช้เครื่องม
 | `stats` | Statistics ข้ามโปรเจกต์ (framework, DB, deploy) |
 | `graph` | Mermaid knowledge graph — project → technology relationships |
 | `rebuild` | บังคับ recompile KB จาก .md ไฟล์ |
-| `render` | Export knowledge graph JSON + stats (สำหรับ graph viewer) |
 
 ## ไฟล์ระบบ (System Files)
 - [Setup](./SETUP.md) — เริ่มต้นไวสำหรับสภาพแวดล้อมใหม่
