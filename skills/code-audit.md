@@ -7,7 +7,6 @@ category: engineering
 projects:
   - truck
   - mcky.space
-  - clientdata
   - habby
 title: code-audit Skill
 description: ''

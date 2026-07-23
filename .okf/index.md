@@ -8,7 +8,7 @@ okf_version: 0.1
 
 ## Structure
 
-- **projects/** — 8 projects (clientdata, collage, data.mcky.space, habby, mcky.space, paper, truck, writer)
+- **projects/** — 6 projects (collage, data.mcky.space, habby, mcky.space, paper, truck)
   - Each project has: profile, agent, status
 - **system/** — workspace conventions, glossary, personalities, sync log, TODOs
 - **skills/** — agent skills (code-audit, design, frontend-dev, kb-ops, kb-sync, manage-okf, etc.)
