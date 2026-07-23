@@ -87,7 +87,6 @@ Local MCP server ที่ `~/OKF/mcp-server/` ใช้เครื่องม
 - [Glossary](./system/glossary.md) — ศัพท์เทคนิค
 - [Personalities](./system/personalities.md) — บุคลิกภาพ agent / คราวก๊อบลิน
 - [Sync Log](./system/sync-log.md) — ประวัติการเปลี่ยนแปลง
-- [TODOs Convention](./system/TODOS.md) — กระบวนการ TODOs + ตรวจสอบตอนเริ่ม (global)
 
 ## Cross-links
 
