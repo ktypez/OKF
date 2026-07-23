@@ -25,7 +25,7 @@ async function bootstrap() {
 
   // Register MCP tools
   registerTools(server);
-  console.error("[okf] ready — 10 tools registered");
+  console.error("[okf] ready — 11 tools registered");
 }
 
 bootstrap().then(() => {
