@@ -29,7 +29,6 @@ tags:
   - profile
 timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
-
 # โปรไฟล์โปรเจกต์: habby
 
 ## ข้อมูลตัวตน (Identity)
@@ -140,3 +139,8 @@ Service worker สำหรับ caching + notification clicks (ไม่มี
 ### Entry Points
 
 `index.html` (Vite), `server.js` (Express)
+
+## Cross-links
+
+- [Habby Agent](projects/habby/agent.md)
+- [Habby Status](projects/habby/status.md)

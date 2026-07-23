@@ -28,7 +28,6 @@ tags:
   - profile
 timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
-
 # โปรไฟล์โปรเจกต์: Truck
 
 ## ข้อมูลตัวตน (Identity)
@@ -126,3 +125,8 @@ timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:
 **Source:**
 - `/home/truck/package.json`
 - `/home/OKF/projects/truck/agent.md`
+
+## Cross-links
+
+- [Truck Agent](projects/truck/agent.md)
+- [Truck Status](projects/truck/status.md)

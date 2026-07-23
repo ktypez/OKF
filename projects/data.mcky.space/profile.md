@@ -28,7 +28,6 @@ tags:
   - profile
 timestamp: Wed Jul 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
-
 # ข้อมูลโปรเจกต์: data.mcky.space
 
 ## ข้อมูลจำเพาะ (Identity)
@@ -156,3 +155,8 @@ data.mcky.space/
 - **State:** active (STABLE — 2026-07-17 เพิ่ม Motion animations)
 - **Role:** Production deployment
 - **Source:** `clientdata` (branch master — ทดลอง), ย้ายมา Vite แล้ว
+
+## Cross-links
+
+- [data.mcky.space Agent](projects/data.mcky.space/agent.md)
+- [data.mcky.space Status](projects/data.mcky.space/status.md)

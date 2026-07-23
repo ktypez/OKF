@@ -11,7 +11,6 @@ tags:
   - conventions
 timestamp: Wed Jul 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
-
 # Conventions
 
 ## Communication Rules
@@ -232,3 +231,10 @@ Or just say **"build site"** to trigger this workflow.
 6. commit + push การเปลี่ยนแปลง — Vercel auto-deploys
 
 **คำที่ใช้ได้:** "sync kb", "refresh kb", "update kb", "อัปเดต kb", "ทำให้ kb ทันสมัย"
+
+## Cross-links
+
+- [Glossary](system/glossary.md)
+- [Personalities](system/personalities.md)
+- [Sync Log](system/sync-log.md)
+- [TODOs Convention](system/TODOS.md)

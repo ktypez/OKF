@@ -27,7 +27,6 @@ tags:
   - profile
 timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
-
 # โปรไฟล์โปรเจกต์: writer
 
 ## ข้อมูลตัวตน (Identity)
@@ -53,3 +52,8 @@ timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:
 - **State:** active
 - **Documentation Completeness:** สูง (High)
 - **Confidence Level:** สูง (High)
+
+## Cross-links
+
+- [Writer Agent](projects/writer/agent.md)
+- [Writer Status](projects/writer/status.md)

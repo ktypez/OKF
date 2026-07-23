@@ -28,7 +28,6 @@ tags:
   - profile
 timestamp: Wed Jul 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
-
 # ข้อมูลโปรเจกต์: collage
 
 ## ข้อมูลจำเพาะ (Identity)
@@ -141,3 +140,8 @@ collage/
 - **State:** active
 - **Role:** พัฒนาอยู่
 - **LINE LIFF ID:** `2010606328-7UnH1Yre`
+
+## Cross-links
+
+- [Collage Agent](projects/collage/agent.md)
+- [Collage Status](projects/collage/status.md)

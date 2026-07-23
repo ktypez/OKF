@@ -28,7 +28,6 @@ tags:
   - profile
 timestamp: Wed Jul 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
-
 ## ข้อมูลตัวตน
 - **Name:** mcky.space
 - **Display Name:** mcky.space
@@ -125,3 +124,8 @@ scripts/          # build scripts (build-blog-posts.mjs)
 - JetBrains Mono ตลอดทั้งเว็บ
 - ARIA landmarks, safe-area-insets, `prefers-reduced-motion`
 - Bilingual toggle: `[data-lang="en"] .lang-th { display:none }` และกลับกัน
+
+## Cross-links
+
+- [mcky.space Agent](projects/mcky.space/agent.md)
+- [mcky.space Status](projects/mcky.space/status.md)

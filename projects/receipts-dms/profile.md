@@ -29,7 +29,6 @@ tags:
   - profile
 timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
-
 # receipts-dms
 
 **Role:** production
@@ -220,3 +219,8 @@ React state ผ่าน hooks (`useReceipts`, `useCategories`) Theme ผ่า�
 - `vite.config.ts`
 - `schema.sql`
 - `src/lib/auth-context.tsx`
+
+## Cross-links
+
+- [Receipts DMS Agent](projects/receipts-dms/agent.md)
+- [Receipts DMS Status](projects/receipts-dms/status.md)
