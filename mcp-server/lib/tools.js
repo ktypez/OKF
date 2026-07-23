@@ -2,6 +2,7 @@ import { z } from "zod";
 import * as okf from "./okf.js";
 import { getDb } from "./db.js";
 import { compile } from "./compiler.js";
+import { render } from "./render.js";
 
 // ── Helper: parse JSON columns ───────────────────────────
 
@@ -342,6 +343,28 @@ export function registerTools(server) {
       } catch (err) {
         return {
           content: [{ type: "text", text: `## Rebuild failed\n\n${err.message}` }],
+          isError: true,
+        };
+      }
+    }
+  );
+
+  // ── 11. render ──────────────────────────────────────────
+  server.tool(
+    "render",
+    "Export the knowledge base as a JSON graph for visualization (projects, entities, edges)",
+    {
+      output: z.string().optional().describe("Output file path (default: mcp-server/out/graph.json)"),
+    },
+    async ({ output } = {}) => {
+      try {
+        const result = render({ output });
+        return {
+          content: [{ type: "text", text: `## Render complete\n\n- Path: \`${result.path}\`\n- Size: ${(result.size_bytes / 1024).toFixed(1)} KB\n- Projects: ${result.projects}\n- Entities: ${result.entities}\n- Edges: ${result.edges}` }],
+        };
+      } catch (err) {
+        return {
+          content: [{ type: "text", text: `## Render failed\n\n${err.message}` }],
           isError: true,
         };
       }
