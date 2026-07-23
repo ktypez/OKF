@@ -184,6 +184,7 @@ Local MCP server at `~/OKF/mcp-server/`. Use these tools to read and query the K
 | `stats` | Statistics across projects |
 | `graph` | Mermaid knowledge graph — project → technology relationships |
 | `rebuild` | Force recompile KB from .md files |
+| `render` | Export knowledge graph as JSON (for D3.js viewer) |
 
 **Rules:**
 - Dates are always YYYY-MM-DD format
