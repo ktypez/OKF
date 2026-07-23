@@ -139,3 +139,8 @@ Service worker สำหรับ caching + notification clicks (ไม่มี
 ### Entry Points
 
 `index.html` (Vite), `server.js` (Express)
+
+## Cross-links
+
+- [Habby Agent](agent.md)
+- [Habby Status](status.md)

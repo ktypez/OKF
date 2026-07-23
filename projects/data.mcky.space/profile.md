@@ -155,3 +155,8 @@ data.mcky.space/
 - **State:** active (STABLE — 2026-07-17 เพิ่ม Motion animations)
 - **Role:** Production deployment
 - **Source:** `clientdata` (branch master — ทดลอง), ย้ายมา Vite แล้ว
+
+## Cross-links
+
+- [data.mcky.space Agent](agent.md)
+- [data.mcky.space Status](status.md)
