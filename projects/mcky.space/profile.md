@@ -125,3 +125,7 @@ scripts/          # build scripts (build-blog-posts.mjs)
 - ARIA landmarks, safe-area-insets, `prefers-reduced-motion`
 - Bilingual toggle: `[data-lang="en"] .lang-th { display:none }` และกลับกัน
 
+## Cross-links
+
+- [mcky.space Agent](agent.md)
+- [mcky.space Status](status.md)

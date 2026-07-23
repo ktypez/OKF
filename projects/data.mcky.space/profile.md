@@ -156,3 +156,7 @@ data.mcky.space/
 - **Role:** Production deployment
 - **Source:** `clientdata` (branch master — ทดลอง), ย้ายมา Vite แล้ว
 
+## Cross-links
+
+- [data.mcky.space Agent](agent.md)
+- [data.mcky.space Status](status.md)

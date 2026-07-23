@@ -232,3 +232,9 @@ Or just say **"build site"** to trigger this workflow.
 
 **คำที่ใช้ได้:** "sync kb", "refresh kb", "update kb", "อัปเดต kb", "ทำให้ kb ทันสมัย"
 
+## Cross-links
+
+- [Glossary](glossary.md)
+- [Personalities](personalities.md)
+- [Sync Log](sync-log.md)
+- [TODOs Convention](TODOS.md)

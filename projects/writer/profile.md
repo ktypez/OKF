@@ -53,3 +53,7 @@ timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:
 - **Documentation Completeness:** สูง (High)
 - **Confidence Level:** สูง (High)
 
+## Cross-links
+
+- [Writer Agent](agent.md)
+- [Writer Status](status.md)
