@@ -30,7 +30,6 @@ tags:
   - INDEX
 timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
-
 # Skills Overview
 
 Centralized index of all specialized skills available for AI agents.
@@ -77,3 +76,15 @@ To invoke a skill manually, reference it by name in your task.
 1. Create skill in `~/.config/opencode/skills/<skill-name>/SKILL.md`
 2. Add entry to this `INDEX.md`
 3. Ensure matching doc exists
+
+## Cross-links
+
+- [Code Audit](code-audit.md)
+- [KB Sync](kb-sync.md)
+- [Frontend Dev](frontend-dev.md)
+- [Design Skill OS](design-skill-os.md)
+- [Supabase PG Best Practices](supabase-postgres-best-practices.md)
+- [Web Dev](web-dev.md)
+- [Writer Work](writer-work.md)
+- [Manage OKF](manage-okf.md)
+- [KB Ops](kb-ops.md)
