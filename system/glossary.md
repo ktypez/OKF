@@ -33,7 +33,3 @@ timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:
 | **cva** | Class Variance Authority — สำหรับจัด variant ของ component |
 | **D1** | Cloudflare D1 — SQLite database บน edge |
 | **R2** | Cloudflare R2 — object storage (ไม่มี egress fee) |
-
-## Cross-links
-
-- [Workspace Conventions](conventions.md)

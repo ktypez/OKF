@@ -140,8 +140,3 @@ collage/
 - **State:** active
 - **Role:** พัฒนาอยู่
 - **LINE LIFF ID:** `2010606328-7UnH1Yre`
-
-## Cross-links
-
-- [Collage Agent](agent.md)
-- [Collage Status](status.md)

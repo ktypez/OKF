@@ -101,8 +101,3 @@ timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:
 
 - `/home/clientdata/package.json`
 - `/home/OKF/projects/clientdata/agent.md`
-
-## Cross-links
-
-- [Clientdata Agent](agent.md)
-- [Clientdata Status](status.md)

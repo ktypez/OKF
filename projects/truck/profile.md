@@ -125,8 +125,3 @@ timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:
 **Source:**
 - `/home/truck/package.json`
 - `/home/OKF/projects/truck/agent.md`
-
-## Cross-links
-
-- [Truck Agent](agent.md)
-- [Truck Status](status.md)
