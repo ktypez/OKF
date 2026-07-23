@@ -1,10 +1,19 @@
 ---
 type: skill
 id: supabase-postgres-best-practices
-last_updated: 2026-07-17
+last_updated: 2026-07-17T00:00:00.000Z
 source: ~/.config/opencode/skills/supabase-postgres-best-practices/SKILL.md
 category: database
-projects: [global]
+projects:
+  - global
+title: supabase-postgres-best-practices Skill
+description: ''
+tags:
+  - skill
+  - agent
+  - opencode
+  - supabase-postgres-best-practices
+timestamp: Fri Jul 17 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 # supabase-postgres-best-practices Skill

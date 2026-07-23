@@ -2,7 +2,7 @@
 type: project-profile
 id: mcky-space-profile
 project: mcky.space
-last_updated: 2026-07-22
+last_updated: 2026-07-22T00:00:00.000Z
 status: active
 stack:
   language: JavaScript
@@ -19,6 +19,14 @@ agent_personality: terminal hipster
 links:
   agent: mcky-space-agent
   status: mcky-space-status
+title: Profile
+description: ''
+tags:
+  - mcky.space
+  - astro
+  - personal-site
+  - profile
+timestamp: Wed Jul 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 ## ข้อมูลตัวตน

@@ -1,10 +1,19 @@
 ---
 type: skill
 id: frontend-dev
-last_updated: 2026-07-17
+last_updated: 2026-07-17T00:00:00.000Z
 source: ~/.config/opencode/skills/frontend-dev/SKILL.md
 category: engineering
-projects: [global]
+projects:
+  - global
+title: frontend-dev Skill
+description: ''
+tags:
+  - skill
+  - agent
+  - opencode
+  - frontend-dev
+timestamp: Fri Jul 17 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 # frontend-dev Skill

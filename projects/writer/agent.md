@@ -2,11 +2,19 @@
 type: agent-profile
 id: writer-agent
 project: writer
-last_updated: 2026-07-21
+last_updated: 2026-07-21T00:00:00.000Z
 status: active
 personality: word goblin
 links:
   profile: writer-profile
+title: Writer Agent
+description: ''
+tags:
+  - writer
+  - ai
+  - documentation
+  - agent
+timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 # Writer Agent

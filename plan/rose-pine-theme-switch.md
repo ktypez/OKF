@@ -1,10 +1,17 @@
 ---
+type: Plan
 id: plan-rose-pine-theme-switch
 version: 4
 status: superseded
-created: 2026-07-09
-updated: 2026-07-13
+created: 2026-07-09T00:00:00.000Z
+updated: 2026-07-13T00:00:00.000Z
 superseded-by: expo-theme
+title: 'Plan: Rose Pine Theme Switch'
+description: ''
+tags:
+  - plan
+  - rose-pine-theme-switch
+timestamp: '2026-07-23T12:00:00Z'
 ---
 
 # Plan: Rose Pine Theme Switch

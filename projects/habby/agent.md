@@ -2,13 +2,22 @@
 type: agent-profile
 id: habby-agent
 project: habby
-last_updated: 2026-07-21
+last_updated: 2026-07-21T00:00:00.000Z
 status: active
 personality: trophy goblin
 status_ref: habby-status
 links:
   profile: habby-profile
   status: habby-status
+title: Habby Agent
+description: ''
+tags:
+  - habby
+  - react
+  - golang
+  - game
+  - agent
+timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 # Habby Agent

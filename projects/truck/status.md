@@ -2,11 +2,19 @@
 type: project-status
 id: truck-status
 project: truck
-last_updated: 2026-07-21
+last_updated: 2026-07-21T00:00:00.000Z
 status: active
 links:
   profile: truck-profile
   agent: truck-agent
+title: สถานะโปรเจกต์ — Truck
+description: ''
+tags:
+  - truck
+  - react
+  - supabase
+  - status
+timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 # สถานะโปรเจกต์ — Truck

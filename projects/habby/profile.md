@@ -2,7 +2,7 @@
 type: project-profile
 id: habby-profile
 project: habby
-last_updated: 2026-07-21
+last_updated: 2026-07-21T00:00:00.000Z
 status: active
 stack:
   language: JavaScript
@@ -19,6 +19,15 @@ agent_personality: trophy goblin
 links:
   agent: habby-agent
   status: habby-status
+title: 'โปรไฟล์โปรเจกต์: habby'
+description: ''
+tags:
+  - habby
+  - react
+  - golang
+  - game
+  - profile
+timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 # โปรไฟล์โปรเจกต์: habby

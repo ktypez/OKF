@@ -2,7 +2,7 @@
 type: project-profile
 id: collage-profile
 project: collage
-last_updated: 2026-07-22
+last_updated: 2026-07-22T00:00:00.000Z
 status: active
 stack:
   language: JavaScript
@@ -19,6 +19,14 @@ agent_personality: barista engineer
 links:
   agent: collage-agent
   status: collage-status
+title: 'ข้อมูลโปรเจกต์: collage'
+description: ''
+tags:
+  - collage
+  - line-bot
+  - image-processing
+  - profile
+timestamp: Wed Jul 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 # ข้อมูลโปรเจกต์: collage

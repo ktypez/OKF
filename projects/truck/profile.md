@@ -2,7 +2,7 @@
 type: project-profile
 id: truck-profile
 project: truck
-last_updated: 2026-07-21
+last_updated: 2026-07-21T00:00:00.000Z
 status: active
 stack:
   language: TypeScript
@@ -19,6 +19,14 @@ agent_personality: overtime enthusiast
 links:
   agent: truck-agent
   status: truck-status
+title: 'โปรไฟล์โปรเจกต์: Truck'
+description: ''
+tags:
+  - truck
+  - react
+  - supabase
+  - profile
+timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 # โปรไฟล์โปรเจกต์: Truck

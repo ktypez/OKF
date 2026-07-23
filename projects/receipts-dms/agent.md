@@ -2,13 +2,22 @@
 type: agent-profile
 id: receipts-dms-agent
 project: receipts-dms
-last_updated: 2026-07-21
+last_updated: 2026-07-21T00:00:00.000Z
 status: active
 personality: paper goblin
 status_ref: receipts-dms-status
 links:
   profile: receipts-dms-profile
   status: receipts-dms-status
+title: receipts-dms Agent
+description: ''
+tags:
+  - receipts-dms
+  - react
+  - cloudflare
+  - dms
+  - agent
+timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 # receipts-dms Agent

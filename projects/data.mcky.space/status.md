@@ -2,11 +2,19 @@
 type: project-status
 id: data-mcky-space-status
 project: data.mcky.space
-last_updated: 2026-07-22
+last_updated: 2026-07-22T00:00:00.000Z
 status: active
 links:
   profile: data-mcky-space-profile
   agent: data-mcky-space-agent
+title: สถานะโปรเจกต์ — data.mcky.space
+description: ''
+tags:
+  - data.mcky.space
+  - react
+  - cloudflare
+  - status
+timestamp: Wed Jul 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 

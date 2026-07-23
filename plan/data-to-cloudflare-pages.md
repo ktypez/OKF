@@ -1,9 +1,16 @@
 ---
+type: Plan
 id: plan-data-to-cloudflare-pages
 version: 2
 status: completed
-created: 2026-07-10
-updated: 2026-07-10
+created: 2026-07-10T00:00:00.000Z
+updated: 2026-07-10T00:00:00.000Z
+title: 'Plan: Migrate Data Project to Cloudflare Pages'
+description: ''
+tags:
+  - plan
+  - data-to-cloudflare-pages
+timestamp: '2026-07-23T12:00:00Z'
 ---
 
 # Plan: Migrate Data Project to Cloudflare Pages

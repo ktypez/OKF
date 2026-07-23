@@ -1,10 +1,22 @@
 ---
 type: skill
 id: code-audit
-last_updated: 2026-07-17
+last_updated: 2026-07-17T00:00:00.000Z
 source: ~/.config/opencode/skills/code-audit/SKILL.md
 category: engineering
-projects: [truck, mcky.space, clientdata, habby]
+projects:
+  - truck
+  - mcky.space
+  - clientdata
+  - habby
+title: code-audit Skill
+description: ''
+tags:
+  - skill
+  - agent
+  - opencode
+  - code-audit
+timestamp: Fri Jul 17 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 # code-audit Skill

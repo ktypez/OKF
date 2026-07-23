@@ -1,10 +1,19 @@
 ---
 type: skill
 id: design-skill-os
-last_updated: 2026-07-17
+last_updated: 2026-07-17T00:00:00.000Z
 source: ~/.config/opencode/skills/design-skill-os/SKILL.md
 category: design
-projects: [global]
+projects:
+  - global
+title: design-skill-os Skill
+description: ''
+tags:
+  - skill
+  - agent
+  - opencode
+  - design-skill-os
+timestamp: Fri Jul 17 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 # design-skill-os Skill

@@ -2,7 +2,7 @@
 type: project-profile
 id: receipts-dms-profile
 project: receipts-dms
-last_updated: 2026-07-21
+last_updated: 2026-07-21T00:00:00.000Z
 status: active
 stack:
   language: TypeScript
@@ -19,6 +19,15 @@ agent_personality: paper goblin
 links:
   agent: receipts-dms-agent
   status: receipts-dms-status
+title: receipts-dms
+description: ''
+tags:
+  - receipts-dms
+  - react
+  - cloudflare
+  - dms
+  - profile
+timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 # receipts-dms

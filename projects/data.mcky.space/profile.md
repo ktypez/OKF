@@ -2,7 +2,7 @@
 type: project-profile
 id: data-mcky-space-profile
 project: data.mcky.space
-last_updated: 2026-07-22
+last_updated: 2026-07-22T00:00:00.000Z
 status: active
 stack:
   language: TypeScript
@@ -19,6 +19,14 @@ agent_personality: data goblin (stable)
 links:
   agent: data-mcky-space-agent
   status: data-mcky-space-status
+title: 'ข้อมูลโปรเจกต์: data.mcky.space'
+description: ''
+tags:
+  - data.mcky.space
+  - react
+  - cloudflare
+  - profile
+timestamp: Wed Jul 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 # ข้อมูลโปรเจกต์: data.mcky.space

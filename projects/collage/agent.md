@@ -2,13 +2,21 @@
 type: agent-profile
 id: collage-agent
 project: collage
-last_updated: 2026-07-21
+last_updated: 2026-07-21T00:00:00.000Z
 status: active
 personality: barista engineer
 status_ref: collage-status
 links:
   profile: collage-profile
   status: collage-status
+title: collage Agent
+description: ''
+tags:
+  - collage
+  - line-bot
+  - image-processing
+  - agent
+timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 # collage Agent

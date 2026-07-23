@@ -1,10 +1,19 @@
 ---
 type: skill
 id: writer-work
-last_updated: 2026-07-17
+last_updated: 2026-07-17T00:00:00.000Z
 source: ~/.config/opencode/skills/writer-work/SKILL.md
 category: content
-projects: [global]
+projects:
+  - global
+title: writer-work Skill
+description: ''
+tags:
+  - skill
+  - agent
+  - opencode
+  - writer-work
+timestamp: Fri Jul 17 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 # writer-work Skill

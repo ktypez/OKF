@@ -2,13 +2,21 @@
 type: agent-profile
 id: mcky-space-agent
 project: mcky.space
-last_updated: 2026-07-21
+last_updated: 2026-07-21T00:00:00.000Z
 status: active
 personality: terminal hipster
 status_ref: mcky-space-status
 links:
   profile: mcky-space-profile
   status: mcky-space-status
+title: Agent
+description: ''
+tags:
+  - mcky.space
+  - astro
+  - personal-site
+  - agent
+timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 ## ภาพรวม

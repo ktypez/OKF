@@ -1,7 +1,7 @@
 ---
 type: index
 id: skills-index
-last_updated: 2026-07-21
+last_updated: 2026-07-21T00:00:00.000Z
 skills:
   - id: code-audit
     path: skills/code-audit.md
@@ -21,6 +21,14 @@ skills:
     path: skills/manage-okf.md
   - id: kb-ops
     path: skills/kb-ops.md
+title: Skills Overview
+description: ''
+tags:
+  - skill
+  - agent
+  - opencode
+  - INDEX
+timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 # Skills Overview

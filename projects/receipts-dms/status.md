@@ -2,11 +2,20 @@
 type: project-status
 id: receipts-dms-status
 project: receipts-dms
-last_updated: 2026-07-21
+last_updated: 2026-07-21T00:00:00.000Z
 status: active
 links:
   profile: receipts-dms-profile
   agent: receipts-dms-agent
+title: สถานะ
+description: ''
+tags:
+  - receipts-dms
+  - react
+  - cloudflare
+  - dms
+  - status
+timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 # สถานะ

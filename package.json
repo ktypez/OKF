@@ -2,8 +2,5 @@
   "name": "okf",
   "private": true,
   "type": "module",
-  "description": "Open Knowledge Framework — workspace knowledge base tools",
-  "dependencies": {
-    "js-yaml": "^4.1.0"
-  }
+  "description": "Open Knowledge Framework — workspace knowledge base"
 }

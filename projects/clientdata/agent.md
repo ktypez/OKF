@@ -2,13 +2,20 @@
 type: agent-profile
 id: clientdata-agent
 project: clientdata
-last_updated: 2026-07-21
+last_updated: 2026-07-21T00:00:00.000Z
 status: archived
 personality: data goblin
 status_ref: clientdata-status
 links:
   profile: clientdata-profile
   status: clientdata-status
+title: clientdata Agent
+description: ''
+tags:
+  - clientdata
+  - archived
+  - agent
+timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 # clientdata Agent

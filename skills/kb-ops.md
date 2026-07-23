@@ -1,8 +1,15 @@
 ---
 type: skill
 id: kb-ops
-last_updated: 2026-07-22
+last_updated: 2026-07-22T00:00:00.000Z
 description: Manage OKF workspace — list projects, search files, read project docs.
+title: kb-ops
+tags:
+  - skill
+  - agent
+  - opencode
+  - kb-ops
+timestamp: Wed Jul 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 # kb-ops

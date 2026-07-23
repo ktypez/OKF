@@ -1,7 +1,13 @@
 ---
 type: template
 id: project-template
-last_updated: 2026-07-21
+last_updated: 2026-07-21T00:00:00.000Z
+title: Project Profile Template
+description: ''
+tags:
+  - template
+  - project-template
+timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 # Project Profile Template

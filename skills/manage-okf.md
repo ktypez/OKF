@@ -1,6 +1,18 @@
 ---
+type: Skill
 name: manage-okf
-description: Maintain an OKF (Open Knowledge Framework) workspace by discovering projects, extracting verified metadata and documentation, normalizing project knowledge into a consistent schema, and synchronizing a central workspace knowledge base that serves as the authoritative source of truth. Use whenever asked to create, repair, update, audit, synchronize, migrate, or organize OKF files across a workspace or multi-project repository.
+description: >-
+  Maintain an OKF (Open Knowledge Framework) workspace by discovering projects, extracting verified metadata and
+  documentation, normalizing project knowledge into a consistent schema, and synchronizing a central workspace knowledge
+  base that serves as the authoritative source of truth. Use whenever asked to create, repair, update, audit,
+  synchronize, migrate, or organize OKF files across a workspace or multi-project repository.
+title: Manage OKF
+tags:
+  - skill
+  - agent
+  - opencode
+  - manage-okf
+timestamp: '2026-07-23T12:00:00Z'
 ---
 
 # Manage OKF

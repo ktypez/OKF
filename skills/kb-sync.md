@@ -1,10 +1,19 @@
 ---
 type: skill
 id: kb-sync
-last_updated: 2026-07-22
+last_updated: 2026-07-22T00:00:00.000Z
 source: ~/.config/opencode/skills/kb-sync/SKILL.md
 category: kb-maintenance
-projects: [global]
+projects:
+  - global
+title: kb-sync Skill
+description: ''
+tags:
+  - skill
+  - agent
+  - opencode
+  - kb-sync
+timestamp: Wed Jul 22 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 # kb-sync Skill

@@ -2,12 +2,19 @@
 type: project-status
 id: clientdata-status
 project: clientdata
-last_updated: 2026-07-21
+last_updated: 2026-07-21T00:00:00.000Z
 status: archived
 superseded_by: data-mcky-space-status
 links:
   profile: clientdata-profile
   agent: clientdata-agent
+title: สถานะโปรเจกต์ — clientdata
+description: ''
+tags:
+  - clientdata
+  - archived
+  - status
+timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
 ---
 
 # สถานะโปรเจกต์ — clientdata
