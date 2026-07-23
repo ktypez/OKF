@@ -89,16 +89,3 @@ Local MCP server ที่ `~/OKF/mcp-server/` ใช้เครื่องม
 - [Sync Log](./system/sync-log.md) — ประวัติการเปลี่ยนแปลง
 - [TODOs Convention](./system/TODOS.md) — กระบวนการ TODOs + ตรวจสอบตอนเริ่ม (global)
 
-## Cross-links
-
-- [Clientdata](projects/clientdata/profile.md)
-- [Collage](projects/collage/profile.md)
-- [data.mcky.space](projects/data.mcky.space/profile.md)
-- [Habby](projects/habby/profile.md)
-- [mcky.space](projects/mcky.space/profile.md)
-- [Receipts DMS](projects/receipts-dms/profile.md)
-- [Truck](projects/truck/profile.md)
-- [Writer](projects/writer/profile.md)
-- [Workspace Conventions](system/conventions.md)
-- [Glossary](system/glossary.md)
-- [Personalities](system/personalities.md)
