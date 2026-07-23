@@ -1,26 +1,26 @@
 ---
 type: agent-profile
-id: receipts-dms-agent
-project: receipts-dms
-last_updated: 2026-07-21T00:00:00.000Z
+id: paper-agent
+project: paper
+last_updated: 2026-07-23T00:00:00.000Z
 status: active
 personality: paper goblin
-status_ref: receipts-dms-status
+status_ref: paper-status
 links:
-  profile: receipts-dms-profile
-  status: receipts-dms-status
-title: receipts-dms Agent
+  profile: paper-profile
+  status: paper-status
+title: paper Agent
 description: ''
 tags:
-  - receipts-dms
+  - paper
   - react
   - cloudflare
   - dms
   - agent
-timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
+timestamp: 2026-07-23T12:00:00.000Z
 ---
 
-# receipts-dms Agent
+# paper Agent
 
 ## Overview
 
@@ -50,7 +50,7 @@ SPA with Cloudflare Pages Functions backend. All `/api/*` routes protected by `_
 
 ## Key Context
 
-- Path: `/home/paper/receipts-dms/`
+- Path: `/home/paper/`
 - Deploy: Cloudflare Pages (paper.mcky.space)
 - Thai-language UI labels, responsive, dark/light theme
 

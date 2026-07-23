@@ -2,7 +2,7 @@
 type: project-status
 id: truck-status
 project: truck
-last_updated: 2026-07-21T00:00:00.000Z
+last_updated: '2026-07-23'
 status: active
 links:
   profile: truck-profile
@@ -14,7 +14,7 @@ tags:
   - react
   - supabase
   - status
-timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
+timestamp: 'Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z'
 ---
 
 # สถานะโปรเจกต์ — Truck
@@ -76,3 +76,7 @@ timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:
 - Mutation invalidation: การ save ที่ mutates `logs` ต้อง invalidate ทั้งหมดของ: `monthly-logs`, `yearly-logs`, `income`
 - Avatar upload: Supabase Storage `avatars/{userId}/avatar.{ext}`, ≤2MB
 - ห้ามใช้ `@ts-ignore` หรือ `@ts-expect-error` (ใช้ `as Record<string, any>` แทน)
+
+## MCP Auto Sync Log
+
+- 2026-07-23T13:50:54.190Z — f1c6130: test: mcp-kb post-commit hook test

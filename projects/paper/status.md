@@ -1,21 +1,21 @@
 ---
 type: project-status
-id: receipts-dms-status
-project: receipts-dms
+id: paper-status
+project: paper
 last_updated: 2026-07-23T00:00:00.000Z
 status: active
 links:
-  profile: receipts-dms-profile
-  agent: receipts-dms-agent
+  profile: paper-profile
+  agent: paper-agent
 title: สถานะ
 description: ''
 tags:
-  - receipts-dms
+  - paper
   - react
   - cloudflare
   - dms
   - status
-timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:00Z
+timestamp: 2026-07-23T12:00:00.000Z
 ---
 
 # สถานะ
