@@ -78,14 +78,14 @@ You have access to a shared knowledge base at `~/OKF/`. Before any task:
 
 | Project | Profile | Agent | Status |
 |---------|---------|-------|--------|
-| clientdata | [profile](projects/clientdata/profile.md) | [agent](projects/clientdata/agent.md) | [status](projects/clientdata/status.md) |
-| data.mcky.space | [profile](projects/data.mcky.space/profile.md) | [agent](projects/data.mcky.space/agent.md) | [status](projects/data.mcky.space/status.md) |
-| habby | [profile](projects/habby/profile.md) | [agent](projects/habby/agent.md) | [status](projects/habby/status.md) |
-| mcky.space | [profile](projects/mcky.space/profile.md) | [agent](projects/mcky.space/agent.md) | [status](projects/mcky.space/status.md) |
-| receipts-dms | [profile](projects/receipts-dms/profile.md) | [agent](projects/receipts-dms/agent.md) | [status](projects/receipts-dms/status.md) |
-| collage | [profile](projects/collage/profile.md) | [agent](projects/collage/agent.md) | [status](projects/collage/status.md) |
-| truck | [profile](projects/truck/profile.md) | [agent](projects/truck/agent.md) | [status](projects/truck/status.md) |
-| writer | [profile](projects/writer/profile.md) | [agent](projects/writer/agent.md) | — |
+| clientdata | [profile](../projects/clientdata/profile.md) | [agent](../projects/clientdata/agent.md) | [status](../projects/clientdata/status.md) |
+| data.mcky.space | [profile](../projects/data.mcky.space/profile.md) | [agent](../projects/data.mcky.space/agent.md) | [status](../projects/data.mcky.space/status.md) |
+| habby | [profile](../projects/habby/profile.md) | [agent](../projects/habby/agent.md) | [status](../projects/habby/status.md) |
+| mcky.space | [profile](../projects/mcky.space/profile.md) | [agent](../projects/mcky.space/agent.md) | [status](../projects/mcky.space/status.md) |
+| receipts-dms | [profile](../projects/receipts-dms/profile.md) | [agent](../projects/receipts-dms/agent.md) | [status](../projects/receipts-dms/status.md) |
+| collage | [profile](../projects/collage/profile.md) | [agent](../projects/collage/agent.md) | [status](../projects/collage/status.md) |
+| truck | [profile](../projects/truck/profile.md) | [agent](../projects/truck/agent.md) | [status](../projects/truck/status.md) |
+| writer | [profile](../projects/writer/profile.md) | [agent](../projects/writer/agent.md) | — |
 
 Shared: `~/OKF/system/conventions.md`
 
