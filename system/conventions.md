@@ -231,9 +231,3 @@ Or just say **"build site"** to trigger this workflow.
 6. commit + push การเปลี่ยนแปลง — Vercel auto-deploys
 
 **คำที่ใช้ได้:** "sync kb", "refresh kb", "update kb", "อัปเดต kb", "ทำให้ kb ทันสมัย"
-
-## Cross-links
-
-- [Glossary](glossary.md)
-- [Personalities](personalities.md)
-- [Sync Log](sync-log.md)

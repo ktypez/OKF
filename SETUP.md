@@ -64,8 +64,7 @@ echo '{"jsonrpc":"2.0","id":1,"method":"initialize","params":{"protocolVersion":
 │   ├── conventions.md                ← Communication rules, Universal Prompt
 │   ├── glossary.md                   ← Terminology
 │   ├── personalities.md              ← Agent personalities
-│   ├── sync-log.md                   ← Change history
-│   └── TODOS.md                      ← TODOs convention
+│   └── sync-log.md                   ← Change history
 ├── mcp-server/                       ← Local MCP server
 │   ├── index.js
 │   ├── lib/

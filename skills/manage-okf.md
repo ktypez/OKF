@@ -57,8 +57,7 @@ OKF/
 │   ├── conventions.md
 │   ├── glossary.md
 │   ├── personalities.md
-│   ├── sync-log.md
-│   └── TODOS.md
+│   └── sync-log.md
 │
 └── templates/
     └── project-template.md
