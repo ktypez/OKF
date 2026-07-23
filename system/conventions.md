@@ -237,5 +237,5 @@ Or just say **"build site"** to trigger this workflow.
 - [Glossary](glossary.md)
 - [Personalities](personalities.md)
 - [Sync Log](sync-log.md)
-- [Setup Guide](SETUP.md)
-- [Project Template](../templates/project-template.md)
+- [Setup Guide](../../SETUP.md)
+- [Project Template](../../templates/project-template.md)
