@@ -1,7 +1,7 @@
 ---
 type: system-doc
 id: conventions
-last_updated: 2026-07-22T00:00:00.000Z
+last_updated: 2026-07-23T00:00:00.000Z
 title: Conventions
 description: ''
 tags:
@@ -177,11 +177,13 @@ updated: 2026-07-09
 
 ## MCP Tools
 
-Local MCP server at `~/OKF/mcp-server/`. Use these tools to read and query the KB.
+เครื่องมือเหล่านี้ใช้ผ่าน `~/KB/bin/okf-wrap` เพื่อ query และจัดการ KB
+- **Native (Node.js):** project, read, filter, tree, dashboard, search, stats, rebuild
+- **Proxy → okf-gem (Ruby):** graph, validate, lint, render, server
 
 | Tool | Description |
 |------|-------------|
-| `projects` | List all projects with metadata |
+| `catalog` | แสดงโปรเจกต์ทั้งหมดพร้อม metadata |
 | `project` | Get profile + agent + status for a project |
 | `search` | Full-text search across title, description, body |
 | `read` | Raw content of any OKF file |

@@ -2,7 +2,7 @@
 type: project-status
 id: receipts-dms-status
 project: receipts-dms
-last_updated: 2026-07-21T00:00:00.000Z
+last_updated: 2026-07-23T00:00:00.000Z
 status: active
 links:
   profile: receipts-dms-profile
@@ -70,6 +70,15 @@ categories: id, name, created_at
 ### 2026-07-21
 - Rebuild OKF files — standardized frontmatter to new schema
 - Removed deprecated freshness/verified/expires/superseded_by fields
+
+### 2026-07-18
+- **Animation**: ลบ entrance animations ที่ซ้ำซ้อน, คงไว้เฉพาะ interaction animations (hover, focus)
+
+### 2026-07-15
+- **Upgrade**: Vite 6 → 8 + Tailwind CSS 3 → 4
+- **Animation**: เพิ่ม framer-motion animations ทุกหน้า — route transitions, card entrance, modal
+- **Perf**: Code-split routes ด้วย React.lazy — เพิ่ม chunk size limit
+- **Fix**: Track build assets in git สำหรับ Cloudflare Pages deploy (แก้ blank page)
 
 ### 2026-07-13
 - Sync OKF knowledge base across all 8 projects

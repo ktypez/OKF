@@ -5,7 +5,7 @@ okf_version: 0.1
 
 ## สรุป Workspace
 - **Root:** `/home`
-- **Sync ล่าสุด:** 2026-07-21
+- **Sync ล่าสุด:** 2026-07-23
 - **ขอบเขต:** `/home` (ตัด node_modules, .git ออก)
 
 ## รายการโปรเจกต์
@@ -64,13 +64,15 @@ okf_version: 0.1
 | `check todos` | อ่าน ./TODOS.md ที่รากโปรเจกต์, แจ้งผู้ใช้เรื่องที่ค้าง | ทั้งหมด |
 | `check scope` | ตรวจสอบไฟล์ OKF ทั้งหมดว่าเกิน scope budget หรือไม่, แจ้งเตือนถ้าเกิน | ทั้งหมด |
 
-## เครื่องมือ MCP (MCP Tools)
+## เครื่องมือ CLI (CLI Tools)
 
-Local MCP server ที่ `~/OKF/mcp-server/` ใช้เครื่องมือเหล่านี้เพื่อ query และจัดการ KB
+เครื่องมือเหล่านี้ใช้ผ่าน `~/KB/bin/okf-wrap` เพื่อ query และจัดการ KB
+- **Native (Node.js):** project, read, filter, tree, dashboard, search, stats, rebuild
+- **Proxy → okf-gem (Ruby):** graph, validate, lint, render, server
 
 | เครื่องมือ | คำอธิบาย |
 |------|-------------|
-| `projects` | แสดงโปรเจกต์ทั้งหมดพร้อม metadata |
+| `catalog` | แสดงโปรเจกต์ทั้งหมดพร้อม metadata |
 | `project` | ดึง profile + agent + status raw markdown ของโปรเจกต์ |
 | `search` | ค้นหน้าข้าม project (title, description, body) |
 | `read` | อ่านเนื้อหาดิบของไฟล์ OKF ใดก็ได้ |
