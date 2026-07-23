@@ -64,24 +64,9 @@ okf_version: 0.1
 | `check todos` | อ่าน ./TODOS.md ที่รากโปรเจกต์, แจ้งผู้ใช้เรื่องที่ค้าง | ทั้งหมด |
 | `check scope` | ตรวจสอบไฟล์ OKF ทั้งหมดว่าเกิน scope budget หรือไม่, แจ้งเตือนถ้าเกิน | ทั้งหมด |
 
-## เครื่องมือ CLI (CLI Tools)
+## การเข้าถึง KB
 
-เครื่องมือเหล่านี้ใช้ผ่าน `~/KB/bin/okf-wrap` เพื่อ query และจัดการ KB
-- **Native (Node.js):** project, read, filter, tree, dashboard, search, stats, rebuild
-- **Proxy → okf-gem (Ruby):** graph, validate, lint, render, server
-
-| เครื่องมือ | คำอธิบาย |
-|------|-------------|
-| `catalog` | แสดงโปรเจกต์ทั้งหมดพร้อม metadata |
-| `project` | ดึง profile + agent + status raw markdown ของโปรเจกต์ |
-| `search` | ค้นหน้าข้าม project (title, description, body) |
-| `read` | อ่านเนื้อหาดิบของไฟล์ OKF ใดก็ได้ |
-| `tree` | แสดงโครงสร้างไดเรกทอรี OKF |
-| `filter` | Query projects by technology, status, deployment, language |
-| `dashboard` | Summary table ของทุกโปรเจกต์ |
-| `stats` | Statistics ข้ามโปรเจกต์ (framework, DB, deploy) |
-| `graph` | Mermaid knowledge graph — project → technology relationships |
-| `rebuild` | บังคับ recompile KB จาก .md ไฟล์ |
+KB ถูก maintain โดยการอ่านและเขียนไฟล์ `.md` โดยตรง — source of truth คือไฟล์ markdown ไม่มี tooling layer คั่นกลาง
 
 ## ไฟล์ระบบ (System Files)
 - [Setup](./SETUP.md) — เริ่มต้นไวสำหรับสภาพแวดล้อมใหม่
