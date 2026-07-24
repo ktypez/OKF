@@ -2,7 +2,7 @@
 type: project-status
 id: truck-status
 project: truck
-last_updated: '2026-07-23'
+last_updated: '2026-07-24T05:25:00.000Z'
 status: active
 links:
   profile: truck-profile
@@ -20,6 +20,10 @@ timestamp: 'Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00
 # สถานะโปรเจกต์ — Truck
 
 ## Changelog
+
+### 2026-07-24 (admin fix)
+- **Fix**: AdminGuard เปลี่ยน `sb.auth.getUser()` → `sb.auth.getSession()` เพื่อเลี่ยง race condition ที่ต้องเข้าซ้ำๆ หน้า admin ถึงจะแสดง
+- **Fix**: เพิ่ม loading state ใน AdminGuard แทน `return null` — ผู้ใช้เห็น Loading card ขณะตรวจสอบสิทธิ์ admin
 
 ### 2026-07-17 (animations)
 - **Animation**: เพิ่ม motion (Framer Motion) สำหรับ route transitions — `<AnimatePresence mode="wait">` + `<motion.div>` fade+slide (0.2s, custom easing)
@@ -80,3 +84,5 @@ timestamp: 'Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00
 ## MCP Auto Sync Log
 
 - 2026-07-23T13:50:54.190Z — f1c6130: test: mcp-kb post-commit hook test
+- 2026-07-24T05:21:23.307Z — 7da45ac: fix: AdminGuard ใช้ getSession แทน getUser + เพิ่ม loading state แก้ต้องเข้าซ้ำๆ หน้า admin ถึงแสดง
+- 2026-07-24T05:25:00.000Z — kb-sync: อัปเดต changelog หลัง fix admin guard
