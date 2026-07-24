@@ -2,7 +2,7 @@
 type: agent-profile
 id: truck-agent
 project: truck
-last_updated: 2026-07-21T00:00:00.000Z
+last_updated: 2026-07-24T00:00:00.000Z
 status: active
 personality: overtime enthusiast
 status_ref: truck-status
@@ -48,7 +48,7 @@ timestamp: Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00:
 
 ```
 main.tsx → App.tsx (auth gate + session + theme)
-         → AppRoutes.tsx (AnimatePresence + motion.div route transitions)
+         → AppRoutes.tsx (AnimatePresence > motion.div > Suspense > Routes route transitions)
          → lazy-loaded: DailyView, ShiftCalendar, History, IncomeView, ProfilePage, Changelog, AdminPanel, UserManagement, IncomeSettings
          → ErrorBoundary wrapper per route
          → Supabase (sb) + ReactQuery (monthly-logs, day-log, income, yearly-logs)
@@ -74,7 +74,7 @@ main.tsx → App.tsx (auth gate + session + theme)
 
 ## รูปแบบหลัก (Key Patterns)
 
-- **Route transitions**: `<AnimatePresence mode="wait">` + `<motion.div>` — fade+slide (0.2s, custom easing `[0.16, 1, 0.3, 1]`), key=`location.pathname`
+- **Route transitions**: `<AnimatePresence>` (no mode) > `<motion.div key={location.pathname}>` > `<Suspense>` > `<Routes>` — fade+slide (0.2s, custom easing `[0.16, 1, 0.3, 1]`). Suspense อยู่ข้างใน motion.div เพื่อไม่ให้ lazy import discard animation tree
 - **Modal exit animations**: `<AnimatePresence>` wrapping modals — backdrop fades out, content scales down (0.18s). CSS `fadeIn`/`scaleIn` removed from globals.css, motion handles enter+exit
 - **Toast exit animation**: `<AnimatePresence>` in ToastContext — slide right + fade out (0.25s). CSS `slideIn`/`slideOut` removed
 - **Nav tab micro-interaction**: `whileTap={{ scale: 0.9 }}` on motion.div tab buttons

@@ -2,7 +2,7 @@
 type: project-status
 id: truck-status
 project: truck
-last_updated: '2026-07-24T05:25:00.000Z'
+last_updated: '2026-07-24'
 status: active
 links:
   profile: truck-profile
@@ -21,7 +21,10 @@ timestamp: 'Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00
 
 ## Changelog
 
-### 2026-07-24 (admin fix)
+### 2026-07-24 (transition fix)
+- **Fix**: ย้าย `<Suspense>` เข้าไปใน `<motion.div>` แทนครอบ `<AnimatePresence>` — แก้ admin page blank แรกเข้า (lazy import discard animation tree + AdminGuard state)
+- **Fix**: เอา `mode="wait"` ออกจาก AnimatePresence — mount หน้าใหม่ทันที ไม่รอ exit animation
+- **Fix**: เอา `location` prop ออกจาก `<Routes>` — ใช้ context auto แทน (ป้องกัน RRv7 edge case)
 - **Fix**: AdminGuard เปลี่ยน `sb.auth.getUser()` → `sb.auth.getSession()` เพื่อเลี่ยง race condition ที่ต้องเข้าซ้ำๆ หน้า admin ถึงจะแสดง
 - **Fix**: เพิ่ม loading state ใน AdminGuard แทน `return null` — ผู้ใช้เห็น Loading card ขณะตรวจสอบสิทธิ์ admin
 
@@ -86,3 +89,5 @@ timestamp: 'Tue Jul 21 2026 00:00:00 GMT+0000 (Coordinated Universal Time)T12:00
 - 2026-07-23T13:50:54.190Z — f1c6130: test: mcp-kb post-commit hook test
 - 2026-07-24T05:21:23.307Z — 7da45ac: fix: AdminGuard ใช้ getSession แทน getUser + เพิ่ม loading state แก้ต้องเข้าซ้ำๆ หน้า admin ถึงแสดง
 - 2026-07-24T05:25:00.000Z — kb-sync: อัปเดต changelog หลัง fix admin guard
+- 2026-07-24T05:38:01.772Z — f946f64: fix: AdminGuard เพิ่ม retry + error state + logError — แก้ redirect เงียบกรณี query ล้มเหลวชั่วคราว
+- 2026-07-24T05:53:14.935Z — cf79c56: fix: move Suspense inside AnimatePresence — แก้ admin page blank แรกเข้า
